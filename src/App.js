@@ -1,8 +1,41 @@
 import "./App.css";
-import React, { useEffect } from "react";
-import { Canvas, useThree } from "@react-three/fiber";
+import React, { useEffect, Suspense } from "react";
+import { Canvas, useThree, useLoader, extend } from "@react-three/fiber";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+import { TextureLoader } from "three/src/loaders/TextureLoader";
+import { Stars, shaderMaterial } from "@react-three/drei";
+import glsl from "babel-plugin-glsl/macro";
 import * as THREE from "three";
+
+const GlobeShaderMaterial = shaderMaterial(
+  //uniforms
+  { globeTexture: "" },
+
+  //Vertex Shader
+  glsl`
+  varying vec2 vertexUV;
+  varying vec3 vertexNormal;
+  void main(){
+    vertexUV = uv;
+    vertexNormal = normal;
+    gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
+  }`,
+
+  //Fragment Shader
+  glsl`  
+  uniform sampler2D globeTexture;
+  varying vec2 vertexUV;
+  varying vec3 vertexNormal;
+  void main(){
+
+    float intensity = 1.05 - dot(vertexNormal, vec3(0,0,1));
+    vec3 atmosphere = vec3(0.3,0.6,1.0)* pow(intensity,1.5);
+
+    gl_FragColor = vec4(atmosphere+texture2D(globeTexture,vertexUV).xyz, 1);
+  }`
+);
+
+extend({ GlobeShaderMaterial });
 
 const CameraController = () => {
   const { camera, gl } = useThree();
@@ -17,17 +50,33 @@ const CameraController = () => {
   return null;
 };
 
+function Scene() {
+  return (
+    <>
+      <CameraController />
+      <Stars />
+      <ambientLight intensity={0.1} />
+      <pointLight position={[1, 1, 1]} />
+      <mesh>
+        <sphereBufferGeometry attach="geometry" args={[2, 50, 50]} />
+        <globeShaderMaterial
+          globeTexture={new THREE.TextureLoader().load("globe.jpg")}
+        />
+      </mesh>
+      <mesh>
+        <sphereBufferGeometry attach="geometry" args={[2.1, 50, 50]} />
+      </mesh>
+    </>
+  );
+}
+
 function App() {
   return (
-    <div className="App">
+    <div className="App" width={window.innerWidth} height={window.innerHeight}>
       <Canvas>
-        <CameraController />
-        <ambientLight intensity={0.2} />
-        <pointLight position={[10, 10, 10]} />
-        <mesh>
-          <sphereBufferGeometry />
-          <meshStandardMaterial color="hotpink" />
-        </mesh>
+        <Suspense fallback={null}>
+          <Scene />
+        </Suspense>
       </Canvas>
     </div>
   );

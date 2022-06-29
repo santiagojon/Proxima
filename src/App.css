@@ -11,6 +11,12 @@ body,
 }
 
 body {
-  background: #f1f4f8;
+  background: #000;
   position: fixed;
+}
+
+canvas {
+  transform: translate(0, 0rem);
+  height: 100%;
+  width: 100%;
 }
