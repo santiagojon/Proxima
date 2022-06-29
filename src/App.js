@@ -24,15 +24,15 @@ const AtmosphereShaderMaterial = shaderMaterial(
   glsl`
   varying vec3 vertexNormal;
   void main(){
-    float intensity = 0.62 - dot(vertexNormal, vec3(0,0,1));
+    float intensity = pow(0.8 - dot(vertexNormal, vec3(0,0,1.0)),2.0);
     gl_FragColor = (vec4(0.3,0.6,1.0,1.0) * intensity);
   }
   `
 );
-
+// float intensity = 0.62 - dot(vertexNormal, vec3(0,0,1));
 const GlobeShaderMaterial = shaderMaterial(
   //uniforms
-  { globeTexture: "" },
+  { globeTexture: "", uColor: new THREE.Color(0, 0, 0) },
 
   //Vertex Shader
   glsl`
@@ -46,13 +46,14 @@ const GlobeShaderMaterial = shaderMaterial(
 
   //Fragment Shader
   glsl`  
+  uniform vec3 uColor;
   uniform sampler2D globeTexture;
   varying vec2 vertexUV;
   varying vec3 vertexNormal;
   void main(){
 
-    float intensity = 1.05 - dot(vertexNormal, vec3(0,0,1));
-    vec3 atmosphere = vec3(0.3,0.6,1.0)* pow(intensity,1.5);
+    float intensity = 1.09 - dot(vertexNormal, vec3(0,0,1));
+    vec3 atmosphere = vec3(uColor)* pow(intensity,1.5);
 
     gl_FragColor = vec4(atmosphere+texture2D(globeTexture,vertexUV).xyz, 1);
   }`
@@ -84,15 +85,23 @@ function Scene() {
       <mesh>
         <sphereBufferGeometry attach="geometry" args={[1.5, 50, 50]} />
         <globeShaderMaterial
+          uColor={new THREE.Color(0.3, 0.6, 1.0)}
           globeTexture={new THREE.TextureLoader().load("globe.jpg")}
         />
       </mesh>
       <mesh>
-        <sphereBufferGeometry attach="geometry" args={[1.57, 50, 50]} />
+        <sphereBufferGeometry attach="geometry" args={[1.59, 50, 50]} />
         <atmosphereShaderMaterial
           attach="material"
           blending={THREE.AdditiveBlending}
           side={THREE.BackSide}
+        />
+      </mesh>
+      <mesh position={[0, 0, 6]}>
+        <sphereBufferGeometry attach="geometry" args={[0.35, 50, 50]} />
+        <globeShaderMaterial
+          uColor={new THREE.Color(0.1, 0.1, 0.1)}
+          globeTexture={new THREE.TextureLoader().load("moon.jpg")}
         />
       </mesh>
     </>
