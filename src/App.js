@@ -70,18 +70,18 @@ const GlobeShaderMaterial = shaderMaterial(
 extend({ GlobeShaderMaterial });
 extend({ AtmosphereShaderMaterial });
 
-const CameraController = () => {
-  const { camera, gl } = useThree();
-  useEffect(() => {
-    const controls = new OrbitControls(camera, gl.domElement);
-    controls.minDistance = 3;
-    controls.maxDistance = 20;
-    return () => {
-      controls.dispose();
-    };
-  }, [camera, gl]);
-  return null;
-};
+// const CameraController = () => {
+//   const { camera, gl } = useThree();
+//   useEffect(() => {
+//     const controls = new OrbitControls(camera, gl.domElement);
+//     controls.minDistance = 3;
+//     controls.maxDistance = 20;
+//     return () => {
+//       controls.dispose();
+//     };
+//   }, [camera, gl]);
+//   return null;
+// };
 
 function Scene() {
   // const meshReference = React.useRef();
@@ -111,12 +111,14 @@ function Scene() {
 
 function App() {
   return (
+
     <div className="App" width={window.innerWidth} height={window.innerHeight}>
       <Canvas>
         <Suspense fallback={null}>
           <Scene />
         </Suspense>
       </Canvas>
+
     </div>
   );
 }
