@@ -84,7 +84,7 @@ export const createPlanet = (
       <mesh position={[position[0], position[1], position[2]]}>
         <sphereBufferGeometry
           attach="geometry"
-          args={[1.5 * compareEarthSize * 1.05, 50, 50]}
+          args={[1.5 * compareEarthSize * 1.03, 50, 50]}
         />
         <atmosphereShaderMaterial
           uColor={
