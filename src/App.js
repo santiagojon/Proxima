@@ -9,7 +9,7 @@ import * as THREE from "three";
 
 const AtmosphereShaderMaterial = shaderMaterial(
   //uniforms
-  {},
+  { uColor: new THREE.Color(0, 0, 0) },
 
   //vertex shader
   glsl`
@@ -22,10 +22,11 @@ const AtmosphereShaderMaterial = shaderMaterial(
 
   //fragment shader
   glsl`
+  uniform vec3 uColor;
   varying vec3 vertexNormal;
   void main(){
     float intensity = pow(0.8 - dot(vertexNormal, vec3(0,0,1.0)),2.0);
-    gl_FragColor = (vec4(0.3,0.6,1.0,1.0) * intensity);
+    gl_FragColor = (vec4(uColor,1.0) * intensity);
   }
   `
 );
@@ -79,11 +80,53 @@ function Scene() {
   return (
     <>
       <CameraController />
-      <Stars />
-      <ambientLight intensity={0.1} />
-      <pointLight position={[1, 1, 1]} />
+      <Stars
+        radius={100}
+        depth={50}
+        count={5000}
+        factor={4}
+        saturation={0}
+        fade
+        speed={1}
+      />
+      <ambientLight intensity={0.2} />
+      <pointLight position={[10, 1, 1]} />
+      <mesh position={[0, 0, -30]}>
+        <sphereBufferGeometry attach="geometry" args={[10, 50, 50]} />
+        <globeShaderMaterial
+          uColor={new THREE.Color(0.4, 0.4, 0.4)}
+          globeTexture={new THREE.TextureLoader().load("Jupiter.jpg")}
+        />
+      </mesh>
+      <mesh position={[0, 0, -30]}>
+        <sphereBufferGeometry attach="geometry" args={[10.1, 50, 50]} />
+        <atmosphereShaderMaterial
+          uColor={new THREE.Color(0.98, 0.82, 0.68)}
+          attach="material"
+          blending={THREE.AdditiveBlending}
+          side={THREE.BackSide}
+        />
+      </mesh>
+      <mesh position={[0, 0, -6]}>
+        <sphereBufferGeometry attach="geometry" args={[0.75, 50, 50]} />
+        <globeShaderMaterial
+          uColor={new THREE.Color(0.98, 0.82, 0.68)}
+          globeTexture={new THREE.TextureLoader().load("mars.jpg")}
+        />
+      </mesh>
+      <mesh position={[0, 0, -6]}>
+        <sphereBufferGeometry attach="geometry" args={[0.78, 50, 50]} />
+        <atmosphereShaderMaterial
+          uColor={new THREE.Color(0.98, 0.82, 0.68)}
+          attach="material"
+          blending={THREE.AdditiveBlending}
+          side={THREE.BackSide}
+        />
+      </mesh>
       <mesh>
         <sphereBufferGeometry attach="geometry" args={[1.5, 50, 50]} />
+        {/* <meshBasicMaterial map={new THREE.TextureLoader().load("globe.jpg")} /> */}
+
         <globeShaderMaterial
           uColor={new THREE.Color(0.3, 0.6, 1.0)}
           globeTexture={new THREE.TextureLoader().load("globe.jpg")}
@@ -92,6 +135,8 @@ function Scene() {
       <mesh>
         <sphereBufferGeometry attach="geometry" args={[1.59, 50, 50]} />
         <atmosphereShaderMaterial
+          //0.3,0.6,1.0
+          uColor={new THREE.Color(0.3, 0.6, 1)}
           attach="material"
           blending={THREE.AdditiveBlending}
           side={THREE.BackSide}
