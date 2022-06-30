@@ -1,11 +1,18 @@
 import "./App.css";
-import React, { useEffect, Suspense } from "react";
-import { Canvas, useThree, useLoader, extend } from "@react-three/fiber";
+import React, { useEffect, Suspense, useRef } from "react";
+import {
+  Canvas,
+  useThree,
+  useLoader,
+  extend,
+  useFrame,
+} from "@react-three/fiber";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { TextureLoader } from "three/src/loaders/TextureLoader";
 import { Stars, shaderMaterial } from "@react-three/drei";
 import glsl from "babel-plugin-glsl/macro";
 import * as THREE from "three";
+import { createPlanet } from "./util/PlanetCreator";
 
 const AtmosphereShaderMaterial = shaderMaterial(
   //uniforms
@@ -77,6 +84,11 @@ const CameraController = () => {
 };
 
 function Scene() {
+  // const meshReference = React.useRef();
+  // useFrame(({ clock }) => {
+  //   meshReference.current.rotation.y = clock.getElapsedTime() / 12;
+  // });
+
   return (
     <>
       <CameraController />
@@ -91,64 +103,8 @@ function Scene() {
       />
       <ambientLight intensity={0.2} />
       <pointLight position={[10, 1, 1]} />
-      <mesh position={[0, 0, -30]}>
-        <sphereBufferGeometry attach="geometry" args={[10, 50, 50]} />
-        <globeShaderMaterial
-          uColor={new THREE.Color(0.4, 0.4, 0.4)}
-          globeTexture={new THREE.TextureLoader().load("Jupiter.jpg")}
-        />
-      </mesh>
-      <mesh position={[0, 0, -30]}>
-        <sphereBufferGeometry attach="geometry" args={[10.1, 50, 50]} />
-        <atmosphereShaderMaterial
-          uColor={new THREE.Color(0.98, 0.82, 0.68)}
-          attach="material"
-          blending={THREE.AdditiveBlending}
-          side={THREE.BackSide}
-        />
-      </mesh>
-      <mesh position={[0, 0, -6]}>
-        <sphereBufferGeometry attach="geometry" args={[0.75, 50, 50]} />
-        <globeShaderMaterial
-          uColor={new THREE.Color(0.98, 0.82, 0.68)}
-          globeTexture={new THREE.TextureLoader().load("mars.jpg")}
-        />
-      </mesh>
-      <mesh position={[0, 0, -6]}>
-        <sphereBufferGeometry attach="geometry" args={[0.78, 50, 50]} />
-        <atmosphereShaderMaterial
-          uColor={new THREE.Color(0.98, 0.82, 0.68)}
-          attach="material"
-          blending={THREE.AdditiveBlending}
-          side={THREE.BackSide}
-        />
-      </mesh>
-      <mesh>
-        <sphereBufferGeometry attach="geometry" args={[1.5, 50, 50]} />
-        {/* <meshBasicMaterial map={new THREE.TextureLoader().load("globe.jpg")} /> */}
-
-        <globeShaderMaterial
-          uColor={new THREE.Color(0.3, 0.6, 1.0)}
-          globeTexture={new THREE.TextureLoader().load("globe.jpg")}
-        />
-      </mesh>
-      <mesh>
-        <sphereBufferGeometry attach="geometry" args={[1.59, 50, 50]} />
-        <atmosphereShaderMaterial
-          //0.3,0.6,1.0
-          uColor={new THREE.Color(0.3, 0.6, 1)}
-          attach="material"
-          blending={THREE.AdditiveBlending}
-          side={THREE.BackSide}
-        />
-      </mesh>
-      <mesh position={[0, 0, 6]}>
-        <sphereBufferGeometry attach="geometry" args={[0.35, 50, 50]} />
-        <globeShaderMaterial
-          uColor={new THREE.Color(0.1, 0.1, 0.1)}
-          globeTexture={new THREE.TextureLoader().load("moon.jpg")}
-        />
-      </mesh>
+      {createPlanet(1, [0.3, 0.6, 1.0], [0.3, 0.6, 1], [0, 0, 0], "globe.jpg")}
+      {createPlanet(0.25, [0, 0, 0], [0, 0, 0], [0, 0, 4], "moon.jpg")}
     </>
   );
 }
