@@ -10,7 +10,9 @@ import {
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { Stars } from "@react-three/drei";
 import * as THREE from "three";
-import { createPlanet } from "./util/PlanetCreator";
+import { Planet } from "./components/Planet";
+import { AtmosphereShaderMaterial } from "./shaders/Atmosphere";
+import { GlobeShaderMaterial } from "./shaders/GlobeMaterial";
 
 const CameraController = () => {
   const { camera, gl } = useThree();
@@ -25,7 +27,17 @@ const CameraController = () => {
   return null;
 };
 
+const planet = {
+  globeRGB: [1, 0.58, 0.26],
+  atmosphereRGB: [1, 0.58, 0.26],
+  compareEarthSize: 1,
+  image: "sun.jpg",
+  sun: true,
+};
+
 function Scene() {
+  extend({ AtmosphereShaderMaterial });
+  extend({ GlobeShaderMaterial });
   return (
     <>
       <CameraController />
@@ -40,23 +52,7 @@ function Scene() {
       />
       <ambientLight intensity={0.2} />
       <pointLight position={[10, 1, 1]} />
-      {createPlanet(
-        80,
-        [1, 0.58, 0.26],
-        [1, 0.58, 0.26],
-        [0, 0, -250],
-        "sun.jpg",
-        true
-      )}
-      {createPlanet(1, [0.3, 0.6, 1.0], [0.3, 0.6, 1], [0, 0, 0], "globe.jpg")}
-      {createPlanet(0.25, [0, 0, 0], [0, 0, 0], [0, 0, 4], "moon.jpg")}
-      {createPlanet(
-        0.5,
-        [1, 0.34, 0.17],
-        [1, 0.34, 0.17],
-        [0, 0, 8],
-        "mars.jpg"
-      )}
+      <Planet {...planet} />
     </>
   );
 }
