@@ -51,6 +51,7 @@ export const Planet = (props) => {
             blending={THREE.AdditiveBlending}
             side={THREE.BackSide}
           />
+
           {props.sun ? (
             <Sun
               compareEarthSize={props.compareEarthSize}
@@ -63,9 +64,10 @@ export const Planet = (props) => {
         {orbitPlanet && orbitPlanet.length > 0
           ? orbitPlanet.map((planet, idx) => {
               return (
-                <mesh key={idx} ref={(el) => (planetRef.current[idx] = el)}>
-                  <Planet {...planet} />
-                  {console.log("inside the log", planetRef.current)}
+                <mesh key={idx}>
+                  <mesh ref={(el) => (planetRef.current[idx] = el)}>
+                    <Planet {...planet} />
+                  </mesh>
                 </mesh>
               );
             })
