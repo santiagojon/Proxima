@@ -14,6 +14,7 @@ import { Planet } from "./components/Planet";
 import { AtmosphereShaderMaterial } from "./shaders/Atmosphere";
 import { GlobeShaderMaterial } from "./shaders/GlobeMaterial";
 import { SolarSystem } from "./components/SolarSystem";
+import { solarSys } from "./util/SolarSystem";
 
 const CameraController = () => {
   const { camera, gl } = useThree();
@@ -27,42 +28,6 @@ const CameraController = () => {
   }, [camera, gl]);
   return null;
 };
-const moon = {
-  position: [9, 0, 0],
-  globeRGB: [0, 0, 0],
-  atmosphereRGB: [0, 0, 0],
-  compareEarthSize: 0.25,
-  image: "moon.jpg",
-  speed: 0.0003,
-  sun: false,
-  orbitSpeed: 0.03,
-  orbitPlanet: [],
-};
-const earth = {
-  position: [7, 0, 0],
-  globeRGB: [0.3, 0.6, 1.0],
-  atmosphereRGB: [0.3, 0.6, 1.0],
-  compareEarthSize: 1,
-  image: "globe.jpg",
-  speed: 0.0003,
-  sun: false,
-  orbitSpeed: 0.002,
-  orbitPlanet: [moon],
-};
-
-const sun = {
-  position: [0, 0, 0],
-  globeRGB: [1, 0.58, 0.26],
-  atmosphereRGB: [1, 0.58, 0.26],
-  compareEarthSize: 2,
-  image: "sun.jpg",
-  speed: 0.0005,
-  sun: true,
-  orbitSpeed: 0,
-  orbitPlanet: [earth],
-};
-
-const solarSys = [sun];
 
 function Scene() {
   extend({ AtmosphereShaderMaterial });
@@ -72,7 +37,7 @@ function Scene() {
       <CameraController />
       <Stars
         radius={200}
-        depth={50}
+        depth={120}
         count={5000}
         factor={4}
         saturation={0}

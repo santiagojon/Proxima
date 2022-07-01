@@ -37,7 +37,7 @@ export const Planet = (props) => {
         <mesh>
           <sphereBufferGeometry
             attach="geometry"
-            args={[1.5 * props.compareEarthSize * 1.05, 50, 50]}
+            args={[1.5 * props.compareEarthSize * 1.01, 50, 50]}
           />
           <atmosphereShaderMaterial
             uColor={
