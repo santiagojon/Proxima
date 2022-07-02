@@ -4,7 +4,7 @@ const neptune = {
   atmosphereRGB: [0.05, 0.1, 0.2],
   compareEarthSize: 3,
   image: "neptune.jpg",
-  speed: 0.000025,
+  speed: 0.000001,
   sun: false,
   orbitSpeed: 0.0005,
   orbitPlanet: [],
@@ -18,7 +18,7 @@ const uranus = {
   image: "uranus.jpg",
   speed: 0.00005,
   sun: false,
-  orbitSpeed: 0.0005,
+  orbitSpeed: 0.000005,
   orbitPlanet: [],
 };
 
