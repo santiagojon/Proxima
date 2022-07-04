@@ -16,7 +16,7 @@ export const SolarSystem = (props) => {
                   args={[
                     orbit.position[0] - 0.01,
                     orbit.position[0] + 0.01,
-                    78,
+                    256,
                     1,
                     0,
                   ]}
