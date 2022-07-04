@@ -15,6 +15,13 @@ import { AtmosphereShaderMaterial } from "./shaders/Atmosphere";
 import { GlobeShaderMaterial } from "./shaders/GlobeMaterial";
 import { SolarSystem } from "./components/SolarSystem";
 import { solarSys } from "./util/SolarSystem";
+import {
+  EffectComposer,
+  DepthOfField,
+  Bloom,
+  Noise,
+  Vignette,
+} from "@react-three/postprocessing";
 
 const CameraController = () => {
   const { camera, gl } = useThree();
@@ -44,8 +51,8 @@ function Scene() {
         fade
         speed={1}
       />
-      <ambientLight intensity={0.2} />
-      <pointLight position={[10, 1, 1]} />
+      <ambientLight intensity={0.03} />
+      <pointLight position={[0, 0, 0]} />
       <SolarSystem solarSystem={solarSys} />
     </>
   );
@@ -54,10 +61,20 @@ function Scene() {
 function App() {
   return (
     <div className="App" width={window.innerWidth} height={window.innerHeight}>
-      <Canvas>
+      {/* <Canvas gl={{ antialias: true }} dpr={window.devicePixelRatio}>
         <Suspense fallback={null}>
           <Scene />
         </Suspense>
+      </Canvas> */}
+      <Canvas gl={{ antialias: true }} dpr={window.devicePixelRatio}>
+        <Suspense fallback={null}>
+          <Scene />
+        </Suspense>
+        <EffectComposer>
+          <Bloom luminanceThreshold={0} luminanceSmoothing={1} height={550} />
+          {/* <Noise opacity={0.005} /> */}
+          <Vignette eskil={false} offset={0.1} darkness={0.1} />
+        </EffectComposer>
       </Canvas>
     </div>
   );

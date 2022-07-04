@@ -9,7 +9,7 @@ export const Planet = (props) => {
   // This reference gives us direct access to the THREE.Mesh object
   const ref = useRef();
   let planetRef = useRef([]);
-  const speed = props.speed || 0.001;
+  const speed = props.speed || 0.0;
   const position = props.position || [0, 10, 0];
   const orbitPlanet = props.orbitPlanet || [];
   // Subscribe this component to the render-loop, rotate the mesh every frame
@@ -24,17 +24,33 @@ export const Planet = (props) => {
     <>
       <mesh ref={ref} position={[position[0], position[1], position[2]]}>
         <sphereBufferGeometry args={[1.5 * props.compareEarthSize, 50, 50]} />
-        <globeShaderMaterial
-          uColor={
-            new THREE.Color(
-              props.globeRGB[0],
-              props.globeRGB[1],
-              props.globeRGB[2]
-            )
-          }
-          globeTexture={new THREE.TextureLoader().load(props.image)}
-        />
-        <mesh>
+        {props.sun ? (
+          <globeShaderMaterial
+            uColor={
+              new THREE.Color(
+                props.globeRGB[0],
+                props.globeRGB[1],
+                props.globeRGB[2]
+              )
+            }
+            globeTexture={new THREE.TextureLoader().load(props.image)}
+          />
+        ) : (
+          <meshStandardMaterial
+            map={new THREE.TextureLoader().load(props.image)}
+          />
+        )}
+
+        {props.sun ? (
+          <Sun
+            compareEarthSize={props.compareEarthSize}
+            atmosphereRGB={props.atmosphereRGB}
+          />
+        ) : (
+          ""
+        )}
+
+        {/* <mesh>
           <sphereBufferGeometry
             attach="geometry"
             args={[1.5 * props.compareEarthSize * 1.01, 50, 50]}
@@ -60,7 +76,7 @@ export const Planet = (props) => {
           ) : (
             ""
           )}
-        </mesh>
+        </mesh> */}
         {orbitPlanet && orbitPlanet.length > 0
           ? orbitPlanet.map((planet, idx) => {
               return (

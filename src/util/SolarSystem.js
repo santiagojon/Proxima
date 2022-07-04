@@ -73,10 +73,10 @@ const earth = {
   globeRGB: [0.3, 0.6, 1.0],
   atmosphereRGB: [0.3, 0.6, 1.0],
   compareEarthSize: 1,
-  image: "earth.jpg",
-  speed: 0.0003,
+  image: "earth2.jpg",
+  speed: 0.0,
   sun: false,
-  orbitSpeed: 0.002,
+  orbitSpeed: 0.0,
   orbitPlanet: [moon],
 };
 
@@ -110,7 +110,7 @@ const sun = {
   atmosphereRGB: [1, 0.58, 0.26],
   compareEarthSize: 2,
   image: "sun.jpg",
-  speed: 0.0005,
+  speed: 0.0,
   sun: true,
   orbitSpeed: 0,
   orbitPlanet: [earth, mercury, venus, mars, jupitar, saturn, uranus, neptune],
