@@ -1,54 +1,54 @@
 import React, { useEffect, Suspense, useRef } from "react";
-import {
-  Canvas,
-  useThree,
-  useLoader,
-  extend,
-  useFrame,
-} from "@react-three/fiber";
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-import { Stars } from "@react-three/drei";
-import * as THREE from "three";
-import { createPlanet } from "./util/PlanetCreator";
+// import {
+//   Canvas,
+//   useThree,
+//   useLoader,
+//   extend,
+//   useFrame,
+// } from "@react-three/fiber";
+// import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+// import { Stars } from "@react-three/drei";
+// import * as THREE from "three";
+// import { createPlanet } from "./util/PlanetCreator";
 
-const CameraController = () => {
-  const { camera, gl } = useThree();
-  useEffect(() => {
-    const controls = new OrbitControls(camera, gl.domElement);
-    controls.minDistance = 3;
-    controls.maxDistance = 20;
-    return () => {
-      controls.dispose();
-    };
-  }, [camera, gl]);
-  return null;
-};
+// const CameraController = () => {
+//   const { camera, gl } = useThree();
+//   useEffect(() => {
+//     const controls = new OrbitControls(camera, gl.domElement);
+//     controls.minDistance = 3;
+//     controls.maxDistance = 20;
+//     return () => {
+//       controls.dispose();
+//     };
+//   }, [camera, gl]);
+//   return null;
+// };
 
-function Scene() {
-  return (
-    <>
-      <CameraController />
-      <Stars
-        radius={100}
-        depth={50}
-        count={5000}
-        factor={4}
-        saturation={0}
-        fade
-        speed={1}
-      />
-      <ambientLight intensity={0.2} />
-      <pointLight position={[10, 1, 1]} />
-      {createPlanet(
-        0.5,
-        [1, 0.34, 0.17],
-        [1, 0.34, 0.17],
-        [0, 0, 8],
-        "mars.jpg"
-      )}
-    </>
-  );
-}
+// function Scene() {
+//   return (
+//     <>
+//       <CameraController />
+//       <Stars
+//         radius={100}
+//         depth={50}
+//         count={5000}
+//         factor={4}
+//         saturation={0}
+//         fade
+//         speed={1}
+//       />
+//       <ambientLight intensity={0.2} />
+//       <pointLight position={[10, 1, 1]} />
+//       {createPlanet(
+//         0.5,
+//         [1, 0.34, 0.17],
+//         [1, 0.34, 0.17],
+//         [0, 0, 8],
+//         "mars.jpg"
+//       )}
+//     </>
+//   );
+// }
 
 const LandingPage = () => {
   window.addEventListener(
