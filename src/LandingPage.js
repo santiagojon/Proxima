@@ -1,4 +1,5 @@
 import React, { useEffect, Suspense, useRef } from "react";
+import { Link } from 'react-router-dom'
 // import {
 //   Canvas,
 //   useThree,
@@ -9,6 +10,7 @@ import React, { useEffect, Suspense, useRef } from "react";
 // import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 // import { Stars } from "@react-three/drei";
 // import * as THREE from "three";
+
 // import { createPlanet } from "./util/PlanetCreator";
 
 // const CameraController = () => {
@@ -89,24 +91,27 @@ const LandingPage = () => {
         </Suspense>
       </Canvas> */}
 
-      <section className='placeHolder3D' >
-      </section>
+      <section className="placeHolder3D"></section>
 
-      <section className='placeHolder3D'>
-      </section>
+      <section className="placeHolder3D"></section>
 
       <div id="milkyWayLandingPageContainer">
-      <section id="milkyWayLandingPage">
-        <img
-          src="https://scitechdaily.com/images/Milky-Way-Galaxy-and-Central-Bar-Viewed-From-Above.jpg"
-          alt="milkway"
-        />
-        <button id="sun">Test</button>
-      </section>
-      <div id="milkyWayTextLandingPage">
-        <h3 id="milkyWayTitleLandingPage">Milky Way</h3>
-        <h3 id="milkyWayCTALandingPage">Select a star system to begin</h3>
-      </div>
+        <section id="milkyWayLandingPage">
+          <img
+            src="https://scitechdaily.com/images/Milky-Way-Galaxy-and-Central-Bar-Viewed-From-Above.jpg"
+            alt="milkway"
+          />
+          <div id="sunWrapper">
+            <Link to={'/home'}>
+              <button id="sun" className="galaxyButtons"></button>
+            </Link>
+            <span id="sunDescription">The Sun</span>
+          </div>
+        </section>
+        <div id="milkyWayTextLandingPage">
+          <h3 id="milkyWayTitleLandingPage">Milky Way</h3>
+          <h3 id="milkyWayCTALandingPage">Select a star system to begin</h3>
+        </div>
       </div>
     </div>
   );

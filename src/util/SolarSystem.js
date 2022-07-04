@@ -34,7 +34,7 @@ const saturn = {
   orbitPlanet: [],
 };
 
-const jupitar = {
+const jupiter = {
   position: [50, 0, 0],
   globeRGB: [0.3, 0.2, 0.15],
   atmosphereRGB: [1, 0.87, 0.8],
@@ -78,6 +78,7 @@ const earth = {
   sun: false,
   orbitSpeed: 0.0,
   orbitPlanet: [moon],
+  planetInfo: 'Planet type: Bing bong'
 };
 
 const venus = {
@@ -113,7 +114,7 @@ const sun = {
   speed: 0.0,
   sun: true,
   orbitSpeed: 0,
-  orbitPlanet: [earth, mercury, venus, mars, jupitar, saturn, uranus, neptune],
+  orbitPlanet: [earth, mercury, venus, mars, jupiter, saturn, uranus, neptune],
 };
 
 export const solarSys = [sun];

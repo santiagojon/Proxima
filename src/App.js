@@ -23,6 +23,8 @@ import {
   Vignette,
 } from "@react-three/postprocessing";
 
+import LandingPage from "./LandingPage";
+
 const CameraController = () => {
   const { camera, gl } = useThree();
   useEffect(() => {
@@ -35,6 +37,8 @@ const CameraController = () => {
   }, [camera, gl]);
   return null;
 };
+
+
 
 function Scene() {
   extend({ AtmosphereShaderMaterial });

@@ -2,13 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import RouterTest from './Routes'
 import reportWebVitals from './reportWebVitals';
 import LandingPage from './LandingPage'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <LandingPage />
+    {/* <LandingPage /> */}
+    <RouterTest />
   </React.StrictMode>
 );
 

@@ -78,7 +78,6 @@ Landing Page  */
   max-height: 60%; */
   width: 70%;
   height: 65%;
-  
 }
 
 #milkyWayTextLandingPage {
@@ -108,7 +107,7 @@ Landing Page  */
 
 @keyframes slide-up {
   from {
-    opacity: 0.0;
+    opacity: 0;
     /* line-height: 200px; */
   }
 
@@ -121,18 +120,47 @@ Landing Page  */
 /* ***********
 Milky Way Buttons */
 
-#sun {
+.galaxyButtons {
+  height: 25px;
+  width: 25px;
+  border-color: crimson;
+  background-color: transparent;
+  border-radius: 50%;
+  opacity: 0.7;
+}
+
+
+/* https://css-tricks.com/4-ways-to-animate-the-color-of-a-text-link-on-hover/ */
+
+.galaxyButtons:hover {
+  border-color: yellow;
+  background-position: 0 100%;
+  transition: opacity 1s, visibility 0.2s;
+}
+
+#sunWrapper {
   position: absolute;
   top: 70%;
   left: 50%;
   transform: translate(-25%, -100%);
-  -ms-transform: translate(-25%, -100%);
-  background-color: transparent;
-  color: red;
-  font-size: 10px;
-  /* padding: 12px 24px; */
-  border: none;
-  cursor: pointer;
+}
 
-  /* border-radius: 5px; */
+#sun {
+  cursor: pointer;
+}
+
+#sunDescription {
+  margin-left: 0.5rem;
+  height: 20px;
+  width: 20px;
+  color: white;
+  /* visibility: hidden; */
+  opacity: 0.7;
+  transition: opacity 1s, visibility 0.2s;
+}
+
+#sunWrapper:hover #sunDescription {
+  /* visibility: visible; */
+  opacity: 1;
+  color: yellow;
 }

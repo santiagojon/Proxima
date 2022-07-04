@@ -21,6 +21,12 @@ export const Planet = (props) => {
     }
   });
 
+  const planetInformation = () => {
+    if (props.planetInfo) {
+      console.log(props.planetInfo)
+    }
+  }
+
   return (
     <>
       <mesh ref={ref} position={[position[0], position[1], position[2]]}>
@@ -57,7 +63,10 @@ export const Planet = (props) => {
           ? orbitPlanet.map((planet, idx) => {
               return (
                 <mesh key={idx}>
-                  <mesh ref={(el) => (planetRef.current[idx] = el)}>
+                  <mesh
+                    ref={(el) => (planetRef.current[idx] = el)}
+                    onPointerOver={planetInformation}
+                  >
                     <Planet {...planet} />
                   </mesh>
                 </mesh>
