@@ -12,7 +12,7 @@ export const Planet = (props) => {
   const speed = props.speed || 0.0;
   const position = props.position || [0, 10, 0];
   const orbitPlanet = props.orbitPlanet || [];
-  const planetScale = 0.3;
+  const planetScale = 0.4;
   // Subscribe this component to the render-loop, rotate the mesh every frame
   useFrame((state, delta) => (ref.current.rotation.y += speed));
   useFrame((state, delta) => {

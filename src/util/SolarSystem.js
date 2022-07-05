@@ -76,7 +76,7 @@ const earth = {
   image: "earth2.jpg",
   speed: 0.0,
   sun: false,
-  orbitSpeed: 0.0,
+  orbitSpeed: 0.0015,
   orbitPlanet: [moon],
 };
 
@@ -108,7 +108,7 @@ const sun = {
   position: [0, 0, 0],
   globeRGB: [1, 0.58, 0.26],
   atmosphereRGB: [1, 0.58, 0.26],
-  compareEarthSize: 2,
+  compareEarthSize: 8,
   image: "sun.jpg",
   speed: 0.0,
   sun: true,
