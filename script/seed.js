@@ -3,8 +3,10 @@
 const {
   db,
 
-  models: { User, Planet },
+  models: { User, Planet, System },
 } = require("../server/db");
+
+const systems = require("./seedData");
 
 const planets = [
   {
@@ -26,6 +28,43 @@ async function seed() {
     planets.map((planet) =>
       Planet.create({
         name: planet.name,
+      })
+    )
+  );
+
+  await Promise.all(
+    systems.map((system) =>
+      System.create({
+        planetName: system.pl_name,
+        starName: system.hostname,
+        numberOfStars: system.sy_snum,
+        numberOfPlanets: system.sy_pnum,
+        discoveryMethod: system.discoverymethod,
+        yearDiscovered: system.disc_year,
+        discoveryFacility: system.disc_facility,
+        isControversial: system.pl_controv_fla,
+        planetOrbitTimeD: system.pl_orbper,
+        orbitDistanceAU: system.pl_orbsmax,
+        planetRadiusE: system.pl_rade,
+        planetMassE: system.pl_bmasse,
+        planetDensity: system.pl_dens,
+        planetOrbitEccentricity: system.pl_orbeccen,
+        planetTemp: system.pl_eqt,
+        planetOrbitToStarRatio: system.pl_ratror,
+        starSpectralType: system.st_spectype,
+        starTempK: system.st_teff,
+        starRadiusS: system.st_rad,
+        starMassS: system.st_mass,
+        starLuminosity: system.st_lum,
+        starAge: system.st_age,
+        starDensity: system.st_dens,
+        starRotationVelocity: system.st_vsin,
+        starRotationTimeD: system.st_rotp,
+        gLat: system.glat,
+        gLon: system.glon,
+        eclipticLat: system.elat,
+        eclipticLon: system.elon,
+        distancePC: system.sy_dist,
       })
     )
   );
