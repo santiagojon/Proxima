@@ -10,14 +10,27 @@ import {
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { Stars } from "@react-three/drei";
 import * as THREE from "three";
-import { createPlanet } from "./util/PlanetCreator";
+import { Planet } from "./components/Planet";
+import { AtmosphereShaderMaterial } from "./shaders/Atmosphere";
+import { GlobeShaderMaterial } from "./shaders/GlobeMaterial";
+import { SolarSystem } from "./components/SolarSystem";
+import { solarSys } from "./util/SolarSystem";
+import {
+  EffectComposer,
+  DepthOfField,
+  Bloom,
+  Noise,
+  Vignette,
+} from "@react-three/postprocessing";
+import { textureGenerator } from "./util/TextureGenerator";
+import { TestCanvas } from "./components/TestCanvas";
 
 const CameraController = () => {
   const { camera, gl } = useThree();
   useEffect(() => {
     const controls = new OrbitControls(camera, gl.domElement);
-    controls.minDistance = 3;
-    controls.maxDistance = 20;
+    controls.minDistance = 0.02;
+    controls.maxDistance = 1000;
     return () => {
       controls.dispose();
     };
@@ -26,34 +39,24 @@ const CameraController = () => {
 };
 
 function Scene() {
-  // const meshReference = React.useRef();
-  // useFrame(({ clock }) => {
-  //   meshReference.current.rotation.y = clock.getElapsedTime() / 12;
-  // });
+  extend({ AtmosphereShaderMaterial });
+  extend({ GlobeShaderMaterial });
 
   return (
     <>
       <CameraController />
       <Stars
-        radius={100}
-        depth={50}
+        radius={200}
+        depth={120}
         count={5000}
         factor={4}
         saturation={0}
         fade
         speed={1}
       />
-      <ambientLight intensity={0.2} />
-      <pointLight position={[10, 1, 1]} />
-      {createPlanet(1, [0.3, 0.6, 1.0], [0.3, 0.6, 1], [0, 0, 0], "globe.jpg")}
-      {createPlanet(0.25, [0, 0, 0], [0, 0, 0], [0, 0, 4], "moon.jpg")}
-      {createPlanet(
-        0.5,
-        [1, 0.34, 0.17],
-        [1, 0.34, 0.17],
-        [0, 0, 8],
-        "mars.jpg"
-      )}
+      <ambientLight intensity={0.03} />
+      <pointLight position={[0, 0, 0]} />
+      <SolarSystem solarSystem={solarSys} />
     </>
   );
 }
@@ -61,11 +64,15 @@ function Scene() {
 function App() {
   return (
     <div className="App" width={window.innerWidth} height={window.innerHeight}>
-      <Canvas>
-        {console.log("test")}
+
+      <Canvas gl={{ antialias: true }} dpr={window.devicePixelRatio}>
         <Suspense fallback={null}>
           <Scene />
         </Suspense>
+        <EffectComposer>
+          <Bloom luminanceThreshold={0} luminanceSmoothing={1} height={550} />
+          <Vignette eskil={false} offset={0.1} darkness={0.1} />
+        </EffectComposer>
       </Canvas>
     </div>
   );
