@@ -22,6 +22,8 @@ import {
   Noise,
   Vignette,
 } from "@react-three/postprocessing";
+import { textureGenerator } from "./util/TextureGenerator";
+import { TestCanvas } from "./components/TestCanvas";
 
 const CameraController = () => {
   const { camera, gl } = useThree();
@@ -39,6 +41,7 @@ const CameraController = () => {
 function Scene() {
   extend({ AtmosphereShaderMaterial });
   extend({ GlobeShaderMaterial });
+
   return (
     <>
       <CameraController />
@@ -61,18 +64,13 @@ function Scene() {
 function App() {
   return (
     <div className="App" width={window.innerWidth} height={window.innerHeight}>
-      {/* <Canvas gl={{ antialias: true }} dpr={window.devicePixelRatio}>
-        <Suspense fallback={null}>
-          <Scene />
-        </Suspense>
-      </Canvas> */}
+      <TestCanvas planetType={"rocky"} />
       <Canvas gl={{ antialias: true }} dpr={window.devicePixelRatio}>
         <Suspense fallback={null}>
           <Scene />
         </Suspense>
         <EffectComposer>
           <Bloom luminanceThreshold={0} luminanceSmoothing={1} height={550} />
-          {/* <Noise opacity={0.005} /> */}
           <Vignette eskil={false} offset={0.1} darkness={0.1} />
         </EffectComposer>
       </Canvas>
