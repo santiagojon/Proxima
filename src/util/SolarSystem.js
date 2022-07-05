@@ -40,7 +40,7 @@ const jupitar = {
   atmosphereRGB: [1, 0.87, 0.8],
   compareEarthSize: 8,
   image: "jupiter.jpg",
-  speed: 0.0001,
+  speed: 0.0002,
   sun: false,
   orbitSpeed: 0.0015,
   orbitPlanet: [],
