@@ -64,6 +64,7 @@ function Scene() {
 function App() {
   return (
     <div className="App" width={window.innerWidth} height={window.innerHeight}>
+
       <Canvas gl={{ antialias: true }} dpr={window.devicePixelRatio}>
         <Suspense fallback={null}>
           <Scene />
