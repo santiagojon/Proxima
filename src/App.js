@@ -62,6 +62,7 @@ function App() {
   return (
     <div className="App" width={window.innerWidth} height={window.innerHeight}>
       <Canvas>
+        {console.log("test")}
         <Suspense fallback={null}>
           <Scene />
         </Suspense>
