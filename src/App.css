@@ -12,7 +12,11 @@ body,
 
 body {
   background: #111;
-  position: fixed;
+  /* position: fixed; */
+}
+
+.App {
+  position: relative;
 }
 
 canvas {
@@ -21,7 +25,160 @@ canvas {
   width: 100%;
 }
 
-#testCanvas {
-  width: 2048;
-  height: 1024;
+
+/* **********************************
+Landing Page  */
+
+.landingPage {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  font-family: "Times New Roman", Times, serif;
+  /* height: 100rem; */
 }
+
+#introLandingPage {
+  color: white;
+  text-align: center;
+  margin: 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#introLandingPage h1 {
+  font-size: 10rem;
+  font-weight: 500;
+  margin: 5%;
+  margin-bottom: 2%;
+}
+
+#introLandingPage h2 {
+  font-size: 100%;
+  margin: 0 25%;
+  font-weight: 400;
+}
+
+.placeHolder3D {
+  height: 80rem;
+  width: 100%;
+}
+
+#milkyWayLandingPageContainer {
+  position: relative;
+}
+
+#milkyWayLandingPage {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+#milkyWayLandingPage img {
+  margin: 0 15% 5% 15%;
+  /* max-width: 75%;
+  max-height: 60%; */
+  width: 70%;
+  height: 65%;
+}
+
+#milkyWayTextLandingPage {
+  background-color: transparent;
+  position: absolute;
+  /* transform: translate3d(0,0,0); */
+  bottom: 18%;
+  left: 3rem;
+}
+
+#milkyWayTitleLandingPage {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 400;
+  /* transform: translate3d(0, 100px, 0); */
+  animation: slide-up 2s;
+  /* animation-delay: calc(var(--scroll) * -1s); */
+}
+
+#milkyWayCTALandingPage {
+  color: red;
+  font-weight: 400;
+
+  animation: slide-up 3s;
+  /* animation-delay: calc(var(--scroll) * -1s); */
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    /* line-height: 200px; */
+  }
+
+  to {
+    opacity: 1;
+    /* line-height: 25px; */
+  }
+}
+
+/* ***********
+Milky Way Buttons */
+
+.galaxyButtons {
+  height: 25px;
+  width: 25px;
+  border-color: crimson;
+  background-color: transparent;
+  border-radius: 50%;
+  opacity: 0.7;
+}
+
+
+/* https://css-tricks.com/4-ways-to-animate-the-color-of-a-text-link-on-hover/ */
+
+.galaxyButtons:hover {
+  border-color: yellow;
+  background-position: 0 100%;
+  transition: opacity 1s, visibility 0.2s;
+}
+
+#sunWrapper {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-25%, -100%);
+}
+
+#sun {
+  cursor: pointer;
+}
+
+#sunDescription {
+  margin-left: 0.5rem;
+  height: 20px;
+  width: 20px;
+  color: white;
+  /* visibility: hidden; */
+  opacity: 0.7;
+  transition: opacity 1s, visibility 0.2s;
+}
+
+#sunWrapper:hover #sunDescription {
+  /* visibility: visible; */
+  opacity: 1;
+  color: yellow;
+}
+
+
+
+/* ***********************
+Single Planet */
+
+.planetText {
+  color: white;
+  position: absolute;
+  bottom: 20%;
+  left: 10%;
+}
+

@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { useEffect, Suspense, useRef } from "react";
+import React, { useEffect, Suspense, useRef, useState } from "react";
 import {
   Canvas,
   useThree,
@@ -25,12 +25,46 @@ import {
 import { textureGenerator } from "./util/TextureGenerator";
 import { TestCanvas } from "./components/TestCanvas";
 
-const CameraController = () => {
+import LandingPage from "./LandingPage";
+import SinglePlanetView from "./components/SinglePlanetView";
+
+// const CameraController = () => {
+//   const { camera, gl } = useThree();
+//   useEffect(() => {
+//     const controls = new OrbitControls(camera, gl.domElement);
+//     controls.minDistance = 0.02;
+//     controls.maxDistance = 1000;
+//     return () => {
+//       controls.dispose();
+//     };
+//   }, [camera, gl]);
+//   return null;
+// };
+
+// const SinglePlanetCameraController = () => {
+//   const { camera, gl } = useThree();
+//   useEffect(() => {
+//     const controls = new OrbitControls(camera, gl.domElement);
+//     controls.minDistance = 0.02;
+//     controls.maxDistance = 1000;
+//     return () => {
+//       controls.dispose();
+//     };
+//   }, [camera, gl]);
+//   return null;
+// };
+
+const CameraController = (props) => {
   const { camera, gl } = useThree();
   useEffect(() => {
     const controls = new OrbitControls(camera, gl.domElement);
-    controls.minDistance = 0.02;
-    controls.maxDistance = 1000;
+    if (props.viewState === "singlePlanetView") {
+      controls.minDistance = 0.02;
+      controls.maxDistance = 2;
+    } else {
+      controls.minDistance = 0.02;
+      controls.maxDistance = 1000;
+    }
     return () => {
       controls.dispose();
     };
@@ -38,13 +72,15 @@ const CameraController = () => {
   return null;
 };
 
-function Scene() {
+function Scene(props) {
+  console.log("SCENEPROPS", props);
   extend({ AtmosphereShaderMaterial });
   extend({ GlobeShaderMaterial });
 
   return (
     <>
       <CameraController />
+
       <Stars
         radius={200}
         depth={120}
@@ -55,18 +91,82 @@ function Scene() {
         speed={1}
       />
       <ambientLight intensity={0.03} />
-      <pointLight position={[0, 0, 0]} />
-      <SolarSystem solarSystem={solarSys} />
+      {props.viewState === "singlePlanetView" ? (
+        <pointLight position={[2, 2, 2]} />
+      ) : (
+        <pointLight position={[0, 0, 0]} />
+      )}
+
+      {props.viewState === "singlePlanetView" ? (
+        <SinglePlanetView
+          planetInfo={props.planetInfo[props.singlePlanetKey]}
+          handleSetState={props.handleSetState}
+          viewState={props.viewState}
+        />
+      ) : (
+        <SolarSystem
+          solarSystem={solarSys}
+          handleSetState={props.handleSetState}
+          viewState={props.viewState}
+        />
+      )}
     </>
   );
 }
 
 function App() {
+  const [viewState, setViewState] = useState("solarSystemView");
+  const [singlePlanetInfo, setSinglePlanetInfo] = useState({});
+  const [singlePlanetKey, setSinglePlanetKey] = useState(0);
+  const [singlePlanetText, setSinglePlanetText] = useState("");
+
+  console.log("SPI", singlePlanetInfo);
+
+  // let name;
+  // if (viewState === "singlePlanetView") {
+  //   name = 
+  //  }
+
+  console.log("SPK", singlePlanetKey);
+
+  const handleSetState = (command, info) => {
+    switch (command) {
+      case "SET_PLANET_VIEW":
+        setViewState(info);
+        break;
+      case "SET_STAR_SYSTEM_VIEW":
+        // reset SinglePlanetInfo?
+        setViewState(info);
+        break;
+      case "SET_PLANET_INFO":
+        setSinglePlanetInfo(info);
+        break;
+      case "SET_PLANET_KEY":
+        setSinglePlanetKey(info);
+        break;
+      case "SET_PLANET_TEXT":
+        setSinglePlanetText(info);
+        break;
+      default:
+        break;
+    }
+  };
+
   return (
     <div className="App" width={window.innerWidth} height={window.innerHeight}>
+      {viewState === "singlePlanetView" ? (
+        <div className="planetText">{singlePlanetInfo[singlePlanetKey].name}</div>
+      ) : (
+        ""
+      )}
       <Canvas gl={{ antialias: true }} dpr={window.devicePixelRatio}>
         <Suspense fallback={null}>
-          <Scene />
+          <Scene
+            viewState={viewState}
+            handleSetState={handleSetState}
+            planetInfo={singlePlanetInfo}
+            singlePlanetKey={singlePlanetKey}
+          />
         </Suspense>
         <EffectComposer>
           <Bloom luminanceThreshold={0} luminanceSmoothing={1} height={550} />

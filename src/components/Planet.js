@@ -4,15 +4,20 @@ import * as THREE from "three";
 import { extend, useFrame } from "@react-three/fiber";
 import { useRef, useState } from "react";
 import { Sun } from "./Sun";
+import { SinglePlanetView } from "./SinglePlanetView";
 
 export const Planet = (props) => {
+  console.log("planetComponentProps", props);
   // This reference gives us direct access to the THREE.Mesh object
   const ref = useRef();
   let planetRef = useRef([]);
   const speed = props.speed || 0.0;
   const position = props.position || [0, 10, 0];
   const orbitPlanet = props.orbitPlanet || [];
+
   const planetScale = 0.4;
+  const handleSetState = props.handleSetState;
+
   // Subscribe this component to the render-loop, rotate the mesh every frame
   useFrame((state, delta) => (ref.current.rotation.y += speed));
   useFrame((state, delta) => {
@@ -20,6 +25,15 @@ export const Planet = (props) => {
       planetRef.current[i].rotation.y += orbitPlanet[i].orbitSpeed;
     }
   });
+
+  const handleOnClick = (idx) => {
+    // console.log("CURRENT", idx);
+    handleSetState("SET_PLANET_VIEW", "singlePlanetView");
+    handleSetState("SET_PLANET_INFO", orbitPlanet);
+    handleSetState("SET_PLANET_KEY", idx);
+    handleSetState("SET_PLANET_TEXT", )
+  };
+
 
   return (
     <>
@@ -55,9 +69,13 @@ export const Planet = (props) => {
         )}
         {orbitPlanet && orbitPlanet.length > 0
           ? orbitPlanet.map((planet, idx) => {
+          
               return (
                 <mesh key={idx}>
-                  <mesh ref={(el) => (planetRef.current[idx] = el)}>
+                  <mesh
+                    ref={(el) => (planetRef.current[idx] = el)}
+                    onClick={() => handleOnClick(idx)}
+                  >
                     <Planet {...planet} />
                   </mesh>
                 </mesh>
