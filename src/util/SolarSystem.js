@@ -39,7 +39,7 @@ const jupitar = {
   globeRGB: [0.3, 0.2, 0.15],
   atmosphereRGB: [1, 0.87, 0.8],
   compareEarthSize: 8,
-  image: "rock2.jpg",
+  image: "mars.jpg",
   speed: 0.0002,
   sun: false,
   orbitSpeed: 0.0015,
