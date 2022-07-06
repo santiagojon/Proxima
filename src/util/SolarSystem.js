@@ -1,4 +1,5 @@
 const neptune = {
+  name: "Neptune",
   position: [90, 0, 0],
   globeRGB: [0.1, 0.2, 0.5],
   atmosphereRGB: [0.05, 0.1, 0.2],
@@ -11,6 +12,7 @@ const neptune = {
 };
 
 const uranus = {
+  name: "Uranus",
   position: [80, 0, 0],
   globeRGB: [0.1, 0.2, 0.5],
   atmosphereRGB: [0.1, 0.2, 0.5],
@@ -47,6 +49,7 @@ const jupiter = {
 };
 
 const mars = {
+  name: "Mars",
   position: [22, 0, 0],
   globeRGB: [0.8, 0.55, 0.3],
   atmosphereRGB: [0.8, 0.55, 0.3],
@@ -58,6 +61,7 @@ const mars = {
   orbitPlanet: [],
 };
 const moon = {
+  name: "Moon",
   position: [3, 0, 0],
   globeRGB: [0, 0, 0],
   atmosphereRGB: [0, 0, 0],

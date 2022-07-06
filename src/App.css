@@ -15,6 +15,10 @@ body {
   /* position: fixed; */
 }
 
+.App {
+  position: relative;
+}
+
 canvas {
   transform: translate(0, 0rem);
   height: 100%;
@@ -163,4 +167,16 @@ Milky Way Buttons */
   /* visibility: visible; */
   opacity: 1;
   color: yellow;
+}
+
+
+
+/* ***********************
+Single Planet */
+
+.planetText {
+  color: white;
+  position: absolute;
+  bottom: 20%;
+  left: 10%;
 }

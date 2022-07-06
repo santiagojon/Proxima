@@ -31,6 +31,7 @@ export const Planet = (props) => {
     handleSetState("SET_PLANET_VIEW", "singlePlanetView");
     handleSetState("SET_PLANET_INFO", orbitPlanet);
     handleSetState("SET_PLANET_KEY", idx);
+    handleSetState("SET_PLANET_TEXT", )
   };
 
 

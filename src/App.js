@@ -71,7 +71,7 @@ const CameraController = (props) => {
 };
 
 function Scene(props) {
-  console.log('SCENEPROPS', props)
+  console.log("SCENEPROPS", props);
   extend({ AtmosphereShaderMaterial });
   extend({ GlobeShaderMaterial });
   return (
@@ -100,7 +100,6 @@ function Scene(props) {
           handleSetState={props.handleSetState}
           viewState={props.viewState}
         />
-  
       ) : (
         <SolarSystem
           solarSystem={solarSys}
@@ -112,13 +111,20 @@ function Scene(props) {
   );
 }
 
-
 function App() {
   const [viewState, setViewState] = useState("solarSystemView");
   const [singlePlanetInfo, setSinglePlanetInfo] = useState({});
   const [singlePlanetKey, setSinglePlanetKey] = useState(0);
+  const [singlePlanetText, setSinglePlanetText] = useState("");
 
-  console.log('SPK',singlePlanetKey)
+  console.log("SPI", singlePlanetInfo);
+
+  // let name;
+  // if (viewState === "singlePlanetView") {
+  //   name = 
+  //  }
+
+  console.log("SPK", singlePlanetKey);
 
   const handleSetState = (command, info) => {
     switch (command) {
@@ -134,7 +140,10 @@ function App() {
         break;
       case "SET_PLANET_KEY":
         setSinglePlanetKey(info);
-        break
+        break;
+      case "SET_PLANET_TEXT":
+        setSinglePlanetText(info);
+        break;
       default:
         break;
     }
@@ -142,6 +151,13 @@ function App() {
 
   return (
     <div className="App" width={window.innerWidth} height={window.innerHeight}>
+      {viewState === "singlePlanetView" ? (
+        <div className="planetText">{singlePlanetInfo[singlePlanetKey].name}</div>
+      ) : (
+        ""
+      )}
+      {/* "Mars Test" */}
+
       <Canvas gl={{ antialias: true }} dpr={window.devicePixelRatio}>
         <Suspense fallback={null}>
           <Scene
