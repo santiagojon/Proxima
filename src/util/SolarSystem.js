@@ -1,4 +1,5 @@
 const neptune = {
+  name: "Neptune",
   position: [90, 0, 0],
   globeRGB: [0.1, 0.2, 0.5],
   atmosphereRGB: [0.05, 0.1, 0.2],
@@ -11,6 +12,7 @@ const neptune = {
 };
 
 const uranus = {
+  name: "Uranus",
   position: [80, 0, 0],
   globeRGB: [0.1, 0.2, 0.5],
   atmosphereRGB: [0.1, 0.2, 0.5],
@@ -23,6 +25,7 @@ const uranus = {
 };
 
 const saturn = {
+  name: "Saturn",
   position: [70, 0, 0],
   globeRGB: [0.3, 0.2, 0.15],
   atmosphereRGB: [1, 0.87, 0.8],
@@ -35,18 +38,20 @@ const saturn = {
 };
 
 const jupiter = {
+  name: "Jupiter",
   position: [50, 0, 0],
   globeRGB: [0.3, 0.2, 0.15],
   atmosphereRGB: [1, 0.87, 0.8],
   compareEarthSize: 8,
   image: "jupiter.jpg",
-  speed: 0.0001,
+  speed: 0.0002,
   sun: false,
   orbitSpeed: 0.0015,
   orbitPlanet: [],
 };
 
 const mars = {
+  name: "Mars",
   position: [22, 0, 0],
   globeRGB: [0.8, 0.55, 0.3],
   atmosphereRGB: [0.8, 0.55, 0.3],
@@ -58,6 +63,7 @@ const mars = {
   orbitPlanet: [],
 };
 const moon = {
+  name: "Moon",
   position: [3, 0, 0],
   globeRGB: [0, 0, 0],
   atmosphereRGB: [0, 0, 0],
@@ -69,6 +75,7 @@ const moon = {
   orbitPlanet: [],
 };
 const earth = {
+  name: "Earth",
   position: [18, 0, 0],
   globeRGB: [0.3, 0.6, 1.0],
   atmosphereRGB: [0.3, 0.6, 1.0],
@@ -76,12 +83,12 @@ const earth = {
   image: "earth2.jpg",
   speed: 0.0,
   sun: false,
-  orbitSpeed: 0.0,
+  orbitSpeed: 0.0015,
   orbitPlanet: [moon],
-  planetInfo: 'Planet type: Bing bong'
 };
 
 const venus = {
+  name: "Venus",
   position: [12, 0, 0],
   globeRGB: [1, 0.5, 0.27],
   atmosphereRGB: [1, 0.5, 0.27],
@@ -94,6 +101,7 @@ const venus = {
 };
 
 const mercury = {
+  name: "Mercury",
   position: [7, 0, 0],
   globeRGB: [0.1, 0.1, 0.1],
   atmosphereRGB: [0.1, 0.1, 0.1],
@@ -106,10 +114,11 @@ const mercury = {
 };
 
 const sun = {
+  name: "Sun",
   position: [0, 0, 0],
   globeRGB: [1, 0.58, 0.26],
   atmosphereRGB: [1, 0.58, 0.26],
-  compareEarthSize: 2,
+  compareEarthSize: 8,
   image: "sun.jpg",
   speed: 0.0,
   sun: true,

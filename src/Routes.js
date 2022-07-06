@@ -8,19 +8,20 @@ import {
 
 import LandingPage from './LandingPage';
 import App from './App';
-import Test from './components/Test';
+import { SolarSystemView } from './components/SolarSystemView';
 // import NotFoundPage from "./NotFoundPage";
+import Test from './components/Test';
 
-const RouterTest = () => {
+const AppRoutes = () => {
   return (
     <Router>
       <Routes>
         <Route exact path="/" element={<LandingPage />} />
-        <Route exact path="/home" element={<App />} />
-        <Route exact path="/test" element={<Test />} />
+        <Route path="/home" element={<SolarSystemView />} />
+        <Route path="/test" element={<Test />} />
       </Routes>
     </Router>
   );
 };
 
-export default RouterTest;
+export default AppRoutes;
