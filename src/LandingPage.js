@@ -1,5 +1,5 @@
 import React, { useEffect, Suspense, useRef } from "react";
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 // import {
 //   Canvas,
 //   useThree,
@@ -76,11 +76,13 @@ const LandingPage = () => {
         <section id="introLandingPage">
           <h1>Proxima</h1>
           <h2>
-            NASA's science, technology and mission management office for the
-            exploration of exoplanets. The program's primary goals, as described
-            in the 2014 NASA Science Plan, are to discover planets around other
-            stars, to characterize their properties and to identify planets that
-            could harbor life.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.
           </h2>
         </section>
       </div>
@@ -102,7 +104,7 @@ const LandingPage = () => {
             alt="milkway"
           />
           <div id="sunWrapper">
-            <Link to={'/home'}>
+            <Link to={"/home"}>
               <button id="sun" className="galaxyButtons"></button>
             </Link>
             <span id="sunDescription">The Sun</span>
