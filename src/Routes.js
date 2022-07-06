@@ -1,13 +1,14 @@
-import React from "react";
+import React from 'react';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Routes,
-} from "react-router-dom";
+} from 'react-router-dom';
 
-import LandingPage from "./LandingPage";
-import App from "./App";
+import LandingPage from './LandingPage';
+import App from './App';
+import Test from './components/Test';
 // import NotFoundPage from "./NotFoundPage";
 
 const RouterTest = () => {
@@ -15,7 +16,8 @@ const RouterTest = () => {
     <Router>
       <Routes>
         <Route exact path="/" element={<LandingPage />} />
-        <Route path="/home" element={<App />} />
+        <Route exact path="/home" element={<App />} />
+        <Route exact path="/test" element={<Test />} />
       </Routes>
     </Router>
   );
