@@ -43,8 +43,8 @@ const jupiter = {
   globeRGB: [0.3, 0.2, 0.15],
   atmosphereRGB: [1, 0.87, 0.8],
   compareEarthSize: 8,
-  image: "jupiter.jpg",
-  speed: 0.0001,
+  image: "mars.jpg",
+  speed: 0.0002,
   sun: false,
   orbitSpeed: 0.0015,
   orbitPlanet: [],
@@ -83,7 +83,7 @@ const earth = {
   image: "earth2.jpg",
   speed: 0.0,
   sun: false,
-  orbitSpeed: 0.0,
+  orbitSpeed: 0.0015,
   orbitPlanet: [moon],
 };
 
@@ -118,7 +118,7 @@ const sun = {
   position: [0, 0, 0],
   globeRGB: [1, 0.58, 0.26],
   atmosphereRGB: [1, 0.58, 0.26],
-  compareEarthSize: 2,
+  compareEarthSize: 8,
   image: "sun.jpg",
   speed: 0.0,
   sun: true,

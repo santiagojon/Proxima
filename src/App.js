@@ -22,6 +22,8 @@ import {
   Noise,
   Vignette,
 } from "@react-three/postprocessing";
+import { textureGenerator } from "./util/TextureGenerator";
+import { TestCanvas } from "./components/TestCanvas";
 
 import LandingPage from "./LandingPage";
 import SinglePlanetView from "./components/SinglePlanetView";
@@ -74,6 +76,7 @@ function Scene(props) {
   console.log("SCENEPROPS", props);
   extend({ AtmosphereShaderMaterial });
   extend({ GlobeShaderMaterial });
+
   return (
     <>
       <CameraController />
@@ -156,8 +159,6 @@ function App() {
       ) : (
         ""
       )}
-      {/* "Mars Test" */}
-
       <Canvas gl={{ antialias: true }} dpr={window.devicePixelRatio}>
         <Suspense fallback={null}>
           <Scene
