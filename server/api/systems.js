@@ -17,8 +17,8 @@ router.get('/', async (req, res, next) => {
 
 router.get('/:starName', async (req, res, next) => {
   try {
-    const systemByStarName = await System.findAll({
-      where: { starName: { [Op.like]: '%proxima%' } },
+    const systemByStarName = await System.findOne({
+      where: { starName: { [Op.like]: `${req.params.starName}%` } },
     });
     res.send(systemByStarName);
   } catch (error) {
