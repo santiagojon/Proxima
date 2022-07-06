@@ -10,8 +10,7 @@ const gotSingleSystem = (system) => ({
 export const getSingleSystemByName = (name) => {
   return async (dispatch) => {
     try {
-      console.log('inredux')
-      const data = await axios.get(`/api/systems/${name}`);
+      const { data } = await axios.get(`/api/systems/${name}`);
       console.log(data);
       dispatch(gotSingleSystem(data));
     } catch (error) {

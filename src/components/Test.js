@@ -3,21 +3,22 @@ import { getSingleSystemByName } from '../store/system';
 import { useEffect, useState } from 'react';
 import { getaAllSystems } from '../store/allSystems';
 
-export default function Test() {
+export default function Test(props) {
   const dispatch = useDispatch();
-  // const system = useSelector((state) => state.singleSystem || {});
+  const system = useSelector((state) => state.singleSystem || {});
   const systems = useSelector((state) => state.allSystems || []);
-  // const [systemData, setSystemData] = useState({});
+  // const [systemData, setSystemData] = useState([]);
 
   useEffect(() => {
-    // dispatch(getSingleSystemByName('proxima'));
-    dispatch(getaAllSystems());
-  });
-  console.log(systems);
+    dispatch(getSingleSystemByName('a'));
+    // dispatch(getaAllSystems());
+  }, []);
+  console.log(system);
+  const singleSystem = system || {};
   return (
     <div>
       <h1>hello</h1>
-      {/* <p>{system.planetName}</p> */}
+      <p>{singleSystem.planetName}</p>
     </div>
   );
 }

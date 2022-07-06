@@ -19,6 +19,8 @@ const AppRoutes = () => {
         <Route exact path="/" element={<LandingPage />} />
         <Route path="/home" element={<SolarSystemView />} />
         <Route path="/test" element={<Test />} />
+        {/* <Route path="/test/:starName" element={<Test />} /> */}
+
       </Routes>
     </Router>
   );

@@ -10,10 +10,7 @@ const gotAllSystems = (systems) => ({
 export const getaAllSystems = () => {
   return async (dispatch) => {
     try {
-      console.log('inredux');
-      const { data } = await axios.get('/api/systems/');
-      console.log('after call')
-      console.log(data);
+      const { data } = await axios.get('/api/systems');
       dispatch(gotAllSystems(data));
     } catch (error) {
       console.error(error);
