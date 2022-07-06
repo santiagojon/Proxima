@@ -8,17 +8,18 @@ import {
 
 import LandingPage from "./LandingPage";
 import App from "./App";
+import { SolarSystemView } from "./components/SolarSystemView";
 // import NotFoundPage from "./NotFoundPage";
 
-const RouterTest = () => {
+const AppRoutes = () => {
   return (
     <Router>
       <Routes>
         <Route exact path="/" element={<LandingPage />} />
-        <Route path="/home" element={<App />} />
+        <Route path="/home" element={<SolarSystemView />} />
       </Routes>
     </Router>
   );
 };
 
-export default RouterTest;
+export default AppRoutes;
