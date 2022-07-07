@@ -17,6 +17,7 @@ body {
 
 .App {
   position: relative;
+  padding: 7rem;
 }
 
 canvas {
@@ -36,14 +37,27 @@ Landing Page  */
   /* height: 100rem; */
 }
 
+#introLandingPageContainer {
+  position: relative;
+}
+
+#canvas {
+  /* position: absolute; */
+  z-index: -1;
+}
+
 #introLandingPage {
+  position: absolute;
+  z-index: 1;
+  top: 25%;
+  left: 5%;
   color: white;
   text-align: center;
-  margin: 15%;
-  display: flex;
+  margin: 0 auto;
+  /* display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
 }
 
 #introLandingPage h1 {
@@ -173,10 +187,15 @@ Single Planet */
 
 .planetText {
   color: white;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 3rem;
   position: absolute;
-  bottom: 20%;
-  left: 10%;
+  bottom: 15%;
+  left: 5%;
+  opacity: 0.7;
+  transition: opacity 1s, visibility 0.2s;
 }
+
 
 .container {
   max-width: 120rem;
@@ -214,3 +233,4 @@ Single Planet */
   font-size: 1.4rem;
   line-height: 1;
 }
+

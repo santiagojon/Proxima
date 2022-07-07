@@ -1,29 +1,52 @@
 import React, { useEffect, Suspense, useRef } from "react";
 import { Link } from "react-router-dom";
 
+import LandingPageIntroAnimation from "./components/LandingPageIntroAnimation";
+
 const LandingPage = () => {
-  window.addEventListener(
-    "scroll",
-    () => {
-      document.body.style.setProperty(
-        "--scroll",
-        window.pageYOffset / (document.body.offsetHeight - window.innerHeight)
-      );
-    },
-    false
-  );
+
+  //Header fade-out
+  const header = document.getElementById("introLandingPageContainer");
+  function fadeOutOnScroll(element) {
+    if (!element) {
+      return;
+    }
+
+    let distanceToTop =
+      window.pageYOffset + element.getBoundingClientRect().top;
+    console.log("DtT", distanceToTop);
+    const elementHeight = element.offsetHeight;
+    console.log("eHeight", elementHeight);
+    const scrollTop = document.documentElement.scrollTop + 1;
+    console.log("SCROLLTOP", scrollTop);
+
+
+    let opacity = 1;
+    console.log("opacity", opacity);
+
+    if (scrollTop > distanceToTop) {
+      opacity = 1 - (scrollTop - distanceToTop) / (elementHeight / 2);
+    }
+
+    if (opacity >= 0) {
+      element.style.opacity = opacity;
+    }
+  }
+
+  function scrollHandler() {
+    fadeOutOnScroll(header);
+  }
+  //Header fade-out end
+
+  window.addEventListener("scroll", scrollHandler);
 
   return (
     <div className="landingPage">
-      <div
-        style={{
-          backgroundImage:
-            'url("https://i.pinimg.com/originals/f9/a8/ed/f9a8ed161524ca06e0d5250fe2d33e51.gif")',
-          backgroundRepeat: "no-repeat",
-        }}
-      >
+      {window.addEventListener("scroll", scrollHandler)}
+
+      <div id="introLandingPageContainer">
         <section id="introLandingPage">
-          <h1>Proxima</h1>
+          <h1>New Worlds</h1>
           <h2>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -34,6 +57,7 @@ const LandingPage = () => {
             culpa qui officia deserunt mollit anim id est laborum.
           </h2>
         </section>
+        <LandingPageIntroAnimation />
       </div>
 
       <section className="SegmentHolder">
@@ -58,6 +82,7 @@ const LandingPage = () => {
           </div>
 
           {/* MOON SECTION */}
+
 
           <div className="step-image-box">
             <img src="moonProxima.jpg" className="step-image" alt="moon" />
