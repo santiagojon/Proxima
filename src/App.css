@@ -1,5 +1,6 @@
 * {
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
+  background-color: black;
 }
 html,
 body,
@@ -25,7 +26,6 @@ canvas {
   width: 100%;
 }
 
-
 /* **********************************
 Landing Page  */
 
@@ -33,13 +33,16 @@ Landing Page  */
   background-color: black;
   display: flex;
   flex-direction: column;
-  font-family: "Times New Roman", Times, serif;
+  align-items: center;
+  /* justify-content: center; */
+  font-family: 'Times New Roman', Times, serif;
   /* height: 100rem; */
 }
 
 #introLandingPage {
   color: white;
   text-align: center;
+
   margin: 15%;
   display: flex;
   flex-direction: column;
@@ -52,6 +55,26 @@ Landing Page  */
   font-weight: 500;
   margin: 5%;
   margin-bottom: 2%;
+}
+
+.rightText {
+  position: fixed;
+  right: 10%;
+  top: 10%;
+  color: white;
+  font-size: 2rem;
+}
+.centerOffsetLeftText {
+  position: fixed;
+  right: 18%;
+  top: 60%;
+  color: white;
+}
+.centerOffsetRightText {
+  position: fixed;
+  right: 50%;
+  top: 40%;
+  color: white;
 }
 
 #introLandingPage h2 {
@@ -134,7 +157,6 @@ Milky Way Buttons */
   opacity: 0.7;
 }
 
-
 /* https://css-tricks.com/4-ways-to-animate-the-color-of-a-text-link-on-hover/ */
 
 .galaxyButtons:hover {
@@ -170,8 +192,6 @@ Milky Way Buttons */
   color: yellow;
 }
 
-
-
 /* ***********************
 Single Planet */
 
@@ -181,4 +201,3 @@ Single Planet */
   bottom: 20%;
   left: 10%;
 }
-
