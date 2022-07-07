@@ -6,7 +6,8 @@ import {
   Routes,
 } from "react-router-dom";
 
-import LandingPage from "./LandingPage";
+// import LandingPage from "./LandingPage";
+import LandingPage from "./components/LandingPage";
 import App from "./App";
 import { SolarSystemView } from "./components/SolarSystemView";
 // import NotFoundPage from "./NotFoundPage";
