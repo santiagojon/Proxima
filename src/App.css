@@ -17,6 +17,7 @@ body {
 
 .App {
   position: relative;
+  padding: 7rem;
 }
 
 canvas {
@@ -24,7 +25,6 @@ canvas {
   height: 100%;
   width: 100%;
 }
-
 
 /* **********************************
 Landing Page  */
@@ -37,14 +37,27 @@ Landing Page  */
   /* height: 100rem; */
 }
 
+#introLandingPageContainer {
+  position: relative;
+}
+
+#canvas {
+  /* position: absolute; */
+  z-index: -1;
+}
+
 #introLandingPage {
+  position: absolute;
+  z-index: 1;
+  top: 25%;
+  left: 5%;
   color: white;
   text-align: center;
-  margin: 15%;
-  display: flex;
+  margin: 0 auto;
+  /* display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
 }
 
 #introLandingPage h1 {
@@ -134,7 +147,6 @@ Milky Way Buttons */
   opacity: 0.7;
 }
 
-
 /* https://css-tricks.com/4-ways-to-animate-the-color-of-a-text-link-on-hover/ */
 
 .galaxyButtons:hover {
@@ -170,15 +182,16 @@ Milky Way Buttons */
   color: yellow;
 }
 
-
-
 /* ***********************
 Single Planet */
 
 .planetText {
   color: white;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 3rem;
   position: absolute;
-  bottom: 20%;
-  left: 10%;
+  bottom: 15%;
+  left: 5%;
+  opacity: 0.7;
+  transition: opacity 1s, visibility 0.2s;
 }
-

@@ -1,80 +1,50 @@
 import React, { useEffect, Suspense, useRef } from "react";
 import { Link } from "react-router-dom";
-// import {
-//   Canvas,
-//   useThree,
-//   useLoader,
-//   extend,
-//   useFrame,
-// } from "@react-three/fiber";
-// import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-// import { Stars } from "@react-three/drei";
-// import * as THREE from "three";
-
-// import { createPlanet } from "./util/PlanetCreator";
-
-// const CameraController = () => {
-//   const { camera, gl } = useThree();
-//   useEffect(() => {
-//     const controls = new OrbitControls(camera, gl.domElement);
-//     controls.minDistance = 3;
-//     controls.maxDistance = 20;
-//     return () => {
-//       controls.dispose();
-//     };
-//   }, [camera, gl]);
-//   return null;
-// };
-
-// function Scene() {
-//   return (
-//     <>
-//       <CameraController />
-//       <Stars
-//         radius={100}
-//         depth={50}
-//         count={5000}
-//         factor={4}
-//         saturation={0}
-//         fade
-//         speed={1}
-//       />
-//       <ambientLight intensity={0.2} />
-//       <pointLight position={[10, 1, 1]} />
-//       {createPlanet(
-//         0.5,
-//         [1, 0.34, 0.17],
-//         [1, 0.34, 0.17],
-//         [0, 0, 8],
-//         "mars.jpg"
-//       )}
-//     </>
-//   );
-// }
+import LandingPageIntroAnimation from "./components/LandingPageIntroAnimation";
 
 const LandingPage = () => {
-  window.addEventListener(
-    "scroll",
-    () => {
-      document.body.style.setProperty(
-        "--scroll",
-        window.pageYOffset / (document.body.offsetHeight - window.innerHeight)
-      );
-    },
-    false
-  );
+
+  //Header fade-out
+  const header = document.getElementById("introLandingPageContainer");
+  function fadeOutOnScroll(element) {
+    if (!element) {
+      return;
+    }
+
+    let distanceToTop =
+      window.pageYOffset + element.getBoundingClientRect().top;
+    console.log("DtT", distanceToTop);
+    const elementHeight = element.offsetHeight;
+    console.log("eHeight", elementHeight);
+    const scrollTop = document.documentElement.scrollTop + 1;
+    console.log("SCROLLTOP", scrollTop);
+
+    let opacity = 1;
+    console.log("opacity", opacity);
+
+    if (scrollTop > distanceToTop) {
+      opacity = 1 - (scrollTop - distanceToTop) / (elementHeight / 2);
+    }
+
+    if (opacity >= 0) {
+      element.style.opacity = opacity;
+    }
+  }
+
+  function scrollHandler() {
+    fadeOutOnScroll(header);
+  }
+  //Header fade-out end
+
+  window.addEventListener("scroll", scrollHandler);
 
   return (
     <div className="landingPage">
-      <div
-        style={{
-          backgroundImage:
-            'url("https://i.pinimg.com/originals/f9/a8/ed/f9a8ed161524ca06e0d5250fe2d33e51.gif")',
-          backgroundRepeat: "no-repeat",
-        }}
-      >
+      {window.addEventListener("scroll", scrollHandler)}
+
+      <div id="introLandingPageContainer">
         <section id="introLandingPage">
-          <h1>Proxima</h1>
+          <h1>New Worlds</h1>
           <h2>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -85,13 +55,8 @@ const LandingPage = () => {
             culpa qui officia deserunt mollit anim id est laborum.
           </h2>
         </section>
+        <LandingPageIntroAnimation />
       </div>
-
-      {/* <Canvas>
-        <Suspense fallback={null}>
-          <Scene />
-        </Suspense>
-      </Canvas> */}
 
       <section className="placeHolder3D"></section>
 
