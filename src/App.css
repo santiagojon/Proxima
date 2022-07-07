@@ -25,7 +25,6 @@ canvas {
   width: 100%;
 }
 
-
 /* **********************************
 Landing Page  */
 
@@ -134,7 +133,6 @@ Milky Way Buttons */
   opacity: 0.7;
 }
 
-
 /* https://css-tricks.com/4-ways-to-animate-the-color-of-a-text-link-on-hover/ */
 
 .galaxyButtons:hover {
@@ -170,8 +168,6 @@ Milky Way Buttons */
   color: yellow;
 }
 
-
-
 /* ***********************
 Single Planet */
 
@@ -182,3 +178,39 @@ Single Planet */
   left: 10%;
 }
 
+.container {
+  max-width: 120rem;
+  padding: 10rem 3.2rem;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  gap: 9.6rem;
+}
+
+.grid--2-cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.step-image-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step-image {
+  width: 50%;
+}
+
+.container-heading {
+  font-weight: 500;
+  letter-spacing: -0.5px;
+  font-size: 2.4rem;
+  margin-bottom: 2.4rem;
+}
+
+.container-text {
+  font-size: 1.4rem;
+  line-height: 1;
+}

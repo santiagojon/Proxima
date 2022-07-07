@@ -1,56 +1,5 @@
 import React, { useEffect, Suspense, useRef } from "react";
 import { Link } from "react-router-dom";
-// import {
-//   Canvas,
-//   useThree,
-//   useLoader,
-//   extend,
-//   useFrame,
-// } from "@react-three/fiber";
-// import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-// import { Stars } from "@react-three/drei";
-// import * as THREE from "three";
-
-// import { createPlanet } from "./util/PlanetCreator";
-
-// const CameraController = () => {
-//   const { camera, gl } = useThree();
-//   useEffect(() => {
-//     const controls = new OrbitControls(camera, gl.domElement);
-//     controls.minDistance = 3;
-//     controls.maxDistance = 20;
-//     return () => {
-//       controls.dispose();
-//     };
-//   }, [camera, gl]);
-//   return null;
-// };
-
-// function Scene() {
-//   return (
-//     <>
-//       <CameraController />
-//       <Stars
-//         radius={100}
-//         depth={50}
-//         count={5000}
-//         factor={4}
-//         saturation={0}
-//         fade
-//         speed={1}
-//       />
-//       <ambientLight intensity={0.2} />
-//       <pointLight position={[10, 1, 1]} />
-//       {createPlanet(
-//         0.5,
-//         [1, 0.34, 0.17],
-//         [1, 0.34, 0.17],
-//         [0, 0, 8],
-//         "mars.jpg"
-//       )}
-//     </>
-//   );
-// }
 
 const LandingPage = () => {
   window.addEventListener(
@@ -87,15 +36,62 @@ const LandingPage = () => {
         </section>
       </div>
 
-      {/* <Canvas>
-        <Suspense fallback={null}>
-          <Scene />
-        </Suspense>
-      </Canvas> */}
+      <section className="SegmentHolder">
+        <div className="container grid grid--2-cols">
+          <div className="text-box">
+            {/* EARTH SECTION */}
 
-      <section className="placeHolder3D"></section>
+            <h3 className="container-heading">Earth</h3>
+            <p className="container-text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
+              labore fuga blanditiis minima, saepe error id inventore nisi unde
+              quo fugit facere tempora, eligendi animi illo! Omnis ad aliquam
+              magni.
+            </p>
+          </div>
+          <div className="step-image-box">
+            <img
+              src="earthProxima.jpg"
+              className="step-image"
+              alt="earth planet"
+            />
+          </div>
 
-      <section className="placeHolder3D"></section>
+          {/* MOON SECTION */}
+
+          <div className="step-image-box">
+            <img src="moonProxima.jpg" className="step-image" alt="moon" />
+          </div>
+          <div className="text-box">
+            <h3 className="container-heading">Moon</h3>
+            <p className="container-text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
+              labore fuga blanditiis minima, saepe error id inventore nisi unde
+              quo fugit facere tempora, eligendi animi illo! Omnis ad aliquam
+              magni.
+            </p>
+          </div>
+
+          {/* MARS SECTION */}
+
+          <div className="text-box">
+            <h3 className="container-heading">Mars</h3>
+            <p className="container-text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
+              labore fuga blanditiis minima, saepe error id inventore nisi unde
+              quo fugit facere tempora, eligendi animi illo! Omnis ad aliquam
+              magni.
+            </p>
+          </div>
+          <div className="step-image-box">
+            <img
+              src="earthProxima.jpg"
+              className="step-image"
+              alt="mars planet "
+            />
+          </div>
+        </div>
+      </section>
 
       <div id="milkyWayLandingPageContainer">
         <section id="milkyWayLandingPage">
