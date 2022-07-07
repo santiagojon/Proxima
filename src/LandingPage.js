@@ -4,13 +4,19 @@ import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 
 import LandingPageIntroAnimation from "./components/LandingPageIntroAnimation";
 
+//choose font
 //fix header fade-out
-//edit text
-//add images to Parallax layer 4
+//add images to Exoplanet intro layer 
+  //make these a fixed position fade-in/out as user scrolls?
+//clean up galaxy view
+  //have text fade-in as that window appears
+  //clean up buttons/change colors
 
 const LandingPage = () => {
   //Header fade-out
+
   const header = document.getElementById("introLandingPageContainer");
+
   function fadeOutOnScroll(element) {
     if (!element) {
       return;
@@ -28,6 +34,7 @@ const LandingPage = () => {
     console.log("opacity", opacity);
 
     if (scrollTop > distanceToTop) {
+      // if (window.scrollY > 400) {
       opacity = 1 - (scrollTop - distanceToTop) / (elementHeight / 2);
     }
 
@@ -36,24 +43,21 @@ const LandingPage = () => {
     }
   }
 
-  // function scrollHandler() {
-  //   fadeOutOnScroll(header);
-  // }
-  //Header fade-out end
-
-  const scrollHandler = () => {
+  function scrollHandler() {
     fadeOutOnScroll(header);
   }
 
+  useEffect(() => {
+    window.addEventListener("scroll", scrollHandler());
+  });
 
-  // window.addEventListener("scroll", scrollHandler);
+  //Header fade-out end
 
   return (
     <div className="landingPage">
       <Parallax pages={7}>
-        <ParallaxLayer>
-
-          <div id="introLandingPageContainer" onScroll={scrollHandler}>
+        <ParallaxLayer id="heroContainer">
+          <div id="introLandingPageContainer">
             <section id="introLandingPage">
               <h1>New Worlds</h1>
               <h2>
@@ -67,10 +71,20 @@ const LandingPage = () => {
           </div>
         </ParallaxLayer>
         <ParallaxLayer offset={1} speed={1}>
-          <h2 className="centerText">
-            Carl Sagan, when first discussing the ‘pale blue dot’ which we call
-            home, said, “”.
-          </h2>
+          <div className="centerText">
+            <h2>
+              Carl Sagan, while unveiling the image <i>Pale Blue Dot</i>, made by Voyager-1, said,
+              “...That's here. That's home. That's us. On
+              it everyone you love, everyone you know, everyone you ever heard
+              of, every human being who ever was, lived out their lives..."
+            </h2>
+            <h2>
+              "...The Earth is the only world known so far to harbor life. There
+              is nowhere else, at least in the near future, to which our species
+              could migrate. Visit, yes. Settle, not yet. Like it or not, for
+              the moment the Earth is where we make our stand..."
+            </h2>
+          </div>
         </ParallaxLayer>
         <ParallaxLayer
           offset={2}
@@ -83,16 +97,15 @@ const LandingPage = () => {
           }}
         >
           <h2 className="rightText">
-            We have studied our own solar system; it's planets, moons, and
-            resources. Humanity will eventually spread throughout it.
+            Over 30 years have passed since then. We've continued to learn about our own solar system: its planets, moons, asteroids, and more. Eventually, humanity will begin settling in these places. Our species will spread out futher than our Pale Blue Dot.
           </h2>
         </ParallaxLayer>
 
         <ParallaxLayer offset={3} speed={2}>
-          <h2 className="rightText">But where else?</h2>
+          <h2 className="rightText">But where else will we go?</h2>
         </ParallaxLayer>
         <ParallaxLayer
-          offset={3.6}
+          offset={3.5}
           speed={1}
           // style={{
           //   backgroundImage:
@@ -107,6 +120,10 @@ const LandingPage = () => {
               alt="fictional planet Arrakis. Orange in color"
               style={{ backgroundSize: "50%" }}
             /> */}
+
+
+            {/* It would  be nice to have each of these paragraphs fade-in/out (in a fixed position) while the user  
+            scrolls. Its a better build up to the final question/galaxy view */}
 
             <p className="landingTextFinal">
               For centuries, fictional depictions of planets orbiting other
@@ -147,7 +164,7 @@ const LandingPage = () => {
           <h2 className="centerOffsetLeftText">That's here.</h2>
           <h2 className="centerOffsetRightText">That's home.</h2>
         </ParallaxLayer> */}
-        <ParallaxLayer offset={4.8} speed={0.5} factor={2.5}>
+        <ParallaxLayer offset={4.8} speed={0.5}>
           <div id="milkyWayLandingPageContainer">
             <section id="milkyWayLandingPage">
               <img

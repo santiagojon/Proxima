@@ -80,14 +80,16 @@ Landing Page  */
 
 .rightText {
   position: fixed;
-  width: 20rem;
+  width: 25rem;
   right: 10%;
   top: 10%;
   color: white;
-  font-size: 2rem;
+  /* font-size: 1.7rem; */
   font-weight: 400;
   animation: slide-up 3s;
 }
+
+
 .centerOffsetLeftText {
   position: fixed;
   right: 18%;
