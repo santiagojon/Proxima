@@ -1,5 +1,6 @@
 import React, { useEffect, Suspense, useRef } from "react";
 import { Link } from "react-router-dom";
+
 import LandingPageIntroAnimation from "./components/LandingPageIntroAnimation";
 
 const LandingPage = () => {
@@ -18,6 +19,7 @@ const LandingPage = () => {
     console.log("eHeight", elementHeight);
     const scrollTop = document.documentElement.scrollTop + 1;
     console.log("SCROLLTOP", scrollTop);
+
 
     let opacity = 1;
     console.log("opacity", opacity);
@@ -58,9 +60,63 @@ const LandingPage = () => {
         <LandingPageIntroAnimation />
       </div>
 
-      <section className="placeHolder3D"></section>
+      <section className="SegmentHolder">
+        <div className="container grid grid--2-cols">
+          <div className="text-box">
+            {/* EARTH SECTION */}
 
-      <section className="placeHolder3D"></section>
+            <h3 className="container-heading">Earth</h3>
+            <p className="container-text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
+              labore fuga blanditiis minima, saepe error id inventore nisi unde
+              quo fugit facere tempora, eligendi animi illo! Omnis ad aliquam
+              magni.
+            </p>
+          </div>
+          <div className="step-image-box">
+            <img
+              src="earthProxima.jpg"
+              className="step-image"
+              alt="earth planet"
+            />
+          </div>
+
+          {/* MOON SECTION */}
+
+
+          <div className="step-image-box">
+            <img src="moonProxima.jpg" className="step-image" alt="moon" />
+          </div>
+          <div className="text-box">
+            <h3 className="container-heading">Moon</h3>
+            <p className="container-text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
+              labore fuga blanditiis minima, saepe error id inventore nisi unde
+              quo fugit facere tempora, eligendi animi illo! Omnis ad aliquam
+              magni.
+            </p>
+          </div>
+
+          {/* MARS SECTION */}
+
+          <div className="text-box">
+            <h3 className="container-heading">Mars</h3>
+            <p className="container-text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
+              labore fuga blanditiis minima, saepe error id inventore nisi unde
+              quo fugit facere tempora, eligendi animi illo! Omnis ad aliquam
+              magni.
+            </p>
+          </div>
+          <div className="step-image-box">
+            <img
+              src="earthProxima.jpg"
+              className="step-image"
+              alt="mars planet "
+            />
+          </div>
+        </div>
+      </section>
 
       <div id="milkyWayLandingPageContainer">
         <section id="milkyWayLandingPage">
