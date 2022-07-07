@@ -29,7 +29,7 @@ const CameraController = (props) => {
 };
 
 function Scene(props) {
-  console.log("SCENEPROPS", props);
+  // console.log("SCENEPROPS", props);
   extend({ AtmosphereShaderMaterial });
   extend({ GlobeShaderMaterial });
 
@@ -74,7 +74,7 @@ export const SolarSystemView = () => {
   const [viewState, setViewState] = useState("solarSystemView");
   const [singlePlanetInfo, setSinglePlanetInfo] = useState({});
   const [singlePlanetKey, setSinglePlanetKey] = useState(0);
-  const [singlePlanetText, setSinglePlanetText] = useState("");
+  // const [singlePlanetText, setSinglePlanetText] = useState("");
 
   const handleSetState = (command, info) => {
     switch (command) {
@@ -91,9 +91,9 @@ export const SolarSystemView = () => {
       case "SET_PLANET_KEY":
         setSinglePlanetKey(info);
         break;
-      case "SET_PLANET_TEXT":
-        setSinglePlanetText(info);
-        break;
+      // case "SET_PLANET_TEXT":
+      //   setSinglePlanetText(info);
+      //   break;
       default:
         break;
     }
