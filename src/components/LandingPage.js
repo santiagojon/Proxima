@@ -1,36 +1,35 @@
-import React, { useEffect, Suspense, useRef } from "react";
-import { Link } from "react-router-dom";
-import { Parallax, ParallaxLayer } from "@react-spring/parallax";
+import React, { useEffect, Suspense, useRef } from 'react';
+import { Link } from 'react-router-dom';
+import { Parallax, ParallaxLayer } from '@react-spring/parallax';
 
-import LandingPageIntroAnimation from "./LandingPageIntroAnimation";
+import LandingPageIntroAnimation from './LandingPageIntroAnimation';
 
 //choose font
 //fix header fade-out
-//add images to Exoplanet intro layer 
-  //make these a fixed position fade-in/out as user scrolls?
+//add images to Exoplanet intro layer
+//make these a fixed position fade-in/out as user scrolls?
 //clean up galaxy view
-  //have text fade-in as that window appears
-  //clean up buttons/change colors
+//have text fade-in as that window appears
+//clean up buttons/change colors
 
 const LandingPage = () => {
   //Header fade-out
-  const header = document.getElementById("introLandingPageContainer");
+  const header = document.getElementById('introLandingPageContainer');
 
   function fadeOutOnScroll(element) {
     if (!element) {
       return;
     }
 
-    let distanceToTop =
-      window.scrollY + element.getBoundingClientRect().top;
-    console.log("DtT", distanceToTop);
+    let distanceToTop = window.scrollY + element.getBoundingClientRect().top;
+    console.log('DtT', distanceToTop);
     const elementHeight = element.offsetHeight;
-    console.log("eHeight", elementHeight);
+    console.log('eHeight', elementHeight);
     const scrollTop = document.documentElement.scrollTop + 1;
-    console.log("SCROLLTOP", scrollTop);
+    console.log('SCROLLTOP', scrollTop);
 
     let opacity = 1;
-    console.log("opacity", opacity);
+    console.log('opacity', opacity);
 
     if (scrollTop > distanceToTop) {
       // if (window.scrollY > 400) {
@@ -43,69 +42,124 @@ const LandingPage = () => {
   }
 
   useEffect(() => {
-      function scrollHandler() {
-        fadeOutOnScroll(header);
-        console.log('window.scrollY', window.scrollY);
-
-  }
-      window.addEventListener("scroll", scrollHandler);
-       return () => {
+    function scrollHandler() {
+      fadeOutOnScroll(header);
+      console.log('window.scrollY', window.scrollY);
+    }
+    window.addEventListener('scroll', scrollHandler);
+    return () => {
       window.removeEventListener('scroll', scrollHandler);
     };
- }, []);
-  
+  }, []);
 
   //Header fade-out end
 
   return (
     <div className="landingPage">
-      <Parallax pages={7}>
-        <ParallaxLayer id="heroContainer">
-          <div id="introLandingPageContainer">
-            <section id="introLandingPage">
-              <h1>New Worlds</h1>
-              <h2>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
-              </h2>
-            </section>
-            <LandingPageIntroAnimation />
-          </div>
-        </ParallaxLayer>
-        <ParallaxLayer offset={1} speed={1}>
-          <div className="centerText">
-            <h2>
-              Carl Sagan, while unveiling the image <i>Pale Blue Dot</i>, made by Voyager-1, said,
-              “...That's here. That's home. That's us. On
-              it everyone you love, everyone you know, everyone you ever heard
-              of, every human being who ever was, lived out their lives..."
-            </h2>
-            <h2>
-              "...The Earth is the only world known so far to harbor life. There
-              is nowhere else, at least in the near future, to which our species
-              could migrate. Visit, yes. Settle, not yet. Like it or not, for
-              the moment the Earth is where we make our stand..."
-            </h2>
-          </div>
+      <Parallax pages={6}>
+        <ParallaxLayer
+          id="heroContainer"
+          factor={1.5}
+          sticky={{ start: 0, end: 1.75 }}
+        >
+          {/* <div id="introLandingPageContainer"> */}
+          {/* <section id="introLandingPage"></section> */}
+          <LandingPageIntroAnimation />
+          {/* </div> */}
         </ParallaxLayer>
         <ParallaxLayer
-          offset={2}
+          className="background"
+          offset={1.2}
+          sticky={{ start: 1.3, end: 1.75 }}
+          factor={1.5}
+        ></ParallaxLayer>
+        <ParallaxLayer offset={0}>
+          <div id="introLandingPageContainer">
+            <section id="introLandingPage">
+              <h1>Proxima</h1>
+              <h2>Start scrolling to explore...</h2>
+            </section>
+          </div>
+        </ParallaxLayer>
+        {/* <ParallaxLayer className='voyagerSat'
+          offset={0.75}
+          speed={0.5}
+          style={{
+            backgroundImage:
+              'url("https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Voyager_spacecraft_model.png/1200px-Voyager_spacecraft_model.png")',
+          }}
+        ></ParallaxLayer> */}
+        <ParallaxLayer
+          className="earthSmall"
+          offset={1}
+          speed={0.5}
+          // factor={2}
+          // sticky={{ start: 2.5, end: 2 }}
+          style={{
+            backgroundImage:
+              'url("https://d494u2iqg624y.cloudfront.net/picture_material_preview/2021/12/10/bff975b85a8d4f65b4904930e2fe30b3.png")',
+            backgroundPositionX: '45%',
+          }}
+        ></ParallaxLayer>
+        <ParallaxLayer
+          className="moon"
+          offset={1.1}
+          speed={1}
+          style={{
+            backgroundImage:
+              'url("https://d494u2iqg624y.cloudfront.net/picture_material_original/2021/12/15/d1a5227713c74d10bc2ef77c220e1c62.png")',
+            backgroundPositionX: '25%',
+          }}
+        >
+          <div className="centerText">
+            <h2>
+              Carl Sagan, while unveiling the image <i>Pale Blue Dot</i>, made
+              by Voyager-1, said, “...That's here. That's home. That's us. On it
+              everyone you love, everyone you know, everyone you ever heard of,
+              every human being who ever was, lived out their lives..."
+            </h2>
+          </div>
+        </ParallaxLayer>
+        <ParallaxLayer offset={1.95} speed={0.5}>
+          <h2 className="centerOffsetLeftText">
+            "...The Earth is the only world known so far to harbor life. There
+            is nowhere else, at least in the near future, to which our species
+            could migrate. Visit, yes. Settle, not yet. Like it or not, for the
+            moment the Earth is where we make our stand..."
+          </h2>
+        </ParallaxLayer>
+        <ParallaxLayer
+          offset={2.5}
           speed={0.75}
           factor={1.5}
           style={{
             backgroundImage:
               'url("https://c.tenor.com/KRIGLPCuG-4AAAAC/earth-planet.gif")',
-            backgroundSize: "50%",
+
+            backgroundSize: '50%',
           }}
         >
           <h2 className="rightText">
-            Over 30 years have passed since then. We've continued to learn about our own solar system: its planets, moons, asteroids, and more. Eventually, humanity will begin settling in these places. Our species will spread out futher than our Pale Blue Dot.
+            Over 30 years have passed since then. We've continued to learn about
+            our own solar system: its planets, moons, asteroids, and more.
           </h2>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={3} speed={2}>
+        <ParallaxLayer offset={3.0} speed={1}>
+          <h2 className="rightText">
+            Eventually, humanity will begin settling in these places. Our
+            species will spread out futher than our Pale Blue Dot.
+          </h2>
+        </ParallaxLayer>
+        <ParallaxLayer offset={3.3} speed={.75}  style={{
+            backgroundImage:
+              'url("https://img1.cgtrader.com/items/2867081/b970c04482/large/mars-planet-with-8k-textures-3d-model-obj.jpg")',
+
+            backgroundSize: '50%',
+          }}>
+        </ParallaxLayer>
+
+        <ParallaxLayer offset={4} speed={2}>
           <h2 className="rightText">But where else will we go?</h2>
         </ParallaxLayer>
         <ParallaxLayer
@@ -125,8 +179,7 @@ const LandingPage = () => {
               style={{ backgroundSize: "50%" }}
             /> */}
 
-
-            {/* It would  be nice to have each of these paragraphs fade-in/out (in a fixed position) while the user  
+            {/* It would  be nice to have each of these paragraphs fade-in/out (in a fixed position) while the user
             scrolls. Its a better build up to the final question/galaxy view */}
 
             <p className="landingTextFinal">
@@ -176,7 +229,7 @@ const LandingPage = () => {
                 alt="milkway"
               />
               <div id="sunWrapper">
-                <Link to={"/home"}>
+                <Link to={'/home'}>
                   <button id="sun" className="galaxyButtons"></button>
                 </Link>
                 <span id="sunDescription">The Sun</span>
@@ -188,10 +241,27 @@ const LandingPage = () => {
             </div>
           </div>
         </ParallaxLayer>
+
+        {/* <div className="text"> */}
+        {/* <ParallaxLayer offset={1} speed={0.75}>
+            <h3 id="sL">"That's here... That's home... That's us..."</h3>
+          </ParallaxLayer> */}
+        {/* <ParallaxLayer offset={1.01} speed={1}>
+            <h3 id="sR">That's here. </h3>
+          </ParallaxLayer>
+          <ParallaxLayer offset={1.02} speed={1.5}>
+            <h3 id='sLL'>That's home...</h3>
+          </ParallaxLayer>
+          <ParallaxLayer offset={1.04} speed={1.8}>
+            <h3>That's us...."</h3>
+          </ParallaxLayer>
+          <ParallaxLayer offset={1.05} speed={2}>
+            <h3>- Carl segan</h3>
+          </ParallaxLayer> */}
+        {/* </div> */}
       </Parallax>
     </div>
   );
-
 };
 
 export default LandingPage;
