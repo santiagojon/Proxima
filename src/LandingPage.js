@@ -14,7 +14,6 @@ import LandingPageIntroAnimation from "./components/LandingPageIntroAnimation";
 
 const LandingPage = () => {
   //Header fade-out
-
   const header = document.getElementById("introLandingPageContainer");
 
   function fadeOutOnScroll(element) {
@@ -23,7 +22,7 @@ const LandingPage = () => {
     }
 
     let distanceToTop =
-      window.pageYOffset + element.getBoundingClientRect().top;
+      window.scrollY + element.getBoundingClientRect().top;
     console.log("DtT", distanceToTop);
     const elementHeight = element.offsetHeight;
     console.log("eHeight", elementHeight);
@@ -43,13 +42,18 @@ const LandingPage = () => {
     }
   }
 
-  function scrollHandler() {
-    fadeOutOnScroll(header);
-  }
-
   useEffect(() => {
-    window.addEventListener("scroll", scrollHandler());
-  });
+      function scrollHandler() {
+        fadeOutOnScroll(header);
+        console.log('window.scrollY', window.scrollY);
+
+  }
+      window.addEventListener("scroll", scrollHandler);
+       return () => {
+      window.removeEventListener('scroll', scrollHandler);
+    };
+ }, []);
+  
 
   //Header fade-out end
 
@@ -187,6 +191,7 @@ const LandingPage = () => {
       </Parallax>
     </div>
   );
+
 };
 
 export default LandingPage;
