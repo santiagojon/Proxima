@@ -5,7 +5,9 @@ import { Stars } from "@react-three/drei";
 import { AtmosphereShaderMaterial } from "../shaders/Atmosphere";
 import { GlobeShaderMaterial } from "../shaders/GlobeMaterial";
 import { SolarSystem } from "./SolarSystem";
-import { solarSys } from "../util/SolarSystem";
+import solarSystem from "../util/DataParsed";
+
+// import { solarSys } from "../util/SolarSystem";
 import { EffectComposer, Bloom, Vignette } from "@react-three/postprocessing";
 
 import SinglePlanetView from "./SinglePlanetView";
@@ -61,7 +63,7 @@ function Scene(props) {
         />
       ) : (
         <SolarSystem
-          solarSystem={solarSys}
+          solarSystem={solarSystem}
           handleSetState={props.handleSetState}
           viewState={props.viewState}
         />

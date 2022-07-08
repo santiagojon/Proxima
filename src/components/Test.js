@@ -10,15 +10,15 @@ export default function Test(props) {
   // const [systemData, setSystemData] = useState([]);
 
   useEffect(() => {
-    dispatch(getSingleSystemByName('a'));
+    dispatch(getSingleSystemByName('tau Cet'));
     // dispatch(getaAllSystems());
   }, []);
   console.log(system);
-  const singleSystem = system || {};
+  const singleSystem = system || [];
   return (
     <div>
       <h1>hello</h1>
-      <p>{singleSystem.planetName}</p>
+      {/* <p>{singleSystem.planetName}</p> */}
     </div>
   );
 }

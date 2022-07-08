@@ -11,6 +11,7 @@ import App from './App';
 import { SolarSystemView } from './components/SolarSystemView';
 // import NotFoundPage from "./NotFoundPage";
 import Test from './components/Test';
+import { TestCanvas } from './components/TestCanvas';
 
 const AppRoutes = () => {
   return (
@@ -19,6 +20,7 @@ const AppRoutes = () => {
         <Route exact path="/" element={<LandingPage />} />
         <Route path="/home" element={<SolarSystemView />} />
         <Route path="/test" element={<Test />} />
+        <Route path='/testcanvas' element={<TestCanvas/>}/>
         {/* <Route path="/test/:starName" element={<Test />} /> */}
 
       </Routes>

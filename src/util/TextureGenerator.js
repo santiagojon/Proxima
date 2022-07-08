@@ -1,20 +1,24 @@
 //canvas is 2:1 width height so the images doesnt get stretched when placed on a sphere
-import { textures } from "./Textures";
+import { textures } from './Textures';
 const canvasWidth = 2048;
 const canvasHeight = canvasWidth / 2;
 
-export const textureGenerator = (planetType, planetColor, callBack) => {
-  console.log("inside texture gen");
+export const textureGenerator = (
+  planetType,
+  planetColor,
+  callBack
+) => {
+  console.log('inside texture gen');
   const img = new Image();
-  const canvas = document.createElement("canvas");
-  let ctx = canvas.getContext("2d");
+  const canvas = document.createElement('canvas');
+  let ctx = canvas.getContext('2d');
   console.log(ctx);
   canvas.width = canvasWidth;
   canvas.height = canvasHeight;
   img.onload = function () {
     ctx.drawImage(img, 0, 0, canvasWidth, canvasHeight);
-    ctx.globalCompositeOperation = "multiply";
-    ctx.fillStyle = "rgb(193, 253, 255)";
+    ctx.globalCompositeOperation = 'multiply';
+    ctx.fillStyle = 'rgb(193, 253, 255)';
     ctx.fillRect(0, 0, canvasWidth, canvasHeight);
     const newImg = new Image();
     newImg.onload = function () {
@@ -32,3 +36,7 @@ const texturePicker = (planetType, planetColor) => {
   const textureArrLength = textureArr.length;
   return textureArr[planetColorSum % textureArrLength];
 };
+
+
+
+// export const textureData = textureGenerator()

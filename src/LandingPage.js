@@ -1,5 +1,6 @@
-import React, { useEffect, Suspense, useRef } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, Suspense, useRef } from 'react';
+import { Link } from 'react-router-dom';
+
 // import {
 //   Canvas,
 //   useThree,
@@ -54,10 +55,10 @@ import { Link } from "react-router-dom";
 
 const LandingPage = () => {
   window.addEventListener(
-    "scroll",
+    'scroll',
     () => {
       document.body.style.setProperty(
-        "--scroll",
+        '--scroll',
         window.pageYOffset / (document.body.offsetHeight - window.innerHeight)
       );
     },
@@ -70,7 +71,7 @@ const LandingPage = () => {
         style={{
           backgroundImage:
             'url("https://i.pinimg.com/originals/f9/a8/ed/f9a8ed161524ca06e0d5250fe2d33e51.gif")',
-          backgroundRepeat: "no-repeat",
+          backgroundRepeat: 'no-repeat',
         }}
       >
         <section id="introLandingPage">
@@ -104,7 +105,7 @@ const LandingPage = () => {
             alt="milkway"
           />
           <div id="sunWrapper">
-            <Link to={"/home"}>
+            <Link to={'/home'}>
               <button id="sun" className="galaxyButtons"></button>
             </Link>
             <span id="sunDescription">The Sun</span>
