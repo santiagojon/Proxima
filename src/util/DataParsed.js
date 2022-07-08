@@ -1,142 +1,142 @@
 // import { textureGenerator } from './TextureGenerator';
-import { textures } from './Textures';
-import react from 'react';
+import { textures } from "./Textures";
+import react from "react";
 const data = [
   {
     id: 6,
-    planetName: 'tau Cet h',
-    starName: 'tau Cet',
-    numberOfStars: '1',
-    numberOfPlanets: '4',
-    discoveryMethod: 'Radial Velocity',
-    yearDiscovered: '2017',
-    discoveryFacility: 'Multiple Observatories',
-    planetOrbitTimeD: '49.41000000',
-    orbitDistanceAU: '0.243000',
-    planetRadiusE: '1.190',
-    planetMassE: '1.83000',
-    planetDensity: '5.970000',
-    planetOrbitEccentricity: '0.230000',
-    planetTemp: null,
+    planetName: "tau Cet h",
+    starName: "tau Cet",
+    numberOfStars: "1",
+    numberOfPlanets: "4",
+    discoveryMethod: "Radial Velocity",
+    yearDiscovered: "2017",
+    discoveryFacility: "Multiple Observatories",
+    planetOrbitTimeD: "49.41000000",
+    orbitDistanceAU: "0.243000",
+    planetRadiusE: "1.190",
+    planetMassE: "1.83000",
+    planetDensity: "5.970000",
+    planetOrbitEccentricity: "0.230000",
+    planetTemp: 600,
     planetOrbitToStarRatio: null,
-    starSpectralType: 'G8.5V',
-    starTempK: '5310.00',
-    starRadiusS: '0.83',
-    starMassS: '0.78',
-    starLuminosity: '-0.305',
-    starAge: '12.120',
-    starDensity: '2.24358',
-    starRotationVelocity: '1.8000',
-    starRotationTimeD: '34.50',
-    gLat: '-73.44240',
-    gLon: '173.07319',
-    eclipticLat: '-24.80956',
-    eclipticLon: '17.81270',
-    distancePC: '3.6030400',
-    createdAt: '2022-07-05T20:18:55.695Z',
-    updatedAt: '2022-07-05T20:18:55.695Z',
+    starSpectralType: "G8.5V",
+    starTempK: "5310.00",
+    starRadiusS: "0.83",
+    starMassS: "0.78",
+    starLuminosity: "-0.305",
+    starAge: "12.120",
+    starDensity: "2.24358",
+    starRotationVelocity: "1.8000",
+    starRotationTimeD: "34.50",
+    gLat: "-73.44240",
+    gLon: "173.07319",
+    eclipticLat: "-24.80956",
+    eclipticLon: "17.81270",
+    distancePC: "3.6030400",
+    createdAt: "2022-07-05T20:18:55.695Z",
+    updatedAt: "2022-07-05T20:18:55.695Z",
   },
   {
     id: 8,
-    planetName: 'tau Cet g',
-    starName: 'tau Cet',
-    numberOfStars: '1',
-    numberOfPlanets: '4',
-    discoveryMethod: 'Radial Velocity',
-    yearDiscovered: '2017',
-    discoveryFacility: 'Multiple Observatories',
-    planetOrbitTimeD: '20.00000000',
-    orbitDistanceAU: '0.133000',
-    planetRadiusE: '1.180',
-    planetMassE: '1.75000',
-    planetDensity: '5.850000',
-    planetOrbitEccentricity: '0.060000',
-    planetTemp: null,
+    planetName: "tau Cet g",
+    starName: "tau Cet",
+    numberOfStars: "1",
+    numberOfPlanets: "4",
+    discoveryMethod: "Radial Velocity",
+    yearDiscovered: "2017",
+    discoveryFacility: "Multiple Observatories",
+    planetOrbitTimeD: "20.00000000",
+    orbitDistanceAU: "0.133000",
+    planetRadiusE: "1.180",
+    planetMassE: "1.75000",
+    planetDensity: "5.850000",
+    planetOrbitEccentricity: "0.060000",
+    planetTemp: 800,
     planetOrbitToStarRatio: null,
-    starSpectralType: 'G8.5V',
-    starTempK: '5310.00',
-    starRadiusS: '0.83',
-    starMassS: '0.78',
-    starLuminosity: '-0.305',
-    starAge: '12.120',
-    starDensity: '2.24358',
-    starRotationVelocity: '1.8000',
-    starRotationTimeD: '34.50',
-    gLat: '-73.44240',
-    gLon: '173.07319',
-    eclipticLat: '-24.80956',
-    eclipticLon: '17.81270',
-    distancePC: '3.6030400',
-    createdAt: '2022-07-05T20:18:55.695Z',
-    updatedAt: '2022-07-05T20:18:55.695Z',
+    starSpectralType: "G8.5V",
+    starTempK: "5310.00",
+    starRadiusS: "0.83",
+    starMassS: "0.78",
+    starLuminosity: "-0.305",
+    starAge: "12.120",
+    starDensity: "2.24358",
+    starRotationVelocity: "1.8000",
+    starRotationTimeD: "34.50",
+    gLat: "-73.44240",
+    gLon: "173.07319",
+    eclipticLat: "-24.80956",
+    eclipticLon: "17.81270",
+    distancePC: "3.6030400",
+    createdAt: "2022-07-05T20:18:55.695Z",
+    updatedAt: "2022-07-05T20:18:55.695Z",
   },
   {
     id: 9,
-    planetName: 'tau Cet f',
-    starName: 'tau Cet',
-    numberOfStars: '1',
-    numberOfPlanets: '4',
-    discoveryMethod: 'Radial Velocity',
-    yearDiscovered: '2017',
-    discoveryFacility: 'Multiple Observatories',
-    planetOrbitTimeD: '636.13000000',
-    orbitDistanceAU: '1.334000',
-    planetRadiusE: '1.810',
-    planetMassE: '3.93000',
-    planetDensity: '3.640000',
-    planetOrbitEccentricity: '0.160000',
-    planetTemp: null,
+    planetName: "tau Cet f",
+    starName: "tau Cet",
+    numberOfStars: "1",
+    numberOfPlanets: "4",
+    discoveryMethod: "Radial Velocity",
+    yearDiscovered: "2017",
+    discoveryFacility: "Multiple Observatories",
+    planetOrbitTimeD: "636.13000000",
+    orbitDistanceAU: "1.334000",
+    planetRadiusE: "1.810",
+    planetMassE: "3.93000",
+    planetDensity: "3.640000",
+    planetOrbitEccentricity: "0.160000",
+    planetTemp: 80,
     planetOrbitToStarRatio: null,
-    starSpectralType: 'G8.5V',
-    starTempK: '5310.00',
-    starRadiusS: '0.83',
-    starMassS: '0.78',
-    starLuminosity: '-0.305',
-    starAge: '12.120',
-    starDensity: '2.24358',
-    starRotationVelocity: '1.8000',
-    starRotationTimeD: '34.50',
-    gLat: '-73.44240',
-    gLon: '173.07319',
-    eclipticLat: '-24.80956',
-    eclipticLon: '17.81270',
-    distancePC: '3.6030400',
-    createdAt: '2022-07-05T20:18:55.695Z',
-    updatedAt: '2022-07-05T20:18:55.695Z',
+    starSpectralType: "G8.5V",
+    starTempK: "5310.00",
+    starRadiusS: "0.83",
+    starMassS: "0.78",
+    starLuminosity: "-0.305",
+    starAge: "12.120",
+    starDensity: "2.24358",
+    starRotationVelocity: "1.8000",
+    starRotationTimeD: "34.50",
+    gLat: "-73.44240",
+    gLon: "173.07319",
+    eclipticLat: "-24.80956",
+    eclipticLon: "17.81270",
+    distancePC: "3.6030400",
+    createdAt: "2022-07-05T20:18:55.695Z",
+    updatedAt: "2022-07-05T20:18:55.695Z",
   },
   {
     id: 10,
-    planetName: 'tau Cet e',
-    starName: 'tau Cet',
-    numberOfStars: '1',
-    numberOfPlanets: '4',
-    discoveryMethod: 'Radial Velocity',
-    yearDiscovered: '2017',
-    discoveryFacility: 'Multiple Observatories',
-    planetOrbitTimeD: '162.87000000',
-    orbitDistanceAU: '0.538000',
-    planetRadiusE: '1.810',
-    planetMassE: '3.93000',
-    planetDensity: '3.640000',
-    planetOrbitEccentricity: '0.180000',
-    planetTemp: null,
+    planetName: "tau Cet e",
+    starName: "tau Cet",
+    numberOfStars: "1",
+    numberOfPlanets: "4",
+    discoveryMethod: "Radial Velocity",
+    yearDiscovered: "2017",
+    discoveryFacility: "Multiple Observatories",
+    planetOrbitTimeD: "162.87000000",
+    orbitDistanceAU: "0.538000",
+    planetRadiusE: "1.810",
+    planetMassE: "3.93000",
+    planetDensity: "3.640000",
+    planetOrbitEccentricity: "0.180000",
+    planetTemp: 300,
     planetOrbitToStarRatio: null,
-    starSpectralType: 'G8.5V',
-    starTempK: '5310.00',
-    starRadiusS: '0.83',
-    starMassS: '0.78',
-    starLuminosity: '-0.305',
-    starAge: '12.120',
-    starDensity: '2.24358',
-    starRotationVelocity: '1.8000',
-    starRotationTimeD: '34.50',
-    gLat: '-73.44240',
-    gLon: '173.07319',
-    eclipticLat: '-24.80956',
-    eclipticLon: '17.81270',
-    distancePC: '3.6030400',
-    createdAt: '2022-07-05T20:18:55.695Z',
-    updatedAt: '2022-07-05T20:18:55.695Z',
+    starSpectralType: "G8.5V",
+    starTempK: "5310.00",
+    starRadiusS: "0.83",
+    starMassS: "0.78",
+    starLuminosity: "-0.305",
+    starAge: "12.120",
+    starDensity: "2.24358",
+    starRotationVelocity: "1.8000",
+    starRotationTimeD: "34.50",
+    gLat: "-73.44240",
+    gLon: "173.07319",
+    eclipticLat: "-24.80956",
+    eclipticLon: "17.81270",
+    distancePC: "3.6030400",
+    createdAt: "2022-07-05T20:18:55.695Z",
+    updatedAt: "2022-07-05T20:18:55.695Z",
   },
 ];
 
@@ -179,21 +179,24 @@ const canvasWidth = 2048;
 const canvasHeight = canvasWidth / 2;
 
 export const textureGenerator = (planetType, planetColor, callBack) => {
-  console.log('inside texture gen');
+  console.log("planetType", planetType);
+  console.log("RGB", planetColor);
+  console.log("inside texture gen");
   const img = new Image();
-  const canvas = document.createElement('canvas');
-  let ctx = canvas.getContext('2d');
+  const canvas = document.createElement("canvas");
+  let ctx = canvas.getContext("2d");
   console.log(ctx);
   canvas.width = canvasWidth;
   canvas.height = canvasHeight;
   img.onload = function () {
     ctx.drawImage(img, 0, 0, canvasWidth, canvasHeight);
-    ctx.globalCompositeOperation = 'multiply';
-    ctx.fillStyle = 'rgb(193, 253, 255)';
+    ctx.globalCompositeOperation = "multiply";
+    ctx.fillStyle = "rgb(193, 253, 255)";
     ctx.fillRect(0, 0, canvasWidth, canvasHeight);
     const newImg = new Image();
     newImg.onload = function () {
-      callBack(newImg);
+      console.log("IMAGE", newImg);
+      callBack(newImg.src);
     };
     newImg.src = canvas.toDataURL();
   };
@@ -213,7 +216,8 @@ const returnFunc = (img) => {
 };
 
 export function rgbFinder(temp) {
-  if (!temp) {
+  console.log("TEMP!", temp);
+  if (temp === "null" || !temp) {
     return [127, 127, 127];
   }
 
@@ -235,22 +239,22 @@ export function textureFinder(mass, temp) {
   //rocky composition
   switch (true) {
     case !mass:
-      return 'rocky';
+      return "rocky";
     case mass < 0.5:
-      if (temp >= 275 && temp <= 375) return 'earthLike';
-      return 'rocky';
+      if (temp >= 275 && temp <= 375) return "earthLike";
+      return "rocky";
     case mass >= 0.5 && mass <= 2:
-      if (temp >= 275 && temp <= 375) return 'earthLike';
-      return 'rocky';
+      if (temp >= 275 && temp <= 375) return "earthLike";
+      return "rocky";
     case mass > 2 && mass <= 10:
-      if (temp >= 275 && temp <= 375) return 'earthLike';
-      return 'rocky';
+      if (temp >= 275 && temp <= 375) return "earthLike";
+      return "rocky";
     case mass > 10 && mass <= 50:
-      if (temp >= 273) return 'gas';
-      return 'icy';
+      if (temp >= 273) return "gas";
+      return "icy";
     //https://exoplanets.nasa.gov/what-is-an-exoplanet/planet-types/neptune-like/
     case mass > 50 && mass <= 5000:
-      return 'gas';
+      return "gas";
     //Jovian planets tend to have very thick atmospheres consisting of hydrogen, helium, methane, and ammonia
     default:
       return null;
@@ -263,19 +267,19 @@ const sunRGB = (data) => {
   //rawData.spectralType[0]
   if (data.starSpectralType[0]) {
     switch (data.starSpectralType[0]) {
-      case 'O':
+      case "O":
         return [155, 176, 255];
-      case 'B':
+      case "B":
         return [170, 191, 255];
-      case 'A':
+      case "A":
         return [202, 215, 255];
-      case 'F':
+      case "F":
         return [248, 247, 255];
-      case 'G':
+      case "G":
         return [255, 244, 234];
-      case 'K':
+      case "K":
         return [255, 210, 161];
-      case 'M':
+      case "M":
         return [255, 204, 111];
       default:
         return [255, 204, 111];
@@ -305,49 +309,73 @@ const sunRGB = (data) => {
 
 export default function dataParser(data) {
   const planets = [];
-  data[0]
-    ? //getting all planets parsed
-      data.forEach((data) => {
-        planets.push({
-          name: data.planetName,
-          position: [(23480 * data.orbitDistanceAU * 0.75) / 100, 0, 0],
-          globeRGB: rgbFinder(data.planetTemp), //get rgb data
-          // atmosphereRGB: [0, 0, 0],
-          compareEarthSize: data.planetRadiusE * 5,
-          image: 'earth.jpg',
-          // image: textureGenerator(
-          //   textureFinder(data.planetMassE, data.planetTemp),
-          //   rgbFinder(rgbFinder(data.planetTemp), returnFunc)
-          // ), //classify planet to get image
-          speed: 0,
-          sun: false,
-          orbitSpeed: 0,
-          orbitPlanet: [],
-        });
-      })
-    : planets.push({
-        name: data.planetName,
-        position: [(23480 * data.orbitDistanceAU * 0.75) / 10, 0, 0],
-        globeRGB: rgbFinder(data.planetTemp), //get rgb data
-        // atmosphereRGB: [0, 0, 0],
-        compareEarthSize: data.planetRadiusE * 5,
-        image: 'earth.jpg',
-        // image: textureGenerator(
-        //   textureFinder(data.planetMassE, data.planetTemp),
-        //   rgbFinder(rgbFinder(data.planetTemp), returnFunc)
-        // ), //classify planet to get image
-        speed: 0,
-        sun: false,
-        orbitSpeed: 0,
-        orbitPlanet: [],
-      });
+
+  if (!data[0]) return null;
+
+  for (let i = 0; i < data.length; i++) {
+    planets.push({
+      name: data[i].planetName,
+      position: [(23480 * data[i].orbitDistanceAU * 0.75) / 100, 0, 0],
+      globeRGB: rgbFinder(data[i].planetTemp), //get rgb data
+      compareEarthSize: data[i].planetRadiusE * 5,
+      speed: 0,
+      sun: false,
+      orbitSpeed: 0,
+      orbitPlanet: [],
+    });
+    textureGenerator(
+      textureFinder(data[i].planetMassE, data[i].planetTemp),
+      rgbFinder(data[i].planetTemp),
+      function (result) {
+        planets[i].image = result;
+      }
+    );
+    console.log("PLANET INFO!", planets[i]);
+  }
+  // data[0]
+  //   ? //getting all planets parsed
+  //     data.forEach((data) => {
+  //       planets.push({
+  //         name: data.planetName,
+  //         position: [(23480 * data.orbitDistanceAU * 0.75) / 100, 0, 0],
+  //         globeRGB: rgbFinder(data.planetTemp), //get rgb data
+  //         compareEarthSize: data.planetRadiusE * 5,
+  //         image: textureGenerator(
+  //           textureFinder(data.planetMassE, data.planetTemp),
+  //           rgbFinder(data.planetTemp),
+  //           function (result) {
+  //             console.log(result);
+  //           }
+  //         ), //classify planet to get image
+  //         speed: 0,
+  //         sun: false,
+  //         orbitSpeed: 0,
+  //         orbitPlanet: [],
+  //       });
+  //     })
+  //   : planets.push({
+  //       name: data.planetName,
+  //       position: [(23480 * data.orbitDistanceAU * 0.75) / 10, 0, 0],
+  //       globeRGB: rgbFinder(data.planetTemp), //get rgb data
+  //       // atmosphereRGB: [0, 0, 0],
+  //       compareEarthSize: data.planetRadiusE * 5,
+  //       image: "earth.jpg",
+  //       // image: textureGenerator(
+  //       //   textureFinder(data.planetMassE, data.planetTemp),
+  //       //   rgbFinder(rgbFinder(data.planetTemp), returnFunc)
+  //       // ), //classify planet to get image
+  //       speed: 0,
+  //       sun: false,
+  //       orbitSpeed: 0,
+  //       orbitPlanet: [],
+  //     });
   //making only one star and passing all planets to it
   const sun = {
     name: data.starName,
     position: [0, 0, 0],
     globeRGB: sunRGB(data),
     atmosphereRGB: [255, 204, 111],
-    image: 'sun.jpg',
+    image: "sun.jpg",
     // image: textureGenerator(this.globeRGB),
     compareEarthSize: data.starRadiusS * 109.3,
     sun: true,
