@@ -1,5 +1,5 @@
 * {
-  background-color: black;
+  /* background-color: black; */
 }
 html,
 body,
@@ -34,12 +34,11 @@ Landing Page  */
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* *** */
   font-family: "Times New Roman", Times, serif;
 }
 
 .landingPage div {
-  background-color: black;
+  /* background-color: black; */
   /* justify-content: center; */
   font-family: 'Times New Roman', Times, serif;
   /* height: 100rem; */
@@ -73,6 +72,7 @@ Landing Page  */
   font-weight: 500;
   margin: 5%;
   margin-bottom: 2%;
+  background-color: transparent;
 }
 
 .rightText {
