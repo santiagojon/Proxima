@@ -1,5 +1,5 @@
 * {
-  box-sizing: border-box;
+  background-color: black;
 }
 html,
 body,
@@ -40,6 +40,9 @@ Landing Page  */
 
 .landingPage div {
   background-color: black;
+  /* justify-content: center; */
+  font-family: 'Times New Roman', Times, serif;
+  /* height: 100rem; */
 }
 
 #introLandingPageContainer {
@@ -58,7 +61,7 @@ Landing Page  */
   left: 5%;
   color: white;
   text-align: center;
-  margin: 0 auto;
+  margin: 15% auto;
   /* display: flex;
   flex-direction: column;
   justify-content: center;
@@ -70,6 +73,26 @@ Landing Page  */
   font-weight: 500;
   margin: 5%;
   margin-bottom: 2%;
+}
+
+.rightText {
+  position: fixed;
+  right: 10%;
+  top: 10%;
+  color: white;
+  font-size: 2rem;
+}
+.centerOffsetLeftText {
+  position: fixed;
+  right: 18%;
+  top: 60%;
+  color: white;
+}
+.centerOffsetRightText {
+  position: fixed;
+  right: 50%;
+  top: 40%;
+  color: white;
 }
 
 #introLandingPage h2 {
@@ -246,4 +269,42 @@ Single Planet */
   left: 5%;
   opacity: 0.7;
   transition: opacity 1s, visibility 0.2s;
+}
+
+
+.container {
+  max-width: 120rem;
+  padding: 10rem 3.2rem;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  gap: 9.6rem;
+}
+
+.grid--2-cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.step-image-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step-image {
+  width: 50%;
+}
+
+.container-heading {
+  font-weight: 500;
+  letter-spacing: -0.5px;
+  font-size: 2.4rem;
+  margin-bottom: 2.4rem;
+}
+
+.container-text {
+  font-size: 1.4rem;
+  line-height: 1;
 }
