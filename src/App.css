@@ -1,5 +1,4 @@
 * {
-  /* box-sizing: border-box; */
   background-color: black;
 }
 html,
@@ -18,7 +17,7 @@ body {
 
 .App {
   position: relative;
-  padding: 7rem;
+  padding: 3rem;
 }
 
 canvas {
@@ -35,6 +34,12 @@ Landing Page  */
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* *** */
+  font-family: "Times New Roman", Times, serif;
+}
+
+.landingPage div {
+  background-color: black;
   /* justify-content: center; */
   font-family: 'Times New Roman', Times, serif;
   /* height: 100rem; */
@@ -96,10 +101,57 @@ Landing Page  */
   font-weight: 400;
 }
 
-.placeHolder3D {
+.rightText {
+  position: fixed;
+  width: 25rem;
+  right: 10%;
+  top: 10%;
+  color: white;
+  /* font-size: 1.7rem; */
+  font-weight: 400;
+  animation: slide-up 3s;
+}
+
+
+.centerOffsetLeftText {
+  position: fixed;
+  right: 18%;
+  top: 60%;
+  color: white;
+  font-weight: 400;
+  animation: slide-up 3s;
+}
+.centerOffsetRightText {
+  position: fixed;
+  right: 50%;
+  top: 40%;
+  color: white;
+  font-weight: 400;
+  animation: slide-up 3s;
+}
+
+.centerText {
+  text-align: center;
+  position: fixed;
+  right: 30%;
+  left: 30%;
+  top: 50%;
+  color: white;
+  font-weight: 400;
+  animation: slide-up 3s;
+}
+
+.landingTextFinal {
+  margin: 1rem;
+}
+
+/* #arrakis {
+} */
+
+/* .placeHolder3D {
   height: 80rem;
   width: 100%;
-}
+} */
 
 #milkyWayLandingPageContainer {
   position: relative;
@@ -210,7 +262,7 @@ Single Planet */
 
 .planetText {
   color: white;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
   font-size: 3rem;
   position: absolute;
   bottom: 15%;
