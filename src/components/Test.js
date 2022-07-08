@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getSingleSystemByName } from '../store/system';
 import { useEffect, useState } from 'react';
 import { getaAllSystems } from '../store/allSystems';
+import dataParser from '../util/DataParsed';
 
 export default function Test(props) {
   const dispatch = useDispatch();
@@ -13,7 +14,7 @@ export default function Test(props) {
     dispatch(getSingleSystemByName('tau Cet'));
     // dispatch(getaAllSystems());
   }, []);
-  console.log(system);
+  console.log(dataParser(system));
   const singleSystem = system || [];
   return (
     <div>
