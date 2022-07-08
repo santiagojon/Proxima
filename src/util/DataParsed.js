@@ -310,7 +310,7 @@ export default function dataParser(data) {
       data.forEach((data) => {
         planets.push({
           name: data.planetName,
-          position: [(23480 * data.orbitDistanceAU * 0.75) / 10, 0, 0],
+          position: [(23480 * data.orbitDistanceAU * 0.75) / 100, 0, 0],
           globeRGB: rgbFinder(data.planetTemp), //get rgb data
           // atmosphereRGB: [0, 0, 0],
           compareEarthSize: data.planetRadiusE * 5,
