@@ -109,6 +109,7 @@ const LandingPage = () => {
             backgroundImage:
               'url("https://d494u2iqg624y.cloudfront.net/picture_material_original/2021/12/15/d1a5227713c74d10bc2ef77c220e1c62.png")',
             backgroundPositionX: '25%',
+            // backgroundSize: '75%'
           }}
         >
           <div className="centerText">
@@ -131,12 +132,12 @@ const LandingPage = () => {
         <ParallaxLayer
           offset={2.5}
           speed={0.75}
-          factor={1.5}
+          factor={1.2}
           style={{
             backgroundImage:
               'url("https://c.tenor.com/KRIGLPCuG-4AAAAC/earth-planet.gif")',
 
-            backgroundSize: '50%',
+            backgroundSize: '35%',
           }}
         >
           <h2 className="rightText">
@@ -145,25 +146,55 @@ const LandingPage = () => {
           </h2>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={3.0} speed={1}>
-          <h2 className="rightText">
-            Eventually, humanity will begin settling in these places. Our
-            species will spread out futher than our Pale Blue Dot.
+        <ParallaxLayer offset={3.21} speed={0.2}>
+          <h2 className="text">
+            Eventually, humanity will begin settling in these places.
           </h2>
         </ParallaxLayer>
-        <ParallaxLayer offset={3.3} speed={.75}  style={{
+        <ParallaxLayer offset={3.999} speed={0.35}>
+          <h2 className="text">
+            Our species will spread out futher than our Pale Blue Dot.
+          </h2>
+        </ParallaxLayer>
+        <ParallaxLayer
+          offset={3.39}
+          speed={0.1}
+          style={{
             backgroundImage:
               'url("https://img1.cgtrader.com/items/2867081/b970c04482/large/mars-planet-with-8k-textures-3d-model-obj.jpg")',
-
-            backgroundSize: '50%',
-          }}>
-        </ParallaxLayer>
+            backgroundPositionX: '65%',
+            zIndex: '-1',
+            backgroundSize: '40%',
+          }}
+        ></ParallaxLayer>
+        <ParallaxLayer
+          offset={3.6}
+          speed={1.75}
+          style={{
+            backgroundImage:
+              'url("https://pluspng.com/img-png/planet-png-hd-mqo-class-planet-png-1024.png")',
+            backgroundPositionX: '63%',
+            zIndex: '-1',
+            backgroundSize: '40%',
+          }}
+        ></ParallaxLayer>
 
         <ParallaxLayer offset={4} speed={2}>
           <h2 className="rightText">But where else will we go?</h2>
         </ParallaxLayer>
         <ParallaxLayer
-          offset={3.5}
+          offset={4}
+          speed={3}
+          style={{
+            backgroundImage:
+              'url("https://cdn.pixabay.com/photo/2019/05/01/14/25/space-4171004_960_720.png")',
+            backgroundPositionX: '50%',
+            zIndex: '-1',
+            backgroundSize: '35c%',
+          }}
+        ></ParallaxLayer>
+        <ParallaxLayer
+          offset={4}
           speed={1}
           // style={{
           //   backgroundImage:
