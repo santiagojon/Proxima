@@ -15,7 +15,7 @@ import LandingPageIntroAnimation from './LandingPageIntroAnimation';
 const LandingPage = () => {
   return (
     <div className="landingPage">
-      <Parallax pages={9.5}>
+      <Parallax pages={9.25}>
         <ParallaxLayer
           id="heroContainer"
           factor={1.5}
