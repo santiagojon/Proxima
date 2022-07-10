@@ -15,7 +15,7 @@ import LandingPageIntroAnimation from './LandingPageIntroAnimation';
 const LandingPage = () => {
   return (
     <div className="landingPage">
-      <Parallax pages={8}>
+      <Parallax pages={9.5}>
         <ParallaxLayer
           id="heroContainer"
           factor={1.5}
@@ -106,7 +106,7 @@ const LandingPage = () => {
         </ParallaxLayer>
         <ParallaxLayer
           offset={3}
-          factor={2}
+          factor={8}
           style={{ zIndex: '-10' }}
           speed={0.5}
         >
@@ -115,7 +115,8 @@ const LandingPage = () => {
         <ParallaxLayer
           className="background"
           offset={3}
-          factor={2}
+          factor={8}
+          style={{ zIndex: '-9' }}
         ></ParallaxLayer>
         <ParallaxLayer offset={3.3} speed={0.2}>
           <h2 className="text">
@@ -164,17 +165,21 @@ const LandingPage = () => {
             backgroundSize: '45%',
           }}
         ></ParallaxLayer>
-        <ParallaxLayer offset={5} speed={0.13} factor={0.5}>
-          <p className="centerText">
-            For centuries, fictional depictions of planets orbiting other stars
-            have fired our imagination. From the desert world of Arrakis in Dune
-            to the lush jungles of Yoda's planet Dagobah in Star Wars, we humans
-            have been fascinated with the idea of exotic, far-off worlds.
-          </p>
+        <ParallaxLayer offset={5.1} speed={0.13}>
+          <h2>
+            <p className="centerText">
+              For centuries, fictional depictions of planets orbiting other
+              stars have fired our imagination. From the desert world of Arrakis
+              in Dune to the lush jungles of Yoda's planet Dagobah in Star Wars,
+              we humans have been fascinated with the idea of exotic, far-off
+              worlds.
+            </p>
+          </h2>
         </ParallaxLayer>
         <ParallaxLayer
-          offset={5.95}
-          speed={1}
+          offset={5.79}
+          speed={0.41}
+          factor={.85}
           style={{
             backgroundImage:
               'url("https://www.seekpng.com/png/full/13-137266_singing-sand-dune-erg-sand.png")',
@@ -184,8 +189,8 @@ const LandingPage = () => {
           }}
         ></ParallaxLayer>
         <ParallaxLayer
-          offset={5.61}
-          speed={0.25}
+          offset={5.41}
+          speed={0.22}
           style={{
             backgroundImage:
               'url("https://www.nicepng.com/png/full/1-15276_sun-png-clip-art-planet-sun-clipart.png")',
@@ -195,7 +200,7 @@ const LandingPage = () => {
           }}
         ></ParallaxLayer>
         <ParallaxLayer
-          offset={5.3}
+          offset={5.2}
           speed={0.1}
           style={{
             backgroundImage:
@@ -206,7 +211,7 @@ const LandingPage = () => {
           }}
         ></ParallaxLayer>
         <ParallaxLayer
-          offset={6}
+          offset={6.41}
           speed={1}
           // style={{
           //   backgroundImage:
@@ -225,14 +230,14 @@ const LandingPage = () => {
             {/* It would  be nice to have each of these paragraphs fade-in/out (in a fixed position) while the user
             scrolls. Its a better build up to the final question/galaxy view */}
 
-            <p className="landingTextFinal">
+            {/* <p className="landingTextFinal">
               For centuries, fictional depictions of planets orbiting other
               stars have fired our imagination. From the desert world of Arrakis
               in Dune to the lush jungles of Yoda's planet Dagobah in Star Wars,
               we humans have been fascinated with the idea of exotic, far-off
               worlds.
-            </p>
-            <br></br>
+            </p> */}
+            {/* <br></br> */}
 
             <p className="landingTextFinal">
               We now know that worlds beyond our solar system — known as
@@ -240,15 +245,60 @@ const LandingPage = () => {
               Scientists have found over 5,000 exoplanets, and think that most
               stars have their own solar systems.
             </p>
-            <br></br>
-            <p className="landingTextFinal">
+            {/* <br></br> */}
+            {/* <p className="landingTextFinal">
               Some exoplanets are surprisingly similar to fictional worlds we've
               imagined, while others have turned out to be more exotic than
               anything we could have dreamed.
-            </p>
+            </p> */}
           </h2>
         </ParallaxLayer>
-        <ParallaxLayer offset={7.3} speed={2} factor={0.5}>
+        <ParallaxLayer
+          offset={6.7}
+          speed={1}
+          style={{
+            backgroundImage:
+              'url("https://upload.wikimedia.org/wikipedia/commons/6/60/Bringer_of_War_Planet.png")',
+            backgroundPositionX: '7%',
+            zIndex: '-3',
+            backgroundSize: '25%',
+          }}
+        ></ParallaxLayer>
+
+        <ParallaxLayer
+          offset={6.64}
+          speed={0.75}
+          style={{
+            backgroundImage:
+              'url("https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Arcadian_Planet_Beta.png/640px-Arcadian_Planet_Beta.png")',
+            backgroundPositionX: '48%',
+            zIndex: '-3',
+            backgroundSize: '25%',
+          }}
+        ></ParallaxLayer>
+
+        <ParallaxLayer
+          offset={6.7}
+          speed={1.2}
+          style={{
+            backgroundImage:
+              'url("https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Gajillion_Islands_Planet.png/640px-Gajillion_Islands_Planet.png")',
+            backgroundPositionX: '99%',
+            zIndex: '-3',
+            backgroundSize: '20%',
+          }}
+        ></ParallaxLayer>
+
+        <ParallaxLayer offset={7} speed={1} factor={0.1}>
+          <h2 className="text">
+              Some exoplanets are surprisingly similar to fictional worlds we've
+              imagined, while others have turned out to be more exotic than
+              anything we could have dreamed.
+ </h2>
+        </ParallaxLayer>
+
+
+        <ParallaxLayer offset={7.999} speed={2} factor={0.5}>
           <h2 className="centerText">Where would you like to go first?</h2>
         </ParallaxLayer>
         {/* <ParallaxLayer
@@ -264,7 +314,7 @@ const LandingPage = () => {
           <h2 className="centerOffsetLeftText">That's here.</h2>
           <h2 className="centerOffsetRightText">That's home.</h2>
         </ParallaxLayer> */}
-        <ParallaxLayer offset={7.3} speed={0.5}>
+        <ParallaxLayer offset={8} speed={0.75}>
           <div id="milkyWayLandingPageContainer">
             <section id="milkyWayLandingPage">
               <img
