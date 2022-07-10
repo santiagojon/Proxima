@@ -176,7 +176,7 @@ const LandingPage = () => {
             </p>
           </h2>
         </ParallaxLayer>
-        <ParallaxLayer
+        {/* <ParallaxLayer
           offset={5.79}
           speed={0.41}
           factor={.85}
@@ -187,7 +187,23 @@ const LandingPage = () => {
             zIndex: '-1',
             backgroundSize: '100%',
           }}
-        ></ParallaxLayer>
+        ></ParallaxLayer> */}
+        <ParallaxLayer
+          offset={5.79}
+          speed={0.41}
+          factor={0.85}
+          // style={{
+          //   backgroundImage: 'url(src="dune.png")',
+          //   backgroundPositionX: '50%',
+          //   zIndex: '-1',
+          //   backgroundSize: '100%',
+          // }}
+        >
+          <img className='dune'
+            src="dune.png"
+            alt="dunes"
+          />
+        </ParallaxLayer>
         <ParallaxLayer
           offset={5.41}
           speed={0.22}
@@ -291,12 +307,11 @@ const LandingPage = () => {
 
         <ParallaxLayer offset={7} speed={1} factor={0.1}>
           <h2 className="text">
-              Some exoplanets are surprisingly similar to fictional worlds we've
-              imagined, while others have turned out to be more exotic than
-              anything we could have dreamed.
- </h2>
+            Some exoplanets are surprisingly similar to fictional worlds we've
+            imagined, while others have turned out to be more exotic than
+            anything we could have dreamed.
+          </h2>
         </ParallaxLayer>
-
 
         <ParallaxLayer offset={7.999} speed={2} factor={0.5}>
           <h2 className="centerText">Where would you like to go first?</h2>

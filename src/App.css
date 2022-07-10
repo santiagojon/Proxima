@@ -128,7 +128,7 @@ Landing Page  */
   position: fixed;
   max-width: 50rem;
   /* text-align: center; */
-left: 15%;
+  left: 15%;
   /* top:40%; */
   color: white;
   font-weight: 400;
@@ -377,14 +377,10 @@ Single Planet */
   left: 10%;
 }
 
-
 /* https://i.gifer.com/Bayw.gif */
 /* https://img1.cgtrader.com/items/2867081/b970c04482/large/mars-planet-with-8k-textures-3d-model-obj.jpg */
 
-
-
 /* starwars    https://www.iconspng.com/uploads/spaceship.png */
-
 
 /* spaceshuttle https://cdn.pixabay.com/photo/2019/05/01/14/25/space-4171004_960_720.png */
 
@@ -402,53 +398,70 @@ https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Gajillion_Islands_Plan
 
  */
 
-
-
-
 /* stars bg */
 @keyframes move-twink-back {
-  from {background-position:0 0;}
-  to {background-position:-10000px 5000px;}
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -10000px 5000px;
+  }
 }
 @-webkit-keyframes move-twink-back {
-  from {background-position:0 0;}
-  to {background-position:-10000px 5000px;}
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -10000px 5000px;
+  }
 }
 @-moz-keyframes move-twink-back {
-  from {background-position:0 0;}
-  to {background-position:-10000px 5000px;}
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -10000px 5000px;
+  }
 }
 @-ms-keyframes move-twink-back {
-  from {background-position:0 0;}
-  to {background-position:-10000px 5000px;}
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -10000px 5000px;
+  }
 }
 
-
-
-.stars, .twinkling {
-position:absolute;
-top:0;
-left:0;
-right:0;
-bottom:0;
-width:100%;
-height:100%;
-display:block;
+.stars,
+.twinkling {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 .stars {
-background:#000 url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top center;
-z-index:0;
+  background: #000
+    url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top
+    center;
+  z-index: 0;
 }
 
-.twinkling{
-/* background:transparent url(http://www.script-tutorials.com/demos/360/images/twinkling.png) repeat top center; */
-/* z-index:-1; */
+.twinkling {
+  /* background:transparent url(http://www.script-tutorials.com/demos/360/images/twinkling.png) repeat top center; */
+  /* z-index:-1; */
 
--moz-animation:move-twink-back 200s linear infinite;
--ms-animation:move-twink-back 200s linear infinite;
--o-animation:move-twink-back 200s linear infinite;
--webkit-animation:move-twink-back 200s linear infinite;
-animation:move-twink-back 200s linear infinite;
+  -moz-animation: move-twink-back 200s linear infinite;
+  -ms-animation: move-twink-back 200s linear infinite;
+  -o-animation: move-twink-back 200s linear infinite;
+  -webkit-animation: move-twink-back 200s linear infinite;
+  animation: move-twink-back 200s linear infinite;
 }
 
+.dune {
+  width: 100%;
+}
