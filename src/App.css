@@ -386,3 +386,58 @@ Single Planet */
 
 
 /* spaceshuttle https://cdn.pixabay.com/photo/2019/05/01/14/25/space-4171004_960_720.png */
+
+/* dunes https://www.seekpng.com/png/full/13-137266_singing-sand-dune-erg-sand.png */
+
+/* sun https://www.nicepng.com/png/full/1-15276_sun-png-clip-art-planet-sun-clipart.png */
+
+/* dune https://d494u2iqg624y.cloudfront.net/picture_material_preview/2021/12/03/a1a3fbf8fe934372b1881a89e8c77ac0.png */
+
+
+/* stars bg */
+@keyframes move-twink-back {
+  from {background-position:0 0;}
+  to {background-position:-10000px 5000px;}
+}
+@-webkit-keyframes move-twink-back {
+  from {background-position:0 0;}
+  to {background-position:-10000px 5000px;}
+}
+@-moz-keyframes move-twink-back {
+  from {background-position:0 0;}
+  to {background-position:-10000px 5000px;}
+}
+@-ms-keyframes move-twink-back {
+  from {background-position:0 0;}
+  to {background-position:-10000px 5000px;}
+}
+
+
+
+.stars, .twinkling {
+position:absolute;
+top:0;
+left:0;
+right:0;
+bottom:0;
+width:100%;
+height:100%;
+display:block;
+}
+
+.stars {
+background:#000 url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top center;
+z-index:0;
+}
+
+.twinkling{
+/* background:transparent url(http://www.script-tutorials.com/demos/360/images/twinkling.png) repeat top center; */
+/* z-index:-1; */
+
+-moz-animation:move-twink-back 200s linear infinite;
+-ms-animation:move-twink-back 200s linear infinite;
+-o-animation:move-twink-back 200s linear infinite;
+-webkit-animation:move-twink-back 200s linear infinite;
+animation:move-twink-back 200s linear infinite;
+}
+

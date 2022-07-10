@@ -1,7 +1,7 @@
 import React, { useEffect, Suspense, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Parallax, ParallaxLayer } from '@react-spring/parallax';
-
+import BgStars from './BgStars';
 import LandingPageIntroAnimation from './LandingPageIntroAnimation';
 
 //choose font
@@ -13,50 +13,9 @@ import LandingPageIntroAnimation from './LandingPageIntroAnimation';
 //clean up buttons/change colors
 
 const LandingPage = () => {
-  //Header fade-out
-  const header = document.getElementById('introLandingPageContainer');
-
-  function fadeOutOnScroll(element) {
-    if (!element) {
-      return;
-    }
-
-    let distanceToTop = window.scrollY + element.getBoundingClientRect().top;
-    console.log('DtT', distanceToTop);
-    const elementHeight = element.offsetHeight;
-    console.log('eHeight', elementHeight);
-    const scrollTop = document.documentElement.scrollTop + 1;
-    console.log('SCROLLTOP', scrollTop);
-
-    let opacity = 1;
-    console.log('opacity', opacity);
-
-    if (scrollTop > distanceToTop) {
-      // if (window.scrollY > 400) {
-      opacity = 1 - (scrollTop - distanceToTop) / (elementHeight / 2);
-    }
-
-    if (opacity >= 0) {
-      element.style.opacity = opacity;
-    }
-  }
-
-  useEffect(() => {
-    function scrollHandler() {
-      fadeOutOnScroll(header);
-      console.log('window.scrollY', window.scrollY);
-    }
-    window.addEventListener('scroll', scrollHandler);
-    return () => {
-      window.removeEventListener('scroll', scrollHandler);
-    };
-  }, []);
-
-  //Header fade-out end
-
   return (
     <div className="landingPage">
-      <Parallax pages={6}>
+      <Parallax pages={8}>
         <ParallaxLayer
           id="heroContainer"
           factor={1.5}
@@ -145,8 +104,20 @@ const LandingPage = () => {
             our own solar system: its planets, moons, asteroids, and more.
           </h2>
         </ParallaxLayer>
-
-        <ParallaxLayer offset={3.21} speed={0.2}>
+        <ParallaxLayer
+          offset={3}
+          factor={2}
+          style={{ zIndex: '-10' }}
+          speed={0.5}
+        >
+          <BgStars />
+        </ParallaxLayer>
+        <ParallaxLayer
+          className="background"
+          offset={3}
+          factor={2}
+        ></ParallaxLayer>
+        <ParallaxLayer offset={3.3} speed={0.2}>
           <h2 className="text">
             Eventually, humanity will begin settling in these places.
           </h2>
@@ -157,44 +128,85 @@ const LandingPage = () => {
           </h2>
         </ParallaxLayer>
         <ParallaxLayer
-          offset={3.39}
-          speed={0.1}
+          offset={3.49}
+          speed={0.75}
           style={{
             backgroundImage:
               'url("https://img1.cgtrader.com/items/2867081/b970c04482/large/mars-planet-with-8k-textures-3d-model-obj.jpg")',
             backgroundPositionX: '65%',
             zIndex: '-1',
-            backgroundSize: '40%',
+            backgroundSize: '35%',
           }}
         ></ParallaxLayer>
         <ParallaxLayer
-          offset={3.6}
-          speed={1.75}
+          offset={3.7}
+          speed={2}
           style={{
             backgroundImage:
               'url("https://pluspng.com/img-png/planet-png-hd-mqo-class-planet-png-1024.png")',
             backgroundPositionX: '63%',
             zIndex: '-1',
-            backgroundSize: '40%',
+            backgroundSize: '36%',
           }}
         ></ParallaxLayer>
 
-        <ParallaxLayer offset={4} speed={2}>
+        <ParallaxLayer offset={4.5} speed={2} factor={0.5}>
           <h2 className="rightText">But where else will we go?</h2>
         </ParallaxLayer>
         <ParallaxLayer
-          offset={4}
-          speed={3}
+          offset={4.3}
+          speed={1}
           style={{
             backgroundImage:
               'url("https://cdn.pixabay.com/photo/2019/05/01/14/25/space-4171004_960_720.png")',
             backgroundPositionX: '50%',
             zIndex: '-1',
-            backgroundSize: '35c%',
+            backgroundSize: '45%',
+          }}
+        ></ParallaxLayer>
+        <ParallaxLayer offset={5} speed={0.13} factor={0.5}>
+          <p className="centerText">
+            For centuries, fictional depictions of planets orbiting other stars
+            have fired our imagination. From the desert world of Arrakis in Dune
+            to the lush jungles of Yoda's planet Dagobah in Star Wars, we humans
+            have been fascinated with the idea of exotic, far-off worlds.
+          </p>
+        </ParallaxLayer>
+        <ParallaxLayer
+          offset={5.95}
+          speed={1}
+          style={{
+            backgroundImage:
+              'url("https://www.seekpng.com/png/full/13-137266_singing-sand-dune-erg-sand.png")',
+            backgroundPositionX: '50%',
+            zIndex: '-1',
+            backgroundSize: '100%',
           }}
         ></ParallaxLayer>
         <ParallaxLayer
-          offset={4}
+          offset={5.61}
+          speed={0.25}
+          style={{
+            backgroundImage:
+              'url("https://www.nicepng.com/png/full/1-15276_sun-png-clip-art-planet-sun-clipart.png")',
+            backgroundPositionX: '50%',
+            zIndex: '-2',
+            backgroundSize: '18%',
+          }}
+        ></ParallaxLayer>
+        <ParallaxLayer
+          offset={5.3}
+          speed={0.1}
+          style={{
+            backgroundImage:
+              'url("https://ewscripps.brightspotcdn.com/dims4/default/587b3dc/2147483647/strip/true/crop/1280x720+0+67/resize/1280x720!/quality/90/?url=http%3A%2F%2Fewscripps-brightspot.s3.amazonaws.com%2Fab%2Fff%2F89135384404dbb4f49ac6f1f0d72%2Fmicrosoftteams-image.png")',
+            backgroundPositionX: '10%',
+            zIndex: '-3',
+            backgroundSize: '50%',
+          }}
+        ></ParallaxLayer>
+        <ParallaxLayer
+          offset={6}
           speed={1}
           // style={{
           //   backgroundImage:
@@ -236,7 +248,7 @@ const LandingPage = () => {
             </p>
           </h2>
         </ParallaxLayer>
-        <ParallaxLayer offset={4.3} speed={2} factor={0.5}>
+        <ParallaxLayer offset={7.3} speed={2} factor={0.5}>
           <h2 className="centerText">Where would you like to go first?</h2>
         </ParallaxLayer>
         {/* <ParallaxLayer
@@ -252,7 +264,7 @@ const LandingPage = () => {
           <h2 className="centerOffsetLeftText">That's here.</h2>
           <h2 className="centerOffsetRightText">That's home.</h2>
         </ParallaxLayer> */}
-        <ParallaxLayer offset={4.8} speed={0.5}>
+        <ParallaxLayer offset={7.3} speed={0.5}>
           <div id="milkyWayLandingPageContainer">
             <section id="milkyWayLandingPage">
               <img
