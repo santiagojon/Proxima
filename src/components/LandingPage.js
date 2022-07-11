@@ -203,7 +203,7 @@ const LandingPage = () => {
           <img className="dune" src="dune.png" alt="dunes" />
         </ParallaxLayer>
         <ParallaxLayer
-          offset={3.51}
+          offset={3.61}
           speed={0.24}
           style={{
             backgroundImage:
@@ -215,7 +215,7 @@ const LandingPage = () => {
         ></ParallaxLayer>
         {/* https://ewscripps.brightspotcdn.com/dims4/default/587b3dc/2147483647/strip/true/crop/1280x720+0+67/resize/1280x720!/quality/90/?url=http%3A%2F%2Fewscripps-brightspot.s3.amazonaws.com%2Fab%2Fff%2F89135384404dbb4f49ac6f1f0d72%2Fmicrosoftteams-image.png */}
         <ParallaxLayer
-          offset={3.3}
+          offset={3.4}
           speed={0.1}
           style={{
             backgroundImage:
