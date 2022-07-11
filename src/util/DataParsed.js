@@ -3,6 +3,75 @@ import { textures } from "./Textures";
 import react from "react";
 const data = [
   {
+    id: 10,
+    planetName: "tau Cet e",
+    starName: "tau Cet",
+    numberOfStars: "1",
+    numberOfPlanets: "4",
+    discoveryMethod: "Radial Velocity",
+    yearDiscovered: "2017",
+    discoveryFacility: "Multiple Observatories",
+    planetOrbitTimeD: "162.87000000",
+    orbitDistanceAU: "0.538000",
+    planetRadiusE: "1.810",
+    planetMassE: "3.93000",
+    planetDensity: "3.640000",
+    planetOrbitEccentricity: "0.180000",
+    planetTemp: 299,
+    planetOrbitToStarRatio: null,
+    starSpectralType: "G8.5V",
+    starTempK: "5310.00",
+    starRadiusS: "0.83",
+    starMassS: "0.78",
+    starLuminosity: "-0.305",
+    starAge: "12.120",
+    starDensity: "2.24358",
+    starRotationVelocity: "1.8000",
+    starRotationTimeD: "34.50",
+    gLat: "-73.44240",
+    gLon: "173.07319",
+    eclipticLat: "-24.80956",
+    eclipticLon: "17.81270",
+    distancePC: "3.6030400",
+    createdAt: "2022-07-05T20:18:55.695Z",
+    updatedAt: "2022-07-05T20:18:55.695Z",
+  },
+
+  {
+    id: 9,
+    planetName: "tau Cet f",
+    starName: "tau Cet",
+    numberOfStars: "1",
+    numberOfPlanets: "4",
+    discoveryMethod: "Radial Velocity",
+    yearDiscovered: "2017",
+    discoveryFacility: "Multiple Observatories",
+    planetOrbitTimeD: "636.13000000",
+    orbitDistanceAU: "1.334000",
+    planetRadiusE: "1.810",
+    planetMassE: "3.93000",
+    planetDensity: "3.640000",
+    planetOrbitEccentricity: "0.160000",
+    planetTemp: 79,
+    planetOrbitToStarRatio: null,
+    starSpectralType: "G8.5V",
+    starTempK: "5310.00",
+    starRadiusS: "0.83",
+    starMassS: "0.78",
+    starLuminosity: "-0.305",
+    starAge: "12.120",
+    starDensity: "2.24358",
+    starRotationVelocity: "1.8000",
+    starRotationTimeD: "34.50",
+    gLat: "-73.44240",
+    gLon: "173.07319",
+    eclipticLat: "-24.80956",
+    eclipticLon: "17.81270",
+    distancePC: "3.6030400",
+    createdAt: "2022-07-05T20:18:55.695Z",
+    updatedAt: "2022-07-05T20:18:55.695Z",
+  },
+  {
     id: 8,
     planetName: "tau Cet g",
     starName: "tau Cet",
@@ -73,41 +142,6 @@ const data = [
   },
 ];
 
-// const data = {
-//   id: 6,
-//   planetName: 'tau Cet h',
-//   starName: 'tau Cet',
-//   numberOfStars: '1',
-//   numberOfPlanets: '4',
-//   discoveryMethod: 'Radial Velocity',
-//   yearDiscovered: '2017',
-//   discoveryFacility: 'Multiple Observatories',
-//   planetOrbitTimeD: '49.41000000',
-//   orbitDistanceAU: '0.243000',
-//   planetRadiusE: '1.190',
-//   planetMassE: '1.83000',
-//   planetDensity: '5.970000',
-//   planetOrbitEccentricity: '0.230000',
-//   planetTemp: null,
-//   planetOrbitToStarRatio: null,
-//   starSpectralType: 'G8.5V',
-//   starTempK: '5310.00',
-//   starRadiusS: '0.83',
-//   starMassS: '0.78',
-//   starLuminosity: '-0.305',
-//   starAge: '12.120',
-//   starDensity: '2.24358',
-//   starRotationVelocity: '1.8000',
-//   starRotationTimeD: '34.50',
-//   gLat: '-73.44240',
-//   gLon: '173.07319',
-//   eclipticLat: '-24.80956',
-//   eclipticLon: '17.81270',
-//   distancePC: '3.6030400',
-//   createdAt: '2022-07-05T20:18:55.695Z',
-//   updatedAt: '2022-07-05T20:18:55.695Z',
-// };
-
 const canvasWidth = 2048;
 const canvasHeight = canvasWidth / 2;
 
@@ -148,7 +182,7 @@ export function rgbFinder(temp) {
   if (red > 230) red = 230;
   else if (red < 127) red = 127;
 
-  let green = red / 2 + 50;
+  let green = Math.floor(red / 2 + 50);
   if (green < 127) green = 127;
 
   let blue = 127;
@@ -245,10 +279,16 @@ export default function dataParser(data) {
       orbitSpeed: 0,
       orbitPlanet: [],
     });
+    console.log(
+      "planet type",
+      textureFinder(data[i].planetMassE, data[i].planetTemp)
+    );
+    console.log("RGB", rgbFinder(data[i].planetTemp));
     textureGenerator(
       textureFinder(data[i].planetMassE, data[i].planetTemp),
       rgbFinder(data[i].planetTemp),
       function (result) {
+        console.log("running planet");
         planets[i].image = result;
       }
     );
