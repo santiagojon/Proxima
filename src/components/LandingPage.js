@@ -63,12 +63,13 @@ const LandingPage = () => {
         <ParallaxLayer
           className="moon"
           offset={1.1}
+          factor={1.3}
           speed={1}
           style={{
             backgroundImage:
               'url("https://d494u2iqg624y.cloudfront.net/picture_material_original/2021/12/15/d1a5227713c74d10bc2ef77c220e1c62.png")',
             backgroundPositionX: '25%',
-            // backgroundSize: '75%'
+            backgroundSize: '55%'
           }}
         >
           <div className="centerText">
