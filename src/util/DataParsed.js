@@ -17,7 +17,7 @@ const data = [
     planetMassE: "1.83000",
     planetDensity: "5.970000",
     planetOrbitEccentricity: "0.230000",
-    planetTemp: 600,
+    planetTemp: 599,
     planetOrbitToStarRatio: null,
     starSpectralType: "G8.5V",
     starTempK: "5310.00",
@@ -47,11 +47,11 @@ const data = [
     discoveryFacility: "Multiple Observatories",
     planetOrbitTimeD: "20.00000000",
     orbitDistanceAU: "0.133000",
-    planetRadiusE: "1.180",
+    planetRadiusE: "2.180",
     planetMassE: "1.75000",
     planetDensity: "5.850000",
     planetOrbitEccentricity: "0.060000",
-    planetTemp: 800,
+    planetTemp: 799,
     planetOrbitToStarRatio: null,
     starSpectralType: "G8.5V",
     starTempK: "5310.00",
@@ -85,7 +85,7 @@ const data = [
     planetMassE: "3.93000",
     planetDensity: "3.640000",
     planetOrbitEccentricity: "0.160000",
-    planetTemp: 80,
+    planetTemp: 79,
     planetOrbitToStarRatio: null,
     starSpectralType: "G8.5V",
     starTempK: "5310.00",
@@ -119,7 +119,7 @@ const data = [
     planetMassE: "3.93000",
     planetDensity: "3.640000",
     planetOrbitEccentricity: "0.180000",
-    planetTemp: 300,
+    planetTemp: 299,
     planetOrbitToStarRatio: null,
     starSpectralType: "G8.5V",
     starTempK: "5310.00",
@@ -191,11 +191,10 @@ export const textureGenerator = (planetType, planetColor, callBack) => {
   img.onload = function () {
     ctx.drawImage(img, 0, 0, canvasWidth, canvasHeight);
     ctx.globalCompositeOperation = "multiply";
-    ctx.fillStyle = "rgb(193, 253, 255)";
+    ctx.fillStyle = `rgb(${planetColor[0]}, ${planetColor[1]}, ${planetColor[2]})`;
     ctx.fillRect(0, 0, canvasWidth, canvasHeight);
     const newImg = new Image();
     newImg.onload = function () {
-      console.log("IMAGE", newImg);
       callBack(newImg.src);
     };
     newImg.src = canvas.toDataURL();
@@ -332,44 +331,7 @@ export default function dataParser(data) {
     );
     console.log("PLANET INFO!", planets[i]);
   }
-  // data[0]
-  //   ? //getting all planets parsed
-  //     data.forEach((data) => {
-  //       planets.push({
-  //         name: data.planetName,
-  //         position: [(23480 * data.orbitDistanceAU * 0.75) / 100, 0, 0],
-  //         globeRGB: rgbFinder(data.planetTemp), //get rgb data
-  //         compareEarthSize: data.planetRadiusE * 5,
-  //         image: textureGenerator(
-  //           textureFinder(data.planetMassE, data.planetTemp),
-  //           rgbFinder(data.planetTemp),
-  //           function (result) {
-  //             console.log(result);
-  //           }
-  //         ), //classify planet to get image
-  //         speed: 0,
-  //         sun: false,
-  //         orbitSpeed: 0,
-  //         orbitPlanet: [],
-  //       });
-  //     })
-  //   : planets.push({
-  //       name: data.planetName,
-  //       position: [(23480 * data.orbitDistanceAU * 0.75) / 10, 0, 0],
-  //       globeRGB: rgbFinder(data.planetTemp), //get rgb data
-  //       // atmosphereRGB: [0, 0, 0],
-  //       compareEarthSize: data.planetRadiusE * 5,
-  //       image: "earth.jpg",
-  //       // image: textureGenerator(
-  //       //   textureFinder(data.planetMassE, data.planetTemp),
-  //       //   rgbFinder(rgbFinder(data.planetTemp), returnFunc)
-  //       // ), //classify planet to get image
-  //       speed: 0,
-  //       sun: false,
-  //       orbitSpeed: 0,
-  //       orbitPlanet: [],
-  //     });
-  //making only one star and passing all planets to it
+
   const sun = {
     name: data.starName,
     position: [0, 0, 0],
