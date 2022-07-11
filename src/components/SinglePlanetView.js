@@ -7,7 +7,6 @@ import { useRef, useState } from "react";
 import Planet from "./Planet";
 
 const SinglePlanetView = (props) => {
-  console.log("SINGLEPLANET_PROPS", props);
   const ref = useRef();
   let planetRef = useRef([]);
   const speed = props.planetInfo.speed || 0.0;

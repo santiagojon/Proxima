@@ -4,11 +4,9 @@ const canvasWidth = 2048;
 const canvasHeight = canvasWidth / 2;
 
 export const textureGenerator = (planetType, planetColor, callBack) => {
-  console.log("inside texture gen");
   const img = new Image();
   const canvas = document.createElement("canvas");
   let ctx = canvas.getContext("2d");
-  console.log(ctx);
   canvas.width = canvasWidth;
   canvas.height = canvasHeight;
   img.onload = function () {

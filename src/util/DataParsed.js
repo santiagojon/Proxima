@@ -3,40 +3,6 @@ import { textures } from "./Textures";
 import react from "react";
 const data = [
   {
-    id: 6,
-    planetName: "tau Cet h",
-    starName: "tau Cet",
-    numberOfStars: "1",
-    numberOfPlanets: "4",
-    discoveryMethod: "Radial Velocity",
-    yearDiscovered: "2017",
-    discoveryFacility: "Multiple Observatories",
-    planetOrbitTimeD: "49.41000000",
-    orbitDistanceAU: "0.243000",
-    planetRadiusE: "1.190",
-    planetMassE: "1.83000",
-    planetDensity: "5.970000",
-    planetOrbitEccentricity: "0.230000",
-    planetTemp: 599,
-    planetOrbitToStarRatio: null,
-    starSpectralType: "G8.5V",
-    starTempK: "5310.00",
-    starRadiusS: "0.83",
-    starMassS: "0.78",
-    starLuminosity: "-0.305",
-    starAge: "12.120",
-    starDensity: "2.24358",
-    starRotationVelocity: "1.8000",
-    starRotationTimeD: "34.50",
-    gLat: "-73.44240",
-    gLon: "173.07319",
-    eclipticLat: "-24.80956",
-    eclipticLon: "17.81270",
-    distancePC: "3.6030400",
-    createdAt: "2022-07-05T20:18:55.695Z",
-    updatedAt: "2022-07-05T20:18:55.695Z",
-  },
-  {
     id: 8,
     planetName: "tau Cet g",
     starName: "tau Cet",
@@ -70,56 +36,23 @@ const data = [
     createdAt: "2022-07-05T20:18:55.695Z",
     updatedAt: "2022-07-05T20:18:55.695Z",
   },
+
   {
-    id: 9,
-    planetName: "tau Cet f",
+    id: 6,
+    planetName: "tau Cet h",
     starName: "tau Cet",
     numberOfStars: "1",
     numberOfPlanets: "4",
     discoveryMethod: "Radial Velocity",
     yearDiscovered: "2017",
     discoveryFacility: "Multiple Observatories",
-    planetOrbitTimeD: "636.13000000",
-    orbitDistanceAU: "1.334000",
-    planetRadiusE: "1.810",
-    planetMassE: "3.93000",
-    planetDensity: "3.640000",
-    planetOrbitEccentricity: "0.160000",
-    planetTemp: 79,
-    planetOrbitToStarRatio: null,
-    starSpectralType: "G8.5V",
-    starTempK: "5310.00",
-    starRadiusS: "0.83",
-    starMassS: "0.78",
-    starLuminosity: "-0.305",
-    starAge: "12.120",
-    starDensity: "2.24358",
-    starRotationVelocity: "1.8000",
-    starRotationTimeD: "34.50",
-    gLat: "-73.44240",
-    gLon: "173.07319",
-    eclipticLat: "-24.80956",
-    eclipticLon: "17.81270",
-    distancePC: "3.6030400",
-    createdAt: "2022-07-05T20:18:55.695Z",
-    updatedAt: "2022-07-05T20:18:55.695Z",
-  },
-  {
-    id: 10,
-    planetName: "tau Cet e",
-    starName: "tau Cet",
-    numberOfStars: "1",
-    numberOfPlanets: "4",
-    discoveryMethod: "Radial Velocity",
-    yearDiscovered: "2017",
-    discoveryFacility: "Multiple Observatories",
-    planetOrbitTimeD: "162.87000000",
-    orbitDistanceAU: "0.538000",
-    planetRadiusE: "1.810",
-    planetMassE: "3.93000",
-    planetDensity: "3.640000",
-    planetOrbitEccentricity: "0.180000",
-    planetTemp: 299,
+    planetOrbitTimeD: "49.41000000",
+    orbitDistanceAU: "0.243000",
+    planetRadiusE: "1.190",
+    planetMassE: "1.83000",
+    planetDensity: "5.970000",
+    planetOrbitEccentricity: "0.230000",
+    planetTemp: 599,
     planetOrbitToStarRatio: null,
     starSpectralType: "G8.5V",
     starTempK: "5310.00",
@@ -179,13 +112,9 @@ const canvasWidth = 2048;
 const canvasHeight = canvasWidth / 2;
 
 export const textureGenerator = (planetType, planetColor, callBack) => {
-  console.log("planetType", planetType);
-  console.log("RGB", planetColor);
-  console.log("inside texture gen");
   const img = new Image();
   const canvas = document.createElement("canvas");
   let ctx = canvas.getContext("2d");
-  console.log(ctx);
   canvas.width = canvasWidth;
   canvas.height = canvasHeight;
   img.onload = function () {
@@ -210,12 +139,7 @@ const texturePicker = (planetType, planetColor) => {
   return textureArr[planetColorSum % textureArrLength];
 };
 
-const returnFunc = (img) => {
-  return img;
-};
-
 export function rgbFinder(temp) {
-  console.log("TEMP!", temp);
   if (temp === "null" || !temp) {
     return [127, 127, 127];
   }
@@ -262,7 +186,6 @@ export function textureFinder(mass, temp) {
 
 const sunRGB = (data) => {
   if (!data.spectralType && !data.starTempK) return [255, 204, 111];
-  console.log(data.starSpectralType[0]);
   //rawData.spectralType[0]
   if (data.starSpectralType[0]) {
     switch (data.starSpectralType[0]) {
@@ -329,17 +252,16 @@ export default function dataParser(data) {
         planets[i].image = result;
       }
     );
-    console.log("PLANET INFO!", planets[i]);
   }
 
   const sun = {
-    name: data.starName,
+    name: data[0].starName,
     position: [0, 0, 0],
     globeRGB: sunRGB(data),
     atmosphereRGB: [255, 204, 111],
     image: "sun.jpg",
     // image: textureGenerator(this.globeRGB),
-    compareEarthSize: data.starRadiusS * 109.3,
+    compareEarthSize: data[0].starRadiusS * 20.3,
     sun: true,
     orbitPlanet: planets,
   };
