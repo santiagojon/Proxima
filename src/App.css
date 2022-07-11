@@ -47,7 +47,7 @@ Landing Page  */
 .landingPage div {
   /* background-color: black; */
   /* justify-content: center; */
-  font-family: "Times New Roman", Times, serif;
+  font-family: 'Times New Roman', Times, serif;
   /* height: 100rem; */
 }
 
@@ -153,6 +153,13 @@ Landing Page  */
   color: white;
   font-weight: 300;
   animation: slide-up 3s;
+}
+.textLower {
+  color: rgb(235, 232, 227);
+  text-align: center;
+  position: fixed;
+  top: 25%;
+justify-content: center;
 }
 
 .landingTextFinal {
@@ -471,7 +478,7 @@ https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Gajillion_Islands_Plan
 #infoPageContainer {
   background-color: black;
   color: white;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 #infoPageIntro {

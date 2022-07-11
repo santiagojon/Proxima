@@ -15,11 +15,11 @@ import LandingPageIntroAnimation from './LandingPageIntroAnimation';
 const LandingPage = () => {
   return (
     <div className="landingPage">
-      <Parallax pages={9.25}>
+      <Parallax pages={7.25}>
         <ParallaxLayer
           id="heroContainer"
-          factor={1.5}
-          sticky={{ start: 0, end: 1.75 }}
+          factor={1.3}
+          sticky={{ start: 0, end: 1.3 }}
         >
           {/* <div id="introLandingPageContainer"> */}
           {/* <section id="introLandingPage"></section> */}
@@ -29,8 +29,8 @@ const LandingPage = () => {
         <ParallaxLayer
           className="background"
           offset={1.2}
-          sticky={{ start: 1.3, end: 1.75 }}
-          factor={1.5}
+          sticky={{ start: 1.1, end: 1.3 }}
+          factor={1.3}
         ></ParallaxLayer>
         <ParallaxLayer offset={0}>
           <div id="introLandingPageContainer">
@@ -69,7 +69,7 @@ const LandingPage = () => {
             backgroundImage:
               'url("https://d494u2iqg624y.cloudfront.net/picture_material_original/2021/12/15/d1a5227713c74d10bc2ef77c220e1c62.png")',
             backgroundPositionX: '25%',
-            backgroundSize: '55%'
+            backgroundSize: '45%',
           }}
         >
           <div className="centerText">
@@ -81,32 +81,32 @@ const LandingPage = () => {
             </h2>
           </div>
         </ParallaxLayer>
-        <ParallaxLayer offset={1.95} speed={0.5}>
+        {/* <ParallaxLayer offset={1.95} speed={0.5}>
           <h2 className="centerOffsetLeftText">
             "...The Earth is the only world known so far to harbor life. There
             is nowhere else, at least in the near future, to which our species
             could migrate. Visit, yes. Settle, not yet. Like it or not, for the
             moment the Earth is where we make our stand..."
           </h2>
-        </ParallaxLayer>
+        </ParallaxLayer> */}
         <ParallaxLayer
-          offset={2.5}
+          offset={1.99}
           speed={0.75}
-          factor={1.2}
-          style={{
-            backgroundImage:
-              'url("https://c.tenor.com/KRIGLPCuG-4AAAAC/earth-planet.gif")',
+          factor={1}
+          // style={{
+          //   backgroundImage:
+          //     'url("https://c.tenor.com/KRIGLPCuG-4AAAAC/earth-planet.gif")',
 
-            backgroundSize: '35%',
-          }}
+          //   backgroundSize: '35%',
+          // }}
         >
-          <h2 className="rightText">
+          <h2 className="textLower">
             Over 30 years have passed since then. We've continued to learn about
             our own solar system: its planets, moons, asteroids, and more.
           </h2>
         </ParallaxLayer>
         <ParallaxLayer
-          offset={3}
+          offset={2}
           factor={8}
           style={{ zIndex: '-10' }}
           speed={0.5}
@@ -115,47 +115,47 @@ const LandingPage = () => {
         </ParallaxLayer>
         <ParallaxLayer
           className="background"
-          offset={3}
+          offset={2.5}
           factor={8}
           style={{ zIndex: '-9' }}
         ></ParallaxLayer>
-        <ParallaxLayer offset={3.3} speed={0.2}>
+        <ParallaxLayer offset={2.35} speed={0.2}>
           <h2 className="text">
             Eventually, humanity will begin settling in these places.
           </h2>
         </ParallaxLayer>
-        <ParallaxLayer offset={3.999} speed={0.35}>
+        <ParallaxLayer offset={2.999} speed={0.3}>
           <h2 className="text">
             Our species will spread out futher than our Pale Blue Dot.
           </h2>
         </ParallaxLayer>
         <ParallaxLayer
-          offset={3.49}
-          speed={0.75}
+          offset={2.49}
+          speed={0.65}
           style={{
             backgroundImage:
               'url("https://img1.cgtrader.com/items/2867081/b970c04482/large/mars-planet-with-8k-textures-3d-model-obj.jpg")',
-            backgroundPositionX: '65%',
+            backgroundPositionX: '50%',
             zIndex: '-1',
             backgroundSize: '35%',
           }}
         ></ParallaxLayer>
         <ParallaxLayer
-          offset={3.7}
+          offset={2.6}
           speed={2}
           style={{
             backgroundImage:
               'url("https://pluspng.com/img-png/planet-png-hd-mqo-class-planet-png-1024.png")',
-            backgroundPositionX: '63%',
+            backgroundPositionX: '48%',
             zIndex: '-1',
             backgroundSize: '36%',
           }}
         ></ParallaxLayer>
 
-        <ParallaxLayer offset={4.5} speed={2} factor={0.5}>
+        {/* <ParallaxLayer offset={4.5} speed={2} factor={0.5}>
           <h2 className="rightText">But where else will we go?</h2>
-        </ParallaxLayer>
-        <ParallaxLayer
+        </ParallaxLayer> */}
+        {/* <ParallaxLayer
           offset={4.3}
           speed={1}
           style={{
@@ -165,8 +165,8 @@ const LandingPage = () => {
             zIndex: '-1',
             backgroundSize: '45%',
           }}
-        ></ParallaxLayer>
-        <ParallaxLayer offset={5.1} speed={0.13}>
+        ></ParallaxLayer> */}
+        <ParallaxLayer offset={3.08} speed={0.1}>
           <h2>
             <p className="centerText">
               For centuries, fictional depictions of planets orbiting other
@@ -190,7 +190,7 @@ const LandingPage = () => {
           }}
         ></ParallaxLayer> */}
         <ParallaxLayer
-          offset={5.79}
+          offset={3.89}
           speed={0.41}
           factor={0.85}
           // style={{
@@ -200,35 +200,33 @@ const LandingPage = () => {
           //   backgroundSize: '100%',
           // }}
         >
-          <img className='dune'
-            src="dune.png"
-            alt="dunes"
-          />
+          <img className="dune" src="dune.png" alt="dunes" />
         </ParallaxLayer>
         <ParallaxLayer
-          offset={5.41}
-          speed={0.22}
+          offset={3.51}
+          speed={0.24}
+          style={{
+            backgroundImage:
+              'url("https://ewscripps.brightspotcdn.com/dims4/default/587b3dc/2147483647/strip/true/crop/1280x720+0+67/resize/1280x720!/quality/90/?url=http%3A%2F%2Fewscripps-brightspot.s3.amazonaws.com%2Fab%2Fff%2F89135384404dbb4f49ac6f1f0d72%2Fmicrosoftteams-image.png")',
+            backgroundPositionX: '50%',
+            zIndex: '-4',
+            backgroundSize: '50%',
+          }}
+        ></ParallaxLayer>
+        {/* https://ewscripps.brightspotcdn.com/dims4/default/587b3dc/2147483647/strip/true/crop/1280x720+0+67/resize/1280x720!/quality/90/?url=http%3A%2F%2Fewscripps-brightspot.s3.amazonaws.com%2Fab%2Fff%2F89135384404dbb4f49ac6f1f0d72%2Fmicrosoftteams-image.png */}
+        <ParallaxLayer
+          offset={3.3}
+          speed={0.1}
           style={{
             backgroundImage:
               'url("https://www.nicepng.com/png/full/1-15276_sun-png-clip-art-planet-sun-clipart.png")',
-            backgroundPositionX: '50%',
-            zIndex: '-2',
+            backgroundPositionX: '22%',
+            zIndex: '-3',
             backgroundSize: '18%',
           }}
         ></ParallaxLayer>
         <ParallaxLayer
-          offset={5.2}
-          speed={0.1}
-          style={{
-            backgroundImage:
-              'url("https://ewscripps.brightspotcdn.com/dims4/default/587b3dc/2147483647/strip/true/crop/1280x720+0+67/resize/1280x720!/quality/90/?url=http%3A%2F%2Fewscripps-brightspot.s3.amazonaws.com%2Fab%2Fff%2F89135384404dbb4f49ac6f1f0d72%2Fmicrosoftteams-image.png")',
-            backgroundPositionX: '10%',
-            zIndex: '-3',
-            backgroundSize: '50%',
-          }}
-        ></ParallaxLayer>
-        <ParallaxLayer
-          offset={6.41}
+          offset={4.41}
           speed={1}
           // style={{
           //   backgroundImage:
@@ -271,7 +269,7 @@ const LandingPage = () => {
           </h2>
         </ParallaxLayer>
         <ParallaxLayer
-          offset={6.7}
+          offset={4.7}
           speed={1}
           style={{
             backgroundImage:
@@ -283,7 +281,7 @@ const LandingPage = () => {
         ></ParallaxLayer>
 
         <ParallaxLayer
-          offset={6.64}
+          offset={4.64}
           speed={0.75}
           style={{
             backgroundImage:
@@ -295,7 +293,7 @@ const LandingPage = () => {
         ></ParallaxLayer>
 
         <ParallaxLayer
-          offset={6.7}
+          offset={4.7}
           speed={1.2}
           style={{
             backgroundImage:
@@ -306,7 +304,7 @@ const LandingPage = () => {
           }}
         ></ParallaxLayer>
 
-        <ParallaxLayer offset={7} speed={1} factor={0.1}>
+        <ParallaxLayer offset={5} speed={1} factor={0.1}>
           <h2 className="text">
             Some exoplanets are surprisingly similar to fictional worlds we've
             imagined, while others have turned out to be more exotic than
@@ -314,9 +312,20 @@ const LandingPage = () => {
           </h2>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={7.999} speed={2} factor={0.5}>
+        <ParallaxLayer offset={5.99} speed={1.79} factor={0.5}>
           <h2 className="centerText">Where would you like to go first?</h2>
         </ParallaxLayer>
+        <ParallaxLayer
+          offset={5.9999}
+          speed={1.4}
+          style={{
+            backgroundImage:
+              'url("https://cdn.pixabay.com/photo/2019/05/01/14/25/space-4171004_960_720.png")',
+            backgroundPositionX: '50%',
+            zIndex: '-1',
+            backgroundSize: '45%',
+          }}
+        ></ParallaxLayer>
         {/* <ParallaxLayer
           offset={2}
           speed={1}
@@ -330,7 +339,7 @@ const LandingPage = () => {
           <h2 className="centerOffsetLeftText">That's here.</h2>
           <h2 className="centerOffsetRightText">That's home.</h2>
         </ParallaxLayer> */}
-        <ParallaxLayer offset={8} speed={0.75}>
+        <ParallaxLayer offset={6} speed={0.75}>
           <div id="milkyWayLandingPageContainer">
             <section id="milkyWayLandingPage">
               <img
