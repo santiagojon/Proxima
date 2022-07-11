@@ -65,14 +65,15 @@ Landing Page  */
 }
 
 #introLandingPage {
-  /* position: absolute; */
+  position: relative;
   text-align: center;
   z-index: 1;
-  top: 25%;
-  left: 5%;
+  top: 20%;
+  /* left: 5%; */
   color: white;
   text-align: center;
-  margin-top: 500px;
+  margin-top: 21%;
+
   /* display: flex;
   flex-direction: column;
   justify-content: center;
@@ -82,8 +83,11 @@ Landing Page  */
 #introLandingPage h1 {
   font-size: 10rem;
   font-weight: 500;
-  margin: 5%;
+
+  position: relative;
+  /* margin: 25%; */
   margin-bottom: 2%;
+  /* top: 50%; */
   background-color: transparent;
 }
 
@@ -109,7 +113,7 @@ Landing Page  */
 
 #introLandingPage h2 {
   font-size: 100%;
-  margin: 0 25%;
+  margin: 0 29%;
   font-weight: 400;
 }
 
@@ -159,9 +163,8 @@ Landing Page  */
   /* text-align: center; */
   position: relative;
   top: 35%;
-text-align: center;
-/* max-width: 70%; */
-
+  text-align: center;
+  /* max-width: 70%; */
 }
 
 .landingTextFinal {
