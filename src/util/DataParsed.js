@@ -26,7 +26,7 @@ const data = [
     starLuminosity: "-0.305",
     starAge: "12.120",
     starDensity: "2.24358",
-    starRotationVelocity: "1.8000",
+    starRotationVelocity: "2",
     starRotationTimeD: "34.50",
     gLat: "-73.44240",
     gLon: "173.07319",
@@ -46,7 +46,7 @@ const data = [
     discoveryMethod: "Radial Velocity",
     yearDiscovered: "2017",
     discoveryFacility: "Multiple Observatories",
-    planetOrbitTimeD: "636.13000000",
+    planetOrbitTimeD: "36.13000000",
     orbitDistanceAU: "1.334000",
     planetRadiusE: "1.810",
     planetMassE: "3.93000",
@@ -175,17 +175,17 @@ const texturePicker = (planetType, planetColor) => {
 
 export function rgbFinder(temp) {
   if (temp === "null" || !temp) {
-    return [127, 127, 127];
+    return [150, 150, 150];
   }
 
   let red = Math.floor((temp / 600) * 230);
   if (red > 230) red = 230;
-  else if (red < 127) red = 127;
+  else if (red < 150) red = 150;
 
   let green = Math.floor(red / 2 + 50);
-  if (green < 127) green = 127;
+  if (green < 150) green = 150;
 
-  let blue = 127;
+  let blue = 150;
   if (temp < 150) blue = 150 - temp + 127;
   if (blue > 230) blue = 230;
 
@@ -274,9 +274,9 @@ export default function dataParser(data) {
       position: [(23480 * data[i].orbitDistanceAU * 0.75) / 100, 0, 0],
       globeRGB: rgbFinder(data[i].planetTemp), //get rgb data
       compareEarthSize: data[i].planetRadiusE * 5,
-      speed: 0,
+      speed: 0.003,
       sun: false,
-      orbitSpeed: 0,
+      orbitSpeed: data[i].planetOrbitTimeD / 120000,
       orbitPlanet: [],
     });
     textureGenerator(
