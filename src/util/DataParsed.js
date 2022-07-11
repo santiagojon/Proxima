@@ -221,8 +221,8 @@ export function textureFinder(mass, temp) {
 const sunRGB = (data) => {
   if (!data.spectralType && !data.starTempK) return [255, 204, 111];
   //rawData.spectralType[0]
-  if (data.starSpectralType[0]) {
-    switch (data.starSpectralType[0]) {
+  if (data.starSpectralType) {
+    switch (data.starSpectralType) {
       case "O":
         return [155, 176, 255];
       case "B":
@@ -279,32 +279,33 @@ export default function dataParser(data) {
       orbitSpeed: 0,
       orbitPlanet: [],
     });
-    console.log(
-      "planet type",
-      textureFinder(data[i].planetMassE, data[i].planetTemp)
-    );
-    console.log("RGB", rgbFinder(data[i].planetTemp));
     textureGenerator(
       textureFinder(data[i].planetMassE, data[i].planetTemp),
       rgbFinder(data[i].planetTemp),
       function (result) {
-        console.log("running planet");
         planets[i].image = result;
       }
     );
   }
 
+  const sunColor = sunRGB(data[0]);
   const sun = {
     name: data[0].starName,
     position: [0, 0, 0],
-    globeRGB: sunRGB(data),
-    atmosphereRGB: [255, 204, 111],
-    image: "sun.jpg",
+    globeRGB: [sunColor[0] / 255, sunColor[1] / 255, sunColor[2] / 255],
+    atmosphereRGB: [1, 0.58, 0.26],
+    speed: 0,
+    orbitSpeed: 0,
+    // image: "sun.jpg",
     // image: textureGenerator(this.globeRGB),
     compareEarthSize: data[0].starRadiusS * 20.3,
     sun: true,
     orbitPlanet: planets,
   };
+  textureGenerator("sun", sunRGB(data[0]), function (result) {
+    sun.sun = true;
+    sun.image = result;
+  });
 
   return [sun];
 }
