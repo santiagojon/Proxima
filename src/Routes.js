@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Routes,
-} from "react-router-dom";
+} from 'react-router-dom';
 
 import LandingPage from "./components/LandingPage";
 import App from "./App";
@@ -12,6 +12,8 @@ import { SolarSystemView } from "./components/SolarSystemView";
 import InfoPage from "./components/InfoPage"
 
 // import NotFoundPage from "./NotFoundPage";
+import Test from './components/Test';
+import { TestCanvas } from './components/TestCanvas';
 
 const AppRoutes = () => {
   return (

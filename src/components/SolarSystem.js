@@ -3,11 +3,9 @@ import { Planet } from "./Planet";
 import * as THREE from "three";
 
 export const SolarSystem = (props) => {
-  // console.log('ssprops', props);
   const solarSystem = props.solarSystem || [];
-  // console.log('SOLARS', solarSystem)
   const orbitRings = solarSystem[0].orbitPlanet || [];
-  const handleSetState = {handleSetState: props.handleSetState};
+  const handleSetState = { handleSetState: props.handleSetState };
 
   return (
     <>
@@ -30,15 +28,10 @@ export const SolarSystem = (props) => {
           })
         : ""}
       {solarSystem.map((planet, idx) => {
-        // console.log(`PLANET ${idx}`, planet)
-        let updatedPlanet = {...planet, ...handleSetState}
-        // console.log('UPDATEDPLANET', updatedPlanet)
+        let updatedPlanet = { ...planet, ...handleSetState };
         return (
           <mesh key={idx}>
-            <Planet
-              {...updatedPlanet}
-             
-            />
+            <Planet {...updatedPlanet} />
           </mesh>
         );
       })}
