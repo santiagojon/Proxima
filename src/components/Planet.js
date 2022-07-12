@@ -15,7 +15,7 @@ export const Planet = (props) => {
   const position = props.position || [0, 10, 0];
   const orbitPlanet = props.orbitPlanet || [];
 
-  const planetScale = 0.1;
+  const planetScale = 1.5;
   const handleSetState = props.handleSetState;
 
   // Subscribe this component to the render-loop, rotate the mesh every frame
@@ -49,7 +49,7 @@ export const Planet = (props) => {
               globeTexture={new THREE.TextureLoader().load(props.image)}
             />
             <sphereBufferGeometry
-              args={[(planetScale * props.compareEarthSize) / 5, 50, 50]}
+              args={[(planetScale * props.compareEarthSize) / 4.5, 50, 50]}
             />
           </>
         ) : (

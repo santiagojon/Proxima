@@ -46,9 +46,9 @@ function Scene(props) {
       <CameraController />
 
       <Stars
-        radius={400}
+        radius={4000}
         depth={320}
-        count={5000}
+        count={6000}
         factor={4}
         saturation={0}
         fade
