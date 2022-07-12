@@ -7,7 +7,7 @@ export const SolarSystem = (props) => {
   const solarSystem = props.solarSystem || [];
   // console.log('SOLARS', solarSystem)
   const orbitRings = solarSystem[0].orbitPlanet || [];
-  const handleSetState = {handleSetState: props.handleSetState};
+  const handleSetState = { handleSetState: props.handleSetState };
 
   return (
     <>
@@ -17,8 +17,8 @@ export const SolarSystem = (props) => {
               <mesh key={idx} rotation={[Math.PI / 2, 0, 0]}>
                 <ringBufferGeometry
                   args={[
-                    orbit.position[0] - 0.01,
-                    orbit.position[0] + 0.01,
+                    orbit.position[0] - 0.05,
+                    orbit.position[0] + 0.05,
                     256,
                     1,
                     0,
@@ -31,14 +31,11 @@ export const SolarSystem = (props) => {
         : ""}
       {solarSystem.map((planet, idx) => {
         // console.log(`PLANET ${idx}`, planet)
-        let updatedPlanet = {...planet, ...handleSetState}
+        let updatedPlanet = { ...planet, ...handleSetState };
         // console.log('UPDATEDPLANET', updatedPlanet)
         return (
           <mesh key={idx}>
-            <Planet
-              {...updatedPlanet}
-             
-            />
+            <Planet {...updatedPlanet} />
           </mesh>
         );
       })}

@@ -11,7 +11,7 @@ import { EffectComposer, Bloom, Vignette } from "@react-three/postprocessing";
 import SinglePlanetView from "./SinglePlanetView";
 
 const CameraController = (props) => {
-  const { camera, gl } = useThree();
+  let { camera, gl } = useThree();
   ChangeCameraPosition(100, 100, 0);
   useEffect(() => {
     const controls = new OrbitControls(camera, gl.domElement);
@@ -32,11 +32,12 @@ const CameraController = (props) => {
 function ChangeCameraPosition(x, y, z) {
   useThree(({ camera }) => {
     camera.position.set(x, y, z);
+    camera.fov = 40;
+    camera.far = 5000;
   });
 }
 
 function Scene(props) {
-  // console.log("SCENEPROPS", props);
   extend({ AtmosphereShaderMaterial });
   extend({ GlobeShaderMaterial });
 
@@ -45,9 +46,9 @@ function Scene(props) {
       <CameraController />
 
       <Stars
-        radius={400}
+        radius={4000}
         depth={320}
-        count={5000}
+        count={6000}
         factor={4}
         saturation={0}
         fade
@@ -115,7 +116,11 @@ export const SolarSystemView = () => {
       ) : (
         ""
       )}
-      <Canvas gl={{ antialias: true }} dpr={window.devicePixelRatio}>
+      <Canvas
+        gl={{ antialias: true }}
+        dpr={window.devicePixelRatio}
+        camera={{ far: 10000 }}
+      >
         <Suspense fallback={null}>
           <Scene
             viewState={viewState}
