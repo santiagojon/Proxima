@@ -1,7 +1,7 @@
-const Sequelize = require("sequelize");
-const db = require("../db");
+const { Sequelize, DataTypes } = require('sequelize');
+const db = require('../db');
 
-const System = db.define("system", {
+const System = db.define('system', {
   planetName: {
     type: Sequelize.STRING,
   },
@@ -33,7 +33,7 @@ const System = db.define("system", {
     type: Sequelize.STRING,
   },
   planetMassE: {
-    type: Sequelize.STRING,
+    type: DataTypes.INTEGER,
   },
   planetDensity: {
     type: Sequelize.STRING,

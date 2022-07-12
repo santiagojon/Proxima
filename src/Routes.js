@@ -12,8 +12,9 @@ import { SolarSystemView } from "./components/SolarSystemView";
 import InfoPage from "./components/InfoPage"
 
 // import NotFoundPage from "./NotFoundPage";
-import Test from './components/Test';
-import { TestCanvas } from './components/TestCanvas';
+// import Test from './components/Test';
+// import { TestCanvas } from './components/TestCanvas';
+import NavBar from './components/NavBar';
 
 const AppRoutes = () => {
   return (
@@ -22,6 +23,7 @@ const AppRoutes = () => {
         <Route exact path="/" element={<LandingPage />} />
         <Route path="/home" element={<SolarSystemView />} />
         <Route path="/learnMore"  element={<InfoPage />}  />
+        <Route path="/nav"  element={<NavBar />}  />
       </Routes>
     </Router>
   );

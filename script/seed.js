@@ -2,25 +2,25 @@ const {
   db,
 
   models: { User, Planet, System },
-} = require("../server/db");
+} = require('../server/db');
 
-const systems = require("./seedData");
+const systems = require('./seedData');
 
 const planets = [
   {
-    name: "earth",
+    name: 'earth',
   },
   {
-    name: "mars",
+    name: 'mars',
   },
   {
-    name: "neptune",
+    name: 'neptune',
   },
 ];
 
 async function seed() {
   await db.sync({ force: true });
-  console.log("db synced!");
+  console.log('db synced!');
 
   await Promise.all(
     planets.map((planet) =>
@@ -44,7 +44,7 @@ async function seed() {
         planetOrbitTimeD: system.pl_orbper,
         orbitDistanceAU: system.pl_orbsmax,
         planetRadiusE: system.pl_rade,
-        planetMassE: system.pl_bmasse,
+        planetMassE: parseInt(Math.round(system.pl_bmasse * 10) / 10),
         planetDensity: system.pl_dens,
         planetOrbitEccentricity: system.pl_orbeccen,
         planetTemp: system.pl_eqt,
@@ -69,19 +69,19 @@ async function seed() {
 
   const users = await Promise.all([
     User.create({
-      username: "Kim",
-      firstName: "Kim",
-      lastName: "Possible",
-      email: "kim@gmail.com",
-      password: "123",
+      username: 'Kim',
+      firstName: 'Kim',
+      lastName: 'Possible',
+      email: 'kim@gmail.com',
+      password: '123',
       isAdmin: false,
     }),
     User.create({
-      username: "Bob",
-      firstName: "Bob",
-      lastName: "Belcher",
-      email: "bob@gmail.com",
-      password: "123",
+      username: 'Bob',
+      firstName: 'Bob',
+      lastName: 'Belcher',
+      email: 'bob@gmail.com',
+      password: '123',
       isAdmin: true,
     }),
   ]);
@@ -93,16 +93,16 @@ async function seed() {
 // This way we can isolate the error handling and exit trapping.
 // The `seed` function is concerned only with modifying the database.
 async function runSeed() {
-  console.log("seeding...");
+  console.log('seeding...');
   try {
     await seed();
   } catch (err) {
     console.error(err);
     process.exitCode = 1;
   } finally {
-    console.log("closing db connection");
+    console.log('closing db connection');
     await db.close();
-    console.log("db connection closed");
+    console.log('db connection closed');
   }
 }
 

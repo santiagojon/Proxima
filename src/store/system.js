@@ -2,6 +2,7 @@ import axios from 'axios';
 
 const GET_SINGLE_SYSTEM_BY_NAME = 'GET_SINGLE_SYSTEM_BY_NAME';
 
+
 const gotSingleSystem = (system) => ({
   type: GET_SINGLE_SYSTEM_BY_NAME,
   system,
