@@ -12,14 +12,15 @@ import SinglePlanetView from "./SinglePlanetView";
 
 const CameraController = (props) => {
   const { camera, gl } = useThree();
+  ChangeCameraPosition(100, 100, 0);
   useEffect(() => {
     const controls = new OrbitControls(camera, gl.domElement);
     if (props.viewState === "singlePlanetView") {
-      controls.minDistance = 0.02;
-      controls.maxDistance = 2;
+      controls.minDistance = 0.002;
+      controls.maxDistance = 5;
     } else {
       controls.minDistance = 0.02;
-      controls.maxDistance = 1000;
+      controls.maxDistance = 10000;
     }
     return () => {
       controls.dispose();
@@ -27,6 +28,12 @@ const CameraController = (props) => {
   }, [camera, gl]);
   return null;
 };
+
+function ChangeCameraPosition(x, y, z) {
+  useThree(({ camera }) => {
+    camera.position.set(x, y, z);
+  });
+}
 
 function Scene(props) {
   // console.log("SCENEPROPS", props);
@@ -38,8 +45,8 @@ function Scene(props) {
       <CameraController />
 
       <Stars
-        radius={200}
-        depth={120}
+        radius={400}
+        depth={320}
         count={5000}
         factor={4}
         saturation={0}
