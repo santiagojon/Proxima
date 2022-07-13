@@ -1,6 +1,6 @@
 const neptune = {
   name: "Neptune",
-  position: [8216, 0, 0],
+  position: [6516, 0, 0],
   globeRGB: [0.1, 0.2, 0.5],
   atmosphereRGB: [0.05, 0.1, 0.2],
   compareEarthSize: 3.9,
@@ -13,7 +13,7 @@ const neptune = {
 
 const uranus = {
   name: "Uranus",
-  position: [6200, 0, 0],
+  position: [5200, 0, 0],
   globeRGB: [0.1, 0.2, 0.5],
   atmosphereRGB: [0.1, 0.2, 0.5],
   compareEarthSize: 4,
