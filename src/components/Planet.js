@@ -27,35 +27,40 @@ export const Planet = (props) => {
   });
 
   const handleOnClick = (idx) => {
-    // console.log("CURRENT", idx);
     handleSetState("SET_PLANET_VIEW", "singlePlanetView");
     handleSetState("SET_PLANET_INFO", orbitPlanet);
     handleSetState("SET_PLANET_KEY", idx);
-    handleSetState("SET_PLANET_TEXT", )
+    handleSetState("SET_PLANET_TEXT");
   };
-
 
   return (
     <>
       <mesh ref={ref} position={[position[0], position[1], position[2]]}>
-        <sphereBufferGeometry
-          args={[planetScale * props.compareEarthSize, 50, 50]}
-        />
         {props.sun ? (
-          <globeShaderMaterial
-            uColor={
-              new THREE.Color(
-                props.globeRGB[0],
-                props.globeRGB[1],
-                props.globeRGB[2]
-              )
-            }
-            globeTexture={new THREE.TextureLoader().load(props.image)}
-          />
+          <>
+            <globeShaderMaterial
+              uColor={
+                new THREE.Color(
+                  props.globeRGB[0],
+                  props.globeRGB[1],
+                  props.globeRGB[2]
+                )
+              }
+              globeTexture={new THREE.TextureLoader().load(props.image)}
+            />
+            <sphereBufferGeometry
+              args={[(planetScale * props.compareEarthSize) / 2, 50, 50]}
+            />
+          </>
         ) : (
-          <meshStandardMaterial
-            map={new THREE.TextureLoader().load(props.image)}
-          />
+          <>
+            <meshStandardMaterial
+              map={new THREE.TextureLoader().load(props.image)}
+            />
+            <sphereBufferGeometry
+              args={[planetScale * props.compareEarthSize * 2, 50, 50]}
+            />
+          </>
         )}
 
         {props.sun ? (
@@ -69,7 +74,6 @@ export const Planet = (props) => {
         )}
         {orbitPlanet && orbitPlanet.length > 0
           ? orbitPlanet.map((planet, idx) => {
-          
               return (
                 <mesh key={idx}>
                   <mesh
