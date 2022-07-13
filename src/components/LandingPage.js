@@ -58,7 +58,7 @@ const LandingPage = () => {
 >
           <div id="introLandingPageContainer">
             <section id="introLandingPage">
-              <h1>Proxima</h1>
+              <h1 id='landingPageTitle'>Proxima</h1>
               <h2>Start scrolling to explore...</h2>
               <br></br>
               <h2 id='skipButton'> Or click here to skip</h2>
