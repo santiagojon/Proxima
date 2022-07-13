@@ -50,16 +50,16 @@ const NavBar = () => {
               <h4>Expertise</h4>
               <ul>
                 <li>
-                  {/* <a href="#">Insurance Industry</a> */}
+                  <a href="#">Insurance Industry</a>
                 </li>
                 <li>
-                  {/* <a href="#">Retail Industry</a> */}
+                  <a href="#">Retail Industry</a>
                 </li>
                 <li>
-                  {/* <a href="#">Logistics Industry</a> */}
+                  <a href="#">Logistics Industry</a>
                 </li>
                 <li>
-                  {/* <a href="#">Blog</a> */}
+                  <a href="#">Blog</a>
                 </li>
               </ul>
             </div>
@@ -67,10 +67,10 @@ const NavBar = () => {
               <h4>Results</h4>
               <ul>
                 <li>
-                  {/* <a href="#">Case Studies</a> */}
+                  <a href="#">Case Studies</a>
                 </li>
                 <li>
-                  {/* <a href="#">Client Partners</a> */}
+                  <a href="#">Client Partners</a>
                 </li>
               </ul>
             </div>
@@ -78,19 +78,19 @@ const NavBar = () => {
               <h4>Company</h4>
               <ul>
                 <li>
-                  {/* <a href="#">Our Story</a> */}
+                  <a href="#">Our Story</a>
                 </li>
                 <li>
-                  {/* <a href="#">Our Team</a> */}
+                  <a href="#">Our Team</a>
                 </li>
                 <li>
-                  {/* <a href="#">Our Culture</a> */}
+                  <a href="#">Our Culture</a>
                 </li>
                 <li>
-                  {/* <a href="#">News</a> */}
+                  <a href="#">News</a>
                 </li>
                 <li>
-                  {/* <a href="#">Join Us</a> */}
+                  <a href="#">Join Us</a>
                 </li>
               </ul>
             </div>
@@ -98,13 +98,13 @@ const NavBar = () => {
               <h4>Approach</h4>
               <ul>
                 <li>
-                  {/* <a href="#">Digital Transformation</a> */}
+                  <a href="#">Digital Transformation</a>
                 </li>
                 <li>
-                  {/* <a href="#">Digital Readiness Tool</a> */}
+                  <a href="#">Digital Readiness Tool</a>
                 </li>
                 <li>
-                  {/* <a href="#">Solution Partners</a> */}
+                  <a href="#">Solution Partners</a>
                 </li>
               </ul>
             </div>
