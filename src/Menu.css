@@ -22,7 +22,7 @@ a {
 .menu-open-button {
   background: #000000;
   border-radius: 100%;
-  opacity: 80%;
+  opacity: 75%;
   width: 80px;
   height: 80px;
   margin-left: -40px;
@@ -45,7 +45,7 @@ a {
 .lines {
   width: 25px;
   height: 3px;
-  background: #596778;
+  background: #171a1d;
   display: block;
   position: absolute;
   top: 50%;
@@ -112,7 +112,7 @@ a {
 
 .menu-item:hover {
   background: #eeeeee;
-  color: #1e2f36;
+  color: #151f24;
 }
 
 .menu-item:nth-child(3) {
@@ -148,6 +148,7 @@ a {
 .menu-item:nth-child(9) {
   -webkit-transition-duration: 180ms;
   transition-duration: 180ms;
+
 }
 
 .menu-open-button {
@@ -157,7 +158,7 @@ a {
   -webkit-transition-duration: 400ms;
   transition-duration: 400ms;
   -webkit-transform: scale(1.1, 1.1) translate3d(0, 0, 0);
-  transform: scale(1.1, 1.1) translate3d(0, 0, 0);
+  transform: scale(0.65, 0.65) translate3d(0, 0, 0);
   cursor: pointer;
   box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.14);
 }
@@ -234,6 +235,7 @@ a {
   background-color: #202d3f;
   box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.14);
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.12);
+  scale: (0.5, 0.5);
 }
 
 .blue:hover {
@@ -245,6 +247,7 @@ a {
   background-color: #272c30;
   box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.14);
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.12);
+  scale: (0.5, 0.5);
 }
 
 .green:hover {
@@ -256,6 +259,7 @@ a {
   background-color: #201618;
   box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.14);
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.12);
+  scale: (0.5, 0.5);
 }
 
 .red:hover {
@@ -267,6 +271,7 @@ a {
   background-color: #1a171b;
   box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.14);
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.12);
+  scale: (0.5, 0.5);
 }
 
 .purple:hover {
@@ -289,6 +294,7 @@ a {
   background-color: #14191b;
   box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.14);
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.12);
+  scale: (0.5, 0.5);
 }
 
 .lightblue:hover {
