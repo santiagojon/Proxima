@@ -1,3 +1,18 @@
+@import 'https://fonts.googleapis.com/css?family=Roboto:400,500';
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Poppins&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Poppins&family=Rubik+Moonrocks&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Poppins&family=Rubik+Moonrocks&family=Strait&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Lato&family=Montserrat&family=Poppins&family=Rubik+Moonrocks&family=Strait&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Iceland&family=Lato&family=Montserrat&family=Poppins&family=Rubik+Moonrocks&family=Strait&display=swap');
 * {
   /* background-color: black; */
 }
@@ -68,13 +83,30 @@ Landing Page  */
   flex-basis: auto;
   flex-direction: column;
   align-items: center;
-  font-family: 'Times New Roman', Times, serif;
+  /* font-family: 'Roboto', sans-serif; */
+  font-family: 'Lato', sans-serif;
+
+
+  /* font-weight: 300; */
+}
+
+#landingPageTitle {
+  font-family: 'Lato', sans-serif;
+  /* font-family: 'Poppins', sans-serif; */
+  /* font-family: 'Rubik Moonrocks', cursive; */
+  font-family: 'Strait', sans-serif;
+  /* font-family: 'Black Ops One', cursive; */
+  /* font-family: 'Iceland', sans-serif; */
+
+
+
+
 }
 
 .landingPage div {
   /* background-color: black; */
   /* justify-content: center; */
-  font-family: 'Times New Roman', Times, serif;
+  /* font-family: Georgia, 'Times New Roman', Times, serif */
   /* height: 100rem; */
 }
 
@@ -141,7 +173,6 @@ Landing Page  */
 #introLandingPage h2 {
   font-size: 100%;
   margin: 0 29%;
-  font-weight: 400;
 }
 
 .rightText {
@@ -151,7 +182,6 @@ Landing Page  */
   top: 10%;
   color: white;
   /* font-size: 1.7rem; */
-  font-weight: 400;
   animation: slide-up 3s;
 }
 
@@ -162,7 +192,6 @@ Landing Page  */
   left: 15%;
   /* top:40%; */
   color: white;
-  font-weight: 400;
   animation: slide-up 3s;
 }
 .centerOffsetRightText {
@@ -170,7 +199,6 @@ Landing Page  */
   right: 0%;
   top: 40%;
   color: white;
-  font-weight: 400;
   animation: slide-up 3s;
 }
 
@@ -181,8 +209,7 @@ Landing Page  */
   right: 15%;
   /* left: 30%; */
   top: 20%;
-  color: white;
-  font-weight: 300;
+  color: blanchedalmond;
   animation: slide-up 3s;
 }
 .textLower {
