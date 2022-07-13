@@ -18,7 +18,7 @@ const AppRoutes = () => {
   return (
     <Router>
       <Routes>
-        <Route path="*" element={<NavBar />} />
+        {/* <Route path="*" element={<NavBar />} /> */}
         <Route exact path="/" element={<LandingPage />} />
         <Route path="/home" element={<SolarSystemView />} />
         <Route path="/learnMore" element={<InfoPage />} />
