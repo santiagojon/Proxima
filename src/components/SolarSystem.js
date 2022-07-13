@@ -15,9 +15,9 @@ export const SolarSystem = (props) => {
               <mesh key={idx} rotation={[Math.PI / 2, 0, 0]}>
                 <ringBufferGeometry
                   args={[
-                    orbit.position[0] - 0.05,
-                    orbit.position[0] + 0.05,
-                    256,
+                    orbit.position[0] - 0.25,
+                    orbit.position[0] + 0.25,
+                    512,
                     1,
                     0,
                   ]}
