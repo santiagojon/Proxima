@@ -460,7 +460,7 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
   animation: fade-in-stagger 0.8s ease forwards;
 }
 
-#masthead.is-active .col:nth-child(1) {
+/* #masthead.is-active .col:nth-child(1) {
   -webkit-animation-delay: 0;
 }
 
@@ -478,7 +478,7 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
 
 #masthead.is-active .col:nth-child(5) {
   -webkit-animation-delay: 0.4s;
-}
+} */
 
 @keyframes fade-in-stagger {
   to {
