@@ -115,7 +115,7 @@ export const SolarSystemView = () => {
       ) : (
         ''
       )}
-      <NavBar />
+      {/* <NavBar /> */}
       <Canvas
         gl={{ antialias: true }}
         dpr={window.devicePixelRatio}

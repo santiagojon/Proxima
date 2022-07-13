@@ -19,7 +19,7 @@ const LandingPage = () => {
   return (
     <div className="landingPage">
       {/* <MenuButton /> */}
-      <NavBar />
+      {/* <NavBar /> */}
       <Parallax pages={7.25}>
         {/* <ParallaxLayer
           className="sticky"
