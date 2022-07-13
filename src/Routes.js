@@ -10,7 +10,7 @@ import LandingPage from './components/LandingPage';
 import App from './App';
 import { SolarSystemView } from './components/SolarSystemView';
 import InfoPage from './components/InfoPage';
-import NavBar from './components/NavBar';
+// import NavBar from './components/NavBar';
 
 // import NotFoundPage from "./NotFoundPage";
 
