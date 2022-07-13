@@ -13,7 +13,7 @@ import SinglePlanetView from './SinglePlanetView';
 const CameraController = (props) => {
 
   let { camera, gl } = useThree();
-  ChangeCameraPosition(450, 450, 0);
+  // ChangeCameraPosition(450, 450, 0);
   useEffect(() => {
     const controls = new OrbitControls(camera, gl.domElement);
     if (props.viewState === "singlePlanetView") {
@@ -83,7 +83,7 @@ function Scene(props) {
             * planetScale
           )
         )
-      : ChangeCameraPosition([50, 20, 0]);
+      : ChangeCameraPosition([350, 250, 0]);
   }
 
  
