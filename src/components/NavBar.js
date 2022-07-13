@@ -6,7 +6,7 @@ export default function NavBar() {
   const planets = useSelector((state) => state.allPlanets);
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getPlanetsByType('SuperEarth'));
+    dispatch(getPlanetsByType('Gas Giant'));
   }, []);
   console.log(planets);
   return (
