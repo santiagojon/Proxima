@@ -1,14 +1,19 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getPlanetsByType } from '../store/planets';
-
-export default function SearchType() {
+import { useParams } from 'react-router-dom';
+export default function SearchType(props) {
   const planets = useSelector((state) => state.allPlanets);
+
   const dispatch = useDispatch();
+
+
+  const params = useParams();
+  const type = params.type;
+  console.log(type);
   useEffect(() => {
-    dispatch(getPlanetsByType('Gas Giant'));
+    dispatch(getPlanetsByType(type));
   }, []);
-  console.log(planets);
   return (
     <div style={{ color: 'white' }}>
       NavBar

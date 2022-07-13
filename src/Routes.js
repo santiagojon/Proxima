@@ -16,13 +16,15 @@ import SearchType from './components/Search';
 // import NotFoundPage from "./NotFoundPage";
 // import Test from './components/Test';
 // import { TestCanvas } from './components/TestCanvas';
-import NavBar from './components/NavBar';
+// import NavBar from './components/NavBar';
 
 const AppRoutes = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/search" element={<SearchType />} />
+        <Route path="search">
+          <Route exact path=":type" element={<SearchType />} />
+        </Route>
         <Route exact path="/" element={<LandingPage />} />
         <Route path="/home" element={<SolarSystemView />} />
         <Route path="/learnMore" element={<InfoPage />} />

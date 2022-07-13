@@ -27,7 +27,7 @@ export const getPlanetsByType = (type) => {
       // console.log(data);
       dispatch(gotPlanetsByType(data));
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
 };

@@ -1,7 +1,7 @@
-
 // import '../Nav.css';
 
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const NavBar = () => {
   const [isActive, setActive] = useState('false');
@@ -76,10 +76,12 @@ const NavBar = () => {
               </ul>
             </div>
             <div className="col">
-              <h4>Company</h4>
+              <h4>Planets by Type</h4>
               <ul>
                 <li>
-                  <a href="#">Our Story</a>
+                  <Link className="site-nav" to="/search/terrestrial">
+                    Terrestrial
+                  </Link>
                 </li>
                 <li>
                   <a href="#">Our Team</a>

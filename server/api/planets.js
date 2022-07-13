@@ -26,19 +26,18 @@ router.get('/', async (req, res, next) => {
 router.get('/:type', async (req, res, next) => {
   try {
     const type = req.params.type;
+    console.log(type);
     let planets = [];
     switch (true) {
-      case type === 'Terrestrial':
-        console.log('in axios');
+      case type === 'terrestrial':
         planets = await System.findAll({
           where: {
-            planetMassE: { [Op.between]: ['0.5', '2'] },
+            planetMassE: { [Op.between]: ['0', '2'] },
           },
           limit: 20,
         });
         break;
-      case type === 'SuperEarth':
-        console.log('in axios');
+      case type === 'superearth':
         planets = await System.findAll({
           where: {
             planetMassE: { [Op.between]: ['2', '10'] },
@@ -46,8 +45,7 @@ router.get('/:type', async (req, res, next) => {
           limit: 20,
         });
         break;
-      case type === 'Neptuntunian':
-        console.log('in axios');
+      case type === 'neptuntunian':
         planets = await System.findAll({
           where: {
             planetMassE: { [Op.between]: ['10', '50'] },
@@ -55,8 +53,7 @@ router.get('/:type', async (req, res, next) => {
           limit: 20,
         });
         break;
-      case type === 'Gas Giant':
-        console.log('in axios');
+      case type === 'gasgiant':
         planets = await System.findAll({
           where: {
             planetMassE: { [Op.between]: ['50', '5000'] },
