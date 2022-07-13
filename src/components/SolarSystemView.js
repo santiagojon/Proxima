@@ -12,7 +12,7 @@ import SinglePlanetView from './SinglePlanetView';
 
 const CameraController = (props) => {
   let { camera, gl } = useThree();
-  ChangeCameraPosition(100, 100, 0);
+  ChangeCameraPosition(450, 450, 0);
   useEffect(() => {
     const controls = new OrbitControls(camera, gl.domElement);
     if (props.viewState === "singlePlanetView") {
@@ -33,7 +33,7 @@ function ChangeCameraPosition(x, y, z) {
   useThree(({ camera }) => {
     camera.position.set(x, y, z);
     camera.fov = 40;
-    camera.far = 5000;
+    camera.far = 9000;
   });
 }
 
@@ -82,7 +82,6 @@ export const SolarSystemView = () => {
   const [viewState, setViewState] = useState('solarSystemView');
   const [singlePlanetInfo, setSinglePlanetInfo] = useState({});
   const [singlePlanetKey, setSinglePlanetKey] = useState(0);
-  // const [singlePlanetText, setSinglePlanetText] = useState("");
 
   const handleSetState = (command, info) => {
     switch (command) {
