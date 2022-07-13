@@ -7,7 +7,7 @@ import { GlobeShaderMaterial } from '../shaders/GlobeMaterial';
 import { SolarSystem } from './SolarSystem';
 import { solarSys } from '../util/SolarSystem';
 import { EffectComposer, Bloom, Vignette } from '@react-three/postprocessing';
-// import NavBar from './NavBar';
+import NavBar from './NavBar';
 import SinglePlanetView from './SinglePlanetView';
 
 const CameraController = (props) => {
@@ -116,7 +116,7 @@ export const SolarSystemView = () => {
       ) : (
         ''
       )}
-      {/* <NavBar /> */}
+      <NavBar />
       <Canvas
         gl={{ antialias: true }}
         dpr={window.devicePixelRatio}

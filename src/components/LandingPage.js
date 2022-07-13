@@ -4,7 +4,7 @@ import { Parallax, ParallaxLayer } from '@react-spring/parallax';
 import BgStars from './BgStars';
 import LandingPageIntroAnimation from './LandingPageIntroAnimation';
 import { MenuButton } from './MenuButton';
-// import NavBar from './NavBar';
+import NavBar from './NavBar';
 
 //choose font
 //fix header fade-out
@@ -19,7 +19,7 @@ const LandingPage = () => {
   return (
     <div className="landingPage">
       {/* <MenuButton /> */}
-      {/* <NavBar /> */}
+      <NavBar />
       <Parallax pages={7.25}>
         {/* <ParallaxLayer
           className="sticky"
