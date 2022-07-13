@@ -15,11 +15,9 @@ export default function SearchType(props) {
     dispatch(getPlanetsByType(type));
   }, []);
   return (
-    <>
+    <div>
       <NavBar style={{ position: 'sticky', top: '20px' }} />
       <div style={{ color: 'white' }}>
-        NavBar
-        <h1>hello</h1>
         <ul style={{ textAlign: 'center', color: 'white' }}>
           {planets.map((planet) => (
             <li key={planet.id}>
@@ -28,6 +26,6 @@ export default function SearchType(props) {
           ))}
         </ul>
       </div>
-    </>
+    </div>
   );
 }

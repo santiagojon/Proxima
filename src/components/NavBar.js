@@ -2,15 +2,30 @@
 
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { getPlanetsByName } from '../store/planetSearchBar';
+import { useDispatch, useSelector } from 'react-redux';
 
 const NavBar = () => {
   const [isActive, setActive] = useState('false');
+  const [search, setSearch] = useState('');
+  const dispatch = useDispatch();
+  const planets = useSelector((state) => state.planetSearch);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
 
   const handleToggle = () => {
     setActive(!isActive);
   };
-  console.log('navBar');
-  const onChange = () => {};
+
+  const handleChange = (e) => {
+    const query = e.target.value;
+    console.log(planets);
+    setSearch(query);
+    dispatch(getPlanetsByName(query));
+  };
+
   return (
     <div className="hero" id="pos">
       <header
@@ -33,13 +48,19 @@ const NavBar = () => {
             </span>
             <span className="hamburger-label">Menu</span>
           </button>
-          <form id="masthead-search" className={isActive ? null : 'is-active'}>
+          <form
+            id="masthead-search"
+            className={isActive ? null : 'is-active'}
+            onSubmit={handleSubmit}
+          >
             <input
               type="search"
               name="s"
               aria-labelledby="search-label"
               placeholder="Search&hellip;"
               className="draw"
+              value={search}
+              onChange={(e) => handleChange(e)}
             />
             <button type="submit">&rarr;</button>
           </form>
@@ -54,6 +75,7 @@ const NavBar = () => {
                   // className="site-nav"
                   style={{ textDecoration: 'none' }}
                   to="/"
+                  // onClick={() => window.history.push('/')}
                 >
                   Home Page
                 </Link>
@@ -68,19 +90,19 @@ const NavBar = () => {
               <h4>Featured</h4>
               <ul>
                 <li>
-                  <Link className="site-nav" to="/home">
+                  <Link
+                    className="site-nav"
+                    to="/home"
+                    // onClick={() => window.location.reload()}
+                  >
                     Our System
                   </Link>
                 </li>
                 <li>
                   <a href="/#milk">Milky Way</a>
                 </li>
-                <li>
-                  {/* <a href="#">Logistics Industry</a> */}
-                </li>
-                <li>
-                  {/* <a href="#">Blog</a> */}
-                </li>
+                <li>{/* <a href="#">Logistics Industry</a> */}</li>
+                <li>{/* <a href="#">Blog</a> */}</li>
               </ul>
             </div>
 
@@ -88,22 +110,38 @@ const NavBar = () => {
               <h4>Planets by Type</h4>
               <ul>
                 <li>
-                  <Link className="site-nav" to="/search/terrestrial">
+                  <Link
+                    className="site-nav"
+                    to="/search/terrestrial"
+                    onClick={() => window.history.push('/search/terrestrial')}
+                  >
                     Terrestrial
                   </Link>
                 </li>
                 <li>
-                  <Link className="site-nav" to="/search/superearth">
+                  <Link
+                    className="site-nav"
+                    to="/search/superearth"
+                    onClick={() => window.history.push('/search/superearth')}
+                  >
                     Super Earth
                   </Link>
                 </li>
                 <li>
-                  <Link className="site-nav" to="/search/neptuntunian">
+                  <Link
+                    className="site-nav"
+                    to="/search/neptuntunian"
+                    onClick={() => window.history.push('/search/neptuntunian')}
+                  >
                     Neptuntunian
                   </Link>
                 </li>
                 <li>
-                  <Link className="site-nav" to="/search/gasgiant">
+                  <Link
+                    className="site-nav"
+                    to="/search/gasgiant"
+                    onClick={() => window.history.push('/search/gasgiant')}
+                  >
                     Gas Giant
                   </Link>
                 </li>
@@ -113,7 +151,11 @@ const NavBar = () => {
               <h4>Learn More</h4>
               <ul>
                 <li>
-                  <Link className="site-nav" to="/learnmore">
+                  <Link
+                    className="site-nav"
+                    to="/learnmore"
+                    // onClick={() => window.location.reload()}
+                  >
                     Info
                   </Link>
                 </li>

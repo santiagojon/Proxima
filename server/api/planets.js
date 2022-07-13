@@ -14,14 +14,21 @@ router.get('/', async (req, res, next) => {
   }
 });
 
-// router.get('/:type', async (req, res, next) => {
-//   try {
-//     const planets = await System.findAll();
-//     res.send(planets);
-//   } catch (error) {
-//     next(error);
-//   }
-// });
+
+
+router.get('/name/:planetName', async (req, res, next) => {
+  try {
+    const planets = await System.findAll({
+      where: {
+        starName: { [Op.like]: `%${req.params.planetName}%` },
+      },
+      limit: 5,
+    });
+    res.send(planets);
+  } catch (error) {
+    next(error);
+  }
+});
 
 router.get('/:type', async (req, res, next) => {
   try {
