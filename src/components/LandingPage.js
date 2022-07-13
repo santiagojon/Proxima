@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { Parallax, ParallaxLayer } from '@react-spring/parallax';
 import BgStars from './BgStars';
 import LandingPageIntroAnimation from './LandingPageIntroAnimation';
+import { MenuButton } from './MenuButton';
+import NavBar from './NavBar';
 
 //choose font
 //fix header fade-out
@@ -13,9 +15,22 @@ import LandingPageIntroAnimation from './LandingPageIntroAnimation';
 //clean up buttons/change colors
 
 const LandingPage = () => {
+  const ref = useRef();
   return (
     <div className="landingPage">
+      {/* <MenuButton /> */}
+      <NavBar />
       <Parallax pages={7.25}>
+        {/* <ParallaxLayer
+          className="sticky"
+          style={{
+            backgroundImage:
+              'url("https://www.nicepng.com/png/full/246-2462923_the-galaxy-map-milky-way-galaxy-black-hole.png")',
+            // backgroundPositionX: '5%',
+            backgroundSize: '5%',
+
+          }}
+        ></ParallaxLayer> */}
         <ParallaxLayer
           id="heroContainer"
           factor={1.3}
