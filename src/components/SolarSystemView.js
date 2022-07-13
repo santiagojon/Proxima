@@ -107,7 +107,8 @@ export const SolarSystemView = () => {
         </div>
       ) : (
         ''
-      )}<NavBar />
+      )}
+      <NavBar />
       <Canvas gl={{ antialias: true }} dpr={window.devicePixelRatio}>
         <Suspense fallback={null}>
           <Scene
@@ -116,7 +117,6 @@ export const SolarSystemView = () => {
             planetInfo={singlePlanetInfo}
             singlePlanetKey={singlePlanetKey}
           />
-
         </Suspense>
         <EffectComposer>
           <Bloom luminanceThreshold={0} luminanceSmoothing={1} height={550} />

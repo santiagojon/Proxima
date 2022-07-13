@@ -3,10 +3,8 @@
 html {
   box-sizing: border-box;
 }
-#pos{
-  /* position:absolute;
-  top: 0; */
-  /* z-index: 11; */
+#pos {
+  position: absolute;
 }
 
 *,
@@ -73,7 +71,6 @@ body {
   margin-right: auto;
   max-width: 1200px;
   margin-top: 0%;
-
 }
 
 .container:after {
@@ -126,7 +123,7 @@ Making sure everything in .hero sits above our :after elements
 #masthead {
   padding: 0px;
   position: relative;
-  height:50px;
+  height: 50px;
 }
 
 #masthead.is-active {
@@ -280,7 +277,7 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
   height: 0;
   overflow: hidden;
   /* padding-top: 2.5em; */
-    padding-top: 0px;
+  padding-top: 0px;
 }
 
 #site-nav.is-active {
