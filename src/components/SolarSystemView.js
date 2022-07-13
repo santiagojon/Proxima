@@ -11,8 +11,15 @@ import { EffectComposer, Bloom, Vignette } from "@react-three/postprocessing";
 import SinglePlanetView from "./SinglePlanetView";
 
 const CameraController = (props) => {
+  console.log("camprops", props);
   const { camera, gl } = useThree();
-  ChangeCameraPosition(100, 100, 0);
+
+  // console.log(viewState)
+
+  // props.viewState === "singlePlanetView"
+  // ? ChangeCameraPosition(2, 0, 0)
+  // : ChangeCameraPosition(25, 5, 0);
+
   useEffect(() => {
     const controls = new OrbitControls(camera, gl.domElement);
     if (props.viewState === "singlePlanetView") {
@@ -29,21 +36,62 @@ const CameraController = (props) => {
   return null;
 };
 
-function ChangeCameraPosition(x, y, z) {
+function ChangeCameraPosition(arr) {
   useThree(({ camera }) => {
-    camera.position.set(x, y, z);
+    camera.position.set(arr[0], arr[1], arr[2]);
   });
 }
 
+// function ChangeCameraPosition(x, y, z) {
+//   useThree(({ camera }) => {
+//     camera.position.set(x, y, z);
+//   });
+// }
+
+const planetScale = 1.5;
+
+function DetermineCameraPosition(num) {
+  if (num < 1) {
+    return [2, 0.5, 0];
+  }
+
+  // if (num === 0) {
+  //   return [4, 8, 1];
+  // }
+
+  if (num > 1 && num < 3) {
+    return [3, 0.5, 0];
+  }
+
+  if (num > 3)  {
+    return [2,1,0]
+  }
+}
+
+//takes in a number (props.compareToEarthSize)
+//
+
 function Scene(props) {
-  // console.log("SCENEPROPS", props);
+  console.log("SCENEPROPS", props);
   extend({ AtmosphereShaderMaterial });
   extend({ GlobeShaderMaterial });
+
+  {
+    props.viewState === "singlePlanetView"
+      ? ChangeCameraPosition(
+          DetermineCameraPosition(
+            props.planetInfo[props.singlePlanetKey].compareEarthSize
+            * planetScale
+          )
+        )
+      : ChangeCameraPosition([50, 10, 0]);
+  }
+
+ 
 
   return (
     <>
       <CameraController />
-
       <Stars
         radius={400}
         depth={320}
@@ -59,14 +107,19 @@ function Scene(props) {
       ) : (
         <pointLight position={[0, 0, 0]} />
       )}
-
       {props.viewState === "singlePlanetView" ? (
+        // ChangeCameraPosition(
+        //   10,
+        //   0,
+        //   0
+        // ) && (
         <SinglePlanetView
           planetInfo={props.planetInfo[props.singlePlanetKey]}
           handleSetState={props.handleSetState}
           viewState={props.viewState}
         />
       ) : (
+        // )
         <SolarSystem
           solarSystem={solarSys}
           handleSetState={props.handleSetState}
@@ -81,7 +134,8 @@ export const SolarSystemView = () => {
   const [viewState, setViewState] = useState("solarSystemView");
   const [singlePlanetInfo, setSinglePlanetInfo] = useState({});
   const [singlePlanetKey, setSinglePlanetKey] = useState(0);
-  // const [singlePlanetText, setSinglePlanetText] = useState("");
+
+  console.log(viewState);
 
   const handleSetState = (command, info) => {
     switch (command) {
