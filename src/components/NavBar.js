@@ -1,4 +1,4 @@
-import '../Nav.css';
+// import '../Nav.css';
 
 import React, { useState } from 'react';
 
