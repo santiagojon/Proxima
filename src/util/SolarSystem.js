@@ -1,9 +1,9 @@
 const neptune = {
   name: "Neptune",
-  position: [90, 0, 0],
+  position: [5216, 0, 0],
   globeRGB: [0.1, 0.2, 0.5],
   atmosphereRGB: [0.05, 0.1, 0.2],
-  compareEarthSize: 3,
+  compareEarthSize: 3.9,
   image: "neptune.jpg",
   speed: 0.000001,
   sun: false,
@@ -13,10 +13,10 @@ const neptune = {
 
 const uranus = {
   name: "Uranus",
-  position: [80, 0, 0],
+  position: [3600, 0, 0],
   globeRGB: [0.1, 0.2, 0.5],
   atmosphereRGB: [0.1, 0.2, 0.5],
-  compareEarthSize: 3,
+  compareEarthSize: 4,
   image: "uranus.jpg",
   speed: 0.00005,
   sun: false,
@@ -26,10 +26,10 @@ const uranus = {
 
 const saturn = {
   name: "Saturn",
-  position: [70, 0, 0],
+  position: [1832, 0, 0],
   globeRGB: [0.3, 0.2, 0.15],
   atmosphereRGB: [1, 0.87, 0.8],
-  compareEarthSize: 6,
+  compareEarthSize: 9,
   image: "saturn.jpg",
   speed: 0.0001,
   sun: false,
@@ -39,11 +39,11 @@ const saturn = {
 
 const jupiter = {
   name: "Jupiter",
-  position: [50, 0, 0],
+  position: [920, 0, 0],
   globeRGB: [0.3, 0.2, 0.15],
   atmosphereRGB: [1, 0.87, 0.8],
-  compareEarthSize: 8,
-  image: "jupiter.jpg",
+  compareEarthSize: 11,
+  image: "jup.jpg",
   speed: 0.0002,
   sun: false,
   orbitSpeed: 0.0015,
@@ -52,7 +52,7 @@ const jupiter = {
 
 const mars = {
   name: "Mars",
-  position: [22, 0, 0],
+  position: [260, 0, 0],
   globeRGB: [0.8, 0.55, 0.3],
   atmosphereRGB: [0.8, 0.55, 0.3],
   compareEarthSize: 0.5,
@@ -64,7 +64,7 @@ const mars = {
 };
 const moon = {
   name: "Moon",
-  position: [3, 0, 0],
+  position: [7, 0, 0],
   globeRGB: [0, 0, 0],
   atmosphereRGB: [0, 0, 0],
   compareEarthSize: 0.25,
@@ -76,7 +76,7 @@ const moon = {
 };
 const earth = {
   name: "Earth",
-  position: [18, 0, 0],
+  position: [184, 0, 0],
   globeRGB: [0.3, 0.6, 1.0],
   atmosphereRGB: [0.3, 0.6, 1.0],
   compareEarthSize: 1,
@@ -89,10 +89,10 @@ const earth = {
 
 const venus = {
   name: "Venus",
-  position: [12, 0, 0],
+  position: [134, 0, 0],
   globeRGB: [1, 0.5, 0.27],
   atmosphereRGB: [1, 0.5, 0.27],
-  compareEarthSize: 0.95,
+  compareEarthSize: 0.9,
   image: "venus.jpg",
   speed: 0.0003,
   sun: false,
@@ -102,7 +102,7 @@ const venus = {
 
 const mercury = {
   name: "Mercury",
-  position: [7, 0, 0],
+  position: [70, 0, 0],
   globeRGB: [0.1, 0.1, 0.1],
   atmosphereRGB: [0.1, 0.1, 0.1],
   compareEarthSize: 0.3,
@@ -118,7 +118,7 @@ const sun = {
   position: [0, 0, 0],
   globeRGB: [1, 0.58, 0.26],
   atmosphereRGB: [1, 0.58, 0.26],
-  compareEarthSize: 8,
+  compareEarthSize: 108,
   image: "sun.jpg",
   speed: 0.0,
   sun: true,

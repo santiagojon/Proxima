@@ -11,15 +11,16 @@ import NavBar from './NavBar';
 import SinglePlanetView from './SinglePlanetView';
 
 const CameraController = (props) => {
-  const { camera, gl } = useThree();
+  let { camera, gl } = useThree();
+  ChangeCameraPosition(100, 100, 0);
   useEffect(() => {
     const controls = new OrbitControls(camera, gl.domElement);
-    if (props.viewState === 'singlePlanetView') {
-      controls.minDistance = 0.02;
-      controls.maxDistance = 2;
+    if (props.viewState === "singlePlanetView") {
+      controls.minDistance = 0.002;
+      controls.maxDistance = 5;
     } else {
       controls.minDistance = 0.02;
-      controls.maxDistance = 1000;
+      controls.maxDistance = 10000;
     }
     return () => {
       controls.dispose();
@@ -28,8 +29,15 @@ const CameraController = (props) => {
   return null;
 };
 
+function ChangeCameraPosition(x, y, z) {
+  useThree(({ camera }) => {
+    camera.position.set(x, y, z);
+    camera.fov = 40;
+    camera.far = 5000;
+  });
+}
+
 function Scene(props) {
-  // console.log("SCENEPROPS", props);
   extend({ AtmosphereShaderMaterial });
   extend({ GlobeShaderMaterial });
 
@@ -38,9 +46,9 @@ function Scene(props) {
       <CameraController />
 
       <Stars
-        radius={200}
-        depth={120}
-        count={5000}
+        radius={4000}
+        depth={320}
+        count={6000}
         factor={4}
         saturation={0}
         fade
@@ -109,7 +117,11 @@ export const SolarSystemView = () => {
         ''
       )}
       <NavBar />
-      <Canvas gl={{ antialias: true }} dpr={window.devicePixelRatio}>
+      <Canvas
+        gl={{ antialias: true }}
+        dpr={window.devicePixelRatio}
+        camera={{ far: 10000 }}
+      >
         <Suspense fallback={null}>
           <Scene
             viewState={viewState}
