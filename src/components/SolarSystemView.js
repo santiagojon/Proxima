@@ -84,7 +84,7 @@ function Scene(props) {
             * planetScale
           )
         )
-      : ChangeCameraPosition([50, 10, 0]);
+      : ChangeCameraPosition([50, 20, 0]);
   }
 
  
