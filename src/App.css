@@ -410,8 +410,6 @@ https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Gajillion_Islands_Plan
 
 /* milky way https://www.nicepng.com/png/full/246-2462923_the-galaxy-map-milky-way-galaxy-black-hole.png */
 
-
-
 /* stars bg */
 @keyframes move-twink-back {
   from {
@@ -604,12 +602,7 @@ a li {
   margin-bottom: 4rem;
 }
 
-
-
-
-
 /* sdflgkjsdogirejgo;idfsjg;ldfskgjsdf;lkgj */
-
 
 @import 'https://fonts.googleapis.com/css?family=Roboto:400,500';
 
@@ -874,7 +867,7 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
 }
 
 #masthead.is-active .hamburger-label {
-  color: #000;
+  color: rgb(247, 246, 246);
 }
 
 .hamburger-box,
@@ -927,11 +920,11 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
   #site-nav .col {
     flex: 0 0 20%;
   }
-
+  /*
   #site-nav .col:last-child {
     display: flex;
-    justify-content: flex-end;
-  }
+    justify-content: first baseline;
+  } */
 }
 
 #site-nav h4 {

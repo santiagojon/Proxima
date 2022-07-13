@@ -22,9 +22,7 @@ const AppRoutes = () => {
   return (
     <Router>
       <Routes>
-        <Route path="search">
-          <Route exact path=":type" element={<SearchType />} />
-        </Route>
+        <Route exact path="/search/:type" element={<SearchType />} />
         <Route exact path="/" element={<LandingPage />} />
         <Route path="/home" element={<SolarSystemView />} />
         <Route path="/learnMore" element={<InfoPage />} />

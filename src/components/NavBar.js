@@ -9,7 +9,8 @@ const NavBar = () => {
   const handleToggle = () => {
     setActive(!isActive);
   };
-
+  console.log('navBar');
+  const onChange = () => {};
   return (
     <div className="hero" id="pos">
       <header
@@ -48,33 +49,41 @@ const NavBar = () => {
             role="navigation"
           >
             <div className="col">
-              <h4>Expertise</h4>
+              <h4>
+                <Link
+                  // className="site-nav"
+                  style={{ textDecoration: 'none' }}
+                  to="/"
+                >
+                  Home Page
+                </Link>
+              </h4>
               <ul>
                 <li>
-                  <a href="#">Insurance Industry</a>
-                </li>
-                <li>
-                  <a href="#">Retail Industry</a>
-                </li>
-                <li>
-                  <a href="#">Logistics Industry</a>
-                </li>
-                <li>
-                  <a href="#">Blog</a>
+                  <h4></h4>
                 </li>
               </ul>
             </div>
             <div className="col">
-              <h4>Results</h4>
+              <h4>Featured</h4>
               <ul>
                 <li>
-                  <a href="#">Case Studies</a>
+                  <Link className="site-nav" to="/home">
+                    Our System
+                  </Link>
                 </li>
                 <li>
-                  <a href="#">Client Partners</a>
+                  <a href="/#milk">Milky Way</a>
+                </li>
+                <li>
+                  {/* <a href="#">Logistics Industry</a> */}
+                </li>
+                <li>
+                  {/* <a href="#">Blog</a> */}
                 </li>
               </ul>
             </div>
+
             <div className="col">
               <h4>Planets by Type</h4>
               <ul>
@@ -84,33 +93,47 @@ const NavBar = () => {
                   </Link>
                 </li>
                 <li>
-                  <a href="#">Our Team</a>
+                  <Link className="site-nav" to="/search/superearth">
+                    Super Earth
+                  </Link>
                 </li>
                 <li>
-                  <a href="#">Our Culture</a>
+                  <Link className="site-nav" to="/search/neptuntunian">
+                    Neptuntunian
+                  </Link>
                 </li>
                 <li>
-                  <a href="#">News</a>
-                </li>
-                <li>
-                  <a href="#">Join Us</a>
+                  <Link className="site-nav" to="/search/gasgiant">
+                    Gas Giant
+                  </Link>
                 </li>
               </ul>
             </div>
             <div className="col">
-              <h4>Approach</h4>
+              <h4>Learn More</h4>
               <ul>
                 <li>
-                  <a href="#">Digital Transformation</a>
+                  <Link className="site-nav" to="/learnmore">
+                    Info
+                  </Link>
                 </li>
-                <li>
-                  <a href="#">Digital Readiness Tool</a>
-                </li>
-                <li>
-                  <a href="#">Solution Partners</a>
-                </li>
+                {/* <li><a href="#">Client Partners</a></li> */}
               </ul>
             </div>
+            {/* <div className="col"> */}
+            {/* <h4>{'         '}   Approach</h4> */}
+            {/* <ul> */}
+            {/* <li> */}
+            {/* <a href="#">Digital Transformation</a> */}
+            {/* </li> */}
+            {/* <li> */}
+            {/* <a href="#">Digital Readiness Tool</a> */}
+            {/* </li> */}
+            {/* <li> */}
+            {/* <a href="#">Solution Partners</a> */}
+            {/* </li> */}
+            {/* </ul> */}
+            {/* </div> */}
             {/* <div className="col">
             <ul className="social">
               <li><a href=""><svg title="Facebook"></svg></a></li>

@@ -86,7 +86,7 @@ function Scene(props) {
       : ChangeCameraPosition([350, 250, 0]);
   }
 
- 
+
 
   return (
     <>
