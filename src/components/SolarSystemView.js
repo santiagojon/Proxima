@@ -1,4 +1,4 @@
-import React, { useEffect, Suspense, useState } from "react";
+import React, { useEffect, Suspense, useState, useMemo } from "react";
 import { Canvas, extend } from "@react-three/fiber";
 import { Stars } from "@react-three/drei";
 import { SolarSystem } from "./SolarSystem";
@@ -9,6 +9,7 @@ import SinglePlanetView from "./SinglePlanetView";
 import { AtmosphereShaderMaterial } from "../shaders/Atmosphere";
 import { GlobeShaderMaterial } from "../shaders/GlobeMaterial";
 import { CameraController } from "./CameraController";
+import dataParser from "../util/DataParsed";
 
 function Scene(props) {
   extend({ AtmosphereShaderMaterial });
@@ -56,15 +57,29 @@ export const SolarSystemView = (props) => {
   const [viewState, setViewState] = useState("solarSystemView");
   const [singlePlanetInfo, setSinglePlanetInfo] = useState({});
   const [singlePlanetKey, setSinglePlanetKey] = useState(0);
+  const [unparsedSolarData, setUnparsedSolarData] = useState(null);
   const [solarSystem, setSolarSystem] = useState(solarSys);
 
   useEffect(() => {
     if (props.viewState) setViewState(props.viewState);
     if (props.singlePlanetInfo) setSinglePlanetInfo(props.setSinglePlanetInfo);
     if (props.singlePlanetKey) setSinglePlanetKey(props.singlePlanetKey);
-    if (props.solarSystem) setSolarSystem(props.solarSystem);
-    // if (props.solarSystem) setSolarSystem(props.solarSystem);
   }, []);
+
+  useEffect(() => {
+    if (unparsedSolarData !== props.solarSystem) {
+      setUnparsedSolarData(props.solarSystem);
+      if (unparsedSolarData !== null) {
+        let parsedData = dataParser(unparsedSolarData);
+        setSolarSystem(parsedData);
+      }
+    }
+  }, [props.solarSystem]);
+
+  // const memoizedValue = useMemo(
+  //   () => dataParser(unparsedSolarData),
+  //   [props.solarSystem]
+  // );
 
   const handleSetState = (command, info) => {
     switch (command) {
