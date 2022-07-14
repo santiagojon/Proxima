@@ -14,12 +14,16 @@ app.use(express.json());
 // app.use('/auth', require('./auth'))
 app.use('/api', require('./api'));
 
+// app.get('/', (req, res) =>
+//   res.sendFile(path.join(__dirname, '..', 'public/index.html'))
+// );
+
 app.get('/', (req, res) =>
-  res.sendFile(path.join(__dirname, '..', 'public/index.html'))
+  res.sendFile(path.join(__dirname, 'client/build'))
 );
 
 // static file-serving middleware
-app.use(express.static(path.join(__dirname, '..', 'public')));
+app.use(express.static(path.join(__dirname, 'client/build')));
 
 // any remaining requests with an extension (.js, .css, etc.) send 404
 app.use((req, res, next) => {
@@ -33,8 +37,11 @@ app.use((req, res, next) => {
 });
 
 // sends index.html
+// app.use('*', (req, res) => {
+// res.sendFile(path.join(__dirname, '..', 'public/index.html'));
+// });
 app.use('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'public/index.html'));
+  res.sendFile(path.join(__dirname, 'client/build/index.html'));
 });
 
 // error handling endware
