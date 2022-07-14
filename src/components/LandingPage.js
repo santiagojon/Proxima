@@ -366,7 +366,7 @@ const LandingPage = () => {
           <h2 className="centerOffsetLeftText">That's here.</h2>
           <h2 className="centerOffsetRightText">That's home.</h2>
         </ParallaxLayer> */}
-        <ParallaxLayer offset={6} speed={0.75}>
+        <ParallaxLayer offset={6} speed={0.75} id="milk">
           <div id="milkyWayLandingPageContainer">
             <section id="milkyWayLandingPage" ref={ref}>
               <img
