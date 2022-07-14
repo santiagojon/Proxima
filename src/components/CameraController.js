@@ -13,7 +13,8 @@ const ChangeCameraPosition = (arr, fov, far) => {
 export const CameraController = (props) => {
   let { camera, gl } = useThree();
   let controls = new OrbitControls(camera, gl.domElement);
-  ChangeCameraPosition([-350, 250, 0], 40, 10000);
+  let cameraPos = [-350, 250, 0];
+  ChangeCameraPosition(cameraPos, 40, 10000);
   useEffect(() => {
     if (props.viewState === "singlePlanetView") {
       controls.minDistance = 0.002;

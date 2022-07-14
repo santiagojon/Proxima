@@ -8,13 +8,13 @@ import { CameraController } from "./CameraController";
 
 const SinglePlanetView = (props) => {
   const ref = useRef();
-  const speed = 0.009;
+  const speed = 0.001;
 
   useFrame((state, delta) => (ref.current.rotation.y += speed));
 
   return (
     <>
-      <CameraController camLocation={[[-350, 0, 0]]} />
+      <CameraController />
       <mesh ref={ref} position={[0, 0, 0]}>
         <sphereBufferGeometry args={[170, 50, 50]} />
         {props.sun ? (

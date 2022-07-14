@@ -1,15 +1,22 @@
 import React, { useEffect, Suspense, useState } from "react";
-import { Canvas } from "@react-three/fiber";
+import { Canvas, extend } from "@react-three/fiber";
 import { Stars } from "@react-three/drei";
 import { SolarSystem } from "./SolarSystem";
 import { solarSys } from "../util/SolarSystem";
 import { EffectComposer, Bloom, Vignette } from "@react-three/postprocessing";
 import NavBar from "./NavBar";
 import SinglePlanetView from "./SinglePlanetView";
+import { AtmosphereShaderMaterial } from "../shaders/Atmosphere";
+import { GlobeShaderMaterial } from "../shaders/GlobeMaterial";
+import { CameraController } from "./CameraController";
 
 function Scene(props) {
+  extend({ AtmosphereShaderMaterial });
+  extend({ GlobeShaderMaterial });
+
   return (
     <>
+      <CameraController viewState={props.viewState} />
       <Stars
         radius={4000}
         depth={320}
@@ -33,7 +40,6 @@ function Scene(props) {
           viewState={props.viewState}
         />
       ) : (
-        // )
         <SolarSystem
           solarSystem={props.solarSystem}
           handleSetState={props.handleSetState}
