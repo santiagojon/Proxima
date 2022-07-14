@@ -20,7 +20,7 @@ const LandingPage = () => {
     <div className="landingPage">
       {/* <MenuButton /> */}
       <NavBar />
-      <Parallax pages={7.25}>
+      <Parallax pages={7.25} ref={ref}>
         {/* <ParallaxLayer
           className="sticky"
           style={{
@@ -31,6 +31,13 @@ const LandingPage = () => {
 
           }}
         ></ParallaxLayer> */}
+        {/* <ParallaxLayer
+        offset={1.3}
+        sticky={{ start: 1.1, end: 6}}
+        onClick={() => ref.current.scrollTo(6)}
+        >
+          <h4 id='skipButton'>Skip</h4>
+        </ParallaxLayer> */}
         <ParallaxLayer
           id="heroContainer"
           factor={1.3}
@@ -47,11 +54,14 @@ const LandingPage = () => {
           sticky={{ start: 1.1, end: 1.3 }}
           factor={1.3}
         ></ParallaxLayer>
-        <ParallaxLayer offset={0}>
+        <ParallaxLayer offset={0}         onClick={() => ref.current.scrollTo(6)}
+>
           <div id="introLandingPageContainer">
             <section id="introLandingPage">
-              <h1>Proxima</h1>
+              <h1 id='landingPageTitle'>Proxima</h1>
               <h2>Start scrolling to explore...</h2>
+              <br></br>
+              <h2 id='skipButton'> Or click here to skip</h2>
             </section>
           </div>
         </ParallaxLayer>
@@ -181,7 +191,7 @@ const LandingPage = () => {
             backgroundSize: '45%',
           }}
         ></ParallaxLayer> */}
-        <ParallaxLayer offset={3.08} speed={0.1}>
+        <ParallaxLayer offset={3.3} speed={0.1}>
           <h2>
             <p className="centerText">
               For centuries, fictional depictions of planets orbiting other
@@ -241,7 +251,7 @@ const LandingPage = () => {
           }}
         ></ParallaxLayer>
         <ParallaxLayer
-          offset={4.41}
+          offset={4.2}
           speed={1}
           // style={{
           //   backgroundImage:
@@ -249,7 +259,7 @@ const LandingPage = () => {
           //   backgroundSize: "50%",
           // }}
         >
-          <h2 className="centerText">
+          <h2 className="textTri">
             {/* <img
               id="arrakis"
               src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/d71bdf86-58c5-4485-9259-f07a5b859d9c/ddqqwri-02f1cc19-a279-4f07-b2d5-fff2128441b4.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2Q3MWJkZjg2LTU4YzUtNDQ4NS05MjU5LWYwN2E1Yjg1OWQ5Y1wvZGRxcXdyaS0wMmYxY2MxOS1hMjc5LTRmMDctYjJkNS1mZmYyMTI4NDQxYjQuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.QRxyKp3rz3LKUdyN0VjCDHSttCK1RopEL-LcP48JJuw"
@@ -269,7 +279,7 @@ const LandingPage = () => {
             </p> */}
             {/* <br></br> */}
 
-            <p className="landingTextFinal">
+            <p className="textTri">
               We now know that worlds beyond our solar system — known as
               exoplanets — do exist. In fact, there are a whole lot of them:
               Scientists have found over 5,000 exoplanets, and think that most
@@ -293,10 +303,12 @@ const LandingPage = () => {
             zIndex: '-3',
             backgroundSize: '25%',
           }}
+
+          
         ></ParallaxLayer>
 
         <ParallaxLayer
-          offset={4.64}
+          offset={4.2}
           speed={0.75}
           style={{
             backgroundImage:
@@ -327,8 +339,8 @@ const LandingPage = () => {
           </h2>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={5.99} speed={1.79} factor={0.5}>
-          <h2 className="centerText">Where would you like to go first?</h2>
+        <ParallaxLayer offset={5.8} speed={1.79} factor={0.5}>
+          <h2 className="text">Where would you like to go first?</h2>
         </ParallaxLayer>
         <ParallaxLayer
           offset={5.9999}
@@ -356,7 +368,7 @@ const LandingPage = () => {
         </ParallaxLayer> */}
         <ParallaxLayer offset={6} speed={0.75} id="milk">
           <div id="milkyWayLandingPageContainer">
-            <section id="milkyWayLandingPage">
+            <section id="milkyWayLandingPage" ref={ref}>
               <img
                 src="https://scitechdaily.com/images/Milky-Way-Galaxy-and-Central-Bar-Viewed-From-Above.jpg"
                 alt="milkway"
@@ -365,7 +377,19 @@ const LandingPage = () => {
                 <Link to={'/home'}>
                   <button id="sun" className="galaxyButtons"></button>
                 </Link>
-                <span id="sunDescription">The Sun</span>
+                <span className="starSystemDescription">The Sun</span>
+              </div>
+              <div id="trappistWrapper">
+                <Link to={'/home'}>
+                  <button id="trappist" className="galaxyButtons"></button>
+                </Link>
+                <span className="starSystemDescription">Trappist-1</span>
+              </div>
+              <div id="proximaWrapper">
+                <Link to={'/home'}>
+                  <button id="proxima" className="galaxyButtons"></button>
+                </Link>
+                <span className="starSystemDescription">Proxima Centauri</span>
               </div>
             </section>
             <div id="milkyWayTextLandingPage">
@@ -375,23 +399,6 @@ const LandingPage = () => {
           </div>
         </ParallaxLayer>
 
-        {/* <div className="text"> */}
-        {/* <ParallaxLayer offset={1} speed={0.75}>
-            <h3 id="sL">"That's here... That's home... That's us..."</h3>
-          </ParallaxLayer> */}
-        {/* <ParallaxLayer offset={1.01} speed={1}>
-            <h3 id="sR">That's here. </h3>
-          </ParallaxLayer>
-          <ParallaxLayer offset={1.02} speed={1.5}>
-            <h3 id='sLL'>That's home...</h3>
-          </ParallaxLayer>
-          <ParallaxLayer offset={1.04} speed={1.8}>
-            <h3>That's us...."</h3>
-          </ParallaxLayer>
-          <ParallaxLayer offset={1.05} speed={2}>
-            <h3>- Carl segan</h3>
-          </ParallaxLayer> */}
-        {/* </div> */}
       </Parallax>
     </div>
   );

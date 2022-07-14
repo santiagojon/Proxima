@@ -1,3 +1,18 @@
+@import 'https://fonts.googleapis.com/css?family=Roboto:400,500';
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Poppins&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Poppins&family=Rubik+Moonrocks&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Poppins&family=Rubik+Moonrocks&family=Strait&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Lato&family=Montserrat&family=Poppins&family=Rubik+Moonrocks&family=Strait&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Iceland&family=Lato&family=Montserrat&family=Poppins&family=Rubik+Moonrocks&family=Strait&display=swap');
 * {
   /* background-color: black; */
 }
@@ -31,6 +46,33 @@ canvas {
 /* **********************************
 Landing Page  */
 
+/* #skipButtonContainer {
+  display: flex;
+  justify-content: flex-end;
+
+} */
+
+/* #skipButton {
+  color: white;
+  border: 1px solid white;
+  position: absolute;
+  text-align: right;
+  margin-top: 2rem;
+  margin-left: 2rem;
+  padding: 1rem;
+  z-index: 20;
+} */
+
+#skipButton {
+  margin: 1rem;
+  font-size: 0.5rem;
+}
+
+#skipButton:hover {
+  /* border: 1px solid gold; */
+  color: gold;
+}
+
 .topCenterText {
   text-align: center;
 }
@@ -41,13 +83,30 @@ Landing Page  */
   flex-basis: auto;
   flex-direction: column;
   align-items: center;
-  font-family: 'Times New Roman', Times, serif;
+  /* font-family: 'Roboto', sans-serif; */
+  font-family: 'Lato', sans-serif;
+
+
+  /* font-weight: 300; */
+}
+
+#landingPageTitle {
+  font-family: 'Lato', sans-serif;
+  /* font-family: 'Poppins', sans-serif; */
+  /* font-family: 'Rubik Moonrocks', cursive; */
+  font-family: 'Strait', sans-serif;
+  /* font-family: 'Black Ops One', cursive; */
+  /* font-family: 'Iceland', sans-serif; */
+
+
+
+
 }
 
 .landingPage div {
   /* background-color: black; */
   /* justify-content: center; */
-  font-family: 'Times New Roman', Times, serif;
+  /* font-family: Georgia, 'Times New Roman', Times, serif */
   /* height: 100rem; */
 }
 
@@ -114,7 +173,6 @@ Landing Page  */
 #introLandingPage h2 {
   font-size: 100%;
   margin: 0 29%;
-  font-weight: 400;
 }
 
 .rightText {
@@ -124,7 +182,6 @@ Landing Page  */
   top: 10%;
   color: white;
   /* font-size: 1.7rem; */
-  font-weight: 400;
   animation: slide-up 3s;
 }
 
@@ -135,7 +192,6 @@ Landing Page  */
   left: 15%;
   /* top:40%; */
   color: white;
-  font-weight: 400;
   animation: slide-up 3s;
 }
 .centerOffsetRightText {
@@ -143,7 +199,6 @@ Landing Page  */
   right: 0%;
   top: 40%;
   color: white;
-  font-weight: 400;
   animation: slide-up 3s;
 }
 
@@ -154,8 +209,7 @@ Landing Page  */
   right: 15%;
   /* left: 30%; */
   top: 20%;
-  color: white;
-  font-weight: 300;
+  color: blanchedalmond;
   animation: slide-up 3s;
 }
 .textLower {
@@ -199,6 +253,10 @@ Landing Page  */
   height: 65%;
 }
 
+/* #milkyWayLandingPage img:hover {
+  opacity: 0.9;
+} */
+
 #milkyWayTextLandingPage {
   background-color: transparent;
   position: absolute;
@@ -211,15 +269,14 @@ Landing Page  */
   color: white;
   font-size: 2.5rem;
   font-weight: 400;
-  /* transform: translate3d(0, 100px, 0); */
   animation: slide-up 2s;
   /* animation-delay: calc(var(--scroll) * -1s); */
+  /* transform: translate3d(0, 100px, 0); */
 }
 
 #milkyWayCTALandingPage {
-  color: red;
+  color: Gold;
   font-weight: 400;
-
   animation: slide-up 3s;
   /* animation-delay: calc(var(--scroll) * -1s); */
 }
@@ -240,9 +297,9 @@ Landing Page  */
 Milky Way Buttons */
 
 .galaxyButtons {
-  height: 25px;
-  width: 25px;
-  border-color: crimson;
+  height: 50px;
+  width: 50px;
+  border-color: black;
   background-color: transparent;
   border-radius: 50%;
   opacity: 0.7;
@@ -251,7 +308,7 @@ Milky Way Buttons */
 /* https://css-tricks.com/4-ways-to-animate-the-color-of-a-text-link-on-hover/ */
 
 .galaxyButtons:hover {
-  border-color: yellow;
+  border-color: gold;
   background-position: 0 100%;
   transition: opacity 1s, visibility 0.2s;
 }
@@ -263,25 +320,64 @@ Milky Way Buttons */
   transform: translate(-25%, -100%);
 }
 
-#sun {
+#sun #proxima #trappist {
   cursor: pointer;
 }
 
-#sunDescription {
+.starSystemDescription {
   margin-left: 0.5rem;
   height: 20px;
   width: 20px;
-  color: white;
+  color: black;
+  font-size: 1rem;
+  font-weight: 700;
   /* visibility: hidden; */
   opacity: 0.7;
   transition: opacity 1s, visibility 0.2s;
 }
 
-#sunWrapper:hover #sunDescription {
+#sunWrapper:hover .starSystemDescription {
   /* visibility: visible; */
   opacity: 1;
-  color: yellow;
+  color: gold;
 }
+
+#proximaWrapper {
+  position: absolute;
+  top: 75%;
+  left: 55%;
+  transform: translate(-25%, -100%);
+}
+
+#promixa {
+  cursor: pointer;
+}
+
+#proximaWrapper:hover .starSystemDescription {
+  opacity: 1;
+  color: gold;
+}
+
+#trappistWrapper {
+  position: absolute;
+  top: 30%;
+  left: 65%;
+  transform: translate(-25%, -100%);
+}
+
+#trappistWrapper button :hover{
+  opacity: 1;
+  color: gold;
+}
+
+
+
+
+/* #trappist {
+  cursor: pointer;
+} */
+
+
 
 /* ***********************
 Single Planet */
@@ -374,8 +470,23 @@ Single Planet */
 .text {
   color: rgb(235, 232, 227);
   text-align: center;
+  left: 25%;
+  right: 25%;
+  padding: 5%;
   /* right: 35%; */
 }
+
+.textTri {
+  color: rgb(235, 232, 227);
+  text-align: center;
+  left: 50%;
+  right: 50%;
+  bottom: 10%;
+  padding: 25%;
+  /* right: 35%; */
+}
+
+
 #sL {
   position: relative;
   right: 10%;
@@ -541,6 +652,7 @@ a li {
 #infoPageContent {
   display: flex;
   flex-direction: column;
+  text-align: left;
   /* padding: 1rem;
   box-shadow: 0 2px 2px rgba(245, 245, 245, 0.025), 0 5px 2px rgba(235, 233, 233, 0.025), 0 15px 15px rgba(242, 242, 242, 0.035),
   0 15px 15px rgba(255, 255, 255, 0.045), 0 15px 15px rgba(255, 255, 255, 0.055); */
@@ -556,8 +668,12 @@ a li {
   border-radius: 10%; */
 }
 
+.infoPageContentCard h2 {
+  margin-bottom: 1rem;
+}
+
 .infoPageContentCard h4 {
-  margin-top: 2rem;
+  margin: 2rem 0 1rem 0;
 }
 
 .infoPageContentCard h5 {
@@ -566,11 +682,17 @@ a li {
 
 .infoPageContentCard ul li {
   list-style-type: none;
+  padding: 1rem;
 }
 
 .infoPageContentCard p span {
   color: rgb(61, 102, 160);
+  margin-top: 2rem;
 }
+
+#toc4 ~ p {
+  margin-top: 1rem;
+} 
 
 #infoPageContent h2 {
   color: gold;
