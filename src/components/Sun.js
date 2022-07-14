@@ -19,7 +19,9 @@ export const Sun = (props) => {
         uColor={
           new THREE.Color(atmosphereRGB[0], atmosphereRGB[1], atmosphereRGB[2])
         }
-        globeTexture={new THREE.TextureLoader().load("updatedNoise2k.png")}
+        globeTexture={new THREE.TextureLoader().load(
+          "/images/updatedNoise2k.png"
+        )}
         blending={THREE.AdditiveBlending}
       />
     </mesh>

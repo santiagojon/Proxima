@@ -1,6 +1,7 @@
 import React from "react";
 import { Planet } from "./Planet";
 import * as THREE from "three";
+import { CameraController } from "./CameraController";
 
 export const SolarSystem = (props) => {
   const solarSystem = props.solarSystem || [];
@@ -9,6 +10,10 @@ export const SolarSystem = (props) => {
 
   return (
     <>
+      <CameraController
+        viewState={props.viewState}
+        camLocation={[[-350, 250, 0]]}
+      />
       {orbitRings && orbitRings.length > 0
         ? orbitRings.map((orbit, idx) => {
             return (
