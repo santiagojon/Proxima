@@ -1,49 +1,20 @@
 import React, { useEffect, Suspense, useState } from "react";
-import { Canvas, useThree, extend } from "@react-three/fiber";
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+import { Canvas, extend } from "@react-three/fiber";
 import { Stars } from "@react-three/drei";
-import { AtmosphereShaderMaterial } from "../shaders/Atmosphere";
-import { GlobeShaderMaterial } from "../shaders/GlobeMaterial";
 import { SolarSystem } from "./SolarSystem";
 import { solarSys } from "../util/SolarSystem";
 import { EffectComposer, Bloom, Vignette } from "@react-three/postprocessing";
 import NavBar from "./NavBar";
 import SinglePlanetView from "./SinglePlanetView";
-
-const ChangeCameraPosition = (arr, fov, far) => {
-  useThree(({ camera }) => {
-    camera.position.set(arr[0], arr[1], arr[2]);
-    camera.fov = 40;
-    camera.far = 9000;
-  });
-};
-
-const CameraController = (props) => {
-  let { camera, gl } = useThree();
-  console.log("PROP VIEW STATE!", props.viewState);
-  let controls = new OrbitControls(camera, gl.domElement);
-  ChangeCameraPosition([-350, 250, 0], 40, 10000);
-  useEffect(() => {
-    if (props.viewState === "singlePlanetView") {
-      controls.minDistance = 0.002;
-      controls.maxDistance = 5;
-    } else {
-      controls.minDistance = 0.02;
-      controls.maxDistance = 10000;
-    }
-    return () => {
-      controls.dispose();
-    };
-  }, [camera, gl]);
-
-  return null;
-};
-
-const planetScale = 1.5;
+import { AtmosphereShaderMaterial } from "../shaders/Atmosphere";
+import { GlobeShaderMaterial } from "../shaders/GlobeMaterial";
+import { CameraController } from "./CameraController";
 
 function Scene(props) {
   extend({ AtmosphereShaderMaterial });
   extend({ GlobeShaderMaterial });
+
+  console.log(props.solarSystem);
 
   return (
     <>
@@ -71,9 +42,8 @@ function Scene(props) {
           viewState={props.viewState}
         />
       ) : (
-        // )
         <SolarSystem
-          solarSystem={solarSys}
+          solarSystem={props.solarSystem}
           handleSetState={props.handleSetState}
           viewState={props.viewState}
         />
@@ -82,10 +52,19 @@ function Scene(props) {
   );
 }
 
-export const SolarSystemView = () => {
+export const SolarSystemView = (props) => {
   const [viewState, setViewState] = useState("solarSystemView");
   const [singlePlanetInfo, setSinglePlanetInfo] = useState({});
   const [singlePlanetKey, setSinglePlanetKey] = useState(0);
+  const [solarSystem, setSolarSystem] = useState(solarSys);
+
+  useEffect(() => {
+    if (props.viewState) setViewState(props.viewState);
+    if (props.singlePlanetInfo) setSinglePlanetInfo(props.setSinglePlanetInfo);
+    if (props.singlePlanetKey) setSinglePlanetKey(props.singlePlanetKey);
+    if (props.solarSystem) setSolarSystem(props.solarSystem);
+    // if (props.solarSystem) setSolarSystem(props.solarSystem);
+  }, []);
 
   const handleSetState = (command, info) => {
     switch (command) {
@@ -93,7 +72,6 @@ export const SolarSystemView = () => {
         setViewState(info);
         break;
       case "SET_STAR_SYSTEM_VIEW":
-        // reset SinglePlanetInfo?
         setViewState(info);
         break;
       case "SET_PLANET_INFO":
@@ -101,9 +79,6 @@ export const SolarSystemView = () => {
         break;
       case "SET_PLANET_KEY":
         setSinglePlanetKey(info);
-        break;
-      case "SET_CAMERA":
-        ChangeCameraPosition(...info);
         break;
       default:
         break;
@@ -131,6 +106,7 @@ export const SolarSystemView = () => {
             handleSetState={handleSetState}
             planetInfo={singlePlanetInfo}
             singlePlanetKey={singlePlanetKey}
+            solarSystem={solarSystem}
           />
         </Suspense>
         <EffectComposer>

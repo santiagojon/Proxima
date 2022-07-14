@@ -118,25 +118,25 @@ const InfoPage = () => {
           <div className="infoPageContentCard">
             <h2 id="toc4">Exoplanet Types</h2>
             <p>
-              <span>Gas giants</span> - large planets mostly
-              composed of helium and/or hydrogen. These planets, like Jupiter
-              and Saturn in our solar system, don’t have hard surfaces and
-              instead have swirling gases above a solid core. Gas giant
-              exoplanets can be much larger than Jupiter, and much closer to
-              their stars than anything found in our solar system.
+              <span>Gas giants</span> - large planets mostly composed of helium
+              and/or hydrogen. These planets, like Jupiter and Saturn in our
+              solar system, don’t have hard surfaces and instead have swirling
+              gases above a solid core. Gas giant exoplanets can be much larger
+              than Jupiter, and much closer to their stars than anything found
+              in our solar system.
             </p>
             <p>
-              <span>Super earths</span> - a class of planets
-              unlike any in our solar system – are more massive than Earth yet
-              lighter than ice giants like Neptune and Uranus, and can be made
-              of gas, rock or a combination of both. They are between twice the
-              size of Earth and up to 10 times its mass.
+              <span>Super earths</span> - a class of planets unlike any in our
+              solar system – are more massive than Earth yet lighter than ice
+              giants like Neptune and Uranus, and can be made of gas, rock or a
+              combination of both. They are between twice the size of Earth and
+              up to 10 times its mass.
             </p>
             <p>
-              <span>Neptunian</span> - These exoplanets are similar in
-              size to Neptune or Uranus in our solar system. Neptunian planets
-              typically have hydrogen and helium-dominated atmospheres with
-              cores or rock and heavier metals.
+              <span>Neptunian</span> - These exoplanets are similar in size to
+              Neptune or Uranus in our solar system. Neptunian planets typically
+              have hydrogen and helium-dominated atmospheres with cores or rock
+              and heavier metals.
             </p>
             <p>
               <span>Terrestrial</span> - In our solar system, Earth, Mars,
@@ -315,7 +315,7 @@ const InfoPage = () => {
               </p>
             </div>
           </div>
-         
+
           <div className="infoPageContentCard">
             <h2 id="toc8">Some exoplanet missions</h2>
             <h4>Past</h4>

@@ -1,12 +1,28 @@
 // import '../Nav.css';
 
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { getPlanetsByName } from '../store/planetSearchBar';
+import { useDispatch, useSelector } from 'react-redux';
 
 const NavBar = () => {
   const [isActive, setActive] = useState('false');
+  const [search, setSearch] = useState('');
+  const dispatch = useDispatch();
+  const planets = useSelector((state) => state.planetSearch);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
 
   const handleToggle = () => {
     setActive(!isActive);
+  };
+
+  const handleChange = (e) => {
+    const query = e.target.value;
+    setSearch(query);
+    dispatch(getPlanetsByName(query));
   };
 
   return (
@@ -31,14 +47,35 @@ const NavBar = () => {
             </span>
             <span className="hamburger-label">Menu</span>
           </button>
-          <form id="masthead-search" className={isActive ? null : 'is-active'}>
+          <form
+            id="masthead-search"
+            className={isActive ? null : 'is-active'}
+            onSubmit={handleSubmit}
+          >
             <input
               type="search"
               name="s"
+              autoComplete="off"
               aria-labelledby="search-label"
               placeholder="Search&hellip;"
               className="draw"
+              value={search}
+              onChange={(e) => handleChange(e)}
             />
+            <div className="results">
+              {planets.map((planet) => (
+                <p key={planet.id} className="list">
+                  <Link
+                    to={`/system/${planet.starName}`}
+                    onClick={() =>
+                      window.history.push(`/system/${planet.starName}`)
+                    }
+                  >
+                    {planet.planetName}
+                  </Link>
+                </p>
+              ))}
+            </div>
             <button type="submit">&rarr;</button>
           </form>
           <nav
@@ -47,67 +84,112 @@ const NavBar = () => {
             role="navigation"
           >
             <div className="col">
-              <h4>Expertise</h4>
+              <h4>
+                <Link
+                  // className="site-nav"
+                  style={{ textDecoration: 'none' }}
+                  to="/"
+                  // onClick={() => window.history.push('/')}
+                >
+                  Home Page
+                </Link>
+              </h4>
               <ul>
                 <li>
-                  <a href="#">Insurance Industry</a>
-                </li>
-                <li>
-                  <a href="#">Retail Industry</a>
-                </li>
-                <li>
-                  <a href="#">Logistics Industry</a>
-                </li>
-                <li>
-                  <a href="#">Blog</a>
+                  <h4></h4>
                 </li>
               </ul>
             </div>
             <div className="col">
-              <h4>Results</h4>
+              <h4>Featured</h4>
               <ul>
                 <li>
-                  <a href="#">Case Studies</a>
+                  <Link
+                    className="site-nav"
+                    to="/home"
+                    // onClick={() => window.location.reload()}
+                  >
+                    Our System
+                  </Link>
                 </li>
                 <li>
-                  <a href="#">Client Partners</a>
+                  <a href="/#milk">Milky Way</a>
+                </li>
+                <li>{/* <a href="#">Logistics Industry</a> */}</li>
+                <li>{/* <a href="#">Blog</a> */}</li>
+              </ul>
+            </div>
+
+            <div className="col">
+              <h4>Planets by Type</h4>
+              <ul>
+                <li>
+                  <Link
+                    className="site-nav"
+                    to="/search/terrestrial"
+                    onClick={() => window.history.push('/search/terrestrial')}
+                  >
+                    Terrestrial
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className="site-nav"
+                    to="/search/superearth"
+                    onClick={() => window.history.push('/search/superearth')}
+                  >
+                    Super Earth
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className="site-nav"
+                    to="/search/neptuntunian"
+                    onClick={() => window.history.push('/search/neptuntunian')}
+                  >
+                    Neptuntunian
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className="site-nav"
+                    to="/search/gasgiant"
+                    onClick={() => window.history.push('/search/gasgiant')}
+                  >
+                    Gas Giant
+                  </Link>
                 </li>
               </ul>
             </div>
             <div className="col">
-              <h4>Company</h4>
+              <h4>Learn More</h4>
               <ul>
                 <li>
-                  <a href="#">Our Story</a>
+                  <Link
+                    className="site-nav"
+                    to="/learnmore"
+                    // onClick={() => window.location.reload()}
+                  >
+                    Info
+                  </Link>
                 </li>
-                <li>
-                  <a href="#">Our Team</a>
-                </li>
-                <li>
-                  <a href="#">Our Culture</a>
-                </li>
-                <li>
-                  <a href="#">News</a>
-                </li>
-                <li>
-                  <a href="#">Join Us</a>
-                </li>
+                {/* <li><a href="#">Client Partners</a></li> */}
               </ul>
             </div>
-            <div className="col">
-              <h4>Approach</h4>
-              <ul>
-                <li>
-                  <a href="#">Digital Transformation</a>
-                </li>
-                <li>
-                  <a href="#">Digital Readiness Tool</a>
-                </li>
-                <li>
-                  <a href="#">Solution Partners</a>
-                </li>
-              </ul>
-            </div>
+            {/* <div className="col"> */}
+            {/* <h4>{'         '}   Approach</h4> */}
+            {/* <ul> */}
+            {/* <li> */}
+            {/* <a href="#">Digital Transformation</a> */}
+            {/* </li> */}
+            {/* <li> */}
+            {/* <a href="#">Digital Readiness Tool</a> */}
+            {/* </li> */}
+            {/* <li> */}
+            {/* <a href="#">Solution Partners</a> */}
+            {/* </li> */}
+            {/* </ul> */}
+            {/* </div> */}
             {/* <div className="col">
             <ul className="social">
               <li><a href=""><svg title="Facebook"></svg></a></li>
