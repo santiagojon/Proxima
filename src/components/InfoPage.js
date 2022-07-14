@@ -7,18 +7,18 @@ const InfoPage = () => {
         How Do We Discover <span>Exoplanets</span>?
       </h1>
       <div id="infoPageIntro">
-        <p id="infoPageSubtitle">
+        {/* <p id="infoPageSubtitle">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exe
-        </p>
+        </p> */}
         <img
           id="surveySatellite"
           src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Transiting_Exoplanet_Survey_Satellite_artist_concept_%28black_background%29.png"
           alt="survey satellite"
         />
         <div id="infoPageContent">
-          <div id="infoPageIntroText">
+          {/* <div id="infoPageIntroText">
             <p>Other text</p>
             <p>
               Some astronomers believe there are about 200 billion stars in our
@@ -26,7 +26,7 @@ const InfoPage = () => {
               potentially habitable Earth-sized planets in our Milky Way galaxy
               alone.
             </p>
-          </div>
+          </div> */}
           {/* ****************************************************** */}
           {/* WRAP TOC IN CONTAINER? */}
           {/* ****************************************************** */}
