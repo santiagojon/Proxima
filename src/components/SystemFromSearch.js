@@ -1,19 +1,18 @@
-import React, { useEffect, Suspense } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getSingleSystemByName } from "../store/system";
 import { useParams } from "react-router-dom";
 import NavBar from "./NavBar";
-import { Canvas, useThree, extend } from "@react-three/fiber";
-import { EffectComposer, Bloom, Vignette } from "@react-three/postprocessing";
 import dataParser from "../util/DataParsed";
-import SinglePlanetView from "./SinglePlanetView";
-import { Stars } from "@react-three/drei";
+import { SolarSystemView } from "./SolarSystemView";
 
 export default function SystemFromSearch(props) {
-  const planets = useSelector((state) => state.allPlanets);
-
   const singleSystem = useSelector((state) => {
-    return state.singleSystem;
+    let parsedPlanet = null;
+    if (state.singleSystem !== {}) {
+      parsedPlanet = dataParser(state.singleSystem);
+    }
+    return parsedPlanet;
   });
 
   const dispatch = useDispatch();
@@ -25,19 +24,19 @@ export default function SystemFromSearch(props) {
     dispatch(getSingleSystemByName(starName));
   }, []);
 
+  // useEffect(() => {
+  //   console.log("running this!");
+  //   const solarSys = dataParser(singleSystem);
+  //   setSolarSystem(solarSys);
+  // }, [singleSystem]);
+
   return (
     <div>
-      {console.log("PARSED SYSTEM!", dataParser(singleSystem))}
-      <NavBar style={{ position: "sticky", top: "20px" }} />
-      <div style={{ color: "white" }}>
-        <ul style={{ textAlign: "center", color: "white" }}>
-          {planets.map((planet) => (
-            <li key={planet.id}>
-              <h1>{planet.planetName}</h1>
-            </li>
-          ))}
-        </ul>
-      </div>
+      {singleSystem !== null ? (
+        <SolarSystemView solarSystem={singleSystem} />
+      ) : (
+        ""
+      )}
     </div>
   );
 }

@@ -14,6 +14,8 @@ function Scene(props) {
   extend({ AtmosphereShaderMaterial });
   extend({ GlobeShaderMaterial });
 
+  console.log(props.solarSystem);
+
   return (
     <>
       <CameraController viewState={props.viewState} />
@@ -54,16 +56,14 @@ export const SolarSystemView = (props) => {
   const [viewState, setViewState] = useState("solarSystemView");
   const [singlePlanetInfo, setSinglePlanetInfo] = useState({});
   const [singlePlanetKey, setSinglePlanetKey] = useState(0);
-  const [solarSystem, setSolarSystem] = useState();
+  const [solarSystem, setSolarSystem] = useState(solarSys);
 
   useEffect(() => {
     if (props.viewState) setViewState(props.viewState);
     if (props.singlePlanetInfo) setSinglePlanetInfo(props.setSinglePlanetInfo);
     if (props.singlePlanetKey) setSinglePlanetKey(props.singlePlanetKey);
     if (props.solarSystem) setSolarSystem(props.solarSystem);
-    else {
-      setSolarSystem(solarSys);
-    }
+    // if (props.solarSystem) setSolarSystem(props.solarSystem);
   }, []);
 
   const handleSetState = (command, info) => {

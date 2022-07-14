@@ -135,7 +135,7 @@ export default function dataParser(data) {
   for (let i = 0; i < data.length; i++) {
     planets.push({
       name: data[i].planetName,
-      position: [(23480 * data[i].orbitDistanceAU * 0.75) / 100, 0, 0],
+      position: [23480 * data[i].orbitDistanceAU * 0.75, 0, 0],
       globeRGB: rgbFinder(data[i].planetTemp), //get rgb data
       compareEarthSize: data[i].planetRadiusE * 5,
       speed: 0.003,
