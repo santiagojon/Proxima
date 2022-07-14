@@ -21,7 +21,6 @@ const NavBar = () => {
 
   const handleChange = (e) => {
     const query = e.target.value;
-    console.log(planets);
     setSearch(query);
     dispatch(getPlanetsByName(query));
   };
@@ -56,12 +55,27 @@ const NavBar = () => {
             <input
               type="search"
               name="s"
+              autoComplete="off"
               aria-labelledby="search-label"
               placeholder="Search&hellip;"
               className="draw"
               value={search}
               onChange={(e) => handleChange(e)}
             />
+            <div className="results">
+              {planets.map((planet) => (
+                <p key={planet.id} className="list">
+                  <Link
+                    to={`/system/${planet.starName}`}
+                    onClick={() =>
+                      window.history.push(`/system/${planet.starName}`)
+                    }
+                  >
+                    {planet.planetName}
+                  </Link>
+                </p>
+              ))}
+            </div>
             <button type="submit">&rarr;</button>
           </form>
           <nav

@@ -17,10 +17,21 @@ router.get('/', async (req, res, next) => {
 router.get('/:starName', async (req, res, next) => {
   try {
     const systemByStarName = await System.findAll({
-      where: { starName: { [Op.like]: `%${req.params.starName}%` } },
+      where: { starName:req.params.starName },
     });
     res.send(systemByStarName);
   } catch (error) {
     next(error);
   }
 });
+
+// router.get('/:starName', async (req, res, next) => {
+//   try {
+//     const systemByStarName = await System.findAll({
+//       where: { starName: { [Op.like]: `%${req.params.starName}%` } },
+//     });
+//     res.send(systemByStarName);
+//   } catch (error) {
+//     next(error);
+//   }
+// });

@@ -1,18 +1,19 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getPlanetsByType } from '../store/planets';
-import { useParams, Link } from 'react-router-dom';
+import { getSingleSystemByName } from '../store/system';
+import { useParams } from 'react-router-dom';
 import NavBar from './NavBar';
-export default function SearchType(props) {
+
+export default function SystemFromSearch(props) {
   const planets = useSelector((state) => state.allPlanets);
 
   const dispatch = useDispatch();
 
   const params = useParams();
-  const type = params.type;
-  // console.log(type);
+  const starName = params.starName;
+  console.log(starName);
   useEffect(() => {
-    dispatch(getPlanetsByType(type));
+    dispatch(getSingleSystemByName(starName));
   }, []);
   return (
     <div>
@@ -21,16 +22,7 @@ export default function SearchType(props) {
         <ul style={{ textAlign: 'center', color: 'white' }}>
           {planets.map((planet) => (
             <li key={planet.id}>
-              <h3>
-                <Link
-                  to={`/system/${planet.starName}`}
-                  onClick={() =>
-                    window.history.push(`/system/${planet.starName}`)
-                  }
-                >
-                  {planet.planetName}
-                </Link>
-              </h3>
+              <h1>{planet.planetName}</h1>
             </li>
           ))}
         </ul>

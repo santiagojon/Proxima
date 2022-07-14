@@ -12,6 +12,7 @@ import { SolarSystemView } from './components/SolarSystemView';
 import InfoPage from './components/InfoPage';
 // import NavBar from './components/NavBar';
 import SearchType from './components/Search';
+import SystemFromSearch from './components/SystemFromSearch';
 
 // import NotFoundPage from "./NotFoundPage";
 // import Test from './components/Test';
@@ -22,6 +23,8 @@ const AppRoutes = () => {
   return (
     <Router>
       <Routes>
+        {' '}
+        <Route exact path="/system/:starName" element={<SystemFromSearch />} />
         <Route exact path="/search/:type" element={<SearchType />} />
         <Route exact path="/" element={<LandingPage />} />
         <Route path="/home" element={<SolarSystemView />} />
