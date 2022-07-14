@@ -1,12 +1,11 @@
 {
-  "name": "server",
+  "name": "astro",
   "version": "0.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "node server/index.js",
     "dev": "nodemon server",
-    "seed": "node script/seed.js",
     "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "keywords": [],
