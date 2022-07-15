@@ -5,33 +5,10 @@ import react from "react";
 const canvasWidth = 2048;
 const canvasHeight = canvasWidth / 2;
 
-export const textureGenerator = (planetType, planetColor, callBack) => {
-  const img = new Image();
-  const canvas = document.createElement("canvas");
-  let ctx = canvas.getContext("2d");
-  canvas.width = canvasWidth;
-  canvas.height = canvasHeight;
-  img.onload = function () {
-    ctx.drawImage(img, 0, 0, canvasWidth, canvasHeight);
-    ctx.globalCompositeOperation = "multiply";
-    ctx.fillStyle = `rgb(${planetColor[0]}, ${planetColor[1]}, ${planetColor[2]})`;
-    ctx.fillRect(0, 0, canvasWidth, canvasHeight);
-    const newImg = new Image();
-    newImg.onload = function () {
-      callBack(newImg.src);
-    };
-
-    newImg.src = canvas.toDataURL();
-  };
-  img.src = `${process.env.PUBLIC_URL}/images/${texturePicker(
-    planetType,
-    planetColor
-  )}`;
-};
-
 //pick texture base on planet color
-const texturePicker = (planetType, planetColor) => {
-  const textureArr = textures[planetType];
+export const texturePicker = (planetType, planetColor) => {
+  const textureArr = textures[`${planetType}`];
+  console.log("text arr", textureArr);
   const planetColorSum = planetColor[0] + planetColor[1] + planetColor[2];
   const textureArrLength = textureArr.length;
   return textureArr[planetColorSum % textureArrLength];
@@ -127,12 +104,24 @@ const sunRGB = (data) => {
     }
 };
 
+export const getTexture = (planetType, id) => {
+  const textureArr = textures[planetType];
+  const textureArrLength = textureArr.length;
+  return textureArr[id % textureArrLength];
+};
+
 export default function dataParser(data) {
   const planets = [];
+  if (data === null) return null;
+  if (data === undefined || !data[0]) return null;
 
-  if (!data[0]) return null;
+  console.log("DATA!", data);
 
   for (let i = 0; i < data.length; i++) {
+    const texture = getTexture(
+      textureFinder(data[i].planetMassE, data[i].planetTemp),
+      data[i].id
+    );
     planets.push({
       name: data[i].planetName,
       position: [23480 * data[i].orbitDistanceAU * 0.75, 0, 0],
@@ -142,17 +131,12 @@ export default function dataParser(data) {
       sun: false,
       orbitSpeed: data[i].planetOrbitTimeD / 120000,
       orbitPlanet: [],
+      image: `${process.env.PUBLIC_URL}/images/${texture}`,
     });
-    textureGenerator(
-      textureFinder(data[i].planetMassE, data[i].planetTemp),
-      rgbFinder(data[i].planetTemp),
-      function (result) {
-        planets[i].image = result;
-      }
-    );
   }
 
   const sunColor = sunRGB(data[0]);
+  const sunTexture = getTexture("sun", sunColor);
   const sun = {
     name: data[0].starName,
     position: [0, 0, 0],
@@ -163,12 +147,8 @@ export default function dataParser(data) {
     compareEarthSize: data[0].starRadiusS * 20.3,
     sun: true,
     orbitPlanet: planets,
+    img: `${process.env.PUBLIC_URL}/images/${sunTexture}`,
   };
-  textureGenerator("sun", sunRGB(data[0]), function (result) {
-    sun.sun = true;
-    sun.image = result;
-  });
-
   return [sun];
 }
 

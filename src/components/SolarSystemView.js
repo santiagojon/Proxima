@@ -15,8 +15,6 @@ function Scene(props) {
   extend({ AtmosphereShaderMaterial });
   extend({ GlobeShaderMaterial });
 
-  console.log(props.solarSystem);
-
   return (
     <>
       <CameraController viewState={props.viewState} />
@@ -36,7 +34,7 @@ function Scene(props) {
         <pointLight position={[0, 0, 0]} />
       )}
 
-      {props.viewState === "singlePlanetView" ? (
+      {props.solarSystem !== null && props.viewState === "singlePlanetView" ? (
         <SinglePlanetView
           planetInfo={props.planetInfo[props.singlePlanetKey]}
           handleSetState={props.handleSetState}
@@ -57,29 +55,27 @@ export const SolarSystemView = (props) => {
   const [viewState, setViewState] = useState("solarSystemView");
   const [singlePlanetInfo, setSinglePlanetInfo] = useState({});
   const [singlePlanetKey, setSinglePlanetKey] = useState(0);
-  const [unparsedSolarData, setUnparsedSolarData] = useState(null);
-  const [solarSystem, setSolarSystem] = useState(solarSys);
+  const [unparsedSolarData, setUnparsedSolarData] = useState();
+  const [solarSystem, setSolarSystem] = useState([]);
 
   useEffect(() => {
     if (props.viewState) setViewState(props.viewState);
     if (props.singlePlanetInfo) setSinglePlanetInfo(props.setSinglePlanetInfo);
     if (props.singlePlanetKey) setSinglePlanetKey(props.singlePlanetKey);
+    if (!props.solarSystem) setSolarSystem(solarSys);
   }, []);
 
   useEffect(() => {
     if (unparsedSolarData !== props.solarSystem) {
       setUnparsedSolarData(props.solarSystem);
-      if (unparsedSolarData !== null) {
-        let parsedData = dataParser(unparsedSolarData);
+      if (unparsedSolarData !== null && unparsedSolarData !== undefined) {
+        console.log("UNPARSED", unparsedSolarData);
+        const parsedData = dataParser(unparsedSolarData);
+        console.log("parsed data", parsedData);
         setSolarSystem(parsedData);
       }
     }
   }, [props.solarSystem]);
-
-  // const memoizedValue = useMemo(
-  //   () => dataParser(unparsedSolarData),
-  //   [props.solarSystem]
-  // );
 
   const handleSetState = (command, info) => {
     switch (command) {

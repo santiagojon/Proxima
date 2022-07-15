@@ -7,7 +7,6 @@ import { Sun } from "./Sun";
 import { SinglePlanetView } from "./SinglePlanetView";
 
 export const Planet = (props) => {
-  console.log("planetComponentProps", props);
   // This reference gives us direct access to the THREE.Mesh object
   const ref = useRef();
   let planetRef = useRef([]);
