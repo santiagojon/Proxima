@@ -2,7 +2,7 @@
   "name": "astro",
   "version": "0.1.0",
   "description": "",
-  "main": "index.js",
+  "private": true,
   "scripts": {
     "start": "node server/index.js",
     "dev": "nodemon server",
