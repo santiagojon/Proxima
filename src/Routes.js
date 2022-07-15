@@ -1,7 +1,7 @@
 import React from "react";
 import {
   BrowserRouter as Router,
-  Switch,
+
   Route,
   Routes,
 } from "react-router-dom";
@@ -10,7 +10,7 @@ import LandingPage from "./components/LandingPage";
 import App from "./App";
 import { SolarSystemView } from "./components/SolarSystemView";
 import InfoPage from "./components/InfoPage";
-// import NavBar from './components/NavBar';
+import NavBar from './components/NavBar';
 import SearchType from "./components/Search";
 import SystemFromSearch from "./components/SystemFromSearch";
 import PageNotFound from "./components/PageNotFound";
@@ -23,8 +23,8 @@ import PageNotFound from "./components/PageNotFound";
 const AppRoutes = () => {
   return (
     <Router>
+      <NavBar/>
       <Routes>
-        {" "}
         <Route exact path="/system/:starName" element={<SystemFromSearch />} />
         <Route exact path="/search/:type" element={<SearchType />} />
         <Route exact path="/" element={<LandingPage />} />

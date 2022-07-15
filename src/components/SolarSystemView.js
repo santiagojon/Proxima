@@ -107,7 +107,7 @@ export const SolarSystemView = (props) => {
 
   return (
     <div className="App">
-      <NavBar />
+
       <Canvas
         gl={{ antialias: true }}
         dpr={window.devicePixelRatio}

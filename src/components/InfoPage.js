@@ -1,12 +1,7 @@
 import React from "react";
-import HoverPopUp from "./HoverPopup";
 import NavBar from "./NavBar";
 
-
-
 const InfoPage = () => {
-
-
   return (
     <div id="infoPageContainer">
       <NavBar/>
@@ -25,9 +20,6 @@ const InfoPage = () => {
           alt="survey satellite"
         />
         <div id="infoPageContent">
-
-
-
           <ul id="toc">
             <span>Table of Contents</span>
             <a href="#toc1">
