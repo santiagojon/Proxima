@@ -16,7 +16,6 @@ export default function SearchType(props) {
   }, []);
   return (
     <div>
-      <NavBar style={{ position: 'sticky', top: '20px' }} />
       <div style={{ color: 'white' }}>
         <ul style={{ textAlign: 'center', color: 'white' }}>
           {planets.map((planet) => (

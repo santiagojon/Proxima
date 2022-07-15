@@ -1,11 +1,9 @@
 import React from "react";
-import HoverPopUp from "./HoverPopup";
 import NavBar from "./NavBar";
 
 const InfoPage = () => {
   return (
     <div id="infoPageContainer">
-      <NavBar />
       <h1 id="infoPageTitle">
         How Do We Discover <span>Exoplanets</span>?
       </h1>
