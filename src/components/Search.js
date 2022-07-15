@@ -24,7 +24,7 @@ export default function SearchType(props) {
                 <Link
                   to={`/system/${planet.starName}`}
                   onClick={() =>
-                    window.history.push(`/system/${planet.starName}`)
+                  window.history.push(`/system/${planet.starName}`)
                   }
                 >
                   {planet.planetName}
