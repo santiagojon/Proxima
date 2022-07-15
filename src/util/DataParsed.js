@@ -120,7 +120,6 @@ export default function dataParser(data) {
       textureFinder(data[i].planetMassE, data[i].planetTemp),
       data[i].id
     );
-
     planets.push({
       name: data[i].planetName,
       planetType: textureFinder(data[i].planetMassE, data[i].planetTemp),
