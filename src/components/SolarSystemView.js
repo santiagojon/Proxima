@@ -77,6 +77,10 @@ export const SolarSystemView = (props) => {
     }
   }, [props.solarSystem]);
 
+  const handleSetViewState = (info) => {
+    setViewState(info);
+  };
+
   const handleSetState = (command, info) => {
     switch (command) {
       case "SET_PLANET_VIEW":
@@ -99,9 +103,19 @@ export const SolarSystemView = (props) => {
   return (
     <div className="App" width={window.innerWidth} height={window.innerHeight}>
       {viewState === "singlePlanetView" ? (
-        <div className="planetText">
-          {singlePlanetInfo[singlePlanetKey].name}
-        </div>
+        <>
+          <div className="planetText">
+            {singlePlanetInfo[singlePlanetKey].name}
+          </div>
+          <button
+            className="planetViewButton"
+            onClick={() => {
+              handleSetViewState("solarSystemView");
+            }}
+          >
+            Solar System
+          </button>
+        </>
       ) : (
         ""
       )}

@@ -1,18 +1,18 @@
-@import 'https://fonts.googleapis.com/css?family=Roboto:400,500';
+@import "https://fonts.googleapis.com/css?family=Roboto:400,500";
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Poppins&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Poppins&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Poppins&family=Rubik+Moonrocks&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Poppins&family=Rubik+Moonrocks&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Poppins&family=Rubik+Moonrocks&family=Strait&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Poppins&family=Rubik+Moonrocks&family=Strait&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Lato&family=Montserrat&family=Poppins&family=Rubik+Moonrocks&family=Strait&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Lato&family=Montserrat&family=Poppins&family=Rubik+Moonrocks&family=Strait&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Iceland&family=Lato&family=Montserrat&family=Poppins&family=Rubik+Moonrocks&family=Strait&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Iceland&family=Lato&family=Montserrat&family=Poppins&family=Rubik+Moonrocks&family=Strait&display=swap");
 * {
   /* background-color: black; */
 }
@@ -84,23 +84,18 @@ Landing Page  */
   flex-direction: column;
   align-items: center;
   /* font-family: 'Roboto', sans-serif; */
-  font-family: 'Lato', sans-serif;
-
+  font-family: "Lato", sans-serif;
 
   /* font-weight: 300; */
 }
 
 #landingPageTitle {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   /* font-family: 'Poppins', sans-serif; */
   /* font-family: 'Rubik Moonrocks', cursive; */
-  font-family: 'Strait', sans-serif;
+  font-family: "Strait", sans-serif;
   /* font-family: 'Black Ops One', cursive; */
   /* font-family: 'Iceland', sans-serif; */
-
-
-
-
 }
 
 .landingPage div {
@@ -365,32 +360,36 @@ Milky Way Buttons */
   transform: translate(-25%, -100%);
 }
 
-#trappistWrapper button :hover{
+#trappistWrapper button :hover {
   opacity: 1;
   color: gold;
 }
 
-
-
-
 /* #trappist {
   cursor: pointer;
 } */
-
-
 
 /* ***********************
 Single Planet */
 
 .planetText {
   color: blanchedalmond;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
   font-size: 3rem;
   position: absolute;
   bottom: 15%;
   left: 5%;
   opacity: 0.7;
   transition: opacity 1s, visibility 0.2s;
+}
+
+.planetViewButton {
+  position: absolute;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1rem;
+  bottom: 15%;
+  right: 5%;
+  z-index: 100;
 }
 
 .container {
@@ -485,7 +484,6 @@ Single Planet */
   padding: 25%;
   /* right: 35%; */
 }
-
 
 #sL {
   position: relative;
@@ -594,7 +592,7 @@ https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Gajillion_Islands_Plan
 #infoPageContainer {
   background-color: black;
   color: white;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 #infoPageIntro {
@@ -692,7 +690,7 @@ a li {
 
 #toc4 ~ p {
   margin-top: 1rem;
-} 
+}
 
 #infoPageContent h2 {
   color: gold;
@@ -726,7 +724,7 @@ a li {
 
 /* sdflgkjsdogirejgo;idfsjg;ldfskgjsdf;lkgj */
 
-@import 'https://fonts.googleapis.com/css?family=Roboto:400,500';
+@import "https://fonts.googleapis.com/css?family=Roboto:400,500";
 
 html {
   box-sizing: border-box;
@@ -786,7 +784,7 @@ figure {
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 100%;
   line-height: 1.5;
 }
@@ -802,7 +800,7 @@ body {
 }
 
 .container:after {
-  content: '';
+  content: "";
   display: table;
   clear: both;
 }
@@ -831,7 +829,7 @@ Full screen background image
 Blueish tint overlay
 */
 .hero:after {
-  content: '';
+  content: "";
   background: rgba(0, 0, 0, 0.5);
   /* position: absolute; */
   opacity: 0;
@@ -863,7 +861,7 @@ Using this method because browsers can transition opacity very cheaply as oppose
 https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
 */
 #masthead:after {
-  content: '';
+  content: "";
   /* position: absolute; */
   top: 0;
   width: 100%;
@@ -941,7 +939,7 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
 
 .hamburger-inner::before,
 .hamburger-inner::after {
-  content: '';
+  content: "";
   display: block;
 }
 
@@ -1215,6 +1213,6 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
   }
 }
 
-.draw{
-  color:white
+.draw {
+  color: white;
 }
