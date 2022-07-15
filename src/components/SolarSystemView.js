@@ -106,11 +106,6 @@ export const SolarSystemView = (props) => {
     }
   };
 
-  //SETUP AN ARRAY OR OBJ TO HOLD THE VALUES FOR THE PLANETYPES TO BE RENDERED IN THE HOVEROVERPOPUP
-  //USING CONDITIONALS, CHECK THE PLANET TYPE OF CURRENT PLANET AND PASS THAT IN AS PROPS
-    //ALONG WITH GRABBING THE INFO FROM THE ARRAY/OBJ HOLDING THOSE VALUES
-      //CHANGE HOVERPOP TO USE IT  
-
   return (
 
 
@@ -142,7 +137,7 @@ export const SolarSystemView = (props) => {
           {singlePlanetInfo ? singlePlanetInfo[singlePlanetKey].name : ''}
         </div>
         <div className="planetTextType">
-     {singlePlanetInfo[singlePlanetKey].planetType ? <HoverPopUp type={singlePlanetInfo[singlePlanetKey].planetType} /> : '' }
+     {singlePlanetInfo[singlePlanetKey].planetType ? <HoverPopUp type={singlePlanetInfo[singlePlanetKey].planetType} size={singlePlanetInfo[singlePlanetKey].compareEarthSize} /> : '' }
       </div>
       {/* <div className="planetTextSize">
         {singlePlanetInfo[singlePlanetKey].compareEarthSize}x the size of Earth
@@ -151,10 +146,10 @@ export const SolarSystemView = (props) => {
       ) : (
         <div>
         <div className="planetTextName">
-        {solarSystem.length ? solarSystem[0].name : ''}
+        {solarSystem && solarSystem.length ? solarSystem[0].name : ''}
         </div>
         <div className="planetTextType">
-        {solarSystem.length ? solarSystem[0].starAge : ''} billion years old
+        {solarSystem && solarSystem.length ? solarSystem[0].starAge : ''} billion years old
         </div>
         </div>
       )}
