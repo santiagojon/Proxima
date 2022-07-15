@@ -34,7 +34,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts start && cd server && npm run start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "seed": "node script/seed.js",

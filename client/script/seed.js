@@ -2,7 +2,7 @@ const {
   db,
 
   models: { User, Planet, System },
-} = require('../../server/db');
+} = require('../server/db');
 
 const systems = require('./seedData');
 
