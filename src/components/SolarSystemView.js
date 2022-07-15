@@ -1,15 +1,15 @@
-import React, { useEffect, Suspense, useState, useMemo } from "react";
-import { Canvas, extend } from "@react-three/fiber";
-import { Stars } from "@react-three/drei";
-import { SolarSystem } from "./SolarSystem";
-import { solarSys } from "../util/SolarSystem";
-import { EffectComposer, Bloom, Vignette } from "@react-three/postprocessing";
-import NavBar from "./NavBar";
-import SinglePlanetView from "./SinglePlanetView";
-import { AtmosphereShaderMaterial } from "../shaders/Atmosphere";
-import { GlobeShaderMaterial } from "../shaders/GlobeMaterial";
-import { CameraController } from "./CameraController";
-import dataParser from "../util/DataParsed";
+import React, { useEffect, Suspense, useState, useMemo } from 'react';
+import { Canvas, extend } from '@react-three/fiber';
+import { Stars } from '@react-three/drei';
+import { SolarSystem } from './SolarSystem';
+import { solarSys } from '../util/SolarSystem';
+import { EffectComposer, Bloom, Vignette } from '@react-three/postprocessing';
+import NavBar from './NavBar';
+import SinglePlanetView from './SinglePlanetView';
+import { AtmosphereShaderMaterial } from '../shaders/Atmosphere';
+import { GlobeShaderMaterial } from '../shaders/GlobeMaterial';
+import { CameraController } from './CameraController';
+import dataParser from '../util/DataParsed';
 
 import HoverPopUpType from "./HoverPopUpType";
 import HoverPopUpDiscovery from "./HoverPopUpDiscovery";
@@ -31,13 +31,13 @@ function Scene(props) {
         speed={1}
       />
       <ambientLight intensity={0.03} />
-      {props.viewState === "singlePlanetView" ? (
+      {props.viewState === 'singlePlanetView' ? (
         <pointLight position={[-700, 700, 90]} />
       ) : (
         <pointLight position={[0, 0, 0]} />
       )}
 
-      {props.solarSystem !== null && props.viewState === "singlePlanetView" ? (
+      {props.solarSystem !== null && props.viewState === 'singlePlanetView' ? (
         <SinglePlanetView
           planetInfo={props.planetInfo[props.singlePlanetKey]}
           handleSetState={props.handleSetState}
@@ -55,7 +55,7 @@ function Scene(props) {
 }
 
 export const SolarSystemView = (props) => {
-  const [viewState, setViewState] = useState("solarSystemView");
+  const [viewState, setViewState] = useState('solarSystemView');
   const [singlePlanetInfo, setSinglePlanetInfo] = useState({});
   const [singlePlanetKey, setSinglePlanetKey] = useState(0);
   const [unparsedSolarData, setUnparsedSolarData] = useState();
@@ -74,9 +74,9 @@ export const SolarSystemView = (props) => {
     if (unparsedSolarData !== props.solarSystem) {
       setUnparsedSolarData(props.solarSystem);
       if (unparsedSolarData !== null && unparsedSolarData !== undefined) {
-        console.log("UNPARSED", unparsedSolarData);
+        console.log('UNPARSED', unparsedSolarData);
         const parsedData = dataParser(unparsedSolarData);
-        console.log("parsed data", parsedData);
+        console.log('parsed data', parsedData);
         setSolarSystem(parsedData);
       }
     }
@@ -88,16 +88,16 @@ export const SolarSystemView = (props) => {
 
   const handleSetState = (command, info) => {
     switch (command) {
-      case "SET_PLANET_VIEW":
+      case 'SET_PLANET_VIEW':
         setViewState(info);
         break;
-      case "SET_STAR_SYSTEM_VIEW":
+      case 'SET_STAR_SYSTEM_VIEW':
         setViewState(info);
         break;
-      case "SET_PLANET_INFO":
+      case 'SET_PLANET_INFO':
         setSinglePlanetInfo(info);
         break;
-      case "SET_PLANET_KEY":
+      case 'SET_PLANET_KEY':
         setSinglePlanetKey(info);
         break;
       default:
@@ -127,7 +127,7 @@ export const SolarSystemView = (props) => {
           <Vignette eskil={false} offset={0.1} darkness={0.1} />
         </EffectComposer>
       </Canvas>
-      {viewState === "singlePlanetView" ? (
+      {viewState === 'singlePlanetView' ? (
         <div id="planetTextContainer">
           <div className="planetText_Name">
             {singlePlanetInfo ? singlePlanetInfo[singlePlanetKey].name : ""}

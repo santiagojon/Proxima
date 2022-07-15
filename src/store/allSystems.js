@@ -10,7 +10,7 @@ const gotAllSystems = (systems) => ({
 export const getaAllSystems = () => {
   return async (dispatch) => {
     try {
-      const { data } = await axios.get('/api/systems');
+      const { data } = await axios.get('https://proxima-worlds-backend.herokuapp.com/api/systems');
       dispatch(gotAllSystems(data));
     } catch (error) {
       console.error(error);
