@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
 
-const HoverPopUp = (props) => {
+const HoverPopUpType = (props) => {
     const [text, setText] = useState('');
-    console.log('HPU', props)
 
     let planetType = props.type;
     const planetSize = props.size;
 
     if ((planetType === 'rocky' || planetType === 'earthLike') && planetSize <= 2) planetType = 'Terrestrial';
-    if ((planetType === 'rocky' || planetType === 'earthLike') && planetSize > 2) planetType = 'Super Earth';
-    if (props.type === 'gas') planetType = 'Gas_Giant';
-    if (props.type === 'icy') planetType = 'Neptunian';
+    if ((planetType === 'rocky' || planetType === 'earthLike') && planetSize > 2) planetType = 'Super_Earth';
+    if (planetType === 'gas') planetType = 'Gas_Giant';
+    if (planetType === 'icy') planetType = 'Neptunian';
 
 
     const planetTypeInfo = {
@@ -21,8 +20,8 @@ const HoverPopUp = (props) => {
       }
 
     const renderText = () => {
-        return (<div className='popupRenderText'>
-            <i>{planetTypeInfo[planetType]}</i>....
+        return (<div className='popupRenderTextType'>
+            <i>{planetTypeInfo[planetType]}</i>
         </div>)
     }
 
@@ -31,10 +30,7 @@ const HoverPopUp = (props) => {
     }
 
     const handleHover = () => {
-        // setText(props.info);
-        // renderText();
         setText(renderText());
-
     }
 
     return (
@@ -48,4 +44,4 @@ const HoverPopUp = (props) => {
     )
 }
 
-export default HoverPopUp;
+export default HoverPopUpType;
