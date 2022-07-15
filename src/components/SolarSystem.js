@@ -6,8 +6,6 @@ export const SolarSystem = (props) => {
   const solarSystem = props.solarSystem || [];
   let orbitRings = [];
   if (solarSystem.length > 0) orbitRings = solarSystem[0].orbitPlanet;
-  console.log("props solar s", props.solarSystem);
-
   return (
     <>
       {orbitRings && orbitRings.length > 0
@@ -39,4 +37,3 @@ export const SolarSystem = (props) => {
     </>
   );
 };
- 

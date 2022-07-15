@@ -8,7 +8,6 @@ const canvasHeight = canvasWidth / 2;
 //pick texture base on planet color
 export const texturePicker = (planetType, planetColor) => {
   const textureArr = textures[`${planetType}`];
-  console.log("text arr", textureArr);
   const planetColorSum = planetColor[0] + planetColor[1] + planetColor[2];
   const textureArrLength = textureArr.length;
   return textureArr[planetColorSum % textureArrLength];
