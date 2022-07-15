@@ -1,5 +1,6 @@
 const neptune = {
   name: "Neptune",
+  planetType: 'Neptunian',
   position: [6516, 0, 0],
   globeRGB: [0.1, 0.2, 0.5],
   atmosphereRGB: [0.05, 0.1, 0.2],
@@ -13,6 +14,7 @@ const neptune = {
 
 const uranus = {
   name: "Uranus",
+  planetType: 'Neptunian',
   position: [5200, 0, 0],
   globeRGB: [0.1, 0.2, 0.5],
   atmosphereRGB: [0.1, 0.2, 0.5],
@@ -26,6 +28,7 @@ const uranus = {
 
 const saturn = {
   name: "Saturn",
+  planetType: 'Gas_Giant',
   position: [3600, 0, 0],
   globeRGB: [0.3, 0.2, 0.15],
   atmosphereRGB: [1, 0.87, 0.8],
@@ -39,6 +42,7 @@ const saturn = {
 
 const jupiter = {
   name: "Jupiter",
+  planetType: 'Gas_Giant',
   position: [2000, 0, 0],
   globeRGB: [0.3, 0.2, 0.15],
   atmosphereRGB: [1, 0.87, 0.8],
@@ -52,6 +56,7 @@ const jupiter = {
 
 const mars = {
   name: "Mars",
+  planetType: 'Terrestrial',
   position: [720, 0, 0],
   globeRGB: [0.8, 0.55, 0.3],
   atmosphereRGB: [0.8, 0.55, 0.3],
@@ -64,6 +69,7 @@ const mars = {
 };
 const moon = {
   name: "Moon",
+  planetType: 'Terrestrial',
   position: [10, 0, 0],
   globeRGB: [0, 0, 0],
   atmosphereRGB: [0, 0, 0],
@@ -76,6 +82,7 @@ const moon = {
 };
 const earth = {
   name: "Earth",
+  planetType: 'Terrestrial',
   position: [568, 0, 0],
   globeRGB: [0.3, 0.6, 1.0],
   atmosphereRGB: [0.3, 0.6, 1.0],
@@ -89,6 +96,7 @@ const earth = {
 
 const venus = {
   name: "Venus",
+  planetType: 'Terrestrial',
   position: [468, 0, 0],
   globeRGB: [1, 0.5, 0.27],
   atmosphereRGB: [1, 0.5, 0.27],
@@ -102,6 +110,7 @@ const venus = {
 
 const mercury = {
   name: "Mercury",
+  planetType: 'Terrestrial',
   position: [340, 0, 0],
   globeRGB: [0.1, 0.1, 0.1],
   atmosphereRGB: [0.1, 0.1, 0.1],
@@ -115,6 +124,7 @@ const mercury = {
 
 const sun = {
   name: "Sun",
+  starAge: 4.6,
   position: [0, 0, 0],
   globeRGB: [1, 0.58, 0.26],
   atmosphereRGB: [1, 0.58, 0.26],

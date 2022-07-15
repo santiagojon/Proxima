@@ -11,7 +11,7 @@ const gotSingleSystem = (system) => ({
 export const getSingleSystemByName = (name) => {
   return async (dispatch) => {
     try {
-      const { data } = await axios.get(`/api/systems/${name}`);
+      const { data } = await axios.get(`https://proxima-worlds-backend.herokuapp.com/api/systems/${name}`);
       console.log(data);
       dispatch(gotSingleSystem(data));
     } catch (error) {
