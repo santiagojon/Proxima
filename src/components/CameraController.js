@@ -13,7 +13,7 @@ const ChangeCameraPosition = (arr, fov, far) => {
 export const CameraController = (props) => {
   let { camera, gl } = useThree();
   let controls = new OrbitControls(camera, gl.domElement);
-  let cameraPos = [-350, 250, 0];
+  let cameraPos = [-350, 240, 0];
   ChangeCameraPosition(cameraPos, 40, 10000);
   useEffect(() => {
     if (props.viewState === "singlePlanetView") {

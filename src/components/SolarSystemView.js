@@ -1,4 +1,4 @@
-import React, { useEffect, Suspense, useState } from "react";
+import React, { useEffect, Suspense, useState, useMemo } from "react";
 import { Canvas, extend } from "@react-three/fiber";
 import { Stars } from "@react-three/drei";
 import { SolarSystem } from "./SolarSystem";
@@ -9,12 +9,13 @@ import SinglePlanetView from "./SinglePlanetView";
 import { AtmosphereShaderMaterial } from "../shaders/Atmosphere";
 import { GlobeShaderMaterial } from "../shaders/GlobeMaterial";
 import { CameraController } from "./CameraController";
+import dataParser from "../util/DataParsed";
+
+import HoverPopUp from "./HoverPopup";
 
 function Scene(props) {
   extend({ AtmosphereShaderMaterial });
   extend({ GlobeShaderMaterial });
-
-  console.log(props.solarSystem);
 
   return (
     <>
@@ -35,7 +36,7 @@ function Scene(props) {
         <pointLight position={[0, 0, 0]} />
       )}
 
-      {props.viewState === "singlePlanetView" ? (
+      {props.solarSystem !== null && props.viewState === "singlePlanetView" ? (
         <SinglePlanetView
           planetInfo={props.planetInfo[props.singlePlanetKey]}
           handleSetState={props.handleSetState}
@@ -56,15 +57,35 @@ export const SolarSystemView = (props) => {
   const [viewState, setViewState] = useState("solarSystemView");
   const [singlePlanetInfo, setSinglePlanetInfo] = useState({});
   const [singlePlanetKey, setSinglePlanetKey] = useState(0);
-  const [solarSystem, setSolarSystem] = useState(solarSys);
+  const [unparsedSolarData, setUnparsedSolarData] = useState();
+  const [solarSystem, setSolarSystem] = useState([]);
+  // const [solarSystem, setSolarSystem] = useState(solarSys);
+
 
   useEffect(() => {
     if (props.viewState) setViewState(props.viewState);
     if (props.singlePlanetInfo) setSinglePlanetInfo(props.setSinglePlanetInfo);
     if (props.singlePlanetKey) setSinglePlanetKey(props.singlePlanetKey);
-    if (props.solarSystem) setSolarSystem(props.solarSystem);
+    if (!props.solarSystem) setSolarSystem(solarSys);
     // if (props.solarSystem) setSolarSystem(props.solarSystem);
+
   }, []);
+
+  useEffect(() => {
+    if (unparsedSolarData !== props.solarSystem) {
+      setUnparsedSolarData(props.solarSystem);
+      if (unparsedSolarData !== null && unparsedSolarData !== undefined) {
+        console.log("UNPARSED", unparsedSolarData);
+        const parsedData = dataParser(unparsedSolarData);
+        console.log("parsed data", parsedData);
+        setSolarSystem(parsedData);
+      }
+    }
+  }, [props.solarSystem]);
+
+  const handleSetViewState = (info) => {
+    setViewState(info);
+  };
 
   const handleSetState = (command, info) => {
     switch (command) {
@@ -85,15 +106,16 @@ export const SolarSystemView = (props) => {
     }
   };
 
+  //SETUP AN ARRAY OR OBJ TO HOLD THE VALUES FOR THE PLANETYPES TO BE RENDERED IN THE HOVEROVERPOPUP
+  //USING CONDITIONALS, CHECK THE PLANET TYPE OF CURRENT PLANET AND PASS THAT IN AS PROPS
+    //ALONG WITH GRABBING THE INFO FROM THE ARRAY/OBJ HOLDING THOSE VALUES
+      //CHANGE HOVERPOP TO USE IT  
+
   return (
-    <div className="App" width={window.innerWidth} height={window.innerHeight}>
-      {viewState === "singlePlanetView" ? (
-        <div className="planetText">
-          {singlePlanetInfo[singlePlanetKey].name}
-        </div>
-      ) : (
-        ""
-      )}
+
+
+    <div className="App" >
+     
       <NavBar />
       <Canvas
         gl={{ antialias: true }}
@@ -114,6 +136,38 @@ export const SolarSystemView = (props) => {
           <Vignette eskil={false} offset={0.1} darkness={0.1} />
         </EffectComposer>
       </Canvas>
+      {viewState === "singlePlanetView" ? (
+        <div id="planetTextContainer">
+        <div className="planetTextName">
+          {singlePlanetInfo[singlePlanetKey].name}
+        </div>
+        <div className="planetTextType">
+        {/* Planet type: {singlePlanetInfo[singlePlanetKey].planetType} */}
+        {/* color={hovered && hoveredIdx === idx ? 'yellow' : 'white'} /> */}
+     <HoverPopUp type={singlePlanetInfo[singlePlanetKey].planetType} />
+      </div>
+      {/* <div className="planetTextSize">
+        {singlePlanetInfo[singlePlanetKey].compareEarthSize}x the size of Earth
+      </div> */}
+      </div>
+      ) : (
+        <div>
+        <div className="planetTextName">
+        {solarSystem.length ? solarSystem[0].name : ''}
+        </div>
+        <div className="planetTextType">
+        {solarSystem.length ? solarSystem[0].starAge : ''} billion years old
+        </div>
+        </div>
+      )}
+       <button
+            className="planetViewButton"
+            onClick={() => {
+              handleSetViewState("solarSystemView");
+            }}
+          >
+            Solar System
+          </button>
     </div>
   );
 };

@@ -1,6 +1,11 @@
 import React from "react";
+import HoverPopUp from "./HoverPopup";
+
 
 const InfoPage = () => {
+  const test2 = "In our solar system, Earth, Mars, Mercury, and Venus are terrestrial, or rocky, planets. For planets outside our solar system, those between half of Earth's size and two times its radius are considered terrestrial."
+
+
   return (
     <div id="infoPageContainer">
       <h1 id="infoPageTitle">
@@ -18,18 +23,9 @@ const InfoPage = () => {
           alt="survey satellite"
         />
         <div id="infoPageContent">
-          {/* <div id="infoPageIntroText">
-            <p>Other text</p>
-            <p>
-              Some astronomers believe there are about 200 billion stars in our
-              Milkyway galaxy. Scientists believe that there are eleven billion
-              potentially habitable Earth-sized planets in our Milky Way galaxy
-              alone.
-            </p>
-          </div> */}
-          {/* ****************************************************** */}
-          {/* WRAP TOC IN CONTAINER? */}
-          {/* ****************************************************** */}
+
+        Planet Type: <HoverPopUp info={test2} />
+         
 
           <ul id="toc">
             <span>Table of Contents</span>
