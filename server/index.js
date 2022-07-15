@@ -3,7 +3,6 @@ const PORT = process.env.PORT || 5000;
 const app = require('./app');
 const seed = require('../client/script/seed.js');
 
-
 const init = async () => {
   try {
     if (process.env.SEED === 'true') {
