@@ -37,7 +37,7 @@ body {
   width: 100%;
   height: 100%;
   overflow: hidden;
- 
+
 
 }
 
@@ -376,10 +376,11 @@ Milky Way Buttons */
   cursor: pointer;
 } */
 
-
 /* ***********************
 Text Popup */
 
+/* ***********************
+Text Popup */
 
 .popupTextWrapper{
   /* display:flex;
@@ -392,6 +393,50 @@ Text Popup */
 
 .popupTextWrapper:hover{
   cursor: pointer;
+
+}
+
+.popupTextRelevance{
+  position:relative;
+  max-width: 100%;
+  max-height:100%;
+  /* padding:0 10px; */
+}
+.popupRenderTextType{
+  position:absolute;
+  text-align: left;
+  /* box-sizing: border-box; */
+  overflow-y:auto;
+  width: 30rem;
+  height:30rem;
+  /* margin-left: 30rem; */
+  top: 20%;
+  left:0;
+  z-index:999;
+  color: gold;
+  background:black;
+  /* padding:10px; */
+  /* border:1px solid white; */
+  /* box-shadow: 0 0 2px 2px grey; */
+}
+
+.popupRenderTextDiscovery{
+  position:absolute;
+  text-align: left;
+  /* box-sizing: border-box; */
+  overflow-y:auto;
+  width: 25rem;
+  height:30rem;
+  /* margin-left: 30rem; */
+  top: 20%;
+  right:0;
+  z-index:999;
+  color: gold;
+  background:black;
+  /* padding:10px; */
+  /* border:1px solid white; */
+  /* box-shadow: 0 0 2px 2px grey; */
+}
 
 }
 
@@ -427,7 +472,7 @@ Single Planet */
 
 }
 
-.planetTextName {
+.planetText_Name {
   font-family: 'Lato', sans-serif;
   font-size: 3rem;
   position: absolute;
@@ -439,7 +484,7 @@ Single Planet */
 /* Test */
 
 
-.planetTextType {
+.planetText_Type {
   font-family: 'Lato', sans-serif;
   font-size: 1.1rem;
   position: absolute;
@@ -449,11 +494,11 @@ Single Planet */
   transition: opacity 1s, visibility 0.2s;
 }
 
-.planetTextType:hover {
+.planetText_Type:hover {
   color: gold;
 }
 
-.planetTextSize{
+.planetText_Size {
   font-family: 'Lato', sans-serif;
   font-size: 1.1rem;
   position: absolute;
@@ -463,13 +508,43 @@ Single Planet */
   transition: opacity 1s, visibility 0.2s;
 }
 
+.planetText_Distance {
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  position: absolute;
+  top: 20%;
+  left: 5%;
+  opacity: 0.9;
+  transition: opacity 1s, visibility 0.2s;
+}
+
+.planetText_Discovery {
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  position: absolute;
+  top: 20%;
+  right: 5%;
+  opacity: 0.9;
+  transition: opacity 1s, visibility 0.2s;
+}
+
+/* ADD ICON TO BUTTON */
 .planetViewButton {
   position: absolute;
-  font-family: "Times New Roman", Times, serif;
+  font-family: 'Lato', serif;
   font-size: 1rem;
   bottom: 15%;
   right: 5%;
   z-index: 100;
+  padding: 1rem;
+  color: white;
+  background-color: black;
+  border: 1px solid white;
+  border-radius: 25px;
+}
+
+.planetViewButton:hover {
+  border: 1px solid gold;
 }
 
 .container {

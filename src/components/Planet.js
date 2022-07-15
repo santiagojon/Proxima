@@ -32,9 +32,19 @@ export const Planet = (props) => {
     handleSetState("SET_PLANET_TEXT");
   };
 
+  function randomizePosition(arr) {
+    const angle = Math.random() * Math.PI * 2;
+    const x = Math.cos(angle) * arr[0];
+    const y = Math.sin(angle) * arr[0];
+    return [x, 0, y];
+  }
+
   return (
     <>
-      <mesh ref={ref} position={[position[0], position[1], position[2]]}>
+      <mesh
+        ref={ref}
+        position={randomizePosition([position[0], position[1], position[2]])}
+      >
         {props.sun ? (
           <>
             <globeShaderMaterial

@@ -11,7 +11,8 @@ import { GlobeShaderMaterial } from '../shaders/GlobeMaterial';
 import { CameraController } from './CameraController';
 import dataParser from '../util/DataParsed';
 
-import HoverPopUp from './HoverPopup';
+import HoverPopUpType from "./HoverPopUpType";
+import HoverPopUpDiscovery from "./HoverPopUpDiscovery";
 
 function Scene(props) {
   extend({ AtmosphereShaderMaterial });
@@ -128,44 +129,68 @@ export const SolarSystemView = (props) => {
       </Canvas>
       {viewState === 'singlePlanetView' ? (
         <div id="planetTextContainer">
-          <div className="planetTextName">
-            {singlePlanetInfo[singlePlanetKey].name}
+          <div className="planetText_Name">
+            {singlePlanetInfo ? singlePlanetInfo[singlePlanetKey].name : ""}
           </div>
-          <div className="planetTextType">
-            {/* Planet type: {singlePlanetInfo[singlePlanetKey].planetType} */}
-            {/* color={hovered && hoveredIdx === idx ? 'yellow' : 'white'} /> */}
+          <div className="planetText_Type">
             {singlePlanetInfo[singlePlanetKey].planetType ? (
-              <HoverPopUp
+              <HoverPopUpType
                 type={singlePlanetInfo[singlePlanetKey].planetType}
                 size={singlePlanetInfo[singlePlanetKey].compareEarthSize}
               />
             ) : (
-              ''
+              ""
             )}
           </div>
-          {/* <div className="planetTextSize">
-        {singlePlanetInfo[singlePlanetKey].compareEarthSize}x the size of Earth
-      </div> */}
+          <div className="planetText_Distance">
+            {singlePlanetInfo
+              ? "You are " +
+                (Math.round(
+                  singlePlanetInfo[singlePlanetKey].distancePC * 3.2
+                ) *
+                  10) /
+                  10 +
+                " light years from Earth"
+              : ""}
+          </div>
+          <div className="planetText_Discovery">
+            {singlePlanetInfo[singlePlanetKey].discoveryMethod ? (
+              <HoverPopUpDiscovery
+                discoveryMethod={
+                  singlePlanetInfo[singlePlanetKey].discoveryMethod
+                }
+                discoveryFacility={
+                  singlePlanetInfo[singlePlanetKey].discoveryFacility
+                }
+              />
+            ) : (
+              ""
+            )}
+          </div>
+          {/* <div className="planetText_Size">
+            {singlePlanetInfo[singlePlanetKey].compareEarthSize}x the size of Earth
+          </div> */}
+          <button
+            className="planetViewButton"
+            onClick={() => {
+              handleSetViewState("solarSystemView");
+            }}
+          >
+            Return to Star System
+          </button>
         </div>
       ) : (
         <div>
-          <div className="planetTextName">
-            {solarSystem && solarSystem.length ? solarSystem[0].name : ''}
+          <div className="planetText_Name">
+            {solarSystem && solarSystem.length ? solarSystem[0].name : ""}
           </div>
-          <div className="planetTextType">
-            {solarSystem && solarSystem.length ? solarSystem[0].starAge : ''}{' '}
-            billion years old
+          <div className="planetText_Type">
+            {solarSystem && solarSystem.length && solarSystem[0].starAge
+              ? solarSystem[0].starAge + " billion years old"
+              : ""}
           </div>
         </div>
       )}
-      <button
-        className="planetViewButton"
-        onClick={() => {
-          handleSetViewState('solarSystemView');
-        }}
-      >
-        Solar System
-      </button>
     </div>
   );
 };

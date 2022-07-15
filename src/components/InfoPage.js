@@ -2,8 +2,8 @@ import React from "react";
 import HoverPopUp from "./HoverPopup";
 
 
+
 const InfoPage = () => {
-  const test2 = "In our solar system, Earth, Mars, Mercury, and Venus are terrestrial, or rocky, planets. For planets outside our solar system, those between half of Earth's size and two times its radius are considered terrestrial."
 
 
   return (
@@ -24,8 +24,7 @@ const InfoPage = () => {
         />
         <div id="infoPageContent">
 
-        Planet Type: <HoverPopUp info={test2} />
-         
+
 
           <ul id="toc">
             <span>Table of Contents</span>

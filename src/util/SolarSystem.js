@@ -1,6 +1,6 @@
 const neptune = {
   name: "Neptune",
-  planetType: 'Neptunian',
+  planetType: "Neptunian",
   position: [6516, 0, 0],
   globeRGB: [0.1, 0.2, 0.5],
   atmosphereRGB: [0.05, 0.1, 0.2],
@@ -10,11 +10,12 @@ const neptune = {
   sun: false,
   orbitSpeed: 0.00001,
   orbitPlanet: [],
+  miles: "2.7346 billion mi",
 };
 
 const uranus = {
   name: "Uranus",
-  planetType: 'Neptunian',
+  planetType: "Neptunian",
   position: [5200, 0, 0],
   globeRGB: [0.1, 0.2, 0.5],
   atmosphereRGB: [0.1, 0.2, 0.5],
@@ -24,11 +25,12 @@ const uranus = {
   sun: false,
   orbitSpeed: 0.00005,
   orbitPlanet: [],
+  miles: "1.8682 billion mi",
 };
 
 const saturn = {
   name: "Saturn",
-  planetType: 'Gas_Giant',
+  planetType: "Gas_Giant",
   position: [3600, 0, 0],
   globeRGB: [0.3, 0.2, 0.15],
   atmosphereRGB: [1, 0.87, 0.8],
@@ -38,11 +40,12 @@ const saturn = {
   sun: false,
   orbitSpeed: 0.00008,
   orbitPlanet: [],
+  miles: "834.26 million mi",
 };
 
 const jupiter = {
   name: "Jupiter",
-  planetType: 'Gas_Giant',
+  planetType: "Gas_Giant",
   position: [2000, 0, 0],
   globeRGB: [0.3, 0.2, 0.15],
   atmosphereRGB: [1, 0.87, 0.8],
@@ -52,11 +55,12 @@ const jupiter = {
   sun: false,
   orbitSpeed: 0.00016,
   orbitPlanet: [],
+  miles: "427.84 million mi",
 };
 
 const mars = {
   name: "Mars",
-  planetType: 'Terrestrial',
+  planetType: "Terrestrial",
   position: [720, 0, 0],
   globeRGB: [0.8, 0.55, 0.3],
   atmosphereRGB: [0.8, 0.55, 0.3],
@@ -66,10 +70,11 @@ const mars = {
   sun: false,
   orbitSpeed: 0.00096,
   orbitPlanet: [],
+  miles: "113.88 million mi",
 };
 const moon = {
   name: "Moon",
-  planetType: 'Terrestrial',
+  planetType: "Terrestrial",
   position: [10, 0, 0],
   globeRGB: [0, 0, 0],
   atmosphereRGB: [0, 0, 0],
@@ -79,10 +84,11 @@ const moon = {
   sun: false,
   orbitSpeed: 0.0148,
   orbitPlanet: [],
+  miles: "238,900 mi",
 };
 const earth = {
   name: "Earth",
-  planetType: 'Terrestrial',
+  planetType: "Terrestrial",
   position: [568, 0, 0],
   globeRGB: [0.3, 0.6, 1.0],
   atmosphereRGB: [0.3, 0.6, 1.0],
@@ -92,11 +98,12 @@ const earth = {
   sun: false,
   orbitSpeed: 0.002,
   orbitPlanet: [moon],
+  miles: "0 mi",
 };
 
 const venus = {
   name: "Venus",
-  planetType: 'Terrestrial',
+  planetType: "Terrestrial",
   position: [468, 0, 0],
   globeRGB: [1, 0.5, 0.27],
   atmosphereRGB: [1, 0.5, 0.27],
@@ -106,11 +113,12 @@ const venus = {
   sun: false,
   orbitSpeed: 0.00326,
   orbitPlanet: [],
+  miles: "137.79 million mi",
 };
 
 const mercury = {
   name: "Mercury",
-  planetType: 'Terrestrial',
+  planetType: "Terrestrial",
   position: [340, 0, 0],
   globeRGB: [0.1, 0.1, 0.1],
   atmosphereRGB: [0.1, 0.1, 0.1],
@@ -120,6 +128,7 @@ const mercury = {
   sun: false,
   orbitSpeed: 0.00415,
   orbitPlanet: [],
+  miles: "123.56 million mi",
 };
 
 const sun = {
@@ -134,6 +143,7 @@ const sun = {
   sun: true,
   orbitSpeed: 0,
   orbitPlanet: [earth, mercury, venus, mars, jupiter, saturn, uranus, neptune],
+  miles: "94.484 million mi",
 };
 
 export const solarSys = [sun];
