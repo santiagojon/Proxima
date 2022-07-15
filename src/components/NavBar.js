@@ -50,7 +50,7 @@ const NavBar = () => {
           <form
             id="masthead-search"
             className={isActive ? null : 'is-active'}
-            onSubmit={handleSubmit}
+            // onSubmit={handleSubmit}
           >
             <input
               type="search"
@@ -67,9 +67,9 @@ const NavBar = () => {
                 <p key={planet.id} className="list">
                   <Link
                     to={`/system/${planet.starName}`}
-                    // onClick={() =>
-                    // window.history.push(`/system/${planet.starName}`)
-                    // }
+                    onClick={() =>
+                      window.history.push(`/system/${planet.starName}`)
+                    }
                   >
                     {planet.planetName}
                   </Link>
@@ -89,7 +89,7 @@ const NavBar = () => {
                   // className="site-nav"
                   style={{ textDecoration: 'none' }}
                   to="/"
-                  // onClick={() => window.history.push('/')}
+                  onClick={() => window.history.push('/')}
                 >
                   Home Page
                 </Link>
@@ -107,7 +107,7 @@ const NavBar = () => {
                   <Link
                     className="site-nav"
                     to="/home"
-                    // onClick={() => window.location.reload()}
+                    onClick={() => window.location.reload()}
                   >
                     Our System
                   </Link>
@@ -127,7 +127,7 @@ const NavBar = () => {
                   <Link
                     className="site-nav"
                     to="/search/terrestrial"
-                    // onClick={() => window.history.push('/search/terrestrial')}
+                    onClick={() => window.history.push('/search/terrestrial')}
                   >
                     Terrestrial
                   </Link>
@@ -136,7 +136,7 @@ const NavBar = () => {
                   <Link
                     className="site-nav"
                     to="/search/superearth"
-                    // onClick={() => window.history.push('/search/superearth')}
+                    onClick={() => window.history.push('/search/superearth')}
                   >
                     Super Earth
                   </Link>
@@ -145,7 +145,7 @@ const NavBar = () => {
                   <Link
                     className="site-nav"
                     to="/search/neptuntunian"
-                    // onClick={() => window.history.push('/search/neptuntunian')}
+                    onClick={() => window.history.push('/search/neptuntunian')}
                   >
                     Neptunian
                   </Link>
@@ -154,7 +154,7 @@ const NavBar = () => {
                   <Link
                     className="site-nav"
                     to="/search/gasgiant"
-                    // onClick={() => window.history.push('/search/gasgiant')}
+                    onClick={() => window.history.push('/search/gasgiant')}
                   >
                     Gas Giant
                   </Link>
@@ -168,7 +168,7 @@ const NavBar = () => {
                   <Link
                     className="site-nav"
                     to="/learnmore"
-                    // onClick={() => window.location.reload()}
+                    onClick={() => window.location.push('/learnmore')}
                   >
                     Info
                   </Link>
