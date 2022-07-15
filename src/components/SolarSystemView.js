@@ -139,12 +139,10 @@ export const SolarSystemView = (props) => {
       {viewState === "singlePlanetView" ? (
         <div id="planetTextContainer">
         <div className="planetTextName">
-          {singlePlanetInfo[singlePlanetKey].name}
+          {singlePlanetInfo ? singlePlanetInfo[singlePlanetKey].name : ''}
         </div>
         <div className="planetTextType">
-        {/* Planet type: {singlePlanetInfo[singlePlanetKey].planetType} */}
-        {/* color={hovered && hoveredIdx === idx ? 'yellow' : 'white'} /> */}
-     <HoverPopUp type={singlePlanetInfo[singlePlanetKey].planetType} />
+     {singlePlanetInfo[singlePlanetKey].planetType ? <HoverPopUp type={singlePlanetInfo[singlePlanetKey].planetType} /> : '' }
       </div>
       {/* <div className="planetTextSize">
         {singlePlanetInfo[singlePlanetKey].compareEarthSize}x the size of Earth
