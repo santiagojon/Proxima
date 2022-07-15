@@ -13,6 +13,7 @@ import InfoPage from "./components/InfoPage";
 // import NavBar from './components/NavBar';
 import SearchType from "./components/Search";
 import SystemFromSearch from "./components/SystemFromSearch";
+import PageNotFound from "./components/PageNotFound";
 
 // import NotFoundPage from "./NotFoundPage";
 // import Test from './components/Test';
@@ -29,6 +30,7 @@ const AppRoutes = () => {
         <Route exact path="/" element={<LandingPage />} />
         <Route path="/home" element={<SolarSystemView />} />
         <Route path="/learnMore" element={<InfoPage />} />
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
     </Router>
   );
