@@ -883,7 +883,7 @@ html {
 *,
 *:before,
 *:after {
-  box-sizing: inherit;
+  box-sizing: content-box;
 }
 
 html,
@@ -1038,7 +1038,8 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
   display: inline-block;
   /* float: left; */
   font: inherit;
-  margin: 0.8125em 0 0;
+  margin: 1.4em 0 0;
+  margin-left: 12.5em;
   overflow: visible;
   outline: none;
   padding: 0;
@@ -1145,13 +1146,14 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
 }
 
 #site-nav {
-  clear: both;
+  /* clear: both; */
   display: flex;
   flex-direction: column;
   height: 0;
   overflow: hidden;
   /* padding-top: 2.5em; */
   padding-top: 0px;
+  justify-content: space-between;
 }
 
 #site-nav.is-active {
@@ -1217,6 +1219,7 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
 
 #site-nav li a:hover,
 #site-nav li a:focus {
+  font-weight: 500;
   color: #686d6e;
 }
 
@@ -1246,7 +1249,7 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
 
 #masthead-search {
   float: right;
-  margin-top: 0.625em;
+  margin-top: 0.5em;
   width: 100%;
   max-width: 14em;
   position: relative;
@@ -1363,4 +1366,73 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
 
 .draw {
   color: white;
+}
+
+/* body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  font-family: "Lato", sans-serif;
+  color: #fff;
+  text-align: center;
+} */
+.not-found {
+  width: 560px;
+  height: 225px;
+  margin-right: -10px;
+}
+.starry-sky {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.notfound-copy {
+  color: #fff;
+  position: fixed;
+  top: 25px;
+  right: 10%;
+  text-align: right;
+}
+/* h1 {
+   font-weight: 700;
+  font-size: 40px;
+} */
+/* a {
+  font-weight: 300;
+  color: #fff;
+  border-bottom: 1.5px solid #5581d4;
+  text-decoration: none;
+} */
+a:hover {
+  font-weight: 800;
+  color: #fff;
+
+  text-decoration: none;
+}
+/* change to alternating star opacities  */
+.all-stars {
+  animation: blinkblink 5s linear infinite;
+}
+
+@keyframes blinkblink {
+  50% {
+    opacity: 0.1;
+  }
+}
+.moon {
+}
+input[type="text"] {
+  color: #fff;
+  background-color: #0a1821;
+  padding: 5px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  font-size: 18px;
+}
+input[type="text"]:focus {
+  border-color: none;
+  border-bottom: 2px solid #ccc;
 }
