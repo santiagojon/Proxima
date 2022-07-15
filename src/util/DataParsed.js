@@ -115,13 +115,12 @@ export default function dataParser(data) {
   if (data === null) return null;
   if (data === undefined || !data[0]) return null;
 
-  console.log("DATA!", data);
-
   for (let i = 0; i < data.length; i++) {
     const texture = getTexture(
       textureFinder(data[i].planetMassE, data[i].planetTemp),
       data[i].id
     );
+
     planets.push({
       name: data[i].planetName,
       planetType: textureFinder(data[i].planetMassE, data[i].planetTemp),
