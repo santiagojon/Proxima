@@ -147,7 +147,7 @@ const NavBar = () => {
                     to="/search/neptuntunian"
                     onClick={() => window.history.push('/search/neptuntunian')}
                   >
-                    Neptuntunian
+                    Neptunian
                   </Link>
                 </li>
                 <li>

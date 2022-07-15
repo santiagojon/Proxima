@@ -6,7 +6,7 @@ export const SolarSystem = (props) => {
   const solarSystem = props.solarSystem || [];
   let orbitRings = [];
   if (solarSystem.length > 0) orbitRings = solarSystem[0].orbitPlanet;
-  const handleSetState = { handleSetState: props.handleSetState };
+  console.log("props solar s", props.solarSystem);
 
   return (
     <>
@@ -28,14 +28,15 @@ export const SolarSystem = (props) => {
             );
           })
         : ""}
-      {solarSystem.map((planet, idx) => {
-        let updatedPlanet = { ...planet, ...handleSetState };
-        return (
-          <mesh key={idx}>
-            <Planet {...updatedPlanet} />
-          </mesh>
-        );
-      })}
+      {props.solarSystem !== null && props.solarSystem.length > 0 ? (
+        <Planet
+          {...props.solarSystem[0]}
+          handleSetState={props.handleSetState}
+        />
+      ) : (
+        ""
+      )}
     </>
   );
 };
+ 
