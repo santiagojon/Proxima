@@ -124,11 +124,16 @@ export default function dataParser(data) {
     );
     planets.push({
       name: data[i].planetName,
+      planetType: textureFinder(data[i].planetMassE, data[i].planetTemp),
+      discoveryMethod: data[i].discoveryMethod,
+      discoveryFacility: data[i].discoveryFacility,
+      distancePC: data[i].distancePC,
       position: [23480 * data[i].orbitDistanceAU * 0.75, 0, 0],
       globeRGB: rgbFinder(data[i].planetTemp), //get rgb data
       compareEarthSize: data[i].planetRadiusE * 5,
       speed: 0.003,
       sun: false,
+      yearDiscovered: data[i].yearDiscovered,
       orbitSpeed: data[i].planetOrbitTimeD / 120000,
       orbitPlanet: [],
       image: `${process.env.PUBLIC_URL}/images/${texture}`,
@@ -139,6 +144,10 @@ export default function dataParser(data) {
   const sunTexture = getTexture("sun", sunColor);
   const sun = {
     name: data[0].starName,
+    distancePC: data[0].distancePC,
+    planetType: "sun",
+    discoveryMethod: data[0].discoveryMethod,
+    discoveryFacility: data[0].discoveryFacility,
     position: [0, 0, 0],
     globeRGB: [sunColor[0] / 255, sunColor[1] / 255, sunColor[2] / 255],
     atmosphereRGB: [1, 0.58, 0.26],
@@ -146,6 +155,7 @@ export default function dataParser(data) {
     orbitSpeed: 0,
     compareEarthSize: data[0].starRadiusS * 20.3,
     sun: true,
+    yearDiscovered: data[0].yearDiscovered,
     orbitPlanet: planets,
     img: `${process.env.PUBLIC_URL}/images/${sunTexture}`,
   };
