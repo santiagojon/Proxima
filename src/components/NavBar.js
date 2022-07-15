@@ -67,9 +67,9 @@ const NavBar = () => {
                 <p key={planet.id} className="list">
                   <Link
                     to={`/system/${planet.starName}`}
-                    onClick={() =>
-                      window.history.push(`/system/${planet.starName}`)
-                    }
+                    // onClick={() =>
+                    // window.history.push(`/system/${planet.starName}`)
+                    // }
                   >
                     {planet.planetName}
                   </Link>
@@ -127,7 +127,7 @@ const NavBar = () => {
                   <Link
                     className="site-nav"
                     to="/search/terrestrial"
-                    onClick={() => window.history.push('/search/terrestrial')}
+                    // onClick={() => window.history.push('/search/terrestrial')}
                   >
                     Terrestrial
                   </Link>
@@ -136,7 +136,7 @@ const NavBar = () => {
                   <Link
                     className="site-nav"
                     to="/search/superearth"
-                    onClick={() => window.history.push('/search/superearth')}
+                    // onClick={() => window.history.push('/search/superearth')}
                   >
                     Super Earth
                   </Link>
@@ -145,7 +145,7 @@ const NavBar = () => {
                   <Link
                     className="site-nav"
                     to="/search/neptuntunian"
-                    onClick={() => window.history.push('/search/neptuntunian')}
+                    // onClick={() => window.history.push('/search/neptuntunian')}
                   >
                     Neptunian
                   </Link>
@@ -154,7 +154,7 @@ const NavBar = () => {
                   <Link
                     className="site-nav"
                     to="/search/gasgiant"
-                    onClick={() => window.history.push('/search/gasgiant')}
+                    // onClick={() => window.history.push('/search/gasgiant')}
                   >
                     Gas Giant
                   </Link>
