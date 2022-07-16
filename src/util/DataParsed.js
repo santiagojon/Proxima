@@ -130,6 +130,7 @@ export default function dataParser(data) {
       position: [23480 * data[i].orbitDistanceAU * 0.75, 0, 0],
       globeRGB: rgbFinder(data[i].planetTemp), //get rgb data
       compareEarthSize: data[i].planetRadiusE * 5,
+      starSpectralType: data[i].starSpectralType,
       speed: 0.003,
       sun: false,
       yearDiscovered: data[i].yearDiscovered,
@@ -139,6 +140,7 @@ export default function dataParser(data) {
     });
   }
 
+
   const sunColor = sunRGB(data[0]);
   const sunTexture = getTexture("sun", sunColor);
   const sun = {
@@ -147,6 +149,8 @@ export default function dataParser(data) {
     planetType: "sun",
     discoveryMethod: data[0].discoveryMethod,
     discoveryFacility: data[0].discoveryFacility,
+    starSpectralType: data[0].starSpectralType,
+    starAge: data[0].starAge,
     position: [0, 0, 0],
     globeRGB: [sunColor[0] / 255, sunColor[1] / 255, sunColor[2] / 255],
     atmosphereRGB: [1, 0.58, 0.26],

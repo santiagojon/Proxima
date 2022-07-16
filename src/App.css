@@ -49,7 +49,7 @@ canvas {
   /* z-index: 500; */
 }
 
-/* **********************************
+/* *************************************************************
 Landing Page  */
 
 /* #skipButtonContainer {
@@ -437,9 +437,27 @@ Text Popup */
   /* box-shadow: 0 0 2px 2px grey; */
 }
 
+.popupRenderTextPlanetInfo{
+  position:absolute;
+  text-align: left;
+  /* box-sizing: border-box; */
+  overflow-y:auto;
+  width: 25rem;
+  height:30rem;
+  /* margin-left: 30rem; */
+  top: 20%;
+  left:0;
+  z-index:999;
+  color: gold;
+  background:black;
+  /* padding:10px; */
+  /* border:1px solid white; */
+  /* box-shadow: 0 0 2px 2px grey; */
+}
 
 
-/* ***********************
+
+/* *************************************************************
 Single Planet */
 
 .planetTextContainer {
@@ -470,15 +488,15 @@ Single Planet */
   transition: opacity 1s, visibility 0.2s;
 }
 
-.planetText_Type:hover {
+/* .planetText_Type:hover {
   color: gold;
-}
+} */
 
 .planetText_Size {
   font-family: 'Lato', sans-serif;
   font-size: 1.1rem;
   position: absolute;
-  bottom: 10%;
+  top: 23%;
   left: 5%;
   opacity: 0.9;
   transition: opacity 1s, visibility 0.2s;
@@ -504,6 +522,30 @@ Single Planet */
   transition: opacity 1s, visibility 0.2s;
 }
 
+/* *************************************************************
+SolarSystemView + Info */
+
+.starText_Habitable {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.1rem;
+  position: absolute;
+  top: 20%;
+  left: 5%;
+  opacity: 0.9;
+  transition: opacity 1s, visibility 0.2s;
+}
+
+.starText_Age {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.1rem;
+  position: absolute;
+  bottom: 9%;
+  left: 5%;
+  opacity: 0.9;
+  transition: opacity 1s, visibility 0.2s;
+
+}
+
 /* ADD ICON TO BUTTON */
 .planetViewButton {
   position: absolute;
@@ -522,6 +564,10 @@ Single Planet */
 .planetViewButton:hover {
   border: 1px solid gold;
 }
+
+
+
+/* **************************************************** */
 
 .container {
   max-width: 120rem;
