@@ -5,8 +5,11 @@ import * as THREE from "three";
 export const SolarSystem = (props) => {
   const solarSystem = props.solarSystem || [];
 
-  const [hovered, setHover] = useState(false);
-  const [active, setActive] = useState(false);
+  const handleOnClick = (idx) => {
+    props.handleSetState("SET_PLANET_VIEW", "singlePlanetView");
+    props.handleSetState("SET_PLANET_INFO", props.solarSystem[0].orbitPlanet);
+    props.handleSetState("SET_PLANET_KEY", idx);
+  };
 
   let orbitRings = [];
   if (solarSystem.length > 0) orbitRings = solarSystem[0].orbitPlanet;
@@ -15,25 +18,34 @@ export const SolarSystem = (props) => {
       {orbitRings && orbitRings.length > 0
         ? orbitRings.map((orbit, idx) => {
             return (
-              <mesh
-                key={idx}
-                rotation={[Math.PI / 2, 0, 0]}
-                onPointerOver={(event) => setHover(true)}
-                onPointerOut={(event) => setHover(false)}
-              >
+              <mesh key={idx} rotation={[Math.PI / 2, 0, 0]}>
+                <mesh onClick={() => handleOnClick(idx)}>
+                  <ringBufferGeometry
+                    args={[
+                      orbit.position[0] - 25,
+                      orbit.position[0] + 25,
+                      64,
+                      1,
+                      0,
+                    ]}
+                  />
+                  <meshBasicMaterial
+                    side={THREE.DoubleSide}
+                    color={"orange"}
+                    opacity={0.0}
+                    transparent
+                  />
+                </mesh>
                 <ringBufferGeometry
                   args={[
-                    orbit.position[0] - 0.25,
-                    orbit.position[0] + 0.25,
+                    orbit.position[0] - 0.5,
+                    orbit.position[0] + 0.5,
                     512,
                     1,
                     0,
                   ]}
                 />
-                <meshBasicMaterial
-                  side={THREE.DoubleSide}
-                  color={hovered ? "hotpink" : "orange"}
-                />
+                <meshBasicMaterial side={THREE.DoubleSide} color={"orange"} />
               </mesh>
             );
           })

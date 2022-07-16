@@ -12,7 +12,6 @@ export const Planet = (props) => {
   const speed = props.speed || 0.0;
   const position = props.position || [0, 10, 0];
   const orbitPlanet = props.orbitPlanet || [];
-  const [randomized, setRandomized] = useState(false);
 
   const planetScale = 1.5;
   const handleSetState = props.handleSetState;
@@ -33,8 +32,6 @@ export const Planet = (props) => {
   };
 
   function randomizePosition(arr) {
-    if (randomized === false) {
-    }
     const angle = Math.random() * Math.PI * 2;
     const x = Math.cos(angle) * arr[0];
     const y = Math.sin(angle) * arr[0];
@@ -74,20 +71,10 @@ export const Planet = (props) => {
             />
 
             <sphereBufferGeometry
-              args={[planetScale * props.compareEarthSize * 2 * 3, 50, 50]}
+              args={[planetScale * props.compareEarthSize * 2, 50, 50]}
             />
           </>
         )}
-
-        {/* {props.sun ? (
-          <Sun
-            planetScale={planetScale}
-            compareEarthSize={props.compareEarthSize}
-            atmosphereRGB={props.atmosphereRGB}
-          />
-        ) : (
-          ""
-        )} */}
         {orbitPlanet && orbitPlanet.length > 0
           ? orbitPlanet.map((planet, idx) => {
               return (
