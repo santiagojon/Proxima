@@ -94,20 +94,7 @@ Landing Page  */
 }
 
 #landingPageTitle {
-  font-family: "Lato", sans-serif;
-  /* font-family: 'Lato', sans-serif; */
-  /* font-family: 'Poppins', sans-serif; */
-  /* font-family: 'Rubik Moonrocks', cursive; */
   font-family: "Strait", sans-serif;
-  /* font-family: 'Black Ops One', cursive; */
-  /* font-family: 'Iceland', sans-serif; */
-}
-
-.landingPage div {
-  /* background-color: black; */
-  /* justify-content: center; */
-  /* font-family: Georgia, 'Times New Roman', Times, serif */
-  /* height: 100rem; */
 }
 
 #heroContainer {
@@ -209,7 +196,7 @@ Landing Page  */
   right: 15%;
   /* left: 30%; */
   top: 20%;
-  color: blanchedalmond;
+  color: white;
   animation: slide-up 3s;
 }
 .textLower {
@@ -260,6 +247,7 @@ Landing Page  */
 #milkyWayTextLandingPage {
   background-color: transparent;
   position: absolute;
+
   /* transform: translate3d(0,0,0); */
   bottom: 18%;
   left: 3rem;
@@ -267,9 +255,10 @@ Landing Page  */
 
 #milkyWayTitleLandingPage {
   color: white;
+  text-align: left;
   font-size: 2.5rem;
   font-weight: 400;
-  animation: slide-up 2s;
+  animation: slide-up 3s;
   /* animation-delay: calc(var(--scroll) * -1s); */
   /* transform: translate3d(0, 100px, 0); */
 }
@@ -278,6 +267,7 @@ Landing Page  */
   color: Gold;
   font-weight: 400;
   animation: slide-up 3s;
+  left: 3rem;
   /* animation-delay: calc(var(--scroll) * -1s); */
 }
 
@@ -299,7 +289,7 @@ Milky Way Buttons */
 .galaxyButtons {
   height: 50px;
   width: 50px;
-  border-color: black;
+  border-color: gold;
   background-color: transparent;
   border-radius: 50%;
   opacity: 0.7;
@@ -484,7 +474,7 @@ Single Planet */
   position: absolute;
   bottom: 15%;
   left: 5%;
-  animation: slide-up 2s;
+  animation: slide-up 3s;
   transition: opacity 1s, visibility 0.2s;
 }
 
@@ -497,7 +487,7 @@ Single Planet */
   bottom: 11%;
   left: 5%;
   opacity: 0.9;
-  animation: slide-up 2s;
+  animation: slide-up 3s;
   transition: opacity 1s, visibility 0.2s;
 }
 
@@ -555,7 +545,7 @@ SolarSystemView + Info */
   bottom: 9%;
   left: 5%;
   opacity: 0.9;
-  animation: slide-up 2s;
+  animation: slide-up 3s;
   transition: opacity 1s, visibility 0.2s;
 }
 
