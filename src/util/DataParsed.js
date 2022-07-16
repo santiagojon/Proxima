@@ -128,7 +128,7 @@ export default function dataParser(data) {
       position: [23480 * data[i].orbitDistanceAU * 0.75 + 90, 0, 0],
       globeRGB: rgbFinder(data[i].planetTemp), //get rgb data
       starSpectralType: data[i].starSpectralType,
-      compareEarthSize: data[i].planetRadiusE * 3,
+      compareEarthSize: data[i].planetRadiusE,
       speed: 0.003,
       sun: false,
       yearDiscovered: data[i].yearDiscovered,
@@ -137,7 +137,6 @@ export default function dataParser(data) {
       image: `${process.env.PUBLIC_URL}/images/${texture}`,
     });
   }
-
 
   const sunColor = sunRGB(data[0]);
   const sunTexture = getTexture("sun", data[0].id);

@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import ArrowDropDownCircleOutlinedIcon from '@mui/icons-material/ArrowDropDownCircleOutlined';
+
 
 const HoverPopUpType = (props) => {
     const [text, setText] = useState('');
@@ -36,6 +38,7 @@ const HoverPopUpType = (props) => {
     return (
         <div className="popupTextWrapper">
             <div className="popupTextRelevance" onMouseOver={handleHover} onMouseLeave={handleLeave}>
+                <ArrowDropDownCircleOutlinedIcon fontSize='small'  style={{margin: '2px'}}/>
                 Planet Type: {planetType.includes('_') ? planetType.split('_').join(' ') : planetType}
                 {text}
             </div>

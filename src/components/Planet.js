@@ -2,9 +2,9 @@ import { shaderMaterial } from "@react-three/drei";
 import glsl from "babel-plugin-glsl/macro";
 import * as THREE from "three";
 import { extend, useFrame } from "@react-three/fiber";
-import { useRef, useState } from "react";
-import { Sun } from "./Sun";
+import { useRef, useState, useEffect, useMemo } from "react";
 import { SinglePlanetView } from "./SinglePlanetView";
+import Text from "./spriteText";
 
 export const Planet = (props) => {
   // This reference gives us direct access to the THREE.Mesh object
@@ -58,7 +58,11 @@ export const Planet = (props) => {
               globeTexture={new THREE.TextureLoader().load(props.image)}
             />
             <sphereBufferGeometry
-              args={[planetScale * props.compareEarthSize, 50, 50]}
+              args={[
+                Math.min(planetScale * props.compareEarthSize, 400),
+                50,
+                50,
+              ]}
             />
           </>
         ) : (
@@ -72,16 +76,6 @@ export const Planet = (props) => {
             />
           </>
         )}
-
-        {/* {props.sun ? (
-          <Sun
-            planetScale={planetScale}
-            compareEarthSize={props.compareEarthSize}
-            atmosphereRGB={props.atmosphereRGB}
-          />
-        ) : (
-          ""
-        )} */}
         {orbitPlanet && orbitPlanet.length > 0
           ? orbitPlanet.map((planet, idx) => {
               return (
@@ -96,6 +90,11 @@ export const Planet = (props) => {
               );
             })
           : ""}
+        {props.sun ? (
+          ""
+        ) : (
+          <Text children={props.name} position={[0, 50, 0]} opacity={100} />
+        )}
       </mesh>
     </>
   );

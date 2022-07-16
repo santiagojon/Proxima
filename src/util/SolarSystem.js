@@ -75,7 +75,7 @@ const mars = {
 const moon = {
   name: "Moon",
   planetType: "Terrestrial",
-  position: [10, 0, 0],
+  position: [20, 0, 0],
   globeRGB: [0, 0, 0],
   atmosphereRGB: [0, 0, 0],
   compareEarthSize: 0.25,
@@ -138,7 +138,7 @@ const sun = {
   atmosphereRGB: [1, 0.58, 0.26],
   compareEarthSize: 108,
   image: "/images/sun.jpg",
-  speed: 0.0,
+  speed: 0.0005,
   sun: true,
   orbitSpeed: 0,
   orbitPlanet: [earth, mercury, venus, mars, jupiter, saturn, uranus, neptune],
