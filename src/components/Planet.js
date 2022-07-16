@@ -2,8 +2,9 @@ import { shaderMaterial } from "@react-three/drei";
 import glsl from "babel-plugin-glsl/macro";
 import * as THREE from "three";
 import { extend, useFrame } from "@react-three/fiber";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, useMemo } from "react";
 import { SinglePlanetView } from "./SinglePlanetView";
+import Text from "./spriteText";
 
 export const Planet = (props) => {
   // This reference gives us direct access to the THREE.Mesh object
@@ -89,6 +90,11 @@ export const Planet = (props) => {
               );
             })
           : ""}
+        {props.sun ? (
+          ""
+        ) : (
+          <Text children={props.name} position={[0, 50, 0]} opacity={100} />
+        )}
       </mesh>
     </>
   );
