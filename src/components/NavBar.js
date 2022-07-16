@@ -107,7 +107,7 @@ const NavBar = () => {
                   <Link
                     className="site-nav"
                     to="/home"
-                    onClick={() => window.location.reload()}
+                    onClick={() => window.history.push('/home')}
                   >
                     Our System
                   </Link>
