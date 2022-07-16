@@ -16,7 +16,7 @@ const SinglePlanetView = (props) => {
     <>
       <CameraController />
       <mesh ref={ref} position={[0, 0, 0]}>
-        <sphereBufferGeometry args={[120, 50, 50]} />
+        <sphereBufferGeometry args={[300, 50, 50]} />
         {props.sun ? (
           <globeShaderMaterial
             uColor={

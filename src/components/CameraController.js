@@ -14,7 +14,7 @@ export const CameraController = (props) => {
   let { camera, gl } = useThree();
   let controls = new OrbitControls(camera, gl.domElement);
   controls.enableDamping = true;
-  let cameraPos = [-350, 240, 0];
+  let cameraPos = props.cameraPos || [-950, 340, 0];
   ChangeCameraPosition(cameraPos, 75, 10000);
   useEffect(() => {
     if (props.viewState === "singlePlanetView") {
@@ -22,7 +22,7 @@ export const CameraController = (props) => {
       controls.maxDistance = 5;
     } else {
       controls.minDistance = 0.02;
-      controls.maxDistance = 10000;
+      controls.maxDistance = 20000;
     }
     return () => {
       controls.dispose();
