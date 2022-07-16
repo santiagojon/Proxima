@@ -13,7 +13,7 @@ export const textures = {
   icy: ["icy1.jpg", "icy2.jpg", "icy3.jpg", "icy4.jpg"],
   sun: ["sun.jpg", "sun1.jpg", "sun2.jpg"],
   gas: ["gas1.jpg", "gas2.jpg", "gas3.jpg", "gas4.jpg", "gas5.jpg"],
-  earthLike: ["earth2.jpg", , "earth3.jpg", "earth4.jpg", "earth5.jpg"],
+  earthLike: ["earth6.jpg", "earth3.jpg", "earth4.jpg", "earth5.jpg"],
 };
 
 // const data =        {
