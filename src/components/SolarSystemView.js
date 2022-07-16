@@ -14,6 +14,8 @@ import { useSelector } from "react-redux";
 
 import HoverPopUpType from "./HoverPopUpType";
 import HoverPopUpDiscovery from "./HoverPopUpDiscovery";
+import SinglePlanetViewInfo from "./SinglePlanetViewInfo";
+import SolarSystemViewInfo from "./SolarSystemViewInfo";
 
 function Scene(props) {
   extend({ AtmosphereShaderMaterial });
@@ -62,6 +64,7 @@ export const SolarSystemView = (props) => {
   const [unparsedSolarData, setUnparsedSolarData] = useState({});
   const [solarSystem, setSolarSystem] = useState([]);
   // const [solarSystem, setSolarSystem] = useState(solarSys);
+
 
   const singleSystem = useSelector((state) => {
     return state.singleSystem || null;
@@ -117,6 +120,7 @@ export const SolarSystemView = (props) => {
   };
 
   return (
+
     <div className="App">
       <Canvas
         gl={{ antialias: true }}
@@ -139,48 +143,8 @@ export const SolarSystemView = (props) => {
       </Canvas>
       {viewState === "singlePlanetView" ? (
         <div id="planetTextContainer">
-          <div className="planetText_Name">
-            {singlePlanetInfo ? singlePlanetInfo[singlePlanetKey].name : ""}
-          </div>
-          <div className="planetText_Type">
-            {singlePlanetInfo[singlePlanetKey].planetType ? (
-              <HoverPopUpType
-                type={singlePlanetInfo[singlePlanetKey].planetType}
-                size={singlePlanetInfo[singlePlanetKey].compareEarthSize}
-              />
-            ) : (
-              ""
-            )}
-          </div>
-          <div className="planetText_Distance">
-            {singlePlanetInfo
-              ? "You are " +
-                (Math.round(
-                  singlePlanetInfo[singlePlanetKey].distancePC * 3.2
-                ) *
-                  10) /
-                  10 +
-                " light years from Earth"
-              : ""}
-          </div>
-          <div className="planetText_Discovery">
-            {singlePlanetInfo[singlePlanetKey].discoveryMethod ? (
-              <HoverPopUpDiscovery
-                discoveryMethod={
-                  singlePlanetInfo[singlePlanetKey].discoveryMethod
-                }
-                discoveryFacility={
-                  singlePlanetInfo[singlePlanetKey].discoveryFacility
-                }
-              />
-            ) : (
-              ""
-            )}
-          </div>
-          {/* <div className="planetText_Size">
-            {singlePlanetInfo[singlePlanetKey].compareEarthSize}x the size of Earth
-          </div> */}
-          <button
+          <SinglePlanetViewInfo singlePlanetInfo={singlePlanetInfo} singlePlanetKey={singlePlanetKey}/>
+            <button
             className="planetViewButton"
             onClick={() => {
               handleSetViewState("solarSystemView");
@@ -190,17 +154,9 @@ export const SolarSystemView = (props) => {
           </button>
         </div>
       ) : (
-        <div>
-          <div className="planetText_Name">
-            {solarSystem && solarSystem.length ? solarSystem[0].name : ""}
-          </div>
-          <div className="planetText_Type">
-            {solarSystem && solarSystem.length && solarSystem[0].starAge
-              ? solarSystem[0].starAge + " billion years old"
-              : ""}
-          </div>
-        </div>
+        <SolarSystemViewInfo solarSystem={solarSystem}/>
       )}
+     
     </div>
   );
 };

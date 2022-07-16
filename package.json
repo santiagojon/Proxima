@@ -1,6 +1,7 @@
 {
   "name": "astro",
   "version": "0.1.0",
+
   "private": true,
   "dependencies": {
     "@react-spring/parallax": "^9.4.5",

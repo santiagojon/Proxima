@@ -10,7 +10,7 @@ const neptune = {
   sun: false,
   orbitSpeed: 0.00001,
   orbitPlanet: [],
-  miles: "2.7346 billion mi",
+  miles: "2.7346 billion miles",
 };
 
 const uranus = {
@@ -25,7 +25,7 @@ const uranus = {
   sun: false,
   orbitSpeed: 0.00005,
   orbitPlanet: [],
-  miles: "1.8682 billion mi",
+  miles: "1.8682 billion miles",
 };
 
 const saturn = {
@@ -40,7 +40,7 @@ const saturn = {
   sun: false,
   orbitSpeed: 0.00008,
   orbitPlanet: [],
-  miles: "834.26 million mi",
+  miles: "834.26 million miles",
 };
 
 const jupiter = {
@@ -55,7 +55,7 @@ const jupiter = {
   sun: false,
   orbitSpeed: 0.00016,
   orbitPlanet: [],
-  miles: "427.84 million mi",
+  miles: "427.84 million miles",
 };
 
 const mars = {
@@ -70,7 +70,7 @@ const mars = {
   sun: false,
   orbitSpeed: 0.00096,
   orbitPlanet: [],
-  miles: "113.88 million mi",
+  miles: "113.88 million miles",
 };
 const moon = {
   name: "Moon",
@@ -84,7 +84,7 @@ const moon = {
   sun: false,
   orbitSpeed: 0.0148,
   orbitPlanet: [],
-  miles: "238,900 mi",
+  miles: "238,900 miles",
 };
 const earth = {
   name: "Earth",
@@ -98,7 +98,6 @@ const earth = {
   sun: false,
   orbitSpeed: 0.002,
   orbitPlanet: [moon],
-  miles: "0 mi",
 };
 
 const venus = {
@@ -113,7 +112,7 @@ const venus = {
   sun: false,
   orbitSpeed: 0.00326,
   orbitPlanet: [],
-  miles: "137.79 million mi",
+  miles: "137.79 million miles",
 };
 
 const mercury = {
@@ -128,7 +127,7 @@ const mercury = {
   sun: false,
   orbitSpeed: 0.00415,
   orbitPlanet: [],
-  miles: "123.56 million mi",
+  miles: "123.56 million miles",
 };
 
 const sun = {
@@ -143,7 +142,7 @@ const sun = {
   sun: true,
   orbitSpeed: 0,
   orbitPlanet: [earth, mercury, venus, mars, jupiter, saturn, uranus, neptune],
-  miles: "94.484 million mi",
+  miles: "94.484 million miles",
 };
 
 export const solarSys = [sun];
