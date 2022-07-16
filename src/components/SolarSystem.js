@@ -22,8 +22,8 @@ export const SolarSystem = (props) => {
                 <mesh onClick={() => handleOnClick(idx)}>
                   <ringBufferGeometry
                     args={[
-                      orbit.position[0] - 25,
-                      orbit.position[0] + 25,
+                      orbit.position[0] - 8,
+                      orbit.position[0] + 8,
                       64,
                       1,
                       0,
@@ -45,7 +45,7 @@ export const SolarSystem = (props) => {
                     0,
                   ]}
                 />
-                <meshBasicMaterial side={THREE.DoubleSide} color={"orange"} />
+                <meshBasicMaterial side={THREE.DoubleSide} color={"#c9b195"} />
               </mesh>
             );
           })

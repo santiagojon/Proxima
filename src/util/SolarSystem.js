@@ -75,7 +75,7 @@ const mars = {
 const moon = {
   name: "Moon",
   planetType: "Terrestrial",
-  position: [20, 0, 0],
+  position: [30, 0, 0],
   globeRGB: [0, 0, 0],
   atmosphereRGB: [0, 0, 0],
   compareEarthSize: 0.25,
