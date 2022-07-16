@@ -7,14 +7,6 @@ import dataParser from "../util/DataParsed";
 import { SolarSystemView } from "./SolarSystemView";
 
 export default function SystemFromSearch(props) {
-  const singleSystem = useSelector((state) => {
-    let parsedPlanet = null;
-    if (state.singleSystem !== {}) {
-      parsedPlanet = state.singleSystem;
-    }
-    return parsedPlanet;
-  });
-
   const dispatch = useDispatch();
 
   const params = useParams();
@@ -26,11 +18,7 @@ export default function SystemFromSearch(props) {
 
   return (
     <div>
-      {singleSystem !== null ? (
-        <SolarSystemView solarSystem={singleSystem} />
-      ) : (
-        ""
-      )}
+      <SolarSystemView search={true} />
     </div>
   );
 }

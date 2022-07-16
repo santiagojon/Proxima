@@ -8,7 +8,6 @@ const canvasHeight = canvasWidth / 2;
 //pick texture base on planet color
 export const texturePicker = (planetType, planetColor) => {
   const textureArr = textures[`${planetType}`];
-  console.log("text arr", textureArr);
   const planetColorSum = planetColor[0] + planetColor[1] + planetColor[2];
   const textureArrLength = textureArr.length;
   return textureArr[planetColorSum % textureArrLength];
@@ -16,18 +15,18 @@ export const texturePicker = (planetType, planetColor) => {
 
 export function rgbFinder(temp) {
   if (temp === "null" || !temp) {
-    return [150, 150, 150];
+    return [180, 180, 180];
   }
 
   let red = Math.floor((temp / 600) * 230);
   if (red > 230) red = 230;
-  else if (red < 150) red = 150;
+  else if (red < 130) red = 130;
 
   let green = Math.floor(red / 2 + 50);
-  if (green < 150) green = 150;
+  if (green < 130) green = 130;
 
-  let blue = 150;
-  if (temp < 150) blue = 150 - temp + 127;
+  let blue = 130;
+  if (temp < 130) blue = 130 - temp + 127;
   if (blue > 230) blue = 230;
 
   return [red, green, blue];
@@ -120,17 +119,16 @@ export default function dataParser(data) {
       textureFinder(data[i].planetMassE, data[i].planetTemp),
       data[i].id
     );
-
     planets.push({
       name: data[i].planetName,
       planetType: textureFinder(data[i].planetMassE, data[i].planetTemp),
       discoveryMethod: data[i].discoveryMethod,
       discoveryFacility: data[i].discoveryFacility,
       distancePC: data[i].distancePC,
-      position: [23480 * data[i].orbitDistanceAU * 0.75, 0, 0],
+      position: [23480 * data[i].orbitDistanceAU * 0.75 + 90, 0, 0],
       globeRGB: rgbFinder(data[i].planetTemp), //get rgb data
-      compareEarthSize: data[i].planetRadiusE * 5,
       starSpectralType: data[i].starSpectralType,
+      compareEarthSize: data[i].planetRadiusE * 3,
       speed: 0.003,
       sun: false,
       yearDiscovered: data[i].yearDiscovered,
@@ -156,11 +154,11 @@ export default function dataParser(data) {
     atmosphereRGB: [1, 0.58, 0.26],
     speed: 0,
     orbitSpeed: 0,
-    compareEarthSize: data[0].starRadiusS * 20.3,
+    compareEarthSize: data[0].starRadiusS * 260.8,
     sun: true,
     yearDiscovered: data[0].yearDiscovered,
     orbitPlanet: planets,
-    img: `${process.env.PUBLIC_URL}/images/${sunTexture}`,
+    img: `${process.env.PUBLIC_URL}/images/"sun1.jpg`,
   };
   return [sun];
 }

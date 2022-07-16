@@ -12,7 +12,7 @@ export const Sun = (props) => {
     <mesh ref={sunRef}>
       <sphereBufferGeometry
         attach="geometry"
-        args={[(props.planetScale * compareEarthSize * 1.005) / 2, 50, 50]}
+        args={[props.planetScale * compareEarthSize * 1.005, 50, 50]}
       />
 
       <globeShaderMaterial

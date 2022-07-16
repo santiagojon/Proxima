@@ -50,7 +50,7 @@ const NavBar = () => {
           <form
             id="masthead-search"
             className={isActive ? null : 'is-active'}
-            onSubmit={handleSubmit}
+            // onSubmit={handleSubmit}
           >
             <input
               type="search"
@@ -89,7 +89,7 @@ const NavBar = () => {
                   // className="site-nav"
                   style={{ textDecoration: 'none' }}
                   to="/"
-                  // onClick={() => window.history.push('/')}
+                  onClick={() => window.history.push('/')}
                 >
                   Home Page
                 </Link>
@@ -107,7 +107,7 @@ const NavBar = () => {
                   <Link
                     className="site-nav"
                     to="/home"
-                    // onClick={() => window.location.reload()}
+                    onClick={() => window.location.reload()}
                   >
                     Our System
                   </Link>
@@ -168,7 +168,7 @@ const NavBar = () => {
                   <Link
                     className="site-nav"
                     to="/learnmore"
-                    // onClick={() => window.location.reload()}
+                    onClick={() => window.location.push('/learnmore')}
                   >
                     Info
                   </Link>

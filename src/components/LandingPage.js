@@ -19,7 +19,6 @@ const LandingPage = () => {
   return (
     <div className="landingPage">
       {/* <MenuButton /> */}
-      <NavBar />
       <Parallax pages={7.25} ref={ref}>
         {/* <ParallaxLayer
           className="sticky"
@@ -54,14 +53,13 @@ const LandingPage = () => {
           sticky={{ start: 1.1, end: 1.3 }}
           factor={1.3}
         ></ParallaxLayer>
-        <ParallaxLayer offset={0}         onClick={() => ref.current.scrollTo(6)}
->
+        <ParallaxLayer offset={0} onClick={() => ref.current.scrollTo(6)}>
           <div id="introLandingPageContainer">
             <section id="introLandingPage">
-              <h1 id='landingPageTitle'>Proxima</h1>
+              <h1 id="landingPageTitle">Proxima</h1>
               <h2>Start scrolling to explore...</h2>
               <br></br>
-              <h2 id='skipButton'> Or click here to skip</h2>
+              <h2 id="skipButton"> Or click here to skip</h2>
             </section>
           </div>
         </ParallaxLayer>
@@ -303,8 +301,6 @@ const LandingPage = () => {
             zIndex: '-3',
             backgroundSize: '25%',
           }}
-
-          
         ></ParallaxLayer>
 
         <ParallaxLayer
@@ -380,13 +376,13 @@ const LandingPage = () => {
                 <span className="starSystemDescription">The Sun</span>
               </div>
               <div id="trappistWrapper">
-                <Link to={'/home'}>
+                <Link to={'system/TRAPPIST-1'}>
                   <button id="trappist" className="galaxyButtons"></button>
                 </Link>
                 <span className="starSystemDescription">Trappist-1</span>
               </div>
               <div id="proximaWrapper">
-                <Link to={'/home'}>
+                <Link to={'system/Proxima%20Cen'}>
                   <button id="proxima" className="galaxyButtons"></button>
                 </Link>
                 <span className="starSystemDescription">Proxima Centauri</span>
@@ -398,7 +394,6 @@ const LandingPage = () => {
             </div>
           </div>
         </ParallaxLayer>
-
       </Parallax>
     </div>
   );

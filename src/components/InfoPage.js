@@ -1,9 +1,6 @@
 import React from "react";
 
-
 const InfoPage = () => {
-
-
   return (
     <div id="infoPageContainer">
       <h1 id="infoPageTitle">
@@ -21,9 +18,6 @@ const InfoPage = () => {
           alt="survey satellite"
         />
         <div id="infoPageContent">
-
-         
-
           <ul id="toc">
             <span>Table of Contents</span>
             <a href="#toc1">

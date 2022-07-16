@@ -10,6 +10,7 @@ import { AtmosphereShaderMaterial } from "../shaders/Atmosphere";
 import { GlobeShaderMaterial } from "../shaders/GlobeMaterial";
 import { CameraController } from "./CameraController";
 import dataParser from "../util/DataParsed";
+import { useSelector } from "react-redux";
 
 import HoverPopUpType from "./HoverPopUpType";
 import HoverPopUpDiscovery from "./HoverPopUpDiscovery";
@@ -60,31 +61,40 @@ export const SolarSystemView = (props) => {
   const [viewState, setViewState] = useState("solarSystemView");
   const [singlePlanetInfo, setSinglePlanetInfo] = useState({});
   const [singlePlanetKey, setSinglePlanetKey] = useState(0);
-  const [unparsedSolarData, setUnparsedSolarData] = useState();
+  const [unparsedSolarData, setUnparsedSolarData] = useState({});
   const [solarSystem, setSolarSystem] = useState([]);
   // const [solarSystem, setSolarSystem] = useState(solarSys);
 
 
-  useEffect(() => {
-    if (props.viewState) setViewState(props.viewState);
-    if (props.singlePlanetInfo) setSinglePlanetInfo(props.setSinglePlanetInfo);
-    if (props.singlePlanetKey) setSinglePlanetKey(props.singlePlanetKey);
-    if (!props.solarSystem) setSolarSystem(solarSys);
-    // if (props.solarSystem) setSolarSystem(props.solarSystem);
+  const singleSystem = useSelector((state) => {
+    return state.singleSystem || null;
+  });
 
+  useEffect(() => {
+    setSolarSystem(solarSys);
   }, []);
 
   useEffect(() => {
-    if (unparsedSolarData !== props.solarSystem) {
-      setUnparsedSolarData(props.solarSystem);
-      if (unparsedSolarData !== null && unparsedSolarData !== undefined) {
-        console.log("UNPARSED", unparsedSolarData);
-        const parsedData = dataParser(unparsedSolarData);
-        console.log("parsed data", parsedData);
-        setSolarSystem(parsedData);
-      }
+    if (
+      singleSystem.length > 0 &&
+      JSON.stringify(singleSystem) !== JSON.stringify(unparsedSolarData)
+    ) {
+      setUnparsedSolarData(singleSystem);
+      const parsedData = dataParser(singleSystem);
+      console.log("parsed data", parsedData);
+      setSolarSystem(parsedData);
     }
-  }, [props.solarSystem]);
+    // if (singleSystem !== props.solarSystem) {
+    //   setUnparsedSolarData(props.solarSystem);
+    //   if (unparsedSolarData !== null && unparsedSolarData !== undefined) {
+    //     console.log("UNPARSED", unparsedSolarData);
+    //     setTimeout(300);
+    //     const parsedData = dataParser(unparsedSolarData);
+    //     console.log("parsed data", parsedData);
+    //     setSolarSystem(parsedData);
+    //   }
+    // }
+  }, [singleSystem]);
 
   const handleSetViewState = (info) => {
     setViewState(info);
@@ -111,10 +121,7 @@ export const SolarSystemView = (props) => {
 
   return (
 
-
-    <div className="App" >
-     
-      <NavBar />
+    <div className="App">
       <Canvas
         gl={{ antialias: true }}
         dpr={window.devicePixelRatio}
