@@ -140,7 +140,7 @@ export default function dataParser(data) {
 
 
   const sunColor = sunRGB(data[0]);
-  const sunTexture = getTexture("sun", sunColor);
+  const sunTexture = getTexture("sun", data[0].id);
   const sun = {
     name: data[0].starName,
     distancePC: data[0].distancePC,
@@ -158,7 +158,7 @@ export default function dataParser(data) {
     sun: true,
     yearDiscovered: data[0].yearDiscovered,
     orbitPlanet: planets,
-    img: `${process.env.PUBLIC_URL}/images/"sun1.jpg`,
+    image: `${process.env.PUBLIC_URL}/images/sun.jpg`,
   };
   return [sun];
 }

@@ -73,7 +73,7 @@ export const Planet = (props) => {
           </>
         )}
 
-        {props.sun ? (
+        {/* {props.sun ? (
           <Sun
             planetScale={planetScale}
             compareEarthSize={props.compareEarthSize}
@@ -81,7 +81,7 @@ export const Planet = (props) => {
           />
         ) : (
           ""
-        )}
+        )} */}
         {orbitPlanet && orbitPlanet.length > 0
           ? orbitPlanet.map((planet, idx) => {
               return (
