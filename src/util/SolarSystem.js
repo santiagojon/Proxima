@@ -138,7 +138,7 @@ const sun = {
   atmosphereRGB: [1, 0.58, 0.26],
   compareEarthSize: 108,
   image: "/images/sun.jpg",
-  speed: 0.0,
+  speed: 0.0005,
   sun: true,
   orbitSpeed: 0,
   orbitPlanet: [earth, mercury, venus, mars, jupiter, saturn, uranus, neptune],

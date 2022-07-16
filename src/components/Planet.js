@@ -58,7 +58,11 @@ export const Planet = (props) => {
               globeTexture={new THREE.TextureLoader().load(props.image)}
             />
             <sphereBufferGeometry
-              args={[planetScale * props.compareEarthSize, 50, 50]}
+              args={[
+                Math.min(planetScale * props.compareEarthSize, 400),
+                50,
+                50,
+              ]}
             />
           </>
         ) : (

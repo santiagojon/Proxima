@@ -25,7 +25,7 @@ function Scene(props) {
     <>
       <CameraController viewState={props.viewState} />
       <Stars
-        radius={4000}
+        radius={10000}
         depth={320}
         count={6000}
         factor={4}
@@ -64,7 +64,6 @@ export const SolarSystemView = (props) => {
   const [unparsedSolarData, setUnparsedSolarData] = useState({});
   const [solarSystem, setSolarSystem] = useState([]);
   // const [solarSystem, setSolarSystem] = useState(solarSys);
-
 
   const singleSystem = useSelector((state) => {
     return state.singleSystem || null;
@@ -120,12 +119,11 @@ export const SolarSystemView = (props) => {
   };
 
   return (
-
     <div className="App">
       <Canvas
         gl={{ antialias: true }}
         dpr={window.devicePixelRatio}
-        camera={{ far: 20000 }}
+        camera={{ far: 25000 }}
       >
         <Suspense fallback={null}>
           <Scene
@@ -143,8 +141,11 @@ export const SolarSystemView = (props) => {
       </Canvas>
       {viewState === "singlePlanetView" ? (
         <div id="planetTextContainer">
-          <SinglePlanetViewInfo singlePlanetInfo={singlePlanetInfo} singlePlanetKey={singlePlanetKey}/>
-            <button
+          <SinglePlanetViewInfo
+            singlePlanetInfo={singlePlanetInfo}
+            singlePlanetKey={singlePlanetKey}
+          />
+          <button
             className="planetViewButton"
             onClick={() => {
               handleSetViewState("solarSystemView");
@@ -154,9 +155,8 @@ export const SolarSystemView = (props) => {
           </button>
         </div>
       ) : (
-        <SolarSystemViewInfo solarSystem={solarSystem}/>
+        <SolarSystemViewInfo solarSystem={solarSystem} />
       )}
-     
     </div>
   );
 };
