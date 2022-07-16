@@ -65,6 +65,8 @@ export const SolarSystemView = (props) => {
   const [solarSystem, setSolarSystem] = useState([]);
   // const [solarSystem, setSolarSystem] = useState(solarSys);
 
+  console.log('SSV', props)
+
 
   const singleSystem = useSelector((state) => {
     return state.singleSystem || null;

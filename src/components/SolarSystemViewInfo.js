@@ -25,10 +25,23 @@ const SolarSystemViewInfo = (props) => {
         </div>)
     }
 
-    // if(solarSystem && solarSystem.length && solarSystem[0].name === 'PROXIMA-CENTAURI') {
-    //     return (<div></div>)
-    // }
-    // //**********************************************************************
+    if(solarSystem && solarSystem.length && solarSystem[0].name === 'Proxima Cen') {
+        return (<div>
+              <div className="planetText_Name">
+                Proxima Centauri
+            </div>
+            <div className="planetText_Type">
+               Red-Dwarf Star
+            </div>
+            <div className="starText_Age">
+               4.9 billion years old
+            </div>
+            <div className="starText_Habitable">
+               <HoverPopUpGeneral solarSystem={solarSystem}/>
+            </div>
+        </div>)
+    }
+    //**********************************************************************
 
 
     // <div className="starText_Habitable">
@@ -41,7 +54,7 @@ const SolarSystemViewInfo = (props) => {
     {solarSystem && solarSystem.length ? solarSystem[0].name : ''}
     </div>
     <div className="planetText_Type">
-    {solarSystem && solarSystem.length && solarSystem[0].starSpectralType !== null  ? `Star Type: ${solarSystem[0].starSpectralType}`: ''} 
+    {solarSystem && solarSystem.length && solarSystem[0].starSpectralType ? `Star Type: ${solarSystem[0].starSpectralType}`: ''} 
     </div>
     <div className="starText_Age">
     {solarSystem && solarSystem.length  && solarSystem[0].starAge !== null ? ` ${(Math.round(solarSystem[0].starAge * 10) / 10)} billion years old` : ''} 
