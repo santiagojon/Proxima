@@ -21,7 +21,9 @@ export const Planet = (props) => {
   useFrame((state, delta) => (ref.current.rotation.y += speed));
   useFrame((state, delta) => {
     for (let i = 0; i < planetRef.current.length; i++) {
-      planetRef.current[i].rotation.y += orbitPlanet[i].orbitSpeed;
+      if (planetRef.current[i]) {
+        planetRef.current[i].rotation.y += orbitPlanet[i].orbitSpeed;
+      }
     }
   });
 
@@ -80,12 +82,11 @@ export const Planet = (props) => {
           ? orbitPlanet.map((planet, idx) => {
               return (
                 <mesh key={idx}>
-                  <mesh ref={(el) => (planetRef.current[idx] = el)}>
-                    <Planet
-                      {...planet}
-                      idx={idx}
-                      handleOnClick={handleOnClick}
-                    />
+                  <mesh
+                    ref={(el) => (planetRef.current[idx] = el)}
+                    onClick={() => handleOnClick(idx)}
+                  >
+                    <Planet {...planet} />
                   </mesh>
                 </mesh>
               );
@@ -96,21 +97,6 @@ export const Planet = (props) => {
         ) : (
           <>
             <Text children={props.name} position={[0, 50, 0]} opacity={100} />
-            {props.name === "moon" ? (
-              ""
-            ) : (
-              <mesh onClick={() => props.handleOnClick(props.idx)}>
-                {console.log(props)}
-                <sphereBufferGeometry
-                  args={[
-                    Math.max(planetScale * props.compareEarthSize * 2.05, 60),
-                    10,
-                    10,
-                  ]}
-                />
-                <meshBasicMaterial opacity={0.0} transparent />
-              </mesh>
-            )}
           </>
         )}
       </mesh>
