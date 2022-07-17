@@ -13,7 +13,9 @@ export default function SystemFromSearch(props) {
   const starName = params.starName;
 
   useEffect(() => {
-    dispatch(getSingleSystemByName(starName));
+    if (starName !== "home") {
+      dispatch(getSingleSystemByName(starName));
+    }
   }, []);
 
   return (

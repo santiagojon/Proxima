@@ -21,7 +21,9 @@ export const Planet = (props) => {
   useFrame((state, delta) => (ref.current.rotation.y += speed));
   useFrame((state, delta) => {
     for (let i = 0; i < planetRef.current.length; i++) {
-      planetRef.current[i].rotation.y += orbitPlanet[i].orbitSpeed;
+      if (planetRef.current[i]) {
+        planetRef.current[i].rotation.y += orbitPlanet[i].orbitSpeed;
+      }
     }
   });
 
