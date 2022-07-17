@@ -309,7 +309,7 @@ Milky Way Buttons */
   position: absolute;
   width: 320px;
   height: 320px;
-  top: 97%;
+  top: 92%;
   left: 45.5%;
   transform: translate(-25%, -100%);
 }
@@ -318,7 +318,7 @@ Milky Way Buttons */
   z-index: 1000;
   position: absolute;
   height: 79px;
-  top: 79%;
+  top: 74%;
   left: 50.5%;
   transform: translate(-25%, -100%);
   text-decoration: none;
@@ -401,6 +401,12 @@ Milky Way Buttons */
   transform: translate(-25%, -100%);
   text-decoration: none;
 }
+.keplerTag:hover {
+  color: gold;
+  background-position: 0 100%;
+  transition: opacity 1s, visibility 0.2s;
+}
+
 #promixa {
   cursor: pointer;
 }
@@ -429,6 +435,7 @@ Milky Way Buttons */
   transform: translate(-25%, -100%);
   text-decoration: none;
 }
+
 .trappistTag:hover {
   color: gold;
   background-position: 0 100%;
@@ -438,16 +445,54 @@ Milky Way Buttons */
   opacity: 1;
   color: gold;
 }
-/*
- #trappist.img {
-  cursor: pointer;
-  padding: 0;
-  max-height: 150px;
-  max-width: 200px;
-  width: 120px;
-  height: 120px;
+
+#tauCetiWrapper {
+  position: absolute;
+  width: 300px;
+  height: 300px;
   margin: 0em;
-} */
+  top: 73%;
+  left: 20%;
+  transform: translate(-25%, -100%);
+}
+.tauCetiTag {
+  z-index: 1000;
+  position: absolute;
+  height: 95px;
+  top: 57.8%;
+  left: 24.2%;
+  transform: translate(-25%, -100%);
+  text-decoration: none;
+}
+.tauCetiTag:hover {
+  color: gold;
+  background-position: 0 100%;
+  transition: opacity 1s, visibility 0.2s;
+}
+
+#waspWrapper {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  margin: 0em;
+  top: 100%;
+  left: 34%;
+  transform: translate(-25%, -100%);
+}
+.waspTag {
+  z-index: 1000;
+  position: absolute;
+  height: 95px;
+  top: 84.5%;
+  left: 38%;
+  transform: translate(-25%, -100%);
+  text-decoration: none;
+}
+.waspTag:hover {
+  color: gold;
+  background-position: 0 100%;
+  transition: opacity 1s, visibility 0.2s;
+}
 
 /* ***********************
 Text Popup */

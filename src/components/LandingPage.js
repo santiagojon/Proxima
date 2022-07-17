@@ -465,6 +465,42 @@ const LandingPage = () => {
                   />
                 </div>
               </div>
+
+              <div>
+                <a href="/system/tau%20Cet" className="tauCetiTag">
+                  Tau Ceti
+                </a>
+                <div id="tauCetiWrapper">
+                  <img
+                    src="https://www.freeiconspng.com/uploads/stars-png-23.png"
+                    width="350"
+                    alt="stars png"
+                    id="tauCeti"
+                    className="galaxyButtons"
+                    onClick={() => {
+                      handleChangingSystem("Kepler-62");
+                    }}
+                  />
+                </div>
+              </div>
+
+              <div>
+                <a href="/system/WASP-12" className="waspTag">
+                  WASP-12
+                </a>
+                <div id="waspWrapper">
+                  <img
+                    src="https://www.freeiconspng.com/uploads/stars-png-23.png"
+                    width="350"
+                    alt="stars png"
+                    id="wasp"
+                    className="galaxyButtons"
+                    onClick={() => {
+                      handleChangingSystem("Kepler-62");
+                    }}
+                  />
+                </div>
+              </div>
             </section>
             <div id="milkyWayTextLandingPage">
               <h3 id="milkyWayTitleLandingPage">Milky Way</h3>
