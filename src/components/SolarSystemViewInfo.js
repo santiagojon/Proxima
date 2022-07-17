@@ -21,6 +21,11 @@ const SolarSystemViewInfo = (props) => {
         <div className="starText_Habitable">
           <HoverPopUpGeneral solarSystem={solarSystem} />
         </div>
+        <div className="starText_NumberOfPlanets">
+          {solarSystem && solarSystem.length && solarSystem[0].numberOfPlanets
+            ? `This system contains ${solarSystem[0].numberOfPlanets} confirmed exoplanet(s)`
+            : ""}
+        </div>
       </div>
     );
   }
@@ -37,6 +42,33 @@ const SolarSystemViewInfo = (props) => {
         <div className="starText_Age">4.9 billion years old</div>
         <div className="starText_Habitable">
           <HoverPopUpGeneral solarSystem={solarSystem} />
+        </div>
+        <div className="starText_NumberOfPlanets">
+          {solarSystem && solarSystem.length && solarSystem[0].numberOfPlanets
+            ? `This system contains ${solarSystem[0].numberOfPlanets} confirmed exoplanet(s)`
+            : ""}
+        </div>
+      </div>
+    );
+  }
+
+  if (
+    solarSystem &&
+    solarSystem.length &&
+    solarSystem[0].name === "Kepler-62"
+  ) {
+    return (
+      <div>
+        <div className="planetText_Name">Kepler-62</div>
+        <div className="planetText_Type">Orange-Dwarf Star</div>
+        <div className="starText_Age">7 billion years old</div>
+        <div className="starText_Habitable">
+          <HoverPopUpGeneral solarSystem={solarSystem} />
+        </div>
+        <div className="starText_NumberOfPlanets">
+          {solarSystem && solarSystem.length && solarSystem[0].numberOfPlanets
+            ? `This system contains ${solarSystem[0].numberOfPlanets} confirmed exoplanet(s)`
+            : ""}
         </div>
       </div>
     );
@@ -66,28 +98,13 @@ const SolarSystemViewInfo = (props) => {
           ? ` ${Math.round(solarSystem[0].starAge * 10) / 10} billion years old`
           : ""}
       </div>
+      <div className="starText_NumberOfPlanets">
+        {solarSystem && solarSystem.length && solarSystem[0].numberOfPlanets
+          ? `This system has ${solarSystem[0].numberOfPlanets} exoplanet(s)`
+          : ""}
+      </div>
     </div>
   );
 };
 
 export default SolarSystemViewInfo;
-
-//Saturday
-
-//Star System View
-//**************************************Add starSpectralType property to data parser
-//**************************************Add this underneath star name
-//**************************************perhaps another piece of data about the star
-//distance too??? (At least for the featured ones)
-
-//Featured Single Planets in Trappist-1, Proxima, etc.
-//Add additional info for those planets. Just one or two lines
-
-//Planet rings color change broken for some reason. Fix with Chris
-
-//Planet mesh shader change on planet selection. Do this with Chris.
-
-//Styling
-//Milky Way
-//Info page + images
-//Anywhere else that needs it

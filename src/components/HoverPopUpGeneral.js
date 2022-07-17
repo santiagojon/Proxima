@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ArrowDropDownCircleOutlinedIcon from "@mui/icons-material/ArrowDropDownCircleOutlined";
+import { SystemSecurityUpdate } from "@mui/icons-material";
 
 const HoverPopUpGeneral = (props) => {
   const [text, setText] = useState("");
@@ -9,6 +10,8 @@ const HoverPopUpGeneral = (props) => {
 
   if (solarSystem && solarSystem.length) planetName = props.solarSystem[0].name;
 
+  // ***************
+  // FEATURED STAR SYSTEMS. ADD INFO TO DB POST CAPSTONE
   const renderText = () => {
     if (planetName === "TRAPPIST-1") {
       return (
@@ -65,7 +68,28 @@ const HoverPopUpGeneral = (props) => {
         </div>
       );
     }
+
+    if (planetName === "Kepler-62") {
+      return (
+        <div className="popupRenderTextPlanetInfo">
+          <div>
+            Kepler-62 is a K-type main sequence star cooler and smaller than the
+            Sun, located roughly 990 light years from Earth in the constellation
+            Lyra. It resides within the field of vision of the Kepler
+            spacecraft, the satellite that NASA's Kepler Mission used to detect
+            planets that may be transiting their stars.
+          </div>
+          <br></br>
+          <div>
+            On April 18, 2013, it was announced that the star has five planets,
+            two of which, Kepler-62e and Kepler-62f are within the star's
+            habitable zone.The outermost, Kepler-62f, is likely a rocky planet
+          </div>
+        </div>
+      );
+    }
   };
+  // ***************
 
   const handleLeave = () => {
     setText("");
