@@ -21,12 +21,9 @@ body,
 #root {
   width: 100%;
   height: 100%;
-}
-
-/* .overflow {
   overflow-y: hidden;
   overflow-x: hidden;
-} */
+}
 
 body {
   /* background: #111; */
@@ -39,8 +36,8 @@ body {
   padding: 1rem;
   width: 100%;
   height: 100%;
-  /* overflow-y: hidden;
-  overflow-x: hidden; */
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 canvas {
@@ -791,8 +788,6 @@ https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Gajillion_Islands_Plan
   background-color: black;
   color: white;
   font-family: "Lato", sans-serif;
-  overflow-y: scroll !important;
-  overflow-x: scroll !important;
 }
 
 #infoPageIntro {
@@ -1498,8 +1493,6 @@ input[type="text"]:focus {
   position: absolute;
   top: 120px;
   background-size: contain;
-  overflow-x: hidden;
-  overflow-y: hidden;
 
   height: 100%;
   width: 100%;
