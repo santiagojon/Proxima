@@ -5,6 +5,7 @@ import BgStars from "./BgStars";
 import LandingPageIntroAnimation from "./LandingPageIntroAnimation";
 import { MenuButton } from "./MenuButton";
 import NavBar from "./NavBar";
+import { useNavigate } from "react-router-dom";
 
 //choose font
 //fix header fade-out
@@ -16,6 +17,28 @@ import NavBar from "./NavBar";
 
 const LandingPage = () => {
   const ref = useRef();
+
+  let navigate = useNavigate();
+  const handleChangingSystem = (system) => {
+    let path = "/";
+    switch (system) {
+      case "home":
+        path = "/home";
+        break;
+      case "TRAPPIST-1":
+        path = "/system/TRAPPIST-1";
+        break;
+      case "proxima":
+        path = "/system/Proxima%20Cen";
+        break;
+      case "Kepler-62":
+        path = "/system/Kepler-62";
+        break;
+      default:
+        break;
+    }
+    navigate(path);
+  };
   return (
     <div className="landingPage">
       {/* <MenuButton /> */}
@@ -370,6 +393,7 @@ const LandingPage = () => {
                 src="https://scitechdaily.com/images/Milky-Way-Galaxy-and-Central-Bar-Viewed-From-Above.jpg"
                 alt="milkway"
               />
+
               <div>
                 <a href="/home" className="sunTag">
                   Sun
@@ -379,9 +403,15 @@ const LandingPage = () => {
                     src="https://www.freeiconspng.com/uploads/stars-png-23.png"
                     width="350"
                     alt="stars png"
+                    id="sun"
+                    className="galaxyButtons"
+                    onClick={() => {
+                      handleChangingSystem("home");
+                    }}
                   />
                 </div>
               </div>
+
               <div>
                 <a href="system/TRAPPIST-1" className="trappistTag">
                   Trappist-1
@@ -391,9 +421,15 @@ const LandingPage = () => {
                     src="https://www.freeiconspng.com/uploads/stars-png-23.png"
                     width="350"
                     alt="stars png"
+                    id="trappist"
+                    className="galaxyButtons"
+                    onClick={() => {
+                      handleChangingSystem("TRAPPIST-1");
+                    }}
                   />
                 </div>
               </div>
+
               <div>
                 <a href="system/Proxima%20Cen" className="proximaTag">
                   Proxima
@@ -403,6 +439,29 @@ const LandingPage = () => {
                     src="https://www.freeiconspng.com/uploads/stars-png-23.png"
                     width="350"
                     alt="stars png"
+                    id="proxima"
+                    className="galaxyButtons"
+                    onClick={() => {
+                      handleChangingSystem("proxima");
+                    }}
+                  />
+                </div>
+              </div>
+
+              <div>
+                <a href="/system/Kepler-62" className="keplerTag">
+                  Kepler
+                </a>
+                <div id="Kepler-62Wrapper">
+                  <img
+                    src="https://www.freeiconspng.com/uploads/stars-png-23.png"
+                    width="350"
+                    alt="stars png"
+                    id="Kepler-62"
+                    className="galaxyButtons"
+                    onClick={() => {
+                      handleChangingSystem("Kepler-62");
+                    }}
                   />
                 </div>
               </div>

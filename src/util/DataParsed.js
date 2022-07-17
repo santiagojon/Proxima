@@ -147,6 +147,7 @@ export default function dataParser(data) {
     discoveryMethod: data[0].discoveryMethod,
     discoveryFacility: data[0].discoveryFacility,
     starSpectralType: data[0].starSpectralType,
+    numberOfPlanets: data[0].numberOfPlanets,
     starAge: data[0].starAge,
     position: [0, 0, 0],
     globeRGB: [sunColor[0] / 255, sunColor[1] / 255, sunColor[2] / 255],
