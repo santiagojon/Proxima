@@ -19,8 +19,6 @@
     "express": "^4.18.1",
     "glsl-noise": "^0.0.0",
     "glslify": "^7.1.1",
-    "morgan": "^1.10.0",
-    "pg": "^8.7.3",
     "pg-hstore": "^2.3.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
