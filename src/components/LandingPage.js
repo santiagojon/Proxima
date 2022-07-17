@@ -31,6 +31,9 @@ const LandingPage = () => {
       case "proxima":
         path = "/system/Proxima%20Cen";
         break;
+      case "Kepler-62":
+        path = "/system/Kepler-62";
+        break;
       default:
         break;
     }
@@ -419,6 +422,16 @@ const LandingPage = () => {
                   }}
                 ></button>
                 <span className="starSystemDescription">Proxima Centauri</span>
+              </div>
+              <div id="Kepler-62Wrapper">
+                <button
+                  id="Kepler-62"
+                  className="galaxyButtons"
+                  onClick={() => {
+                    handleChangingSystem("Kepler-62");
+                  }}
+                ></button>
+                <span className="starSystemDescription">Kepler-62</span>
               </div>
             </section>
             <div id="milkyWayTextLandingPage">
