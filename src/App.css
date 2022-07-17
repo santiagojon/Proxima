@@ -271,12 +271,12 @@ Landing Page  */
 Milky Way Buttons */
 
 .galaxyButtons {
-  height: 50px;
-  width: 50px;
+  height: 20px;
+  width: 20px;
   border-color: gold;
   background-color: transparent;
   border-radius: 50%;
-  opacity: 0.7;
+  /* opacity: 0.7; */
 }
 
 /* https://css-tricks.com/4-ways-to-animate-the-color-of-a-text-link-on-hover/ */
@@ -289,20 +289,41 @@ Milky Way Buttons */
 
 #sunWrapper {
   position: absolute;
-  top: 70%;
-  left: 50%;
+  width: 320px;
+  height: 320px;
+  top: 92%;
+  left: 45.5%;
   transform: translate(-25%, -100%);
 }
 
+.sunTag {
+  z-index: 1000;
+  position: absolute;
+  height: 79px;
+  top: 74%;
+  left: 50.5%;
+  transform: translate(-25%, -100%);
+  text-decoration: none;
+}
+.sunTag:hover {
+  color: gold;
+  background-position: 0 100%;
+  transition: opacity 1s, visibility 0.2s;
+}
 #sun #proxima #trappist {
   cursor: pointer;
 }
 
 .starSystemDescription {
   margin-left: 0.5rem;
-  height: 20px;
-  width: 20px;
-  color: black;
+  position: absolute;
+  height: 79px;
+  top: 75%;
+  left: 52%;
+  transform: translate(-25%, -100%);
+  height: 50px;
+  width: 50px;
+  color: rgb(255, 255, 255);
   font-size: 1rem;
   font-weight: 700;
   /* visibility: hidden; */
@@ -316,11 +337,35 @@ Milky Way Buttons */
   color: gold;
 }
 
+#trappist .starSystemDescription {
+  position: absolute;
+  height: 79px;
+  top: 33%;
+  left: 59%;
+  transform: translate(-25%, -100%);
+}
+
 #proximaWrapper {
   position: absolute;
-  top: 75%;
-  left: 55%;
+  width: 230px;
+  height: 230px;
+  top: 94%;
+  left: 53%;
   transform: translate(-25%, -100%);
+}
+.proximaTag {
+  z-index: 1000;
+  position: absolute;
+  height: 79px;
+  top: 82%;
+  left: 56%;
+  transform: translate(-25%, -100%);
+  text-decoration: none;
+}
+.proximaTag:hover {
+  color: gold;
+  background-position: 0 100%;
+  transition: opacity 1s, visibility 0.2s;
 }
 
 #Kepler-62Wrapper {
@@ -328,6 +373,20 @@ Milky Way Buttons */
   top: 35%;
   left: 45%;
   transform: translate(-25%, -100%);
+}
+.keplerTag {
+  z-index: 1000;
+  position: absolute;
+  height: 79px;
+  top: 27%;
+  left: 48.5%;
+  transform: translate(-25%, -100%);
+  text-decoration: none;
+}
+.keplerTag:hover {
+  color: gold;
+  background-position: 0 100%;
+  transition: opacity 1s, visibility 0.2s;
 }
 
 #promixa {
@@ -341,19 +400,81 @@ Milky Way Buttons */
 
 #trappistWrapper {
   position: absolute;
-  top: 30%;
-  left: 65%;
+  width: 300px;
+  height: 300px;
+  margin: 0em;
+  top: 51%;
+  left: 55%;
   transform: translate(-25%, -100%);
 }
 
-#trappistWrapper button :hover {
+.trappistTag {
+  z-index: 1000;
+  position: absolute;
+  height: 95px;
+  top: 35%;
+  left: 59%;
+  transform: translate(-25%, -100%);
+  text-decoration: none;
+}
+
+.trappistTag:hover {
+  color: gold;
+  background-position: 0 100%;
+  transition: opacity 1s, visibility 0.2s;
+}
+#trappistWrapper:hover .starSystemDescription {
   opacity: 1;
   color: gold;
 }
 
-/* #trappist {
-  cursor: pointer;
-} */
+#tauCetiWrapper {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  margin: 0em;
+  top: 73%;
+  left: 20%;
+  transform: translate(-25%, -100%);
+}
+.tauCetiTag {
+  z-index: 1000;
+  position: absolute;
+  height: 95px;
+  top: 57.8%;
+  left: 24.2%;
+  transform: translate(-25%, -100%);
+  text-decoration: none;
+}
+.tauCetiTag:hover {
+  color: gold;
+  background-position: 0 100%;
+  transition: opacity 1s, visibility 0.2s;
+}
+
+#waspWrapper {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  margin: 0em;
+  top: 100%;
+  left: 34%;
+  transform: translate(-25%, -100%);
+}
+.waspTag {
+  z-index: 1000;
+  position: absolute;
+  height: 95px;
+  top: 84.5%;
+  left: 38%;
+  transform: translate(-25%, -100%);
+  text-decoration: none;
+}
+.waspTag:hover {
+  color: gold;
+  background-position: 0 100%;
+  transition: opacity 1s, visibility 0.2s;
+}
 
 /* ***********************
 Text Popup */
