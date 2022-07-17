@@ -65,7 +65,6 @@ export const SolarSystemView = (props) => {
   const [solarSystem, setSolarSystem] = useState([]);
   // const [solarSystem, setSolarSystem] = useState(solarSys);
 
-
   const singleSystem = useSelector((state) => {
     return state.singleSystem || null;
   });
@@ -125,6 +124,7 @@ export const SolarSystemView = (props) => {
         gl={{ antialias: true }}
         dpr={window.devicePixelRatio}
         camera={{ far: 25000 }}
+        className="overflow"
       >
         <Suspense fallback={null}>
           <Scene

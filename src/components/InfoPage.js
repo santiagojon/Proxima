@@ -42,7 +42,7 @@ const InfoPage = () => {
 
           <div className="infoPageContentCard">
             <h2 id="toc1">What is an exoplanet?</h2>
-            <p>
+            <div>
               An exoplanet is any planetary body that is outside the solar
               system and orbits a star other than our Sun. Our closest neighbor
               is loocated in the star system Proxima Centauri, 4.25 light years
@@ -69,7 +69,7 @@ const InfoPage = () => {
                 orbiting between stars. We can estimate that the number of
                 planets in our galaxy is more than a trillion.”
               </i>
-            </p>
+            </div>
           </div>
 
           <div className="infoPageContentCard">
