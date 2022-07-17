@@ -21,10 +21,8 @@ body,
 #root {
   width: 100%;
   height: 100%;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
   overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 body {
@@ -38,7 +36,8 @@ body {
   padding: 1rem;
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 canvas {
@@ -51,23 +50,6 @@ canvas {
 
 /* *************************************************************
 Landing Page  */
-
-/* #skipButtonContainer {
-  display: flex;
-  justify-content: flex-end;
-
-} */
-
-/* #skipButton {
-  color: white;
-  border: 1px solid white;
-  position: absolute;
-  text-align: right;
-  margin-top: 2rem;
-  margin-left: 2rem;
-  padding: 1rem;
-  z-index: 20;
-} */
 
 #skipButton {
   margin: 1rem;
@@ -505,8 +487,7 @@ Single Planet */
 } */
 
 .planetText_Size {
-  font-family: 'Lato', sans-serif;
-  font-size: 1.1rem;
+  font-family: "Lato", sans-serif;
   position: absolute;
   top: 23%;
   left: 5%;
@@ -534,15 +515,38 @@ Single Planet */
   transition: opacity 1s, visibility 0.2s;
 }
 
+.planetText_Earth {
+  font-family: "Lato", sans-serif;
+  font-size: 1rem;
+  text-align: left;
+  color: gold;
+  width: 15%;
+  position: absolute;
+  top: 20%;
+  left: 5%;
+  opacity: 0.9;
+  transition: opacity 1s, visibility 0.2s;
+}
+
 /* *************************************************************
 SolarSystemView + Info */
 
 .starText_Habitable {
-  font-family: 'Lato', sans-serif;
-  font-size: 1.1rem;
+  font-family: "Lato", sans-serif;
+  font-size: 1rem;
   position: absolute;
   top: 20%;
   left: 5%;
+  opacity: 0.9;
+  transition: opacity 1s, visibility 0.2s;
+}
+
+.starText_NumberOfPlanets {
+  font-family: "Lato", sans-serif;
+  font-size: 1rem;
+  position: absolute;
+  top: 20%;
+  right: 5%;
   opacity: 0.9;
   transition: opacity 1s, visibility 0.2s;
 }
@@ -775,6 +779,10 @@ https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Gajillion_Islands_Plan
 }
 /* ******************* */
 /* Info Page */
+#test infoPageContainer {
+  display: flex;
+  flex-direction: column;
+}
 
 #infoPageContainer {
   background-color: black;
@@ -808,8 +816,8 @@ https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Gajillion_Islands_Plan
   margin-bottom: 8rem;
 }
 
-#infoPageIntroText {
-}
+/* #infoPageIntroText {
+} */
 
 #toc {
   /* width: 20rem;
@@ -909,7 +917,7 @@ a li {
   margin-bottom: 4rem;
 }
 
-/* sdflgkjsdogirejgo;idfsjg;ldfskgjsdf;lkgj */
+/* ********************************** */
 
 @import 'https://fonts.googleapis.com/css?family=Roboto:400,500';
 

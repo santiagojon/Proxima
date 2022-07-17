@@ -1,4 +1,4 @@
-@import 'https://fonts.googleapis.com/css?family=Roboto:400,500';
+@import "https://fonts.googleapis.com/css?family=Roboto:400,500";
 
 html {
   box-sizing: border-box;
@@ -58,7 +58,7 @@ figure {
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 100%;
   line-height: 1.5;
 }
@@ -74,7 +74,7 @@ body {
 }
 
 .container:after {
-  content: '';
+  content: "";
   display: table;
   clear: both;
 }
@@ -103,7 +103,7 @@ Full screen background image
 Blueish tint overlay
 */
 .hero:after {
-  content: '';
+  content: "";
   background: rgba(0, 0, 0, 0.5);
   /* position: absolute; */
   opacity: 0;
@@ -135,7 +135,7 @@ Using this method because browsers can transition opacity very cheaply as oppose
 https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
 */
 #masthead:after {
-  content: '';
+  content: "";
   /* position: absolute; */
   top: 0;
   width: 100%;
@@ -213,7 +213,7 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
 
 .hamburger-inner::before,
 .hamburger-inner::after {
-  content: '';
+  content: "";
   display: block;
 }
 

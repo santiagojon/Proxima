@@ -1,13 +1,13 @@
 // import '../Nav.css';
 
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { getPlanetsByName } from '../store/planetSearchBar';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { getPlanetsByName } from "../store/planetSearchBar";
+import { useDispatch, useSelector } from "react-redux";
 
 const NavBar = () => {
-  const [isActive, setActive] = useState('false');
-  const [search, setSearch] = useState('');
+  const [isActive, setActive] = useState("false");
+  const [search, setSearch] = useState("");
   const dispatch = useDispatch();
   const planets = useSelector((state) => state.planetSearch);
 
@@ -29,15 +29,15 @@ const NavBar = () => {
     <div className="hero" id="pos">
       <header
         id="masthead"
-        className={isActive ? null : 'is-active'}
+        className={isActive ? null : "is-active"}
         role="banner"
       >
         <div className="container">
           <button
             className={
               isActive
-                ? 'hamburger hamburger--boring'
-                : 'is-active hamburger hamburger--boring'
+                ? "hamburger hamburger--boring"
+                : "is-active hamburger hamburger--boring"
             }
             type="button"
             onClick={handleToggle}
@@ -49,7 +49,7 @@ const NavBar = () => {
           </button>
           <form
             id="masthead-search"
-            className={isActive ? null : 'is-active'}
+            className={isActive ? null : "is-active"}
             // onSubmit={handleSubmit}
           >
             <input
@@ -80,16 +80,16 @@ const NavBar = () => {
           </form>
           <nav
             id="site-nav"
-            className={isActive ? null : 'is-active'}
+            className={isActive ? null : "is-active"}
             role="navigation"
           >
             <div className="col">
               <h4>
                 <Link
                   // className="site-nav"
-                  style={{ textDecoration: 'none' }}
+                  style={{ textDecoration: "none" }}
                   to="/"
-                  onClick={() => window.history.push('/')}
+                  onClick={() => window.history.push("/")}
                 >
                   Home Page
                 </Link>
@@ -101,15 +101,15 @@ const NavBar = () => {
               </ul>
             </div>
             <div className="col">
-              <h4>Featured</h4>
+              <h4>Featured Systems</h4>
               <ul>
                 <li>
                   <Link
                     className="site-nav"
                     to="/home"
-                    onClick={() => window.history.push('/home')}
+                    onClick={() => window.history.push("/home")}
                   >
-                    Our System
+                    The Sun
                   </Link>
                 </li>
                 <li>
@@ -127,7 +127,7 @@ const NavBar = () => {
                   <Link
                     className="site-nav"
                     to="/search/terrestrial"
-                    onClick={() => window.history.push('/search/terrestrial')}
+                    onClick={() => window.history.push("/search/terrestrial")}
                   >
                     Terrestrial
                   </Link>
@@ -136,7 +136,7 @@ const NavBar = () => {
                   <Link
                     className="site-nav"
                     to="/search/superearth"
-                    onClick={() => window.history.push('/search/superearth')}
+                    onClick={() => window.history.push("/search/superearth")}
                   >
                     Super Earth
                   </Link>
@@ -145,7 +145,7 @@ const NavBar = () => {
                   <Link
                     className="site-nav"
                     to="/search/neptuntunian"
-                    onClick={() => window.history.push('/search/neptuntunian')}
+                    onClick={() => window.history.push("/search/neptuntunian")}
                   >
                     Neptunian
                   </Link>
@@ -154,7 +154,7 @@ const NavBar = () => {
                   <Link
                     className="site-nav"
                     to="/search/gasgiant"
-                    onClick={() => window.history.push('/search/gasgiant')}
+                    onClick={() => window.history.push("/search/gasgiant")}
                   >
                     Gas Giant
                   </Link>
@@ -168,7 +168,7 @@ const NavBar = () => {
                   <Link
                     className="site-nav"
                     to="/learnmore"
-                    onClick={() => window.location.push('/learnmore')}
+                    onClick={() => window.location.push("/learnmore")}
                   >
                     Info
                   </Link>
