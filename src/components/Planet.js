@@ -48,6 +48,11 @@ export const Planet = (props) => {
         position={randomizePosition([position[0], position[1], position[2]])}
       >
         {props.sun ? (
+          ""
+        ) : (
+          <Text children={props.name} position={[0, 50, 0]} opacity={100} />
+        )}
+        {props.sun ? (
           <>
             <globeShaderMaterial
               uColor={
@@ -92,13 +97,6 @@ export const Planet = (props) => {
               );
             })
           : ""}
-        {props.sun ? (
-          ""
-        ) : (
-          <>
-            <Text children={props.name} position={[0, 50, 0]} opacity={100} />
-          </>
-        )}
       </mesh>
     </>
   );

@@ -67,7 +67,8 @@ export const SolarSystemView = (props) => {
   });
 
   useEffect(() => {
-    if (!params.starName) setSolarSystem(solarSys);
+    if (params.starName === undefined) setSolarSystem(solarSys);
+    if (params.starName !== undefined) console.log(params.starName);
   }, []);
 
   useEffect(() => {
@@ -77,7 +78,6 @@ export const SolarSystemView = (props) => {
     ) {
       setUnparsedSolarData(singleSystem);
       const parsedData = dataParser(singleSystem);
-      console.log("parsed data", parsedData);
       setSolarSystem(parsedData);
     }
   }, [singleSystem]);

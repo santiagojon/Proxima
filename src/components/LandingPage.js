@@ -34,6 +34,8 @@ const LandingPage = () => {
       case "Kepler-62":
         path = "/system/Kepler-62";
         break;
+      case "WASP-12":
+        path = "/system/WASP-12";
       default:
         break;
     }
@@ -496,7 +498,7 @@ const LandingPage = () => {
                     id="wasp"
                     className="galaxyButtons"
                     onClick={() => {
-                      handleChangingSystem("Kepler-62");
+                      handleChangingSystem("WASP-12");
                     }}
                   />
                 </div>
