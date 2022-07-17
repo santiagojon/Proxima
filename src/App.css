@@ -1,18 +1,18 @@
-@import "https://fonts.googleapis.com/css?family=Roboto:400,500";
+@import 'https://fonts.googleapis.com/css?family=Roboto:400,500';
 
-@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
-@import url("https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&display=swap');
 
-@import url("https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Poppins&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Poppins&display=swap');
 
-@import url("https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Poppins&family=Rubik+Moonrocks&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Poppins&family=Rubik+Moonrocks&display=swap');
 
-@import url("https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Poppins&family=Rubik+Moonrocks&family=Strait&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Poppins&family=Rubik+Moonrocks&family=Strait&display=swap');
 
-@import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Lato&family=Montserrat&family=Poppins&family=Rubik+Moonrocks&family=Strait&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Lato&family=Montserrat&family=Poppins&family=Rubik+Moonrocks&family=Strait&display=swap');
 
-@import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Iceland&family=Lato&family=Montserrat&family=Poppins&family=Rubik+Moonrocks&family=Strait&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Iceland&family=Lato&family=Montserrat&family=Poppins&family=Rubik+Moonrocks&family=Strait&display=swap');
 * {
   /* background-color: black; */
 }
@@ -72,13 +72,13 @@ Landing Page  */
   flex-direction: column;
   align-items: center;
   /* font-family: 'Roboto', sans-serif; */
-  font-family: "Lato", sans-serif;
+  font-family: 'Lato', sans-serif;
 
   /* font-weight: 300; */
 }
 
 #landingPageTitle {
-  font-family: "Strait", sans-serif;
+  font-family: 'Strait', sans-serif;
 }
 
 #heroContainer {
@@ -580,7 +580,7 @@ Single Planet */
 }
 
 .planetText_Name {
-  font-family: "Lato", sans-serif;
+  font-family: 'Lato', sans-serif;
   font-size: 3rem;
   font-weight: 700;
   position: absolute;
@@ -593,7 +593,7 @@ Single Planet */
 /* Test */
 
 .planetText_Type {
-  font-family: "Lato", sans-serif;
+  font-family: 'Lato', sans-serif;
   font-size: 1.1rem;
   position: absolute;
   bottom: 11%;
@@ -617,7 +617,7 @@ Single Planet */
 }
 
 .planetText_Distance {
-  font-family: "Lato", sans-serif;
+  font-family: 'Lato', sans-serif;
   font-size: 1rem;
   position: absolute;
   top: 20%;
@@ -627,7 +627,7 @@ Single Planet */
 }
 
 .planetText_Discovery {
-  font-family: "Lato", sans-serif;
+  font-family: 'Lato', sans-serif;
   font-size: 1rem;
   position: absolute;
   top: 20%;
@@ -673,7 +673,7 @@ SolarSystemView + Info */
 }
 
 .starText_Age {
-  font-family: "Lato", sans-serif;
+  font-family: 'Lato', sans-serif;
   font-size: 1.1rem;
   position: absolute;
   bottom: 9%;
@@ -686,7 +686,7 @@ SolarSystemView + Info */
 /* ADD ICON TO BUTTON */
 .planetViewButton {
   position: absolute;
-  font-family: "Lato", serif;
+  font-family: 'Lato', serif;
   font-size: 1rem;
   bottom: 15%;
   right: 5%;
@@ -908,7 +908,7 @@ https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Gajillion_Islands_Plan
 #infoPageContainer {
   background-color: black;
   color: white;
-  font-family: "Lato", sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 
 #infoPageIntro {
@@ -1040,7 +1040,7 @@ a li {
 
 /* ********************************** */
 
-@import "https://fonts.googleapis.com/css?family=Roboto:400,500";
+@import 'https://fonts.googleapis.com/css?family=Roboto:400,500';
 
 html {
   box-sizing: border-box;
@@ -1100,7 +1100,7 @@ figure {
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 100%;
   line-height: 1.5;
 }
@@ -1117,7 +1117,7 @@ body {
 }
 
 .container:after {
-  content: "";
+  content: '';
   display: table;
   clear: both;
 }
@@ -1146,7 +1146,7 @@ Full screen background image
 Blueish tint overlay
 */
 .hero:after {
-  content: "";
+  content: '';
   background: rgba(0, 0, 0, 0.5);
   /* position: absolute; */
   opacity: 0;
@@ -1178,7 +1178,7 @@ Using this method because browsers can transition opacity very cheaply as oppose
 https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
 */
 #masthead:after {
-  content: "";
+  content: '';
   /* position: absolute; */
   top: 0;
   width: 100%;
@@ -1257,7 +1257,7 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
 
 .hamburger-inner::before,
 .hamburger-inner::after {
-  content: "";
+  content: '';
   display: block;
 }
 
@@ -1593,7 +1593,7 @@ a:hover {
 }
 .moon {
 }
-input[type="text"] {
+input[type='text'] {
   color: #fff;
   background-color: #0a1821;
   padding: 5px;
@@ -1601,7 +1601,7 @@ input[type="text"] {
   border-bottom: 2px solid #ccc;
   font-size: 18px;
 }
-input[type="text"]:focus {
+input[type='text']:focus {
   border-color: none;
   border-bottom: 2px solid #ccc;
 }
@@ -1612,13 +1612,13 @@ input[type="text"]:focus {
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 120px;
+  top: 9%;
   background-size: contain;
 
   height: 100%;
   width: 100%;
   /* font-size: 20px; */
-  font-size: 1.8vw;
+  font-size: 1.4vw;
 }
 .searchResults .type {
   text-align: left;
@@ -1631,7 +1631,7 @@ input[type="text"]:focus {
 }
 
 .terrestrial {
-  background-image: url("../public/images/terran.jpg");
+  background-image: url('../public/images/terran.jpg');
   background-size: 150%;
   background-repeat: no-repeat;
   background-position: right 95% top 5%;
@@ -1640,7 +1640,7 @@ input[type="text"]:focus {
   position: absolute;
 }
 .superearth {
-  background-image: url("../public/images/terran.jpg");
+  background-image: url('../public/images/terran.jpg');
   background-size: 150%;
   background-repeat: no-repeat;
   background-position: right 95% top 5%;
@@ -1649,17 +1649,17 @@ input[type="text"]:focus {
   position: absolute;
 }
 .neptuntunian {
-  background-image: url("../public/images/nept.jpg");
+  background-image: url('../public/images/nept.jpg');
   background-size: 140%;
   background-repeat: no-repeat;
 
   background-position: right 95% top -5%;
   height: 100%;
   width: 100%;
-  /* position: absolute; */
+  position: absolute;
 }
 .gasgiant {
-  background-image: url("../public/images/gasgiant.jpg");
+  background-image: url('../public/images/gasgiant.jpg');
   background-size: 150%;
   background-repeat: no-repeat;
   background-position: left top;
@@ -1676,7 +1676,7 @@ input[type="text"]:focus {
   padding-top: 1.7vw;
   max-width: 40%;
 
-  font-size: 1.85vw;
+  font-size: 1vw;
 }
 
 .searchComp {
@@ -1694,14 +1694,15 @@ input[type="text"]:focus {
   justify-content: space-around;
   align-content: space-around;
   position: absolute;
-  /* margin-top: 59vh; */
-  top: 60%;
+  margin-top: 32vw;
+  /* top: 60%; */
   overflow-y: scroll;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
   /* height: 30vh; */
-  gap: 2.5vh;
-  max-height: 45vh;
+  gap: 2vh;
+  max-height: 55vh;
+  /* bottom: 1%; */
   width: 100%;
   justify-content: center;
 }
@@ -1718,4 +1719,56 @@ input[type="text"]:focus {
 
 .resultsContainer::-webkit-scrollbar {
   display: none;
+}
+
+/* info display */
+
+.main-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.car-icon {
+  /* display: block;
+  margin: 0 auto;
+  height: 1vw;
+  width: 1vw;
+ */
+}
+
+.info-card h1 {
+  color: #0075d2;
+  font-size: 1.3vw;
+}
+
+.info-card h2 {
+  font-size: 1vw;
+  color: #77bdff;
+}
+
+.info-card {
+  align-self: flex-start;
+  background-color: rgb(255, 255, 255);
+  border: 2px solid #a8c7e0;
+  border-radius: 5%;
+  cursor: pointer;
+  height: 10vw;
+  overflow: hidden;
+  padding: 10px;
+  text-align: center;
+  margin: 10px;
+  width: 10vw;
+  transition: all 0.2s ease-out;
+  z-index: 0;
+  text-align: center;
+  background-image: url(../public/images/planeticon.png);
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: center top 79%;
+}
+
+.extra-info {
+  transition: opacity 0.2s 0.3s;
+  opacity: 0;
 }
