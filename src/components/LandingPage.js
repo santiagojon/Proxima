@@ -21,6 +21,7 @@ const LandingPage = () => {
   let navigate = useNavigate();
   const handleChangingSystem = (system) => {
     let path = "/";
+    console.log("system", system);
     switch (system) {
       case "home":
         path = "/home";
@@ -33,6 +34,12 @@ const LandingPage = () => {
         break;
       case "Kepler-62":
         path = "/system/Kepler-62";
+        break;
+      case "TauCeti":
+        path = "/system/tau%20Cet";
+        break;
+      case "WASP-12":
+        path = "/system/WASP-12";
         break;
       default:
         break;
@@ -395,10 +402,11 @@ const LandingPage = () => {
               />
 
               <div>
+
+                <div id="sunWrapper">
                 <a href="/home" className="sunTag">
                   Sun
                 </a>
-                <div id="sunWrapper">
                   <img
                     src="https://www.freeiconspng.com/uploads/stars-png-23.png"
                     width="350"
@@ -413,10 +421,11 @@ const LandingPage = () => {
               </div>
 
               <div>
+
+                <div id="trappistWrapper">
                 <a href="system/TRAPPIST-1" className="trappistTag">
                   Trappist-1
                 </a>
-                <div id="trappistWrapper">
                   <img
                     src="https://www.freeiconspng.com/uploads/stars-png-23.png"
                     width="350"
@@ -431,10 +440,11 @@ const LandingPage = () => {
               </div>
 
               <div>
+
+                <div id="proximaWrapper">
                 <a href="system/Proxima%20Cen" className="proximaTag">
                   Proxima
                 </a>
-                <div id="proximaWrapper">
                   <img
                     src="https://www.freeiconspng.com/uploads/stars-png-23.png"
                     width="350"
@@ -449,10 +459,11 @@ const LandingPage = () => {
               </div>
 
               <div>
+
+                <div id="Kepler-62Wrapper">
                 <a href="/system/Kepler-62" className="keplerTag">
                   Kepler
                 </a>
-                <div id="Kepler-62Wrapper">
                   <img
                     src="https://www.freeiconspng.com/uploads/stars-png-23.png"
                     width="350"
@@ -467,10 +478,11 @@ const LandingPage = () => {
               </div>
 
               <div>
+
+                <div id="tauCetiWrapper">
                 <a href="/system/tau%20Cet" className="tauCetiTag">
                   Tau Ceti
                 </a>
-                <div id="tauCetiWrapper">
                   <img
                     src="https://www.freeiconspng.com/uploads/stars-png-23.png"
                     width="350"
@@ -478,17 +490,18 @@ const LandingPage = () => {
                     id="tauCeti"
                     className="galaxyButtons"
                     onClick={() => {
-                      handleChangingSystem("Kepler-62");
+                      handleChangingSystem("TauCeti");
                     }}
                   />
                 </div>
               </div>
 
               <div>
+
+                <div id="waspWrapper">
                 <a href="/system/WASP-12" className="waspTag">
                   WASP-12
                 </a>
-                <div id="waspWrapper">
                   <img
                     src="https://www.freeiconspng.com/uploads/stars-png-23.png"
                     width="350"
@@ -496,7 +509,7 @@ const LandingPage = () => {
                     id="wasp"
                     className="galaxyButtons"
                     onClick={() => {
-                      handleChangingSystem("Kepler-62");
+                      handleChangingSystem("WASP-12");
                     }}
                   />
                 </div>
