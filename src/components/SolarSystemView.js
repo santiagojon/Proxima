@@ -21,15 +21,7 @@ function Scene(props) {
   return (
     <>
       <CameraController viewState={props.viewState} />
-      <Stars
-        radius={10000}
-        depth={320}
-        count={6000}
-        factor={4}
-        saturation={0}
-        fade
-        speed={1}
-      />
+
       <ambientLight intensity={0.03} />
       {props.viewState === "singlePlanetView" ? (
         <pointLight position={[-700, 700, 90]} />
@@ -114,6 +106,15 @@ export const SolarSystemView = (props) => {
         className="overflow"
       >
         <Suspense fallback={null}>
+          <Stars
+            radius={10000}
+            depth={320}
+            count={6000}
+            factor={4}
+            saturation={0}
+            fade
+            speed={1}
+          />
           <Scene
             viewState={viewState}
             handleSetState={handleSetState}
