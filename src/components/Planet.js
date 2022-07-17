@@ -96,17 +96,21 @@ export const Planet = (props) => {
         ) : (
           <>
             <Text children={props.name} position={[0, 50, 0]} opacity={100} />
-            <mesh onClick={() => props.handleOnClick(props.idx)}>
-              {console.log(props)}
-              <sphereBufferGeometry
-                args={[
-                  Math.max(planetScale * props.compareEarthSize * 2.05, 60),
-                  10,
-                  10,
-                ]}
-              />
-              <meshBasicMaterial opacity={0.0} transparent />
-            </mesh>
+            {props.name === "moon" ? (
+              ""
+            ) : (
+              <mesh onClick={() => props.handleOnClick(props.idx)}>
+                {console.log(props)}
+                <sphereBufferGeometry
+                  args={[
+                    Math.max(planetScale * props.compareEarthSize * 2.05, 60),
+                    10,
+                    10,
+                  ]}
+                />
+                <meshBasicMaterial opacity={0.0} transparent />
+              </mesh>
+            )}
           </>
         )}
       </mesh>
