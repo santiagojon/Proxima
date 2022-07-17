@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ArrowDropDownCircleOutlinedIcon from "@mui/icons-material/ArrowDropDownCircleOutlined";
+import { SystemSecurityUpdate } from "@mui/icons-material";
 
 const HoverPopUpGeneral = (props) => {
   const [text, setText] = useState("");
@@ -9,6 +10,8 @@ const HoverPopUpGeneral = (props) => {
 
   if (solarSystem && solarSystem.length) planetName = props.solarSystem[0].name;
 
+  // ***************
+  // FEATURED STAR SYSTEMS. ADD INFO TO DB POST CAPSTONE
   const renderText = () => {
     if (planetName === "TRAPPIST-1") {
       return (
@@ -65,7 +68,74 @@ const HoverPopUpGeneral = (props) => {
         </div>
       );
     }
+
+    if (planetName === "Kepler-62") {
+      return (
+        <div className="popupRenderTextPlanetInfo">
+          <div>
+            Kepler-62 is a K-type main sequence star cooler and smaller than the
+            Sun, located roughly 990 light years from Earth in the constellation
+            Lyra. It resides within the field of vision of the Kepler
+            spacecraft, the satellite that NASA's Kepler Mission used to detect
+            planets that may be transiting their stars.
+          </div>
+          <br></br>
+          <div>
+            On April 18, 2013, it was announced that the star has five planets,
+            two of which, Kepler-62e and Kepler-62f are within the star's
+            habitable zone.The outermost, Kepler-62f, is likely a rocky planet
+          </div>
+        </div>
+      );
+    }
+
+    if (planetName === "WASP-12") {
+      return (
+        <div className="popupRenderTextPlanetInfo">
+          <div>
+            WASP-12 is a magnitude 11 yellow dwarf star located approximately
+            1410 light-years away in the constellation Auriga. WASP-12 has a
+            mass and radius similar to the Sun and is known for being orbited by
+            a planet that is extremely hot and has a retrograde orbit around
+            WASP-12.
+          </div>
+          <br></br>
+          <div>
+            In 2008, the extrasolar planet WASP-12b was discovered orbiting
+            WASP-12. The doomed planet is a hot Jupiter that orbits so close to
+            its parent star, it's being torn apart. It takes this alien world
+            only 1.1 days to completely circle its sun.
+          </div>
+        </div>
+      );
+    }
+
+    if (planetName === "Tau Ceti") {
+      return (
+        <div className="popupRenderTextPlanetInfo">
+          <div>
+            Since December 2012, there has been evidence of at least four
+            planets—all confirmed being super-Earths—orbiting Tau Ceti, with two
+            of these being potentially in the habitable zone. There are an
+            additional four unconfirmed planets, one of which is a Jovian planet
+            between 3 and 20 AU from the star. Because of its debris disk, any
+            planet orbiting Tau Ceti would face far more impact events than
+            Earth. Despite this hurdle to habitability, its solar analog
+            (Sun-like) characteristics have led to widespread interest in the
+            star.
+          </div>
+          <br></br>
+          <div>
+            Given its stability, similarity and relative proximity to the Sun,
+            Tau Ceti is consistently listed as a target for the Search for
+            Extra-Terrestrial Intelligence (SETI) and appears in some science
+            fiction literature.
+          </div>
+        </div>
+      );
+    }
   };
+  // ***************
 
   const handleLeave = () => {
     setText("");
