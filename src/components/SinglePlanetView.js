@@ -5,6 +5,7 @@ import { Canvas, extend, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 import { useRef, useState } from "react";
 import { CameraController } from "./CameraController";
+import { Stars } from "@react-three/drei";
 
 const SinglePlanetView = (props) => {
   const ref = useRef();
@@ -15,7 +16,15 @@ const SinglePlanetView = (props) => {
   return (
     <>
       <CameraController />
-
+      <Stars
+        radius={10000}
+        depth={320}
+        count={6000}
+        factor={4}
+        saturation={0}
+        fade
+        speed={1}
+      />
       <mesh ref={ref} position={[0, 0, 0]}>
         <sphereBufferGeometry args={[300, 50, 50]} />
         {props.sun ? (

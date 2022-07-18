@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Planet } from "./Planet";
 import * as THREE from "three";
+import { Stars } from "@react-three/drei";
 
 export const SolarSystem = (props) => {
   const solarSystem = props.solarSystem || [];
@@ -15,6 +16,15 @@ export const SolarSystem = (props) => {
   if (solarSystem.length > 0) orbitRings = solarSystem[0].orbitPlanet;
   return (
     <>
+      <Stars
+        radius={10000}
+        depth={320}
+        count={6000}
+        factor={4}
+        saturation={0}
+        fade
+        speed={1}
+      />
       {orbitRings && orbitRings.length > 0
         ? orbitRings.map((orbit, idx) => {
             return (

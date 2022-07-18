@@ -106,15 +106,6 @@ export const SolarSystemView = (props) => {
         className="overflow"
       >
         <Suspense fallback={null}>
-          <Stars
-            radius={10000}
-            depth={320}
-            count={6000}
-            factor={4}
-            saturation={0}
-            fade
-            speed={1}
-          />
           <Scene
             viewState={viewState}
             handleSetState={handleSetState}
