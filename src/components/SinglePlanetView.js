@@ -16,15 +16,7 @@ const SinglePlanetView = (props) => {
   return (
     <>
       <CameraController />
-      <Stars
-        radius={8000}
-        depth={320}
-        count={6000}
-        factor={4}
-        saturation={0}
-        fade
-        speed={1}
-      />
+
       <mesh ref={ref} position={[0, 0, 0]}>
         <sphereBufferGeometry args={[300, 50, 50]} />
         {props.sun ? (

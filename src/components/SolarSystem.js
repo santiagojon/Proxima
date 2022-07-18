@@ -16,15 +16,6 @@ export const SolarSystem = (props) => {
   if (solarSystem.length > 0) orbitRings = solarSystem[0].orbitPlanet;
   return (
     <>
-      <Stars
-        radius={8000}
-        depth={320}
-        count={6000}
-        factor={4}
-        saturation={0}
-        fade
-        speed={1}
-      />
       {orbitRings && orbitRings.length > 0
         ? orbitRings.map((orbit, idx) => {
             return (
