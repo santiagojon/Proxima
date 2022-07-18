@@ -92,7 +92,7 @@ const SolarSystemViewInfo = (props) => {
     );
   }
 
-  if (solarSystem && solarSystem.length && solarSystem[0].name === "Tau Ceti") {
+  if (solarSystem && solarSystem.length && solarSystem[0].name === "tau Cet") {
     return (
       <div>
         <div className="planetText_Name">Tau Ceti</div>
