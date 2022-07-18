@@ -21,7 +21,6 @@ const LandingPage = () => {
   let navigate = useNavigate();
   const handleChangingSystem = (system) => {
     let path = "/";
-    console.log("system", system);
     switch (system) {
       case "home":
         path = "/home";
@@ -520,7 +519,7 @@ const LandingPage = () => {
                   WASP-12
                 </span>
               </div>
-              
+
             </section>
             <div id="milkyWayTextLandingPage">
               <h3 id="milkyWayTitleLandingPage">Milky Way</h3>

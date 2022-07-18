@@ -72,7 +72,7 @@ export const createUser = (user, history) => {
 };
 
 export const updateUser = (id, user) => {
-  console.log(user);
+
 
   return async (dispatch) => {
     const { data: updated } = await axios.put(
