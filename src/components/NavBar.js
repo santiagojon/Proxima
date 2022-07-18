@@ -104,14 +104,9 @@ const NavBar = () => {
               <h4>Featured Systems</h4>
               <ul>
                 <li>
-                  <Link
-                    className="site-nav"
-                    to="/home"
-                    onClick={() => window.history.push("/home")}
-                  >
-                    The Sun
-                  </Link>
+                  <a href="/home">The Sun</a>
                 </li>
+
                 <li>
                   <a href="/system/Kepler-62">Kepler-62</a>
                 </li>
