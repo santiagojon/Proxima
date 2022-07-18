@@ -1,18 +1,18 @@
-@import 'https://fonts.googleapis.com/css?family=Roboto:400,500';
+@import "https://fonts.googleapis.com/css?family=Roboto:400,500";
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Poppins&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Poppins&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Poppins&family=Rubik+Moonrocks&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Poppins&family=Rubik+Moonrocks&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Poppins&family=Rubik+Moonrocks&family=Strait&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Poppins&family=Rubik+Moonrocks&family=Strait&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Lato&family=Montserrat&family=Poppins&family=Rubik+Moonrocks&family=Strait&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Lato&family=Montserrat&family=Poppins&family=Rubik+Moonrocks&family=Strait&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Iceland&family=Lato&family=Montserrat&family=Poppins&family=Rubik+Moonrocks&family=Strait&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Iceland&family=Lato&family=Montserrat&family=Poppins&family=Rubik+Moonrocks&family=Strait&display=swap");
 * {
   /* background-color: black; */
 }
@@ -72,13 +72,13 @@ Landing Page  */
   flex-direction: column;
   align-items: center;
   /* font-family: 'Roboto', sans-serif; */
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
 
   /* font-weight: 300; */
 }
 
 #landingPageTitle {
-  font-family: 'Strait', sans-serif;
+  font-family: "Strait", sans-serif;
 }
 
 #heroContainer {
@@ -287,42 +287,15 @@ Milky Way Buttons */
   transition: opacity 1s, visibility 0.2s;
 }
 
-#sunWrapper {
-  position: absolute;
-  width: 320px;
-  height: 320px;
-  top: 92%;
-  left: 45.5%;
-  transform: translate(-25%, -100%);
-}
-
-.sunTag {
-  z-index: 1000;
-  position: absolute;
-  height: 79px;
-  top: 74%;
-  left: 50.5%;
-  transform: translate(-25%, -100%);
-  text-decoration: none;
-}
-.sunTag:hover {
-  color: gold;
-  background-position: 0 100%;
-  transition: opacity 1s, visibility 0.2s;
-}
-#sun #proxima #trappist {
-  cursor: pointer;
-}
-
 .starSystemDescription {
   margin-left: 0.5rem;
   position: absolute;
   height: 79px;
-  top: 75%;
-  left: 52%;
+  top: 96%;
+  left: 14%;
   transform: translate(-25%, -100%);
-  height: 50px;
-  width: 50px;
+  height: 46px;
+  width: 124px;
   color: rgb(255, 255, 255);
   font-size: 1rem;
   font-weight: 700;
@@ -331,65 +304,29 @@ Milky Way Buttons */
   transition: opacity 1s, visibility 0.2s;
 }
 
+#sunWrapper {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 80%;
+  left: 47.5%;
+  transform: translate(-25%, -100%);
+  cursor: pointer;
+}
+
 #sunWrapper:hover .starSystemDescription {
   /* visibility: visible; */
   opacity: 1;
   color: gold;
 }
 
-#trappist .starSystemDescription {
-  position: absolute;
-  height: 79px;
-  top: 33%;
-  left: 59%;
-  transform: translate(-25%, -100%);
-}
-
 #proximaWrapper {
   position: absolute;
-  width: 230px;
-  height: 230px;
-  top: 94%;
-  left: 53%;
+  width: 100px;
+  height: 100px;
+  top: 83%;
+  left: 54%;
   transform: translate(-25%, -100%);
-}
-.proximaTag {
-  z-index: 1000;
-  position: absolute;
-  height: 79px;
-  top: 82%;
-  left: 56%;
-  transform: translate(-25%, -100%);
-  text-decoration: none;
-}
-.proximaTag:hover {
-  color: gold;
-  background-position: 0 100%;
-  transition: opacity 1s, visibility 0.2s;
-}
-
-#Kepler-62Wrapper {
-  position: absolute;
-  top: 35%;
-  left: 45%;
-  transform: translate(-25%, -100%);
-}
-.keplerTag {
-  z-index: 1000;
-  position: absolute;
-  height: 79px;
-  top: 27%;
-  left: 48.5%;
-  transform: translate(-25%, -100%);
-  text-decoration: none;
-}
-.keplerTag:hover {
-  color: gold;
-  background-position: 0 100%;
-  transition: opacity 1s, visibility 0.2s;
-}
-
-#promixa {
   cursor: pointer;
 }
 
@@ -398,31 +335,32 @@ Milky Way Buttons */
   color: gold;
 }
 
+#Kepler-62Wrapper {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 37%;
+  left: 47%;
+  transform: translate(-25%, -100%);
+  cursor: pointer;
+}
+
+#Kepler-62Wrapper:hover .starSystemDescription {
+  opacity: 1;
+  color: gold;
+}
+
 #trappistWrapper {
   position: absolute;
-  width: 300px;
-  height: 300px;
+  width: 100px;
+  height: 100px;
   margin: 0em;
-  top: 51%;
-  left: 55%;
+  top: 37%;
+  left: 63%;
   transform: translate(-25%, -100%);
+  cursor: pointer;
 }
 
-.trappistTag {
-  z-index: 1000;
-  position: absolute;
-  height: 95px;
-  top: 35%;
-  left: 59%;
-  transform: translate(-25%, -100%);
-  text-decoration: none;
-}
-
-.trappistTag:hover {
-  color: gold;
-  background-position: 0 100%;
-  transition: opacity 1s, visibility 0.2s;
-}
 #trappistWrapper:hover .starSystemDescription {
   opacity: 1;
   color: gold;
@@ -430,50 +368,31 @@ Milky Way Buttons */
 
 #tauCetiWrapper {
   position: absolute;
-  width: 300px;
-  height: 300px;
+  width: 100px;
+  height: 100px;
   margin: 0em;
-  top: 73%;
-  left: 20%;
+  top: 62%;
+  left: 26%;
   transform: translate(-25%, -100%);
+  cursor: pointer;
 }
-.tauCetiTag {
-  z-index: 1000;
-  position: absolute;
-  height: 95px;
-  top: 57.8%;
-  left: 24.2%;
-  transform: translate(-25%, -100%);
-  text-decoration: none;
-}
-.tauCetiTag:hover {
+#tauCetiWrapper:hover .starSystemDescription {
+  opacity: 1;
   color: gold;
-  background-position: 0 100%;
-  transition: opacity 1s, visibility 0.2s;
 }
-
 #waspWrapper {
   position: absolute;
-  width: 300px;
-  height: 300px;
+  width: 100px;
+  height: 100px;
   margin: 0em;
-  top: 100%;
-  left: 34%;
+  top: 84%;
+  left: 33%;
   transform: translate(-25%, -100%);
+  cursor: pointer;
 }
-.waspTag {
-  z-index: 1000;
-  position: absolute;
-  height: 95px;
-  top: 84.5%;
-  left: 38%;
-  transform: translate(-25%, -100%);
-  text-decoration: none;
-}
-.waspTag:hover {
+#waspWrapper:hover .starSystemDescription {
+  opacity: 1;
   color: gold;
-  background-position: 0 100%;
-  transition: opacity 1s, visibility 0.2s;
 }
 
 /* ***********************
@@ -580,7 +499,7 @@ Single Planet */
 }
 
 .planetText_Name {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   font-size: 3rem;
   font-weight: 700;
   position: absolute;
@@ -593,7 +512,7 @@ Single Planet */
 /* Test */
 
 .planetText_Type {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   font-size: 1.1rem;
   position: absolute;
   bottom: 11%;
@@ -617,7 +536,7 @@ Single Planet */
 }
 
 .planetText_Distance {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   font-size: 1rem;
   position: absolute;
   top: 20%;
@@ -627,7 +546,7 @@ Single Planet */
 }
 
 .planetText_Discovery {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   font-size: 1rem;
   position: absolute;
   top: 20%;
@@ -673,7 +592,7 @@ SolarSystemView + Info */
 }
 
 .starText_Age {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   font-size: 1.1rem;
   position: absolute;
   bottom: 9%;
@@ -686,7 +605,7 @@ SolarSystemView + Info */
 /* ADD ICON TO BUTTON */
 .planetViewButton {
   position: absolute;
-  font-family: 'Lato', serif;
+  font-family: "Lato", serif;
   font-size: 1rem;
   bottom: 15%;
   right: 5%;
@@ -908,7 +827,7 @@ https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Gajillion_Islands_Plan
 #infoPageContainer {
   background-color: black;
   color: white;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
 #infoPageIntro {
@@ -1040,7 +959,7 @@ a li {
 
 /* ********************************** */
 
-@import 'https://fonts.googleapis.com/css?family=Roboto:400,500';
+@import "https://fonts.googleapis.com/css?family=Roboto:400,500";
 
 html {
   box-sizing: border-box;
@@ -1100,7 +1019,7 @@ figure {
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 100%;
   line-height: 1.5;
 }
@@ -1117,7 +1036,7 @@ body {
 }
 
 .container:after {
-  content: '';
+  content: "";
   display: table;
   clear: both;
 }
@@ -1146,7 +1065,7 @@ Full screen background image
 Blueish tint overlay
 */
 .hero:after {
-  content: '';
+  content: "";
   background: rgba(0, 0, 0, 0.5);
   /* position: absolute; */
   opacity: 0;
@@ -1178,7 +1097,7 @@ Using this method because browsers can transition opacity very cheaply as oppose
 https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
 */
 #masthead:after {
-  content: '';
+  content: "";
   /* position: absolute; */
   top: 0;
   width: 100%;
@@ -1257,7 +1176,7 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
 
 .hamburger-inner::before,
 .hamburger-inner::after {
-  content: '';
+  content: "";
   display: block;
 }
 
@@ -1593,7 +1512,7 @@ a:hover {
 }
 .moon {
 }
-input[type='text'] {
+input[type="text"] {
   color: #fff;
   background-color: #0a1821;
   padding: 5px;
@@ -1601,7 +1520,7 @@ input[type='text'] {
   border-bottom: 2px solid #ccc;
   font-size: 18px;
 }
-input[type='text']:focus {
+input[type="text"]:focus {
   border-color: none;
   border-bottom: 2px solid #ccc;
 }
@@ -1631,7 +1550,7 @@ input[type='text']:focus {
 }
 
 .terrestrial {
-  background-image: url('../public/images/terran.jpg');
+  background-image: url("../public/images/terran.jpg");
   background-size: 150%;
   background-repeat: no-repeat;
   background-position: right 95% top 5%;
@@ -1640,7 +1559,7 @@ input[type='text']:focus {
   position: absolute;
 }
 .superearth {
-  background-image: url('../public/images/terran.jpg');
+  background-image: url("../public/images/terran.jpg");
   background-size: 150%;
   background-repeat: no-repeat;
   background-position: right 95% top 5%;
@@ -1649,7 +1568,7 @@ input[type='text']:focus {
   position: absolute;
 }
 .neptuntunian {
-  background-image: url('../public/images/nept.jpg');
+  background-image: url("../public/images/nept.jpg");
   background-size: 140%;
   background-repeat: no-repeat;
 
@@ -1659,7 +1578,7 @@ input[type='text']:focus {
   position: absolute;
 }
 .gasgiant {
-  background-image: url('../public/images/gasgiant.jpg');
+  background-image: url("../public/images/gasgiant.jpg");
   background-size: 150%;
   background-repeat: no-repeat;
   background-position: left top;
