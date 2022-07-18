@@ -411,7 +411,14 @@ const LandingPage = () => {
                     handleChangingSystem("home");
                   }}
                 />
-                <span className="starSystemDescription">Sun</span>
+                <span
+                  className="starSystemDescription"
+                  onClick={() => {
+                    handleChangingSystem("home");
+                  }}
+                >
+                  Sun
+                </span>
               </div>
 
               <div id="trappistWrapper">
@@ -424,7 +431,14 @@ const LandingPage = () => {
                     handleChangingSystem("TRAPPIST-1");
                   }}
                 />
-                <span className="starSystemDescription">Trappist-1</span>
+                <span
+                  className="starSystemDescription"
+                  onClick={() => {
+                    handleChangingSystem("TRAPPIST-1");
+                  }}
+                >
+                  Trappist-1
+                </span>
               </div>
 
               <div id="proximaWrapper">
@@ -437,7 +451,14 @@ const LandingPage = () => {
                     handleChangingSystem("proxima");
                   }}
                 />
-                <span className="starSystemDescription">Proxima Centauri</span>
+                <span
+                  className="starSystemDescription"
+                  onClick={() => {
+                    handleChangingSystem("proxima");
+                  }}
+                >
+                  Proxima Centauri
+                </span>
               </div>
 
               <div id="Kepler-62Wrapper">
@@ -450,7 +471,14 @@ const LandingPage = () => {
                     handleChangingSystem("Kepler-62");
                   }}
                 />
-                <span className="starSystemDescription">Kepler-62</span>
+                <span
+                  className="starSystemDescription"
+                  onClick={() => {
+                    handleChangingSystem("Kepler-62");
+                  }}
+                >
+                  Kepler-62
+                </span>
               </div>
 
               <div id="tauCetiWrapper">
@@ -463,7 +491,14 @@ const LandingPage = () => {
                     handleChangingSystem("TauCeti");
                   }}
                 />
-                <span className="starSystemDescription">Tau Ceti</span>
+                <span
+                  className="starSystemDescription"
+                  onClick={() => {
+                    handleChangingSystem("TauCeti");
+                  }}
+                >
+                  Tau Ceti
+                </span>
               </div>
 
               <div id="waspWrapper">
@@ -476,7 +511,14 @@ const LandingPage = () => {
                     handleChangingSystem("WASP-12");
                   }}
                 />
-                <span className="starSystemDescription">WASP-12</span>
+                <span
+                  className="starSystemDescription"
+                  onClick={() => {
+                    handleChangingSystem("WASP-12");
+                  }}
+                >
+                  WASP-12
+                </span>
               </div>
             </section>
             <div id="milkyWayTextLandingPage">
