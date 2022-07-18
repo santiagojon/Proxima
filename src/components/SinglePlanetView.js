@@ -17,7 +17,7 @@ const SinglePlanetView = (props) => {
     <>
       <CameraController />
       <Stars
-        radius={10000}
+        radius={8000}
         depth={320}
         count={6000}
         factor={4}

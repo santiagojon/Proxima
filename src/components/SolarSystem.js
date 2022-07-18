@@ -17,7 +17,7 @@ export const SolarSystem = (props) => {
   return (
     <>
       <Stars
-        radius={10000}
+        radius={8000}
         depth={320}
         count={6000}
         factor={4}
