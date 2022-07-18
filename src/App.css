@@ -313,7 +313,7 @@ Milky Way Buttons */
   font-weight: 700;
   /* visibility: hidden; */
   opacity: 1;
-  transition: opacity 1s, visibility 0.2s;
+  transition: opacity .7s, visibility 0.2s;
 }
 
 #sunWrapper {
