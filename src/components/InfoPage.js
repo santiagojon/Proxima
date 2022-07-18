@@ -10,11 +10,6 @@ const InfoPage = () => {
             How Do We Discover <span>Exoplanets</span>?
           </h1>
           <div id="infoPageIntro">
-            {/* <p id="infoPageSubtitle">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exe
-        </p> */}
             <img
               id="surveySatellite"
               src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Transiting_Exoplanet_Survey_Satellite_artist_concept_%28black_background%29.png"
@@ -62,16 +57,15 @@ const InfoPage = () => {
                   main-sequence stars of spectral categories F, G, or K.
                   <br></br>
                   <br></br>
-                  <i>
-                    Scientists say, “Some of these exoplanets are as
-                    (relatively) small as the moon, while others are as massive
-                    as Jupiter. Unlike Earth, most of the exoplanets are not
-                    tightly bound to stars, so they’re actually wandering
-                    through space or loosely orbiting between stars. We can
-                    estimate that the number of planets in our galaxy is more
-                    than a trillion.”
-                  </i>
                 </p>
+                <i>
+                  Scientists say, “Some of these exoplanets are as (relatively)
+                  small as the moon, while others are as massive as Jupiter.
+                  Unlike Earth, most of the exoplanets are not tightly bound to
+                  stars, so they’re actually wandering through space or loosely
+                  orbiting between stars. We can estimate that the number of
+                  planets in our galaxy is more than a trillion.”
+                </i>
               </div>
 
               <div className="infoPageContentCard">
