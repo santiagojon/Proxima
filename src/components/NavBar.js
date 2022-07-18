@@ -173,7 +173,7 @@ const NavBar = () => {
                     to="/dev"
                     onClick={() => window.location.push("/dev")}
                   >
-                    Meet The Dev's
+                    Meet The Devs
                   </Link>
                 </li>
                 {/* <li><a href="#">Client Partners</a></li> */}
