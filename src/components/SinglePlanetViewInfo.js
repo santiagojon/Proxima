@@ -32,8 +32,7 @@ const SinglePlanetViewInfo = (props) => {
             every "supreme leader," every saint and sinner in the history of our
             species lived there-on a mote of dust suspended in a sunbeam."
             <br></br>
-            <br></br>
-            <p>- Carl Sagan</p>
+            <br></br>- Carl Sagan
           </p>
         </div>
       </div>
