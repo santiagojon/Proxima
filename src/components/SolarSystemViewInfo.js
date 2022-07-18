@@ -3,8 +3,7 @@ import HoverPopUpGeneral from "./HoverPopUpGeneral";
 
 const SolarSystemViewInfo = (props) => {
   const solarSystem = props.solarSystem;
-  console.log("SSProps", props);
-
+ 
   //Featured star systems w/ additional information
   if (
     solarSystem &&

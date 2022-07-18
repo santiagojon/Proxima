@@ -69,7 +69,7 @@ export const SolarSystemView = (props) => {
 
   useEffect(() => {
     if (params.starName === undefined) setSolarSystem(solarSys);
-    if (params.starName !== undefined) console.log(params.starName);
+    if (params.starName !== undefined);
   }, []);
 
   useEffect(() => {
