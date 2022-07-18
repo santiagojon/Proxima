@@ -171,7 +171,7 @@ const NavBar = () => {
                   <Link
                     className="site-nav"
                     to="/learnmore"
-                    onClick={() => window.location.push("/learnmore")}
+                    onClick={() => window.location.push("/dev")}
                   >
                     Developers
                   </Link>
