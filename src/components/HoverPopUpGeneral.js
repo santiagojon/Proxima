@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import ArrowDropDownCircleOutlinedIcon from "@mui/icons-material/ArrowDropDownCircleOutlined";
-import { SystemSecurityUpdate } from "@mui/icons-material";
 
 const HoverPopUpGeneral = (props) => {
   const [text, setText] = useState("");
@@ -110,7 +109,7 @@ const HoverPopUpGeneral = (props) => {
       );
     }
 
-    if (planetName === "Tau Ceti") {
+    if (planetName === "tau Cet") {
       return (
         <div className="popupRenderTextPlanetInfo">
           <div>

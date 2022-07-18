@@ -300,7 +300,7 @@ Milky Way Buttons */
   font-size: 1rem;
   font-weight: 700;
   /* visibility: hidden; */
-  opacity: 0.7;
+  opacity: 1;
   transition: opacity 1s, visibility 0.2s;
 }
 
@@ -1544,7 +1544,7 @@ input[type="text"]:focus {
 }
 
 .terrestrial {
-  background-image: url("../public/images/terran.jpg");
+  background-image: url("../public/images/p4-2.jpg");
   background-size: 150%;
   background-repeat: no-repeat;
   background-position: right 95% top 5%;
@@ -1553,10 +1553,10 @@ input[type="text"]:focus {
   position: absolute;
 }
 .superearth {
-  background-image: url("../public/images/terran.jpg");
-  background-size: 150%;
+  background-image: url("../public/images/p5.jpg");
+  background-size: 130%;
   background-repeat: no-repeat;
-  background-position: right 95% top 5%;
+  background-position: right 100% top 5%;
   height: 100%;
   width: 100%;
   position: absolute;
@@ -1656,7 +1656,7 @@ input[type="text"]:focus {
 }
 
 .info-card h2 {
-  font-size: 1vw;
+  font-size: 0.8vw;
   color: rgb(61, 102, 160);
 }
 
@@ -1679,6 +1679,10 @@ input[type="text"]:focus {
   background-repeat: no-repeat;
   background-size: 50%;
   background-position: center top 79%;
+}
+
+.info-card:hover {
+  background-color: rgb(255, 255, 255, 0.3);
 }
 
 .extra-info {
