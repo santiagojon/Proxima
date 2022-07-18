@@ -220,8 +220,20 @@ Landing Page  */
   margin: 0 15% 5% 15%;
   /* max-width: 75%;
   max-height: 60%; */
+  animation-name: spin;
+  animation-duration: 800s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
   width: 70%;
   height: 65%;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* #milkyWayLandingPage img:hover {
@@ -301,7 +313,7 @@ Milky Way Buttons */
   font-weight: 700;
   /* visibility: hidden; */
   opacity: 1;
-  transition: opacity 1s, visibility 0.2s;
+  transition: opacity 0.7s, visibility 0.2s;
 }
 
 #sunWrapper {
@@ -311,6 +323,7 @@ Milky Way Buttons */
   top: 80%;
   left: 47.5%;
   transform: translate(-25%, -100%);
+  animation: blinkblink 2s cubic-bezier(0.39, 0.58, 0.57, 1) infinite;
   cursor: pointer;
 }
 
@@ -327,6 +340,8 @@ Milky Way Buttons */
   top: 83%;
   left: 54%;
   transform: translate(-25%, -100%);
+  /* animation: blinkblink 2s linear infinite; */
+  animation: blinkblink 4s cubic-bezier(0, 0, 0.2, 1) infinite;
   cursor: pointer;
 }
 
@@ -342,6 +357,7 @@ Milky Way Buttons */
   top: 37%;
   left: 47%;
   transform: translate(-25%, -100%);
+  animation: blinkblink 2s linear infinite;
   cursor: pointer;
 }
 
@@ -358,6 +374,7 @@ Milky Way Buttons */
   top: 37%;
   left: 63%;
   transform: translate(-25%, -100%);
+  animation: blinkblink 4s cubic-bezier(0.6, -0.28, 0.74, 0.05) infinite;
   cursor: pointer;
 }
 
@@ -374,6 +391,7 @@ Milky Way Buttons */
   top: 62%;
   left: 26%;
   transform: translate(-25%, -100%);
+  animation: blinkblink 3s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
   cursor: pointer;
 }
 #tauCetiWrapper:hover .starSystemDescription {
@@ -388,6 +406,7 @@ Milky Way Buttons */
   top: 84%;
   left: 33%;
   transform: translate(-25%, -100%);
+  animation: blinkblink 2s cubic-bezier(0.4, 0, 1, 1) infinite;
   cursor: pointer;
 }
 #waspWrapper:hover .starSystemDescription {
@@ -1507,7 +1526,7 @@ a:hover {
 
 @keyframes blinkblink {
   50% {
-    opacity: 0.1;
+    opacity: 0.78;
   }
 }
 .moon {
@@ -1531,10 +1550,10 @@ input[type="text"]:focus {
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 9%;
+  /* top: 9%; */
   background-size: contain;
 
-  height: 100%;
+  height: 98%;
   width: 100%;
   /* font-size: 20px; */
   font-size: 1.4vw;
@@ -1614,14 +1633,14 @@ input[type="text"]:focus {
   justify-content: space-around;
   /* align-content: space-around; */
   /* position: absolute; */
-  margin-top: 34vw;
+  margin-top: 28vw;
   /* top: 60%; */
   overflow-y: scroll;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
   /* height: 30vh; */
   gap: 2vh;
-  max-height: 40vh;
+  max-height: 50vh;
   /* bottom: 1%; */
   width: 100%;
   justify-content: center;
