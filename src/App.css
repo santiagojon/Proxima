@@ -1526,7 +1526,7 @@ a:hover {
 
 @keyframes blinkblink {
   50% {
-    opacity: 0.9;
+    opacity: 0.78;
   }
 }
 .moon {
