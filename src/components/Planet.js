@@ -1,7 +1,7 @@
 import { shaderMaterial } from "@react-three/drei";
 import glsl from "babel-plugin-glsl/macro";
 import * as THREE from "three";
-import { extend, useFrame } from "@react-three/fiber";
+import { extend, useFrame, useLoader } from "@react-three/fiber";
 import { useRef, useState, useEffect, useMemo } from "react";
 import { SinglePlanetView } from "./SinglePlanetView";
 import Text from "./spriteText";
@@ -16,6 +16,11 @@ export const Planet = (props) => {
 
   const planetScale = 1.5;
   const handleSetState = props.handleSetState;
+
+  const texture = useLoader(
+    THREE.TextureLoader,
+    `${process.env.PUBLIC_URL}/images/drew.png`
+  );
 
   // Subscribe this component to the render-loop, rotate the mesh every frame
   useFrame((state, delta) => (ref.current.rotation.y += speed));
@@ -47,8 +52,10 @@ export const Planet = (props) => {
         ref={ref}
         position={randomizePosition([position[0], position[1], position[2]])}
       >
-        {props.sun ? (
-          ""
+        {props.sun && props.name === "Dev Team" ? (
+          <sprite scale={[200, 200, 200]} position={[0, 400, 0]}>
+            <spriteMaterial map={texture} />
+          </sprite>
         ) : (
           <Text children={props.name} position={[0, 50, 0]} opacity={100} />
         )}

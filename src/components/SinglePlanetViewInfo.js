@@ -1,6 +1,7 @@
 import React from "react";
 import HoverPopUpType from "./HoverPopUpType";
 import HoverPopUpDiscovery from "./HoverPopUpDiscovery";
+import { names, info } from "../util/DevPage";
 
 const SinglePlanetViewInfo = (props) => {
   const singlePlanetInfo = props.singlePlanetInfo;
@@ -55,6 +56,18 @@ const SinglePlanetViewInfo = (props) => {
           ""
         )}
       </div>
+      {names.includes(singlePlanetInfo[singlePlanetKey].name) ? (
+        <>
+          <div className="planetText_Distance">{`Linkedin: ${
+            info[singlePlanetInfo[singlePlanetKey].name][0]
+          }`}</div>
+          <div className="planetText_Size">{`Github: ${
+            info[singlePlanetInfo[singlePlanetKey].name][1]
+          }`}</div>
+        </>
+      ) : (
+        ""
+      )}
       <div className="planetText_Distance">
         {singlePlanetInfo[singlePlanetKey].distancePC
           ? `You are ${
@@ -65,13 +78,19 @@ const SinglePlanetViewInfo = (props) => {
           : ""}
       </div>
       <div className="planetText_Distance">
-        {singlePlanetInfo[singlePlanetKey].miles
+        {singlePlanetInfo[singlePlanetKey].miles &&
+        !names.includes(singlePlanetInfo[singlePlanetKey].name)
           ? `You are ${singlePlanetInfo[singlePlanetKey].miles} from Earth`
           : ""}
       </div>
-      <div className="planetText_Size">
-        {Math.round(size * 10) / 10}x the size of Earth
-      </div>
+      {!names.includes(singlePlanetInfo[singlePlanetKey].name) ? (
+        <div className="planetText_Size">
+          {Math.round(size * 10) / 10}x the size of Earth
+        </div>
+      ) : (
+        ""
+      )}
+
       <div className="planetText_Discovery">
         {singlePlanetInfo[singlePlanetKey].discoveryMethod ? (
           <HoverPopUpDiscovery
