@@ -113,10 +113,20 @@ const NavBar = () => {
                   </Link>
                 </li>
                 <li>
-                  <a href="/#milk">Milky Way</a>
+                  <a href="/#milk">Kepler-62</a>
                 </li>
-                <li>{/* <a href="#">Logistics Industry</a> */}</li>
-                <li>{/* <a href="#">Blog</a> */}</li>
+                <li>
+                  <a href="/#milk">Proxima Centauri</a>
+                </li>
+                <li>
+                  <a href="/#milk">Trappist-1</a>
+                </li>
+                <li>
+                  <a href="/#milk">WASP-12</a>
+                </li>
+                <li>
+                  <a href="/#milk">Tau Ceti</a>
+                </li>
               </ul>
             </div>
 
