@@ -164,7 +164,16 @@ const NavBar = () => {
                     to="/learnmore"
                     onClick={() => window.location.push("/learnmore")}
                   >
-                    Info
+                    More Info
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className="site-nav"
+                    to="/learnmore"
+                    onClick={() => window.location.push("/learnmore")}
+                  >
+                    Developers
                   </Link>
                 </li>
                 {/* <li><a href="#">Client Partners</a></li> */}
