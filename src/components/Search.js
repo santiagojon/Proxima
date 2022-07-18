@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { getPlanetsByType, getMorePlanetsByType } from '../store/planets';
-import { useParams, Link } from 'react-router-dom';
-import NavBar from './NavBar';
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getPlanetsByType, getMorePlanetsByType } from "../store/planets";
+import { useParams, Link } from "react-router-dom";
+import NavBar from "./NavBar";
+import { Parallax } from "@react-spring/parallax";
+
 export default function SearchType(props) {
   const planets = useSelector((state) => state.allPlanets);
 
@@ -36,7 +38,7 @@ export default function SearchType(props) {
                 <i className="car-icon"></i>
                 <h1>{planet.planetName}</h1>
                 <h2>
-                  {Math.round(planet.planetRadiusE * 10) / 10} Times the size of
+                  {Math.round(planet.planetRadiusE * 10) / 10}x the size of
                   Earth
                 </h2>
               </div>
