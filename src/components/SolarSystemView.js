@@ -24,7 +24,7 @@ function Scene(props) {
       <Stars
         radius={8000}
         depth={320}
-        count={6000}
+        count={4000}
         factor={4}
         saturation={0}
         fade
@@ -111,7 +111,6 @@ export const SolarSystemView = (props) => {
         gl={{ antialias: true }}
         dpr={window.devicePixelRatio}
         camera={{ far: 25000 }}
-        className="overflow"
       >
         <Suspense fallback={null}>
           <Scene

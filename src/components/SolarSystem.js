@@ -21,15 +21,6 @@ export const SolarSystem = (props) => {
             return (
               <mesh key={idx} rotation={[Math.PI / 2, 0, 0]}>
                 <mesh onClick={() => handleOnClick(idx)}>
-                  {/* <ringBufferGeometry
-                    args={[
-                      orbit.position[0] - 8,
-                      orbit.position[0] + 8,
-                      48,
-                      1,
-                      5,
-                    ]}
-                  /> */}
                   <torusBufferGeometry args={[orbit.position[0], 15, 3, 48]} />
                   <meshBasicMaterial
                     side={THREE.DoubleSide}
