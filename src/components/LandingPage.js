@@ -520,6 +520,7 @@ const LandingPage = () => {
                   WASP-12
                 </span>
               </div>
+              
             </section>
             <div id="milkyWayTextLandingPage">
               <h3 id="milkyWayTitleLandingPage">Milky Way</h3>
