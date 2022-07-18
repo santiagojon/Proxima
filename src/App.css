@@ -796,6 +796,13 @@ https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Gajillion_Islands_Plan
   display: block;
 }
 
+.stars {
+  background: #000
+    url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top
+    center;
+  z-index: 0;
+}
+
 .twinkling {
   /* background:transparent url(http://www.script-tutorials.com/demos/360/images/twinkling.png) repeat top center; */
   /* z-index:-1; */
