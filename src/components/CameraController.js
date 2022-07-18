@@ -6,7 +6,7 @@ const ChangeCameraPosition = (arr, fov, far) => {
   useThree(({ camera }) => {
     camera.position.set(arr[0], arr[1], arr[2]);
     camera.fov = 75;
-    camera.far = 15000;
+    camera.far = 25000;
   });
 };
 
@@ -15,7 +15,7 @@ export const CameraController = (props) => {
   let controls = new OrbitControls(camera, gl.domElement);
   controls.enableDamping = true;
   let cameraPos = props.cameraPos || [-950, 340, 0];
-  ChangeCameraPosition(cameraPos, 75, 15000);
+  ChangeCameraPosition(cameraPos, 75, 25000);
   useEffect(() => {
     if (props.viewState === "singlePlanetView") {
       controls.minDistance = 0.002;
