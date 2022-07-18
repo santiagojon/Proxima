@@ -581,9 +581,10 @@ Single Planet */
   color: gold;
   width: 20%;
   position: absolute;
-  top: 8%;
+  top: 10%;
   left: 5%;
-  opacity: 0.8;
+  opacity: 0.9;
+  animation: slide-up 3s;
   transition: opacity 1s, visibility 0.2s;
 }
 
@@ -1561,7 +1562,7 @@ input[type="text"]:focus {
 .searchResults .type {
   text-align: left;
   position: absolute;
-  top: 0.5vh;
+  top: 14.5vh;
   left: 6%;
   /* padding-left: 10vw; */
 
@@ -1610,7 +1611,7 @@ input[type="text"]:focus {
 .blob {
   text-align: left;
   position: absolute;
-  top: 5%;
+  top: 21%;
   padding-left: 6vw;
   padding-top: 1.7vw;
   max-width: 40%;
