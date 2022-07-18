@@ -355,9 +355,10 @@ const InfoPage = () => {
 
                   <li>
                     The James Webb Space Telescope (sometimes called JWST or
-                    Webb) will be a large infrared telescope with a 6.5-meter
-                    primary mirror. It will be used to map the atmosphere of
-                    exoplanets.
+                    Webb) is a large infrared telescope with a 6.5-meter primary
+                    mirror. It will be used to map the atmosphere of exoplanets.
+                    During the first year of operation, 25% of its missions will
+                    be related to observing exoplanets.
                   </li>
                   <h5>Roman Space Telescope</h5>
 
