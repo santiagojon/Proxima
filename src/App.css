@@ -220,8 +220,20 @@ Landing Page  */
   margin: 0 15% 5% 15%;
   /* max-width: 75%;
   max-height: 60%; */
+  animation-name: spin;
+  animation-duration: 800s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
   width: 70%;
   height: 65%;
+}
+@keyframes spin {
+  from {
+      transform:rotate(0deg);
+  }
+  to {
+      transform:rotate(360deg);
+  }
 }
 
 /* #milkyWayLandingPage img:hover {
@@ -1507,7 +1519,7 @@ a:hover {
 
 @keyframes blinkblink {
   50% {
-    opacity: 0.6;
+    opacity: 0.9;
   }
 }
 .moon {
