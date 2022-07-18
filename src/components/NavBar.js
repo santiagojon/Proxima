@@ -113,19 +113,19 @@ const NavBar = () => {
                   </Link>
                 </li>
                 <li>
-                  <a href="/#milk">Kepler-62</a>
+                  <a href="/system/Kepler-62">Kepler-62</a>
                 </li>
                 <li>
-                  <a href="/#milk">Proxima Centauri</a>
+                  <a href="/system/Proxima%20Cen">Proxima Centauri</a>
                 </li>
                 <li>
-                  <a href="/#milk">Trappist-1</a>
+                  <a href="/system/TRAPPIST-1">Trappist-1</a>
                 </li>
                 <li>
-                  <a href="/#milk">WASP-12</a>
+                  <a href="/system/WASP-12">WASP-12</a>
                 </li>
                 <li>
-                  <a href="/#milk">Tau Ceti</a>
+                  <a href="/system/tau%20Cet">Tau Ceti</a>
                 </li>
               </ul>
             </div>
