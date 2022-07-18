@@ -47,11 +47,7 @@ const NavBar = () => {
             </span>
             <span className="hamburger-label">Menu</span>
           </button>
-          <form
-            id="masthead-search"
-            className={isActive ? null : "is-active"}
-            // onSubmit={handleSubmit}
-          >
+          <form id="masthead-search" className={isActive ? null : "is-active"}>
             <input
               type="search"
               name="s"
@@ -86,37 +82,35 @@ const NavBar = () => {
             <div className="col">
               <h4>
                 <Link
-                  // className="site-nav"
                   style={{ textDecoration: "none" }}
                   to="/"
                   onClick={() => window.history.push("/")}
                 >
-                  Home Page
+                  Home
                 </Link>
               </h4>
-              <ul>
-                <li>
-                  <h4></h4>
-                </li>
-              </ul>
             </div>
             <div className="col">
               <h4>Featured Systems</h4>
               <ul>
                 <li>
-                  <Link
-                    className="site-nav"
-                    to="/home"
-                    onClick={() => window.history.push("/home")}
-                  >
-                    The Sun
-                  </Link>
+                  <a href="/home">The Sun</a>
                 </li>
                 <li>
-                  <a href="/#milk">Milky Way</a>
+                  <a href="/system/Kepler-62">Kepler-62</a>
                 </li>
-                <li>{/* <a href="#">Logistics Industry</a> */}</li>
-                <li>{/* <a href="#">Blog</a> */}</li>
+                <li>
+                  <a href="/system/Proxima%20Cen">Proxima Centauri</a>
+                </li>
+                <li>
+                  <a href="/system/TRAPPIST-1">Trappist-1</a>
+                </li>
+                <li>
+                  <a href="/system/WASP-12">WASP-12</a>
+                </li>
+                <li>
+                  <a href="/system/tau%20Cet">Tau Ceti</a>
+                </li>
               </ul>
             </div>
 
@@ -176,27 +170,25 @@ const NavBar = () => {
                 {/* <li><a href="#">Client Partners</a></li> */}
               </ul>
             </div>
-            {/* <div className="col"> */}
-            {/* <h4>{'         '}   Approach</h4> */}
-            {/* <ul> */}
-            {/* <li> */}
-            {/* <a href="#">Digital Transformation</a> */}
-            {/* </li> */}
-            {/* <li> */}
-            {/* <a href="#">Digital Readiness Tool</a> */}
-            {/* </li> */}
-            {/* <li> */}
-            {/* <a href="#">Solution Partners</a> */}
-            {/* </li> */}
-            {/* </ul> */}
-            {/* </div> */}
-            {/* <div className="col">
-            <ul className="social">
-              <li><a href=""><svg title="Facebook"></svg></a></li>
-              <li><a href=""><svg title="Twitter"></svg></a></li>
-              <li><a href=""><svg title="LinkedIn"></svg></a></li>
-            </ul>
-          </div> */}
+            {/* <div>
+              <ul className="social">
+                <li>
+                  <a href="">
+                    <svg title="Facebook"></svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="">
+                    <svg title="Twitter"></svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="">
+                    <svg title="LinkedIn"></svg>
+                  </a>
+                </li>
+              </ul>
+            </div> */}
           </nav>
         </div>
       </header>
