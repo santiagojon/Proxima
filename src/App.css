@@ -311,6 +311,7 @@ Milky Way Buttons */
   top: 80%;
   left: 47.5%;
   transform: translate(-25%, -100%);
+  animation: blinkblink 2s cubic-bezier(0.39, 0.58, 0.57, 1) infinite;
   cursor: pointer;
 }
 
@@ -327,6 +328,8 @@ Milky Way Buttons */
   top: 83%;
   left: 54%;
   transform: translate(-25%, -100%);
+  /* animation: blinkblink 2s linear infinite; */
+  animation: blinkblink 4s cubic-bezier(0, 0, 0.2, 1) infinite;
   cursor: pointer;
 }
 
@@ -342,6 +345,7 @@ Milky Way Buttons */
   top: 37%;
   left: 47%;
   transform: translate(-25%, -100%);
+  animation: blinkblink 2s linear infinite;
   cursor: pointer;
 }
 
@@ -358,6 +362,7 @@ Milky Way Buttons */
   top: 37%;
   left: 63%;
   transform: translate(-25%, -100%);
+  animation: blinkblink 4s cubic-bezier(0.6, -0.28, 0.74, 0.05) infinite;
   cursor: pointer;
 }
 
@@ -374,6 +379,7 @@ Milky Way Buttons */
   top: 62%;
   left: 26%;
   transform: translate(-25%, -100%);
+  animation: blinkblink 3s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
   cursor: pointer;
 }
 #tauCetiWrapper:hover .starSystemDescription {
@@ -388,6 +394,7 @@ Milky Way Buttons */
   top: 84%;
   left: 33%;
   transform: translate(-25%, -100%);
+  animation: blinkblink 2s cubic-bezier(0.4, 0, 1, 1) infinite;
   cursor: pointer;
 }
 #waspWrapper:hover .starSystemDescription {
@@ -1500,7 +1507,7 @@ a:hover {
 
 @keyframes blinkblink {
   50% {
-    opacity: 0.1;
+    opacity: 0.6;
   }
 }
 .moon {
