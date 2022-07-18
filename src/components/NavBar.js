@@ -86,7 +86,7 @@ const NavBar = () => {
                   to="/"
                   onClick={() => window.history.push("/")}
                 >
-                  Home Page
+                  Home
                 </Link>
               </h4>
             </div>
