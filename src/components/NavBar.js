@@ -170,10 +170,10 @@ const NavBar = () => {
                 <li>
                   <Link
                     className="site-nav"
-                    to="/learnmore"
+                    to="/dev"
                     onClick={() => window.location.push("/dev")}
                   >
-                    Developers
+                    Meet The Dev's
                   </Link>
                 </li>
                 {/* <li><a href="#">Client Partners</a></li> */}
