@@ -43,7 +43,7 @@ function Scene(props) {
         />
       )}
       <Stars
-        radius={1000}
+        radius={8000}
         depth={320}
         count={4000}
         factor={4}
