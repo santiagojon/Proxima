@@ -27,6 +27,7 @@ const AppRoutes = () => {
         <Route path="/home" element={<SolarSystemView />} />
         <Route path="/learnMore" element={<InfoPage />} />
         <Route path="*" element={<PageNotFound />} />
+        <Route path="/dev" element={<SolarSystemView />} />
       </Routes>
     </Router>
   );

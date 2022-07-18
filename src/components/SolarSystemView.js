@@ -3,6 +3,7 @@ import { Canvas, extend } from "@react-three/fiber";
 import { Stars } from "@react-three/drei";
 import { SolarSystem } from "./SolarSystem";
 import { solarSys } from "../util/SolarSystem";
+import { devSys } from "../util/DevPage";
 import { EffectComposer, Bloom, Vignette } from "@react-three/postprocessing";
 import SinglePlanetView from "./SinglePlanetView";
 import { AtmosphereShaderMaterial } from "../shaders/Atmosphere";
@@ -69,7 +70,7 @@ export const SolarSystemView = (props) => {
 
   useEffect(() => {
     if (params.starName === undefined) setSolarSystem(solarSys);
-    if (params.starName !== undefined);
+    if (window.location.pathname === "/dev") setSolarSystem(devSys);
   }, []);
 
   useEffect(() => {
