@@ -401,118 +401,82 @@ const LandingPage = () => {
                 alt="milkway"
               />
 
-              <div>
-
-                <div id="sunWrapper">
-                <a href="/home" className="sunTag">
-                  Sun
-                </a>
-                  <img
-                    src="https://www.freeiconspng.com/uploads/stars-png-23.png"
-                    width="350"
-                    alt="stars png"
-                    id="sun"
-                    className="galaxyButtons"
-                    onClick={() => {
-                      handleChangingSystem("home");
-                    }}
-                  />
-                </div>
+              <div id="sunWrapper">
+                <img
+                  src="images/stars-png-23.png"
+                  alt="stars"
+                  id="sun"
+                  className="galaxyButtons"
+                  onClick={() => {
+                    handleChangingSystem("home");
+                  }}
+                />
+                <span className="starSystemDescription">Sun</span>
               </div>
 
-              <div>
-
-                <div id="trappistWrapper">
-                <a href="system/TRAPPIST-1" className="trappistTag">
-                  Trappist-1
-                </a>
-                  <img
-                    src="https://www.freeiconspng.com/uploads/stars-png-23.png"
-                    width="350"
-                    alt="stars png"
-                    id="trappist"
-                    className="galaxyButtons"
-                    onClick={() => {
-                      handleChangingSystem("TRAPPIST-1");
-                    }}
-                  />
-                </div>
+              <div id="trappistWrapper">
+                <img
+                  src="images/stars-png-23.png"
+                  alt="stars"
+                  id="trappist"
+                  className="galaxyButtons"
+                  onClick={() => {
+                    handleChangingSystem("TRAPPIST-1");
+                  }}
+                />
+                <span className="starSystemDescription">Trappist-1</span>
               </div>
 
-              <div>
-
-                <div id="proximaWrapper">
-                <a href="system/Proxima%20Cen" className="proximaTag">
-                  Proxima
-                </a>
-                  <img
-                    src="https://www.freeiconspng.com/uploads/stars-png-23.png"
-                    width="350"
-                    alt="stars png"
-                    id="proxima"
-                    className="galaxyButtons"
-                    onClick={() => {
-                      handleChangingSystem("proxima");
-                    }}
-                  />
-                </div>
+              <div id="proximaWrapper">
+                <img
+                  src="images/stars-png-23.png"
+                  alt="stars"
+                  id="proxima"
+                  className="galaxyButtons"
+                  onClick={() => {
+                    handleChangingSystem("proxima");
+                  }}
+                />
+                <span className="starSystemDescription">Proxima Centauri</span>
               </div>
 
-              <div>
-
-                <div id="Kepler-62Wrapper">
-                <a href="/system/Kepler-62" className="keplerTag">
-                  Kepler
-                </a>
-                  <img
-                    src="https://www.freeiconspng.com/uploads/stars-png-23.png"
-                    width="350"
-                    alt="stars png"
-                    id="Kepler-62"
-                    className="galaxyButtons"
-                    onClick={() => {
-                      handleChangingSystem("Kepler-62");
-                    }}
-                  />
-                </div>
+              <div id="Kepler-62Wrapper">
+                <img
+                  src="images/stars-png-23.png"
+                  alt="stars"
+                  id="Kepler-62"
+                  className="galaxyButtons"
+                  onClick={() => {
+                    handleChangingSystem("Kepler-62");
+                  }}
+                />
+                <span className="starSystemDescription">Kepler-62</span>
               </div>
 
-              <div>
-
-                <div id="tauCetiWrapper">
-                <a href="/system/tau%20Cet" className="tauCetiTag">
-                  Tau Ceti
-                </a>
-                  <img
-                    src="https://www.freeiconspng.com/uploads/stars-png-23.png"
-                    width="350"
-                    alt="stars png"
-                    id="tauCeti"
-                    className="galaxyButtons"
-                    onClick={() => {
-                      handleChangingSystem("TauCeti");
-                    }}
-                  />
-                </div>
+              <div id="tauCetiWrapper">
+                <img
+                  src="images/stars-png-23.png"
+                  alt="stars"
+                  id="tauCeti"
+                  className="galaxyButtons"
+                  onClick={() => {
+                    handleChangingSystem("TauCeti");
+                  }}
+                />
+                <span className="starSystemDescription">Tau Ceti</span>
               </div>
 
-              <div>
-
-                <div id="waspWrapper">
-                <a href="/system/WASP-12" className="waspTag">
-                  WASP-12
-                </a>
-                  <img
-                    src="https://www.freeiconspng.com/uploads/stars-png-23.png"
-                    width="350"
-                    alt="stars png"
-                    id="wasp"
-                    className="galaxyButtons"
-                    onClick={() => {
-                      handleChangingSystem("WASP-12");
-                    }}
-                  />
-                </div>
+              <div id="waspWrapper">
+                <img
+                  src="images/stars-png-23.png"
+                  alt="stars"
+                  id="wasp"
+                  className="galaxyButtons"
+                  onClick={() => {
+                    handleChangingSystem("WASP-12");
+                  }}
+                />
+                <span className="starSystemDescription">WASP-12</span>
               </div>
             </section>
             <div id="milkyWayTextLandingPage">

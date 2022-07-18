@@ -4,16 +4,13 @@ import { Stars } from "@react-three/drei";
 import { SolarSystem } from "./SolarSystem";
 import { solarSys } from "../util/SolarSystem";
 import { EffectComposer, Bloom, Vignette } from "@react-three/postprocessing";
-import NavBar from "./NavBar";
 import SinglePlanetView from "./SinglePlanetView";
 import { AtmosphereShaderMaterial } from "../shaders/Atmosphere";
 import { GlobeShaderMaterial } from "../shaders/GlobeMaterial";
 import { CameraController } from "./CameraController";
 import dataParser from "../util/DataParsed";
 import { useSelector } from "react-redux";
-
-import HoverPopUpType from "./HoverPopUpType";
-import HoverPopUpDiscovery from "./HoverPopUpDiscovery";
+import { useParams } from "react-router-dom";
 import SinglePlanetViewInfo from "./SinglePlanetViewInfo";
 import SolarSystemViewInfo from "./SolarSystemViewInfo";
 
@@ -64,13 +61,14 @@ export const SolarSystemView = (props) => {
   const [unparsedSolarData, setUnparsedSolarData] = useState({});
   const [solarSystem, setSolarSystem] = useState([]);
   // const [solarSystem, setSolarSystem] = useState(solarSys);
-
+  const params = useParams();
   const singleSystem = useSelector((state) => {
     return state.singleSystem || null;
   });
 
   useEffect(() => {
-    setSolarSystem(solarSys);
+    if (params.starName === undefined) setSolarSystem(solarSys);
+    if (params.starName !== undefined) console.log(params.starName);
   }, []);
 
   useEffect(() => {
@@ -80,19 +78,8 @@ export const SolarSystemView = (props) => {
     ) {
       setUnparsedSolarData(singleSystem);
       const parsedData = dataParser(singleSystem);
-      console.log("parsed data", parsedData);
       setSolarSystem(parsedData);
     }
-    // if (singleSystem !== props.solarSystem) {
-    //   setUnparsedSolarData(props.solarSystem);
-    //   if (unparsedSolarData !== null && unparsedSolarData !== undefined) {
-    //     console.log("UNPARSED", unparsedSolarData);
-    //     setTimeout(300);
-    //     const parsedData = dataParser(unparsedSolarData);
-    //     console.log("parsed data", parsedData);
-    //     setSolarSystem(parsedData);
-    //   }
-    // }
   }, [singleSystem]);
 
   const handleSetViewState = (info) => {

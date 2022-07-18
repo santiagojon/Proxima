@@ -104,8 +104,8 @@ const sunRGB = (data) => {
 };
 
 export const getTexture = (planetType, id) => {
-  const textureArr = textures[planetType];
-  const textureArrLength = textureArr.length;
+  const textureArr = textures[planetType] || textures["rocky"];
+  const textureArrLength = textureArr.length || 0;
   return textureArr[id % textureArrLength];
 };
 
