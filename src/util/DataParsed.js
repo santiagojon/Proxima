@@ -125,7 +125,7 @@ export default function dataParser(data) {
       discoveryMethod: data[i].discoveryMethod,
       discoveryFacility: data[i].discoveryFacility,
       distancePC: data[i].distancePC,
-      position: [23480 * data[i].orbitDistanceAU * 0.75 + 250, 0, 0],
+      position: [23480 * data[i].orbitDistanceAU * 0.75 + 380, 0, 0],
       globeRGB: rgbFinder(data[i].planetTemp), //get rgb data
       starSpectralType: data[i].starSpectralType,
       compareEarthSize: data[i].planetRadiusE,
