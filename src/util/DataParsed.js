@@ -140,6 +140,7 @@ export default function dataParser(data) {
 
   const sunColor = sunRGB(data[0]);
   const sunTexture = getTexture("sun", data[0].id);
+  const sunCompareToEarthSize = data[0].starRadiusS * 260.8 || 2 * 260.8;
   const sun = {
     name: data[0].starName,
     distancePC: data[0].distancePC,
@@ -154,7 +155,7 @@ export default function dataParser(data) {
     atmosphereRGB: [1, 0.58, 0.26],
     speed: 0,
     orbitSpeed: 0,
-    compareEarthSize: data[0].starRadiusS * 260.8,
+    compareEarthSize: sunCompareToEarthSize,
     sun: true,
     yearDiscovered: data[0].yearDiscovered,
     orbitPlanet: planets,
